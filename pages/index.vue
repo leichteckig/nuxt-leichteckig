@@ -4,6 +4,8 @@
       <div class="hero__text">
         <h1 class="hero__title">Hi, I'm Ramona</h1>
         <h2 class="hero__sub-title">A frontend-developer<br> who ❤️ test automation and JavaScript</h2>
+        <Button>Visit my projects</Button>
+        <Button variant="secondary">Message me</Button>
       </div>
 
       <img class="hero__image" src="/moe.jpg">
@@ -63,6 +65,7 @@ export default {}
 .hero__sub-title {
   font-size: 30px;
   font-weight: normal;
+  margin-bottom: 30px;
   color: var(--color-primary);
 }
 
