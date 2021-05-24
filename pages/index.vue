@@ -1,16 +1,36 @@
 <template>
-  <div class="hero">
-    <div class="container hero__inner">
-      <div class="hero__text">
-        <h1 class="hero__title">Hi, I'm Ramona</h1>
-        <h2 class="hero__sub-title">A frontend-developer<br> who ❤️ test automation and JavaScript</h2>
-        <Button>Visit my projects</Button>
-        <Button variant="secondary">Message me</Button>
+  <div class="index">
+    <div class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">Hi, I'm Ramona</h1>
+          <h2 class="hero__sub-title">A frontend-developer<br> who ❤️ test automation and JavaScript</h2>
+          <Button>Visit my projects</Button>
+          <Button variant="secondary">Message me</Button>
+        </div>
+
+        <img class="hero__image" src="/moe.jpg">
       </div>
-
-      <img class="hero__image" src="/moe.jpg">
     </div>
-
+    <div class="featured-posts">
+      <div class="container">
+        <article class="post">
+          <h3 class="post__title">Cypress request feature</h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <Button variant="secondary">Read more...</Button>
+        </article>
+        <article class="post">
+          <h3 class="post__title">How to survive conferences</h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <Button variant="secondary">Read more...</Button>
+        </article>
+        <article class="post">
+          <h3 class="post__title">Problem, officer?</h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <Button variant="secondary">Read more...</Button>
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -78,6 +98,27 @@ export default {}
   width: 350px;
   height: 350px;
   border-radius: 50%;
+}
+
+.featured-posts {
+  padding: 40px 0;
+}
+
+.post__title {
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.featured-posts .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+.featured-posts p {
+  margin-bottom: 30px;
 }
 
 .container {

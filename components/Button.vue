@@ -36,9 +36,9 @@ export default {
 
 .button--secondary {
   background-color: transparent;
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   color: var(--color-primary);
-  padding: 10px 28px;
+  padding: 11px 30px;
 }
 
 </style>

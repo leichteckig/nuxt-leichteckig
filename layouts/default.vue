@@ -1,7 +1,10 @@
 <template>
   <div class="app">
-    <Header />
-    <Nuxt />
+    <div class="wrapper">
+      <Header />
+      <Nuxt />
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -45,5 +48,16 @@ body {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex-grow: 1;
+  border-bottom: 1px solid var(--color-border);
 }
 </style>
