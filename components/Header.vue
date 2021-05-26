@@ -7,8 +7,8 @@
       <nuxt-link class="header-main__link" to="/blog">
         Blog
       </nuxt-link>
-      <nuxt-link class="header-main__link" to="/projects">
-        Projects
+      <nuxt-link class="header-main__link" to="/talks">
+        Talks
       </nuxt-link>
       <nuxt-link class="header-main__link" to="/contact">
         Contact
@@ -38,7 +38,7 @@ export default {
     text-decoration: none;
   }
 
-  .header-main__link.nuxt-link-active {
+  .header-main__link.nuxt-link-exact-active {
     border-bottom: 3px solid var(--color-primary);
   }
 
