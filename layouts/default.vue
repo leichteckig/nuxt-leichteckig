@@ -14,6 +14,7 @@
   --color-background-light: #212528;
   --color-primary: #37a8dc;
   --color-text-default: #e3e3e3;
+  --color-text-muted: #aaaaaa;
   --color-border: #2b2c31;
 
   --font-family-default:
@@ -60,4 +61,20 @@ body {
   flex-grow: 1;
   border-bottom: 1px solid var(--color-border);
 }
+
+p {
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+h1 { font-weight: normal; font-size: 45px; margin-bottom: 20px; }
+h2 { font-weight: normal; font-size: 40px; margin-bottom: 20px; }
+h3 { font-weight: normal; font-size: 35px; margin-bottom: 20px; }
+h4 { font-weight: normal; font-size: 30px; margin-bottom: 20px; }
+h5 { font-weight: normal; font-size: 25px; margin-bottom: 20px; }
+h6 { font-weight: normal; font-size: 20px; margin-bottom: 20px; }
 </style>
