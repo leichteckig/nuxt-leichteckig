@@ -28,7 +28,6 @@ export default {
 
   .main-footer__link {
     display: inline-block;
-    color: var(--color-text-default);
     text-decoration: none;
   }
 </style>
