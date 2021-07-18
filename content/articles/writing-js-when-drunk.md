@@ -1,12 +1,12 @@
 ---
 title: Writing JavaScript when you're drunk
 description: Lorem ipsum dolor sit amet
-img: first-blog-post.jpg
+img: beer.png
 alt: my first blog post
 author:
   name: Tobbe
   bio: All about Tobbe
-  image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
+  image: https://avatars.githubusercontent.com/u/8480203?s=88&u=b0dab2dcf528db937065ebc4374d4f07819e406e&v=4
 tags:
 - JavaScript
 - ketchup

@@ -28,5 +28,7 @@
     sans-serif;
 }
 
-
+.wrapper {
+  min-height: calc(100vh - 80px);
+}
 </style>
