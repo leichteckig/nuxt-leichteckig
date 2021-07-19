@@ -1,5 +1,6 @@
 <template>
   <button
+    v-bind="$attrs"
     class="button"
     :class="[ 'button--' + variant ]">
     <slot></slot>

@@ -24,7 +24,7 @@
             </NuxtLink>
           </h3>
           <p>{{ article.description }}</p>
-          <Button variant="secondary">Read more...</Button>
+          <Button variant="secondary" @click.native="$router.push({ name: 'blog-slug', params: { slug: article.slug } })">Read more...</Button>
         </article>
       </div>
     </div>
