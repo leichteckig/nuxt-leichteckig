@@ -14,20 +14,17 @@
     </div>
     <div class="featured-posts">
       <div class="container">
-        <article class="post">
-          <h3 class="post__title">Cypress request feature</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          <Button variant="secondary">Read more...</Button>
-        </article>
-        <article class="post">
-          <h3 class="post__title">How to survive conferences</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          <Button variant="secondary">Read more...</Button>
-        </article>
-        <article class="post">
-          <h3 class="post__title">Problem, officer?</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          <Button variant="secondary">Read more...</Button>
+        <article
+          v-for="article in articles"
+          class="post"
+        >
+          <h3 class="post__title">
+            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+              {{ article.title }}
+            </NuxtLink>
+          </h3>
+          <p>{{ article.description }}</p>
+          <Button variant="secondary" @click.native="$router.push({ name: 'blog-slug', params: { slug: article.slug } })">Read more...</Button>
         </article>
       </div>
     </div>
@@ -35,7 +32,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'index',
+
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('createdAt', 'asc')
+      .limit(3)
+      .fetch();
+
+    return {
+      articles
+    }
+  }
+}
 </script>
 
 <style>

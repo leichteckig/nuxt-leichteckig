@@ -1,12 +1,12 @@
 ---
 title: My first Blog Post
 description: Lorem ipsum dolor sit amet
-img: first-blog-post.jpg
+img: first-blog-post.png
 alt: my first blog post
 author:
   name: Leichteckig
   bio: All about Leichteckig
-  image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
+  image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
   - pommes
   - ketchup

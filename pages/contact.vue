@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1>Contact me</h1>
-  </div>
+  <Page title="Contact me">
+    Contact Info
+  </Page>
 </template>
 
 <script>

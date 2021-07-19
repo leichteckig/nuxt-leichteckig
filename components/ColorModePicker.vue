@@ -1,11 +1,15 @@
 <template>
   <div>
     <ul>
-      <li v-for="color of colors" :key="color">
+      <li
+        v-for="color of colors"
+        :key="color"
+        @click="$colorMode.preference = color"
+        class="color-item"
+        :class="getClasses(color)"
+      >
         <component
           :is="`icon-${color}`"
-          @click="$colorMode.preference = color"
-          :class="getClasses(color)"
         />
       </li>
     </ul>
@@ -47,25 +51,11 @@ export default {
 </script>
 
 <style scoped>
-.feather {
-  position: relative;
-  top: 0;
-  cursor: pointer;
-  padding: 7px;
-  background-color: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  margin: 0;
-  border-radius: 5px;
-  transition: all 0.1s ease;
-}
-.feather:hover {
-  top: -3px;
-}
-.feather.preferred {
+.color-item.preferred {
   border-color: var(--color-primary);
-  top: -3px;
 }
-.feather.selected {
+
+.color-item.selected {
   color: var(--color-primary);
 }
 
@@ -73,11 +63,21 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 5px;
 }
-ul li {
-  display: inline-block;
-  padding: 5px;
+
+.color-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
   margin: auto 0;
+  border: 2px solid var(--border-color);
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 p {

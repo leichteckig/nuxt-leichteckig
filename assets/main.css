@@ -15,6 +15,7 @@
     --bg-secondary: #071521;
     --border-color: #0d2538;
   }
+
   .sepia-mode {
     --color: #433422;
     --color-secondary: #504231;
@@ -29,7 +30,9 @@
     background-color: var(--bg);
     color: var(--color);
     transition: background-color 0.3s;
+    margin: 0;
   }
+
   a {
     color: var(--color-primary);
   }:root {
@@ -55,6 +58,10 @@
   --bg: #f1e7d0;
   --bg-secondary: #eae0c9;
   --border-color: #ded0bf;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1 { font-weight: normal; font-size: 45px; margin-bottom: 20px; }
