@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <div class="hero">
+    <div class="hero handdraw-line">
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 class="hero__title">Hi, I'm Ramona</h1>
@@ -13,28 +13,19 @@
       </div>
     </div>
     <div class="featured-posts">
-      <div class="container">
-        <article
-          v-for="article in articles"
-          class="post"
-        >
-          <h3 class="post__title">
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-              {{ article.title }}
-            </NuxtLink>
-          </h3>
-          <p>{{ article.description }}</p>
-          <Button variant="secondary" @click.native="$router.push({ name: 'blog-slug', params: { slug: article.slug } })">Read more...</Button>
-        </article>
-      </div>
+        <SmallTile :contents="articles"></SmallTile>
     </div>
   </div>
 </template>
 
 <script>
+import SmallTile from "../components/SmallTile";
+
 export default {
   name: 'index',
-
+  components: {
+    SmallTile
+  },
   async asyncData({ $content, params }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author'])
@@ -84,7 +75,6 @@ export default {
 .hero {
   min-height: 300px;
   padding: 100px 0;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .hero__title {
@@ -113,13 +103,6 @@ export default {
 
 .featured-posts {
   padding: 40px 0;
-}
-
-.post__title {
-  font-size: 22px;
-  font-weight: normal;
-  margin-bottom: 20px;
-  color: var(--color-primary);
 }
 
 .featured-posts .container {
