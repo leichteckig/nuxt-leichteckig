@@ -38,7 +38,6 @@ export default {
 
 .post {
   padding: 25px;
-  border: solid 3px var(--bg);
 }
 
 .post p {
@@ -50,7 +49,7 @@ export default {
   font-weight: normal;
   margin-bottom: 20px;
   color: var(--color-primary);
-  text-decoration: none;
+  top: 0;
 }
 
 .post__title a {
@@ -59,12 +58,6 @@ export default {
 
 .post:hover {
   border: solid 3px var(--color-primary);
-}
-
-.btn {
-  bottom: 0;
-  margin: 50px auto 0 auto;
-  display: block;
 }
 
 </style>

@@ -8,8 +8,7 @@
           <Button>Visit my projects</Button>
           <Button variant="secondary">Message me</Button>
         </div>
-
-        <img class="hero__image" src="/moe.jpg">
+        <Polaroid imagePath="/moe.jpg" />
       </div>
     </div>
     <div class="featured-posts">
@@ -20,10 +19,12 @@
 
 <script>
 import SmallTile from "../components/SmallTile";
+import Polaroid from "../components/Polaroid";
 
 export default {
   name: 'index',
   components: {
+    Polaroid,
     SmallTile
   },
   async asyncData({ $content, params }) {
@@ -92,13 +93,6 @@ export default {
 
 .hero__inner {
   display: flex;
-}
-
-.hero__image {
-  margin-left: auto;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
 }
 
 .featured-posts {
