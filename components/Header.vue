@@ -1,10 +1,10 @@
 <template>
   <header class="header-main">
     <div class="header-main__inner container">
-      <nuxt-link class="header-main__link" to="/">
+      <nuxt-link class="header-main__link first__link" to="/">
         Home
       </nuxt-link>
-      <nuxt-link class="header-main__link" to="/blog">
+      <nuxt-link class="header-main__link second__link" to="/blog">
         Blog
       </nuxt-link>
       <nuxt-link class="header-main__link" to="/talks">
@@ -32,7 +32,10 @@ export default {
 <style scoped>
   .header-main {
     height: 80px;
-    border-bottom: 1px solid var(--color-border);
+
+    border-bottom: solid 3px var(--border-color);
+    border-bottom-right-radius: 255px 15px;
+    border-bottom-left-radius: 255px 15px;
   }
 
   .header-main__link {
@@ -44,6 +47,10 @@ export default {
 
   .header-main__link.nuxt-link-exact-active {
     border-bottom: 3px solid var(--color-primary);
+  }
+
+  .first__link.nuxt-link-exact-active {
+    border-bottom-left-radius: 255px 15px;
   }
 
   .header-main__inner {

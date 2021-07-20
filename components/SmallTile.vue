@@ -61,16 +61,6 @@ export default {
   border: solid 3px var(--color-primary);
 }
 
-.handdraw-border {
-  /*  can be shortened with border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;*/
-  border: solid 3px var(--border-color);
-
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius:15px 255px;
-}
-
 .btn {
   bottom: 0;
   margin: 50px auto 0 auto;

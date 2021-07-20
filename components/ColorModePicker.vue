@@ -73,11 +73,15 @@ ul {
   justify-content: center;
   line-height: 0;
   margin: auto 0;
-  border: 2px solid var(--border-color);
   height: 40px;
   width: 40px;
   cursor: pointer;
-  border-radius: 6px;
+  border: solid 3px var(--border-color);
+
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
 }
 
 p {
