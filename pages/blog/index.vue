@@ -1,5 +1,5 @@
 <template>
-  <Page title="Blog">
+  <Page title="Blog" class="blog">
 
     <!-- TODO: Make blog card component -->
     <article
