@@ -24,22 +24,34 @@ export default {
 <style scoped>
 .button {
   display: inline-block;
-  border-radius: 6px;
   color: #fff;
   text-decoration: none;
   background-color: var(--color-primary);
   font-family: var(--font-family-default);
   font-size: 16px;
-  border: 0;
   padding: 12px 30px;
   cursor: pointer;
+
+  border: solid 3px var(--color-primary);
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+
 }
 
 .button--secondary {
   background-color: transparent;
-  border: 1px solid var(--color-primary);
   color: var(--color-primary);
   padding: 11px 30px;
-}
 
+  bottom: 0;
+  margin: 50px auto 0 auto;
+  border: solid 3px var(--color-primary);
+
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+}
 </style>

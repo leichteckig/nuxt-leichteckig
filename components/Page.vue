@@ -30,8 +30,11 @@ export default {
 <style scoped>
   .page__title {
     padding: 36px 0;
-    border-bottom: 1px solid var(--color-border);
     margin-bottom: 40px;
+
+    border-bottom: solid 3px var(--border-color);
+    border-bottom-right-radius: 255px 15px;
+    border-bottom-left-radius: 100px 30px;
   }
 
   .page__title h1 {
