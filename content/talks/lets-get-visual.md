@@ -1,15 +1,14 @@
 ---
 title: Let's get visual
-description: SymfonyLive Online, Germany
+description: Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit einem vorherigen Stand.
 img: first-blog-post.jpg
 alt: Flaky tests - Fighting nightmares
 author:
-  name: Leichteckig
+  name: Ramona Schwering
   bio: All about Leichteckig
   image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 tags:
-  - CityJS
-  - Flakiness
+  - SymfonyWorld Germany
 ---
 
 ## Abstract

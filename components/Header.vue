@@ -1,6 +1,6 @@
 <template>
   <header class="header-main">
-    <div class="header-main__inner container">
+    <nav class="header-main__inner container">
       <nuxt-link class="header-main__link first__link" to="/">
         Home
       </nuxt-link>
@@ -14,7 +14,7 @@
         Contact
       </nuxt-link>
       <ColorModePicker class="color-mode__container" />
-    </div>
+    </nav>
   </header>
 </template>
 

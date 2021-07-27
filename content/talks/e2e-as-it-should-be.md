@@ -1,5 +1,5 @@
 ---
-title: Symfony meets Cypress
+title: End-to-End testing as it should be
 description: When it comes to UI testing, some developers tend to be reluctant a lot. Are those tests slow, flaky, hard to write and maintain?
 img: first-blog-post.jpg
 alt: Symfony meets Cypress
@@ -8,9 +8,9 @@ author:
   bio: All about Leichteckig
   image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 tags:
-  - Symfony World Online
-  - Sfugos
-  - PHP UG Darmstadt
+  - Symfony UK Meetup
+  - PHPUGMS
+  - eCommerce Camp Jena
 ---
 
 ## Disclaimer
@@ -27,6 +27,10 @@ In my session, I want to introduce Cypress to you and explore its possibilities 
 
 ## Recordings
 
-### Sfugos (Symfony User Group Osnabrück)
+### Symfony UK
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-vekdbWRWvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4BPKVSWsolI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### eCommerce Camp Jena
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jA12oktG1rU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
