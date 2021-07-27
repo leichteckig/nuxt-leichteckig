@@ -12,7 +12,10 @@
       </div>
     </div>
     <div class="featured-posts">
-        <SmallTile :contents="articles"></SmallTile>
+        <SmallTile
+          :contents="articles"
+          slugName="blog">
+        </SmallTile>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 :root {
     --color-background: #1b1c20;
     --color-background-light: #212528;
-    --color-primary: #37a8dc;
+    --color-primary: #967bb6;
     --color-text-default: #e3e3e3;
     --color-text-muted: #aaaaaa;
     --color-border: #2b2c31;
@@ -9,15 +9,16 @@
 
   .dark-mode {
     --color: #ebf4f1;
-    --color-primary: #41b38a;
+    --color-primary: #967bb6;
     --color-secondary: #fdf9f3;
     --bg: #091a28;
     --bg-secondary: #071521;
-    --border-color: #0d2538;
+    --border-color: #13354f;
   }
 
   .sepia-mode {
     --color: #433422;
+    --color-primary: #967bb6;
     --color-secondary: #504231;
     --bg: #f1e7d0;
     --bg-secondary: #eae0c9;
@@ -35,9 +36,10 @@
 
   a {
     color: var(--color-primary);
+    text-decoration: none;
   }:root {
   --color: #243746;
-  --color-primary: #158876;
+  --color-primary: #967bb6;
   --color-secondary: #0e2233;
   --bg: #f3f5f4;
   --bg-secondary: #fff;
@@ -46,15 +48,15 @@
 
 .dark-mode {
   --color: #ebf4f1;
-  --color-primary: #41b38a;
+  --color-primary: #967bb6;
   --color-secondary: #fdf9f3;
   --bg: #091a28;
   --bg-secondary: #071521;
-  --border-color: #0d2538;
+  --border-color: #13354f;
 }
 .sepia-mode {
   --color: #433422;
-  --color-secondary: #504231;
+  --color-primary: #967bb6;
   --bg: #f1e7d0;
   --bg-secondary: #eae0c9;
   --border-color: #ded0bf;
@@ -66,7 +68,7 @@
 
 h1 { font-weight: normal; font-size: 45px; margin-bottom: 20px; }
 h2 { font-weight: normal; font-size: 40px; margin-bottom: 20px; }
-h3 { font-weight: normal; font-size: 35px; margin-bottom: 20px; }
+h3 { font-weight: normal; font-size: 35px; margin-bottom: 20px; color: var(--color-primary); }
 h4 { font-weight: normal; font-size: 30px; margin-bottom: 20px; }
 h5 { font-weight: normal; font-size: 25px; margin-bottom: 20px; }
 h6 { font-weight: normal; font-size: 20px; margin-bottom: 20px; }

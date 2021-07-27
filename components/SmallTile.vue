@@ -3,14 +3,14 @@
     <article
       v-for="article in contents"
       class="post handdraw-border"
+      @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
     >
       <h3 class="post__title">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+        <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
           {{ article.title }}
         </NuxtLink>
       </h3>
       <p>{{ article.description }}</p>
-      <Button class="btn handdraw-border" variant="secondary" @click.native="$router.push({ name: 'blog-slug', params: { slug: article.slug } })">Read more...</Button>
     </article>
   </div>
 </template>
@@ -23,6 +23,10 @@ export default {
   props: {
     contents: {
       type: Array,
+      required: true
+    },
+    slugName: {
+      type: String,
       required: true
     }
   }
@@ -37,7 +41,7 @@ export default {
 }
 
 .post {
-  padding: 25px;
+  padding: 50px 25px;
 }
 
 .post p {
