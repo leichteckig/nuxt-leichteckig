@@ -42,7 +42,8 @@ import Hero from "@/components/Hero";
 export default {
   name: 'talks',
   components: {
-    TableOverview
+    LinkTile,
+    Hero
   },
 
   head() {
@@ -52,34 +53,6 @@ export default {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
-    }
-  },
-
-  data() {
-    return {
-      currentTalks: [{
-        title: 'How to survive conferences as an introvert',
-        link: 'https://scd.shopware.com/',
-        eventTitle: 'Shopware Community Day 2020',
-        date: '02.09.2021'
-      },{
-        title: 'How to survive conferences as an introvert',
-        link: 'https://femtechconf.com/',
-        eventTitle: 'How to survive conferences as an introvert',
-        date: '24. - 25.09.2021'
-      },{
-        title: 'Let\'s get visual',
-        link: 'https://www.codetalks.de/home',
-        eventTitle: 'code.talks',
-        date: '28. - 29.10.2021'
-      },{
-        placeholder: true
-      },{
-        title: 'Not always as a speaker, but it\'s our Cypress Germany meetup! ❤️',
-        link: 'https://www.meetup.com/de-DE/cypress-de-community/',
-        eventTitle: 'Cypress DE Community',
-        date: 'Once in a quarter'
-      }]
     }
   },
 
