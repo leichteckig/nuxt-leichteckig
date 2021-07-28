@@ -1,12 +1,9 @@
 <template>
-  <Page class="blog-detail" :title="article.title">
+  <Page class="blog-detail" :title="article.title" :img="{
+    path: article.img,
+    alt: article.alt
+  }">
     <main>
-      <img v-if="article.img"
-           class="blog-detail__img"
-           :src="article.img"
-           alt="article.title"
-      />
-
       <DetailSummary :article="article"></DetailSummary>
 
       <article class="blog-detail__detail-content">
@@ -21,7 +18,7 @@ import DetailSummary from "@/components/DetailSummary";
 
 export default {
   async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
+    const article = await $content('articles', params.slug).fetch();
 
     return { article }
   },

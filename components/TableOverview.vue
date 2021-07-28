@@ -49,6 +49,9 @@ export default {
       if(entry.placeholder) {
         return 'handdraw-line talk--placeholder'
       }
+      if(entry.old) {
+        return 'handdraw-line talk--old'
+      }
       return 'handdraw-line';
     }
   }
@@ -95,6 +98,11 @@ export default {
       var(--bg) 1px,
       var(--bg) 10px
     );
+  }
+
+  .talk--old {
+    text-decoration: line-through;
+    color: gray;
   }
 
   @media screen and (max-width:700px) {

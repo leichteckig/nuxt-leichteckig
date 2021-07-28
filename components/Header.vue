@@ -21,11 +21,11 @@
         <nuxt-link class="header-main__link second__link" to="/blog">
           Blog
         </nuxt-link>
-        <nuxt-link class="header-main__link" to="/talks">
-          Talks
+        <nuxt-link class="header-main__link" to="/conferences">
+          Conferences
         </nuxt-link>
-        <nuxt-link class="header-main__link" to="/contact">
-          Contact
+        <nuxt-link class="header-main__link" to="/talks">
+          Publications
         </nuxt-link>
       </div>
       <ColorModePicker class="color-mode__container" />
