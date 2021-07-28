@@ -1,16 +1,14 @@
 ---
 title: A matter of trust – Test
-description: Shopware Community Day 2020
+description: Our daily work at Shopware, but also at agencies, ends up in the hands of people who trust us not only to have done our best, but also that it works.
 img: first-blog-post.jpg
 alt: Flaky tests - Fighting nightmares
 author:
-  name: Leichteckig
+  name: Ramona Schwering
   bio: All about Leichteckig
   image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 tags:
   - Shopware Community Day
-  - Shopware
-  - Testing strategy
 ---
 
 ## Abstract

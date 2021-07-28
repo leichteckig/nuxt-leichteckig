@@ -1,6 +1,6 @@
 <template>
-  <div class="index">
-    <div class="hero handdraw-line">
+  <main class="index">
+    <section class="hero handdraw-line">
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 class="hero__title">Hi, I'm Ramona</h1>
@@ -10,14 +10,14 @@
         </div>
         <Polaroid imagePath="/moe.jpg" />
       </div>
-    </div>
-    <div class="featured-posts">
+    </section>
+    <section class="featured-posts">
         <SmallTile
           :contents="articles"
           slugName="blog">
         </SmallTile>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>

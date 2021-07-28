@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 export default {
   name: "SmallTile",
 
@@ -42,6 +41,7 @@ export default {
 
 .post {
   padding: 50px 25px;
+  max-height: 570px;
 }
 
 .post p {

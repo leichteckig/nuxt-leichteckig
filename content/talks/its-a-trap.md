@@ -1,15 +1,14 @@
 ---
 title: It's a (Testing) Trap! - Common Testing Pitfalls and How to Solve Them
-description: FrontEnd Test Fest
+description: “It’s a trap” - a call or feeling we all might be familiar with, not only when it comes to Star Wars.
 img: first-blog-post.jpg
 alt: It's a (Testing) Trap
 author:
-  name: Leichteckig
+  name: Ramona Schwering
   bio: All about Leichteckig
   image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 tags:
-  - FrontendTestFest
-  - Cypress
+  - FrontendTestFest 2021
 ---
 
 ## Abstract

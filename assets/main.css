@@ -66,8 +66,8 @@
   box-sizing: border-box;
 }
 
-h1 { font-weight: normal; font-size: 45px; margin-bottom: 20px; }
-h2 { font-weight: normal; font-size: 40px; margin-bottom: 20px; }
+h1 { font-weight: normal; font-size: 45px; margin-bottom: 20px; color: var(--color-primary); }
+h2 { font-weight: normal; font-size: 40px; margin-bottom: 20px; color: var(--color-primary); }
 h3 { font-weight: normal; font-size: 35px; margin-bottom: 20px; color: var(--color-primary); }
 h4 { font-weight: normal; font-size: 30px; margin-bottom: 20px; }
 h5 { font-weight: normal; font-size: 25px; margin-bottom: 20px; }

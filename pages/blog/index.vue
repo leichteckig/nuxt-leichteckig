@@ -1,41 +1,22 @@
 <template>
   <Page title="Blog" class="blog">
 
-    <!-- TODO: Make blog card component -->
-    <article
-      v-for="article of articles"
-      :key="article.slug"
-      class="blog-card"
-    >
-      <div class="blog-card__author text-muted">
-        <img
-          class="blog-card__author-img"
-          :src="article.author.image"
-        >
-        {{ article.author.name }}
-      </div>
+    <LargeTile
+      :contents="articles"
+      slugName="blog">
 
-      <h3 class="blog-card__title">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          {{ article.title }}
-        </NuxtLink>
-      </h3>
-
-      <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-        <img
-          :src="article.img"
-          class="blog-card__img"
-        >
-      </NuxtLink>
-      <p class="blog-card__description">{{ article.description }}</p>
-
-    </article>
+    </LargeTile>
   </Page>
 </template>
 
 <script>
+import LargeTile from "@/components/LargeTile";
+
 export default {
   name: 'index',
+  components: {
+    LargeTile
+  },
 
   async asyncData({ $content, params }) {
     const articles = await $content('articles')
@@ -61,11 +42,11 @@ export default {
 
   .blog-card__title {
     margin-top: 0;
+    color: var(--color-text-default);
   }
 
   .blog-card__title a {
     text-decoration: none;
-    color: var(--color-text-default);
   }
 
   .blog-card__img {

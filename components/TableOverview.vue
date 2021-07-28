@@ -1,0 +1,135 @@
+<template>
+  <div class="talk-event-table">
+    <table>
+      <thead>
+      <tr class="handdraw-line">
+        <th>Talk title</th>
+        <th>Conference / Event</th>
+        <th>Date / Slot</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-if="contents.length"
+          v-for="entry in contents"
+          :class="getTableClasses(entry)">
+        <td data-label="Title">
+          {{ entry.title }}
+        </td>
+        <td data-label="Conference">
+          <a v-if="entry.link" :href="entry.link">
+            {{ entry.eventTitle }}
+          </a>
+          <span v-else>
+            {{ entry.eventTitle }}
+          </span>
+        </td>
+        <td data-label="Date">
+          {{ entry.date }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: "TableOverview",
+
+  props: {
+    contents: {
+      type: Array,
+      required: true
+    }
+  },
+
+  methods: {
+    getTableClasses(entry) {
+      if(entry.placeholder) {
+        return 'handdraw-line talk--placeholder'
+      }
+      return 'handdraw-line';
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .talk-event-table {
+    width: auto;
+    display: block;
+  }
+
+  .talk-event-table * {
+    box-sizing:border-box;
+  }
+  .talk-event-table table {
+    width:100%;
+  }
+
+  .talk-event-table table,
+  .talk-event-table td,
+  .talk-event-table tr,
+  .talk-event-table th {
+    border-collapse: collapse;
+    text-align: left;
+    max-width: 700px
+  }
+
+  .talk-event-table td,
+  .talk-event-table tr,
+  .talk-event-table th {
+    padding:1em;
+  }
+
+  .talk-event-table th {
+    font-weight: bold;
+  }
+
+  .talk--placeholder {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--border-color),
+      var(--border-color) 1px,
+      var(--bg) 1px,
+      var(--bg) 10px
+    );
+  }
+
+  @media screen and (max-width:700px) {
+
+    .talk-event-table tr {
+      border: none;
+    }
+
+    .talk-event-table td {
+      padding:0;
+    }
+
+    .talk-event-table thead {
+      display:none;
+    }
+
+    .talk-event-table tr {
+      float: left;
+      width: 100%;
+    }
+
+    .talk-event-table td {
+      float: left;
+      width: 100%;
+      padding: 1em;
+    }
+
+    .talk-event-table td::before {
+      content:attr(data-label);
+      word-wrap: break-word;
+      width: 20%;
+      float:left;
+      padding:1em;
+      font-weight: bold;
+      margin:-1em 1em -1em -1em;
+    }
+  }
+</style>
