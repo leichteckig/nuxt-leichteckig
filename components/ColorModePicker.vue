@@ -20,19 +20,17 @@
 import IconSystem from '@/assets/icons/system.svg?inline'
 import IconLight from '@/assets/icons/light.svg?inline'
 import IconDark from '@/assets/icons/dark.svg?inline'
-import IconSepia from '@/assets/icons/sepia.svg?inline'
 
 export default {
   components: {
     IconSystem,
     IconLight,
-    IconDark,
-    IconSepia
+    IconDark
   },
 
   data() {
     return {
-      colors: ['system', 'light', 'dark', 'sepia']
+      colors: ['system', 'light', 'dark']
     }
   },
   methods: {
@@ -76,7 +74,7 @@ ul {
   height: 40px;
   width: 40px;
   cursor: pointer;
-  border: solid 3px var(--border-color);
+  border: solid 3px var(--color);
 
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 255px;

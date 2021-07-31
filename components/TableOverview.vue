@@ -74,7 +74,7 @@ export default {
   .talk-event-table th {
     border-collapse: collapse;
     text-align: left;
-    max-width: 700px
+    max-width: 700px;
   }
 
   .talk-event-table td,
@@ -90,8 +90,8 @@ export default {
   .talk--placeholder {
     background: repeating-linear-gradient(
       45deg,
-      var(--border-color),
-      var(--border-color) 1px,
+      var(--color-secondary),
+      var(--color-secondary) 1px,
       var(--bg) 1px,
       var(--bg) 10px
     );

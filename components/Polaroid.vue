@@ -1,7 +1,7 @@
 <template>
   <div class="outer-frame handdraw-border">
     <div class="inner-image handdraw-border">
-      <img class="image" :src="imagePath">
+      <img class="image" :src="imagePath" alt="Ramona">
     </div>
   </div>
 </template>
@@ -26,15 +26,15 @@ export default {
 
   background: repeating-linear-gradient(
     45deg,
-    var(--color-secondary),
-    var(--color-secondary) 1px,
+    var(--color),
+    var(--color) 1px,
     var(--bg) 1px,
     var(--bg) 10px
   );
 }
 
 .handdraw-border {
-  border: solid 3px var(--color-secondary);
+  border: solid 3px var(--color);
 
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 255px;

@@ -1,28 +1,19 @@
 :root {
-    --color-background: #1b1c20;
+    --color-background: #FFFFFF;
     --color-background-light: #212528;
-    --color-primary: #967bb6;
+    --color-primary: #C05746;
     --color-text-default: #e3e3e3;
     --color-text-muted: #aaaaaa;
-    --color-border: #2b2c31;
+    --color-border: #E0E0E0;
   }
 
   .dark-mode {
     --color: #ebf4f1;
-    --color-primary: #967bb6;
-    --color-secondary: #fdf9f3;
+    --color-primary: #C05746;
+    --color-secondary: #07141F;
     --bg: #091a28;
     --bg-secondary: #071521;
-    --border-color: #13354f;
-  }
-
-  .sepia-mode {
-    --color: #433422;
-    --color-primary: #967bb6;
-    --color-secondary: #504231;
-    --bg: #f1e7d0;
-    --bg-secondary: #eae0c9;
-    --border-color: #ded0bf;
+    --border-color: #061019;
   }
 
   body {
@@ -38,28 +29,21 @@
     color: var(--color-primary);
     text-decoration: none;
   }:root {
-  --color: #243746;
-  --color-primary: #967bb6;
-  --color-secondary: #0e2233;
-  --bg: #f3f5f4;
+  --color: #091A28;
+  --color-primary: #C05746;
+  --color-secondary: #E4E1E1;
+  --bg: #FFFFFF;
   --bg-secondary: #fff;
-  --border-color: #ddd;
+  --border-color: #E0E0E0;
 }
 
 .dark-mode {
   --color: #ebf4f1;
-  --color-primary: #967bb6;
-  --color-secondary: #fdf9f3;
+  --color-primary: #C05746;
+  --color-secondary: #07141F;
   --bg: #091a28;
   --bg-secondary: #071521;
-  --border-color: #13354f;
-}
-.sepia-mode {
-  --color: #433422;
-  --color-primary: #967bb6;
-  --bg: #f1e7d0;
-  --bg-secondary: #eae0c9;
-  --border-color: #ded0bf;
+  --border-color: #061019;
 }
 
 * {

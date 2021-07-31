@@ -91,7 +91,7 @@ export default {
   font-size: 30px;
   font-weight: normal;
   margin-bottom: 30px;
-  color: var(--color-primary);
+  color: var(--color);
 }
 
 .hero__inner {
