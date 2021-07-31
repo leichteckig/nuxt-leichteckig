@@ -11,10 +11,16 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
-  async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch()
+  name: 'talkDetail',
 
-    return { talk }
+  head() {
+    return {
+      title: this.talk.title,
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
   },
 
   components: {
@@ -26,7 +32,13 @@ export default {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
-  }
+  },
+
+  async asyncData({ $content, params }) {
+    const talk = await $content('talks', params.slug).fetch()
+
+    return { talk }
+  },
 }
 </script>
 

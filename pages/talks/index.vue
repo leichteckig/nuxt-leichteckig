@@ -28,6 +28,16 @@ export default {
     TableOverview
   },
 
+  head() {
+    return {
+      title: 'My conference appearances and talks',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   data() {
     return {
       currentTalks: [{
