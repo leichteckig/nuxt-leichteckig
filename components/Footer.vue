@@ -5,7 +5,7 @@
       <a class="main-footer__link" href="https://www.linkedin.com/in/%F0%9F%92%99-ramona-schwering-7a56b215b/" target="_blank">LinkedIn</a>
       <a class="main-footer__link" href="https://www.xing.com/profile/Ramona_Schwering2/cv" target="_blank">Xing</a>
       <a class="main-footer__link" href="https://github.com/leichteckig" target="_blank">GitHub</a>
-      <a class="main-footer__link" href="#">Imprint</a>
+      <a class="main-footer__link" href="/imprint">Imprint</a>
     </div>
   </footer>
 </template>
