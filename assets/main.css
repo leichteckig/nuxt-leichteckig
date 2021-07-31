@@ -4,7 +4,7 @@
     --color-primary: #C05746;
     --color-text-default: #e3e3e3;
     --color-text-muted: #aaaaaa;
-    --color-border: #E4E1E1;
+    --color-border: #E0E0E0;
   }
 
   .dark-mode {
@@ -34,7 +34,7 @@
   --color-secondary: #E4E1E1;
   --bg: #FFFFFF;
   --bg-secondary: #fff;
-  --border-color: #E4E1E1;
+  --border-color: #E0E0E0;
 }
 
 .dark-mode {

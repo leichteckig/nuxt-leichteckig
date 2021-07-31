@@ -84,8 +84,8 @@ export default {
 }
 
 .summary-detail__tag {
-  border: solid 3px var(--color-primary);
-  color: var(--color-primary);
+  border: solid 3px var(--color-secondary);
+  color: var(--color-secondary);
   padding: 5px;
   margin: 5px;
 }
