@@ -79,7 +79,6 @@ export default {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    margin-left: 10px;
     position: relative;
     padding: 0;
     color: red;
@@ -160,7 +159,7 @@ export default {
     align-items: center;
     justify-content: center;
     line-height: 57px;
-    margin: 0 5px 0 auto;
+    margin-left: auto;
   }
 
   @media screen and (min-width: 600px) {
