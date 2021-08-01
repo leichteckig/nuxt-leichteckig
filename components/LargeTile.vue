@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="large-tile">
     <article
       v-for="article of contents"
       :key="article.slug"

@@ -12,10 +12,10 @@
       </div>
     </section>
     <section class="featured-posts">
-        <SmallTile
-          :contents="articles"
-          slugName="blog">
-        </SmallTile>
+      <SmallTile
+        :contents="articles"
+        slugName="blog">
+      </SmallTile>
     </section>
   </main>
 </template>
@@ -78,12 +78,18 @@ export default {
 
 .hero {
   min-height: 300px;
-  padding: 100px 0;
+  padding-bottom: 40px;
+}
+
+.hero__text {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .hero__title {
   font-size: 60px;
   font-weight: normal;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -95,7 +101,8 @@ export default {
 }
 
 .hero__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .featured-posts {
@@ -104,8 +111,8 @@ export default {
 
 .featured-posts .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
 }
 
 .featured-posts p {
@@ -113,7 +120,34 @@ export default {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
+  padding: 0 40px;
   margin: 0 auto;
+}
+
+.hero__text .button {
+  display: block;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 600px) {
+  .hero__text .button {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    min-height: 300px;
+    padding: 100px 0;
+  }
 }
 </style>

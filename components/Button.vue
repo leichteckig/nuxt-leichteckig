@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .button {
   display: inline-block;
   color: #fff;
@@ -46,7 +46,7 @@ export default {
   padding: 11px 30px;
 
   bottom: 0;
-  margin: 50px auto 0 auto;
+  /*margin: 50px auto 0 auto;*/
   border: solid 3px var(--color-primary);
 
   border-top-left-radius: 255px 15px;
