@@ -80,6 +80,10 @@ export default {
     &.nuxt-link-exact-active {
       border-bottom: 3px solid var(--color-primary);
     }
+
+    &.first__link.nuxt-link-exact-active {
+      border-bottom-left-radius: 255px 15px;
+    }
   }
 
   .header-main__hamburger {
@@ -147,10 +151,6 @@ export default {
       opacity: 1;
       height: 320px;
     }
-  }
-
-  .first__link.nuxt-link-exact-active {
-    border-bottom-left-radius: 255px 15px;
   }
 
   .color-mode__container {
