@@ -26,12 +26,24 @@ export default {
     return { article }
   },
 
-  components: {
-    DetailSummary
+  head() {
+    return {
+      title: this.article.title,
+      link: [
+        {
+          rel: 'canoncial',
+          href: this.article.author.bio.includes('smashing') ? this.article.author.bio : undefined
+        },
+      ],
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
   },
 
-  created() {
-    console.log('article', this.article)
+  components: {
+    DetailSummary
   }
 }
 </script>
@@ -42,6 +54,16 @@ export default {
     object-fit: cover;
     border-radius: 6px;
     display: block;
+  }
+  .blog-detail__detail-content p {
+    display: flex;
+  }
+
+  .blog-detail__detail-content img {
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
   }
 
   .blog-detail__author-img {
@@ -90,6 +112,10 @@ export default {
 
   .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.boolean {
     color: var(--color);
+  }
+
+  .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.operator {
+    background-color: var(--border-color);
   }
 
   .blog-detail blockquote {

@@ -26,10 +26,22 @@ import Polaroid from "../components/Polaroid";
 
 export default {
   name: 'index',
+
   components: {
     Polaroid,
     SmallTile
   },
+
+  head() {
+    return {
+      title: 'Ramona codes',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   async asyncData({ $content, params }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author'])
