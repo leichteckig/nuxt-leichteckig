@@ -52,48 +52,41 @@ a {
   box-sizing: border-box;
 }
 
-h1 {
-  font-family: "Amatic SC", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Amatic SC', sans-serif;
   font-weight: normal;
-  font-size: 60px;
   margin-bottom: 20px;
+}
+
+
+h1 {
+  font-size: 60px;
   color: var(--color-primary);
 }
 
 h2 {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: normal;
-  font-size: 40px;
-  margin-bottom: 20px;
   color: var(--color-primary);
 }
 
 h3 {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: normal;
   font-size: 35px;
-  margin-bottom: 20px;
 }
 
 h4 {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: normal;
   font-size: 30px;
-  margin-bottom: 20px;
 }
 
 h5 {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: normal;
   font-size: 25px;
-  margin-bottom: 20px;
 }
 
 h6 {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: normal;
   font-size: 20px;
-  margin-bottom: 20px;
 }
 
 .handdraw-line {
