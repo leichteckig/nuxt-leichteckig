@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="link-tile">
     <!-- entry.img is used as link. Strange but serves the aim of getting a link only -->
     <a
       v-for="entry in contents"
@@ -37,9 +37,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.link-tile {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 60px;
 }
 
@@ -69,7 +69,6 @@ export default {
 .post:hover {
   border: solid 3px var(--color-primary);
 }
-
 
 .link-tile__tag-container {
   display: flex;
