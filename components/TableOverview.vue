@@ -77,7 +77,6 @@ export default {
   .talk-event-table th {
     border-collapse: collapse;
     text-align: left;
-    max-width: 700px;
   }
 
   .talk-event-table td,
@@ -105,39 +104,33 @@ export default {
     color: gray;
   }
 
-  @media screen and (max-width:700px) {
-
-    .talk-event-table tr {
-      border: none;
-    }
-
-    .talk-event-table td {
-      padding:0;
-    }
-
+  @media screen and (max-width: 700px) {
     .talk-event-table thead {
-      display:none;
+      display: none;
     }
 
     .talk-event-table tr {
       float: left;
       width: 100%;
+      padding: 1em 0;
+    }
+
+    .talk-event-table .talk--placeholder td {
+      display: none;
     }
 
     .talk-event-table td {
       float: left;
       width: 100%;
-      padding: 1em;
+      padding: 1em 0;
+      display: flex;
     }
 
     .talk-event-table td::before {
       content:attr(data-label);
-      word-wrap: break-word;
-      width: 20%;
-      float:left;
-      padding:1em;
+      width: min-content;
+      min-width: 110px;
       font-weight: bold;
-      margin:-1em 1em -1em -1em;
     }
   }
 </style>

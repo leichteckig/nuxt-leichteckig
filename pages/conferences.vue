@@ -126,12 +126,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .conference-talks {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 60px;
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 h2 {
@@ -139,15 +144,15 @@ h2 {
   text-align: center;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
 .img-header {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  margin-right: 75px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 h2 {
