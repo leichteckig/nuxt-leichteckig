@@ -19,13 +19,13 @@
           Home
         </nuxt-link>
         <nuxt-link class="header-main__link second__link" to="/blog">
-          Blog
-        </nuxt-link>
-        <nuxt-link class="header-main__link" to="/conferences">
-          Conferences
+          Writing
         </nuxt-link>
         <nuxt-link class="header-main__link" to="/talks">
-          Publications
+          Speaking
+        </nuxt-link>
+        <nuxt-link class="header-main__link" to="/conferences">
+          Attending
         </nuxt-link>
       </div>
       <ColorModePicker class="color-mode__container" />
