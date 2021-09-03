@@ -144,6 +144,7 @@ export default {
     height: 0;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    z-index: 2;
 
     &.is--active {
       display: flex;

@@ -52,15 +52,13 @@ export default {
     border-radius: 6px;
     display: block;
   }
-  .blog-detail__detail-content p {
-    display: flex;
-  }
 
   .blog-detail__detail-content img {
-    justify-content: center;
-    text-align: center;
     max-width: 800px;
     width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .blog-detail__author-img {
@@ -84,6 +82,10 @@ export default {
 
   .blog-detail__summary-card {
     padding: 30px;
+  }
+
+  .blog-detail ul {
+    line-height: 1.75;
   }
 
   .blog-detail p {
