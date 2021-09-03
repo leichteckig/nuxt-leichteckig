@@ -5,8 +5,7 @@
         <div class="hero__text">
           <h1 class="hero__title">Hi, I'm Ramona</h1>
           <h2 class="hero__sub-title">A frontend-developer<br> who ❤️ test automation and JavaScript</h2>
-          <Button>Visit my projects</Button>
-          <Button variant="secondary">Message me</Button>
+          <SocialButtonGroup name="twitter"></SocialButtonGroup>
         </div>
         <Polaroid imagePath="/moe.jpg" />
       </div>
@@ -25,13 +24,15 @@
 <script>
 import SmallTile from "../components/SmallTile";
 import Polaroid from "../components/Polaroid";
+import SocialButtonGroup from "~/components/SocialButtonGroup";
 
 export default {
   name: 'index',
 
   components: {
     Polaroid,
-    SmallTile
+    SmallTile,
+    SocialButtonGroup
   },
 
   head() {
