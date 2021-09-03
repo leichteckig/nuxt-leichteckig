@@ -27,6 +27,13 @@
           Quelle: https://www.e-recht24.de/impressum-generator.html<br/>
         </p>
       </section>
+      <section>
+          <h2>Disclaimer</h2>
+          <h3>Fontawesome icons</h3>
+          <p>A couple of icons were taken from <a href="https://fontawesome.com/">Fontawesome</a>, so the copyright is theirs. Their free icons are
+          published under Creative Commons Attribution 4.0 International license. Read more on Fontawesome's own
+          <a href="https://fontawesome.com/license">licence</a> as well, no changes were made.</p>
+      </section>
     </main>
   </Page>
 </template>
