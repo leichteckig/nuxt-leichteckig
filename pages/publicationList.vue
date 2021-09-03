@@ -2,7 +2,7 @@
   <Page title="My content and other publications">
     <section>
     </section>
-    <section class="container">
+    <section class="other-publications">
       <h2>Guest contributions and appearances</h2>
       <div class="featured-posts">
         <LinkTile :contents="publications">

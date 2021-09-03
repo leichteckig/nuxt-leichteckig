@@ -11,7 +11,7 @@
     <section class="talks-refer handdraw-line">
       <div class="handdraw-line"></div>
       <div class="gradient"></div>
-      <div class="container talks__inner">
+      <div class="talks__inner">
         <div class="talks__text">
           <h2 class="talks__title">Looking for my past talks?</h2>
           <h3 class="talks__sub-title">Head over to the talks site for an overview!</h3>
@@ -128,11 +128,6 @@ export default {
 
 <style scoped>
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .conference-talks {
   display: flex;
   flex-wrap: wrap;
@@ -153,11 +148,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 h2 {

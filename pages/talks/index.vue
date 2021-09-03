@@ -5,7 +5,7 @@
       }">
     <section>
     </section>
-    <section class="container past-talks handdraw-line">
+    <section class="past-talks handdraw-line">
       <h2>Talks I held in the past</h2>
       <div class="featured-posts">
         <SmallTile
@@ -20,7 +20,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="guest-contributions">
       <h2>Guest contributions and appearances</h2>
       <div class="featured-posts">
         <LinkTile :contents="publications">

@@ -3,7 +3,7 @@
       class="talk-list">
     <section>
     </section>
-    <section class="container past-talks">
+    <section class="past-talks">
       <h2>Talks I held in the past</h2>
       <div class="featured-posts">
         <SmallTile

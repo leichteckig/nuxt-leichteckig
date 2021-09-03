@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="small-tile">
     <article
       v-for="article in contents"
       class="post handdraw-border"
@@ -33,9 +33,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.small-tile {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 60px;
 }
 

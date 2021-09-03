@@ -12,10 +12,12 @@
       </div>
     </section>
     <section class="featured-posts">
-      <SmallTile
-        :contents="articles"
-        slugName="blog">
-      </SmallTile>
+      <div class="container">
+        <SmallTile
+          :contents="articles"
+          slugName="blog">
+        </SmallTile>
+      </div>
     </section>
   </main>
 </template>
@@ -119,12 +121,6 @@ export default {
 
 .featured-posts {
   padding: 40px 0;
-}
-
-.featured-posts .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 40px;
 }
 
 .featured-posts p {
