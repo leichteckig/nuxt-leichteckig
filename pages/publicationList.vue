@@ -22,6 +22,16 @@ export default {
     LinkTile
   },
 
+  head() {
+    return {
+      title: 'Guest appearances',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   async asyncData({ $content, params }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
@@ -31,8 +41,7 @@ export default {
 
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'asc')
-      .limit(6)
+      .sortBy('createdAt', 'desc')
       .fetch();
 
     return {

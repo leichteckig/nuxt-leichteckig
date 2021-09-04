@@ -20,7 +20,7 @@ export default {
 
   head() {
     return {
-      title: 'Blog',
+      title: 'Writing',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -28,10 +28,11 @@ export default {
     }
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'asc')
+      .limit(3)
       .fetch();
 
     return {

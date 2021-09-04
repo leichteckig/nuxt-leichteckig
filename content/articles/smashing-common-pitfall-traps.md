@@ -9,6 +9,9 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine
+- Unit Tests
+- End-To-End Tests
+- Integration Tests
 ---
 When writing front-end tests, you’ll find a lot of pitfalls along the way. In sum, they can lead to lousy maintainability, slow execution time, and — in the worst case — tests you cannot trust. But it doesn’t have to be that way. In this article, I will talk about common mistakes developers make, at least in my experience, and, of course, how to avoid them. Testing doesn’t need to be painful, after all.
 

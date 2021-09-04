@@ -24,10 +24,20 @@ export default {
     LinkTile
   },
 
+  head() {
+    return {
+      title: 'Talks',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   async asyncData({ $content, params }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('updatedAt', 'desc')
       .fetch();
 
     return {

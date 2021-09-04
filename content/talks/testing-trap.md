@@ -1,14 +1,11 @@
 ---
 title: It's a (Testing) Trap! - Common Testing Pitfalls and How to Solve Them
 description: “It’s a trap” - a call or feeling we all might be familiar with, not only when it comes to Star Wars.
-img: first-blog-post.jpg
-alt: It's a (Testing) Trap
 author:
   name: Ramona Schwering
-  bio: All about Leichteckig
-  image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
+  image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-  - FrontendTestFest 2021
+- FrontendTestFest 2021
 ---
 
 ## Abstract
@@ -17,6 +14,15 @@ tags:
 
 When writing frontend tests, there are lots of pitfalls on the way. In sum, they can lead to bad maintainability, slow execution time, and - in the worst-case - tests you cannot trust. But it doesn’t have to be that way. In this session, I will talk about the common mistakes developers make, at least from my experience. And of course, on how to avoid them. Testing doesn’t need to be painful, after all.
 
+## Slides
+
+<media-grid :media="[{
+url: 'https://speakerdeck.com/player/568421dfecd94b7183bf6d405eda82d4'
+}]"></media-grid>
+
 ## Recording
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uvJwWQLaVqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<media-grid :media="[{
+name: 'Front-End Test Fest',
+url: 'https://www.youtube.com/embed/uvJwWQLaVqU'
+}]"></media-grid>

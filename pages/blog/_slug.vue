@@ -119,14 +119,6 @@ export default {
     color: var(--color-primary);
   }
 
-  .blog-detail h2 {
-    font-size: 40px;
-  }
-
-  .blog-detail h3 {
-    font-size: 30px;
-  }
-
   .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.boolean {
     color: var(--color);
   }

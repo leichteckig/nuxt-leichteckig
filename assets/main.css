@@ -70,6 +70,7 @@ h1 {
 }
 
 h2 {
+  font-size: 50px;
   color: var(--color-primary);
 }
 
