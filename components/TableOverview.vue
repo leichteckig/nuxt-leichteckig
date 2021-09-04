@@ -16,15 +16,23 @@
           {{ entry.title }}
         </td>
         <td data-label="Conference">
-          <a v-if="entry.link" :href="entry.link">
-            {{ entry.eventTitle }}
+          <!-- entry.img == link of the event -->
+          <a v-if="entry.img" :href="entry.img" target="_blank" rel="noopener">
+
+            <!-- entry.description == link of the event -->
+            {{ entry.description }}
           </a>
           <span v-else>
-            {{ entry.eventTitle }}
+
+          <!-- entry.description == Event title -->
+            {{ entry.description }}
           </span>
         </td>
         <td data-label="Date">
-          {{ entry.date }}
+          <!-- entry.alt == Date of the event -->
+          <span>
+          {{ entry.alt }}
+          </span>
         </td>
       </tr>
       </tbody>
@@ -46,10 +54,15 @@ export default {
 
   methods: {
     getTableClasses(entry) {
-      if(entry.placeholder) {
+      if(entry.tags?.includes('placeholder')) {
         return 'handdraw-line talk--placeholder'
       }
-      if(entry.old) {
+
+      if(entry.tags?.includes('CypressDE')) {
+        return 'handdraw-line talk--cyde'
+      }
+
+      if(entry.tags?.includes('old')) {
         return 'handdraw-line talk--old'
       }
       return 'handdraw-line';
@@ -97,6 +110,11 @@ export default {
       var(--bg) 1px,
       var(--bg) 10px
     );
+  }
+
+  .talk--placeholder :nth-child(3) span,
+  .talk--cyde :nth-child(3) span {
+      visibility: hidden;
   }
 
   .talk--old {

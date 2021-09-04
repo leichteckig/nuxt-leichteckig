@@ -1,11 +1,11 @@
 <template>
   <Page title="Events I attend">
-    <h2>Conferences 2021: Meet me at...</h2>
+    <h2>Meet me at...</h2>
     <section class="conference-talks">
       <div class="image-container">
         <img alt="Moe giving talks" src="~/assets/images/talks.jpeg" class=" img-header"/>
       </div>
-      <TableOverview :contents="currentTalks"/>
+      <TableOverview :contents="appearances"/>
     </section>
 
     <section class="talks-refer handdraw-line">
@@ -35,92 +35,14 @@ export default {
     TableOverview
   },
 
-  data() {
-    return {
-      currentTalks: [{
-        title: 'How to survive conferences as an introvert',
-        link: 'https://scd.shopware.com/',
-        eventTitle: 'Shopware Community Day 2020',
-        date: '02.09.2021'
-      },{
-        title: 'How to survive conferences as an introvert',
-        link: 'https://femtechconf.com/',
-        eventTitle: 'How to survive conferences as an introvert',
-        date: '24. - 25.09.2021'
-      },{
-        title: 'Let\'s get visual',
-        link: 'https://www.codetalks.de/home',
-        eventTitle: 'code.talks',
-        date: '28. - 29.10.2021'
-      },{
-        placeholder: true
-      },{
-        title: 'Not always as a speaker, but it\'s our Cypress Germany meetup! ❤️',
-        link: 'https://www.meetup.com/de-DE/cypress-de-community/',
-        eventTitle: 'Cypress DE Community',
-        date: 'Once in a quarter'
-      },{
-        placeholder: true
-      },{
-        title: 'Symfony User Group Osnabrück #10',
-        link: 'https://www.meetup.com/de-DE/sfugos/events/275765097/',
-        eventTitle: 'Symfony Usergroup Osnabrück',
-        date: '28.01.2021',
-        old: true
-      },{
-        title: 'PHP UG Darmstadt 1/21',
-        link: 'https://www.meetup.com/de-DE/Darmstadt-PHP-Meetup-Gruppe/events/275064690/',
-        eventTitle: 'Darmstadt PHP Meetup Gruppe',
-        date: '10.02.2021',
-        old: true
-      },{
-        title: 'CityJS London 2021',
-        link: 'https://cityjsconf.org/',
-        eventTitle: 'CityJS London 2021',
-        date: '24.03.2021 - 26.03.2021',
-        old: true
-      },{
-        title: 'SymfonyLive Online, German Edition',
-        link: 'https://live.symfony.com/2021-germany/',
-        eventTitle: 'SymfonyLive Online, German Edition',
-        date: '16.04.2021',
-        old: true
-      },{
-        title: 'TechFAIR Live 2021',
-        link: 'https://www.techfairlive.com/',
-        eventTitle: 'TechFAIR Live 2021',
-        date: '30.04.2021',
-        old: true
-      },{
-        title: 'WEUc Online Session: Flaky Tests - Fighting Nightmares',
-        link: 'https://ti.to/phpuceu/may21?fbclid=IwAR10jWrm5zKarJPMSkP6tHWo3FSsT8_DHFKb93G_yl5aOxEBYZ7jQhc3Aj8',
-        eventTitle: 'WEUc Online Session',
-        date: '05.05.2021',
-        old: true
-      },{
-        title: 'Front-End Test Fest | June 2021',
-        link: 'https://applitools.com/on-demand-videos/front-end-test-fest-june-2021/',
-        eventTitle: 'Front-End Test Fest',
-        date: '08.06.2021',
-        old: true
-      },{
-        title: 'Developer Week 2021',
-        link: 'https://applitools.com/on-demand-videos/front-end-test-fest-june-2021/',
-        eventTitle: 'Developer Week 2021',
-        date: '28.06.2021 - 02.07.2021',
-        old: true
-      }]
-    }
-  },
-
-  async asyncData({ $content, params }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc')
+  async asyncData({ $content }) {
+    const appearances = await $content('conferences')
+      .only(['title', 'description', 'img', 'tags', 'alt'])
+      .sortBy('alt', 'desc')
       .fetch();
 
     return {
-      pastTalks
+      appearances
     }
   }
 }

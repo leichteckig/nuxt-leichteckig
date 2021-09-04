@@ -92,12 +92,22 @@ export default {
     line-height: 1.75;
   }
 
+  .blog-detail li {
+    line-height: 1.75;
+  }
+
+  .blog-detail li::marker {
+    color: var(--color-primary);
+  }
+
   .blog-detail p code,
   .blog-detail .nuxt-content-highlight pre[class*="language-"] {
     border: solid 3px var(--border-color);
     background: var(--border-color);
     color: var(--color);
     text-shadow: none;
+    width: max-content;
+    margin: 0 auto;
 
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 255px;
@@ -107,6 +117,14 @@ export default {
 
   .blog-detail .nuxt-content-highlight pre[class*="language-"] .keyword {
     color: var(--color-primary);
+  }
+
+  .blog-detail h2 {
+    font-size: 40px;
+  }
+
+  .blog-detail h3 {
+    font-size: 30px;
   }
 
   .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.boolean {
