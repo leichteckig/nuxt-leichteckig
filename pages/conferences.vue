@@ -14,7 +14,7 @@
       <div class="talks__inner">
         <div class="talks__text">
           <h2 class="talks__title">Looking for my past talks?</h2>
-          <h3 class="talks__sub-title">Head over to the talks site for an overview!</h3>
+          <p class="talks__sub-title">Head over to the talks site for an overview!</p>
           <Button
             variant="secondary"
             @click.native="$router.push({ name: 'talkList' })">

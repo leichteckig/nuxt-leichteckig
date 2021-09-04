@@ -49,7 +49,7 @@ export default {
 }
 
 .post__title {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: normal;
   margin-bottom: 20px;
   color: var(--color-primary);

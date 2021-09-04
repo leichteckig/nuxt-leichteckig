@@ -13,7 +13,7 @@
           <p>{{ formatDate(article.createdAt) }}</p>
         </div>
       </div>
-      <h5 class="summary-detail__description">{{ article.description }}</h5>
+      <p class="summary-detail__description">{{ article.description }}</p>
       <div class="summary-detail__tag-container">
         <div v-if="article.tags"
              v-for="tag in article.tags"
@@ -66,9 +66,15 @@ export default {
 .summary-detail__author-name {
   margin: auto 10px;
 }
+
+.summary-detail__description {
+  font-size: 30px;
+}
+
 .summary-detail__basic-info {
   display: flex;
 }
+
 .summary-detail__basic-info  p {
   margin: auto;
 }
@@ -91,7 +97,6 @@ export default {
   padding: 5px;
   margin: 5px;
 }
-
 
 .gradient {
   height: 30px;
