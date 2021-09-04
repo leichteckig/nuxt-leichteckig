@@ -5,7 +5,7 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- Shopware Community Day '21
+- Shopware Community Day 2021
 ---
 
 ## Abstract
@@ -15,5 +15,6 @@ Large crowds full of strangers. Many sounds. Senses on overdrive. A large, noisy
 ## Slides
 
 <media-grid :media="[{
-url: 'https://speakerdeck.com/player/e1f21e1d92c84cce9de6ae3fc77ebf46'
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-introvert'
 }]"></media-grid>

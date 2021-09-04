@@ -15,7 +15,8 @@ Our daily work at Shopware, but also at agencies, ends up in the hands of people
 ## Slides
 
 <media-grid :media="[{
-url: 'https://speakerdeck.com/player/118b9d1fe2bb4c69b8442f836d54ed39'
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/a-matter-of-trust-test'
 }]"></media-grid>
 
 ## Recording

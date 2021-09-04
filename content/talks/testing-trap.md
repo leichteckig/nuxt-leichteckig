@@ -17,7 +17,8 @@ When writing frontend tests, there are lots of pitfalls on the way. In sum, they
 ## Slides
 
 <media-grid :media="[{
-url: 'https://speakerdeck.com/player/568421dfecd94b7183bf6d405eda82d4'
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them'
 }]"></media-grid>
 
 ## Recording

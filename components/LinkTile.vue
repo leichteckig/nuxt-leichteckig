@@ -10,7 +10,7 @@
       <h3 class="post__title">
           {{ entry.title }}
       </h3>
-      <p>{{ entry.description }}</p>
+      <p v-if="entry.description">{{ entry.description }}</p>
       <div class="link-tile__tag-container">
         <div v-if="entry.tags"
              v-for="tag in entry.tags"

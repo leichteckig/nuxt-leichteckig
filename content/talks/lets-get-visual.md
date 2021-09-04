@@ -20,5 +20,6 @@ Ich nutze visuelles Testing schon eine Weile und es hat mir schon einpaar mal me
 ## Slides
 
 <media-grid :media="[{
-url: 'https://speakerdeck.com/player/fef84fafd1cc4a7a846b5bd72c1b1c64'
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
 }]"></media-grid>

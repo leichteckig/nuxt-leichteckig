@@ -15,7 +15,7 @@
         <div class="moe__text">
           <h2 class="moe__title">Who dis?</h2>
           <p class="moe__sub-title">Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️  </p>
-          <p class="moe__description">After her education as an application developer, Ramona has contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. She has both views of the product - that of a tester and that of a developer. Ramona uses this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from her pen, and she continues to push it firmly.</p>
+          <p class="moe__description">After my education as an application developer, I contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. I own both views of the product - that of a tester and that of a developer: I use this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.</p>
         </div>
       </div>
       <div class="gradient"></div>

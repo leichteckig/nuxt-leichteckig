@@ -45,11 +45,7 @@ export default {
       type: String,
       required: true
     }
-  },
-
-  created() {
-    console.log('articles', this.contents)
-  },
+  }
 }
 
 

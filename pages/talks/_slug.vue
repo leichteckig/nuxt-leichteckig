@@ -47,16 +47,6 @@ export default {
     color: var(--color-text-muted);
   }
 
-  .talk--content iframe {
-    border: solid 3px var(--border-color);
-    margin: 10px auto;
-
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-bottom-left-radius:15px 255px;
-  }
-
   .talk--content p code,
   .talk--content .nuxt-content-highlight pre[class*="language-"] {
     border: solid 3px var(--border-color);

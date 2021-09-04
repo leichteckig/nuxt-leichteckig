@@ -22,7 +22,8 @@ I've spent hours and hours on such tests, and I want to share my path through th
 ## Slides
 
 <media-grid :media="[{
-url: 'https://speakerdeck.com/player/e3629b31af154f0ea018482014b00523'
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
 }]"></media-grid>
 
 ## Recordings
