@@ -10,8 +10,20 @@
         <Polaroid imagePath="/moe.jpg" />
       </div>
     </section>
+    <section class="moe-refer">
+      <div class="container moe__inner">
+        <div class="moe__text">
+          <h2 class="moe__title">Who dis?</h2>
+          <p class="moe__sub-title">Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️  </p>
+          <p class="moe__description">After her education as an application developer, Ramona has contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. She has both views of the product - that of a tester and that of a developer. Ramona uses this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from her pen, and she continues to push it firmly.</p>
+        </div>
+      </div>
+      <div class="gradient"></div>
+      <div class="handdraw-line"></div>
+    </section>
     <section class="featured-posts">
       <div class="container">
+        <h2>Featured Posts</h2>
         <SmallTile
           :contents="articles"
           slugName="blog">
@@ -61,36 +73,6 @@ export default {
 
 <style>
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-
 .hero {
   min-height: 300px;
   padding-bottom: 40px;
@@ -134,18 +116,37 @@ export default {
   margin: 0 auto;
 }
 
-.hero__text .button {
-  display: block;
-  width: 100%;
-  margin-bottom: 14px;
+.moe__title {
+  margin-bottom: 20px;
 }
 
-@media screen and (min-width: 600px) {
-  .hero__text .button {
-    display: inline-block;
-    width: auto;
-    margin: 0;
-  }
+.moe__sub-title {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.moe__description {
+  line-height: 1.75;
+}
+
+.moe__inner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gradient {
+  height: 30px;
+
+  background: repeating-linear-gradient(
+    45deg,
+    var(--border-color),
+    var(--border-color) 1px,
+    var(--bg) 1px,
+    var(--bg) 10px
+  );
 }
 
 @media screen and (min-width: 800px) {
