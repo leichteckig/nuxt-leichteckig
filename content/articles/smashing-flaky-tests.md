@@ -1,7 +1,7 @@
 ---
 title: Flaky Tests
 description: Getting Rid Of A Living Nightmare In Testing
-img: heisenbug.png
+img: smashing-flakiness/heisenbug.png
 alt: flaky test
 author:
   name: Ramona Schwering
@@ -34,13 +34,13 @@ A flaky test is one that fails to produce the same result each time the same ana
 
 When I recall my testing nightmares, one case in particular comes into my mind. It was in a UI test. We built a custom-styled combo box (i.e. a selectable list with input field):
 
-![A custom selector in a project I worked on every day.](/1-custom-select.png "Custom combo box")
+![A custom selector in a project I worked on every day.](/smashing-flakiness/1-custom-select.png "Custom combo box")
 
 With this combo box, you could search for a product and select one or more of the results. Many days, this test went fine, but at some point, things changed. In one of the approximately ten builds in our continuous integration (CI) system, the test for searching and selecting a product in this combo box failed.
 
 The screenshot of the fail shows the results list not being filtered, despite the search having been successful:
 
-![Flaky test in action: why did it fail only sometimes and not always?](/2-flakiness-in-log.png "Flakiness in log")
+![Flaky test in action: why did it fail only sometimes and not always?](/smashing-flakiness/2-flakiness-in-log.png "Flakiness in log")
 
 A flaky test like this can block the continuous deployment pipeline, making feature delivery slower than it needs to be. Moreover, a flaky test is problematic because it is not deterministic anymore — making it useless. After all, you wouldn’t trust one any more than you would trust a liar.
 
@@ -100,7 +100,7 @@ Another wrong assumption relates to time itself. I once discovered that a flaky 
 
 False assumptions do not stop there. We can also have wrong assumptions about the order of data. Imagine a grid or list containing multiple entries with information, such as a list of currencies:
 
-![A custom list component used in our project.](/3-listing.png "Listing")
+![A custom list component used in our project.](/smashing-flakiness/3-listing.png "Listing")
 
 We want to work with the information of the first entry, the “Czech koruna” currency. Can you be sure that your application will always place this piece of data as the first entry every time your test is executed? Could it be that the “Euro” or another currency will be the first entry on some occasions?
 
@@ -148,9 +148,9 @@ This one is self-explanatory: Simply delete the flaky test, so that it doesn’t
 
 I had the most success with this strategy. In this case, we would skip the test temporarily, and have the test suite constantly remind us that a test has been skipped. To make sure the fix doesn’t get overlooked, we would schedule a ticket for the next sprint. Bot reminders also work well. Once the issue causing the flakiness has been fixed, we’ll integrate (i.e. unskip) the test again. Unfortunately, we will lose coverage temporarily, but it will come back with a fix, so this will not take long.
 
-![Skipped tests, taken from a report from our CI](/4-skipped-tests.png "Skipped tests"
+![Skipped tests, taken from a report from our CI](//smashing-flakiness4-skipped-tests.png "Skipped tests")
 
-)These strategies help us deal with test problems at the workflow level, and I’m not the only one who has encountered them. In his article, Sam Saffron comes to the similar conclusion. But in our day-to-day work, they help us to a limited extent. So, how do we proceed when such a task comes our way?
+These strategies help us deal with test problems at the workflow level, and I’m not the only one who has encountered them. In his article, Sam Saffron comes to the similar conclusion. But in our day-to-day work, they help us to a limited extent. So, how do we proceed when such a task comes our way?
 
 ### Keep tests isolated
 
@@ -219,7 +219,7 @@ Instead, use dynamic waiting times. There are many ways to do so, but Cypress ha
 
 All Cypress commands own an implicit waiting method: They already check whether the element that the command is being applied to exists in the DOM for the specified time — pointing to Cypress’ retry-ability. However, it only checks for existence, and nothing more. So I recommend going a step further — waiting for any changes in your website or application’s UI that a real user would also see, such as changes in the UI itself or in the animation.
 
-![A fixed waiting time, found in Cypress’ test log.](/5-waiting-times.png "Waiting times")
+![A fixed waiting time, found in Cypress’ test log.](/smashing-flakiness/5-waiting-times.png "Waiting times")
 
 This example uses an explicit waiting time on the element with the selector `.offcanvas`. The test would only proceed if the element is visible until the specified timeout, which you can configure:
 
