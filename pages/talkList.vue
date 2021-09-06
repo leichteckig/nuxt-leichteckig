@@ -1,9 +1,7 @@
 <template>
   <Page title="Past talks"
       class="talk-list">
-    <section>
-    </section>
-    <section class="past-talks">
+    <main class="past-talks">
       <h2 data-cy="PastTalkHeader">Talks I held in the past</h2>
       <div class="featured-posts">
         <SmallTile
@@ -11,7 +9,7 @@
           slugName="talks"
         />
       </div>
-    </section>
+    </main>
   </Page>
 </template>
 
@@ -29,12 +27,17 @@ export default {
       title: 'Talks',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'past-talk-description',
+          name: 'past-talks',
+          content: 'If you want to rewatch my past talks, you can find all of them here.'
+        }
       ]
     }
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')

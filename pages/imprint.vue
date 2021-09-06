@@ -47,7 +47,12 @@ export default {
       title: 'Imprint and contact',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'imprint-description',
+          name: 'imprint',
+          content: 'This is the imprint of my site.'
+        }
       ]
     }
   },

@@ -17,6 +17,8 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
+  name: 'blogDetail',
+
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch();
 
@@ -34,7 +36,12 @@ export default {
       ],
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: this.article.title.replace(' ', '-'),
+          name: this.article.title,
+          content: this.article.description
+        }
       ]
     }
   },

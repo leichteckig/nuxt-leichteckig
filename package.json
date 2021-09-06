@@ -12,6 +12,9 @@
     "jest-watch": "jest --watch",
     "cy:run": "./node_modules/.bin/cypress run",
     "cy:open": "./node_modules/.bin/cypress open"
+    "jest-watch": "jest --watch",
+    "build:modern": "nuxt build --modern=server",
+    "start:modern": "nuxt start --modern=server"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

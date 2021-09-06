@@ -5,7 +5,7 @@
         <div class="hero__text">
           <h1 class="hero__title" data-cy="Welcome">Hi, I'm Ramona</h1>
           <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ test automation and JavaScript</p>
-          <SocialButtonGroup name="twitter"></SocialButtonGroup>
+          <SocialButtonGroup/>
         </div>
         <Polaroid imagePath="/moe.jpg" />
       </div>
@@ -52,12 +52,18 @@ export default {
       title: 'Ramona codes',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'index-description',
+          name: 'index',
+          content: 'Hi, I\'m Ramona. ' +
+            'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
+        }
       ]
     }
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'asc')
@@ -72,7 +78,6 @@ export default {
 </script>
 
 <style>
-
 .hero {
   min-height: 300px;
   padding-bottom: 40px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="talk-event-table">
+  <section class="talk-event-table">
     <table>
       <thead>
       <tr class="handdraw-line">
@@ -37,7 +37,7 @@
       </tr>
       </tbody>
     </table>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -123,6 +123,10 @@ export default {
   }
 
   @media screen and (max-width: 700px) {
+    tr :last-child {
+      margin-bottom: 10px;
+    }
+
     .talk-event-table thead {
       display: none;
     }
@@ -149,6 +153,10 @@ export default {
       width: min-content;
       min-width: 110px;
       font-weight: bold;
+    }
+
+    .talk--old td {
+      text-decoration: line-through;
     }
   }
 </style>

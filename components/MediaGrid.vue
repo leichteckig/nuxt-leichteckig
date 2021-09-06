@@ -1,5 +1,5 @@
 <template>
-  <div class="video-grid">
+  <section class="video-grid">
     <div
       v-for="entry in media"
       :key="entry.name">
@@ -14,10 +14,10 @@
       </div>
       <div v-else class="video">
         <h3 v-if="entry.name">{{ entry.name }}</h3>
-        <iframe width="560" height="315" :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
    </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -48,7 +48,7 @@ export default {
   margin: 15px;
 }
 
-iframe {
+.video iframe {
   border: solid 3px var(--border-color);
 
   border-top-left-radius: 255px 15px;
@@ -67,5 +67,12 @@ iframe {
 
 .slide-btn {
   margin: 0 20px;
+}
+
+@media (min-width: 800px) {
+  iframe {
+    width: 600px;
+    height: 300px;
+  }
 }
 </style>

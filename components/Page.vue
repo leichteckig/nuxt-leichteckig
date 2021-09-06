@@ -9,11 +9,11 @@
       <Hero :img="img">
       </Hero>
     </section>
-    <div class="page__content">
+    <section class="page__content">
       <div class="container">
         <slot />
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

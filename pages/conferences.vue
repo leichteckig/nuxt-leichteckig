@@ -1,12 +1,12 @@
 <template>
   <Page title="Events I attend">
     <h2>Meet me at...</h2>
-    <section class="conference-talks" data-cy="EventAppearances">
+    <main class="conference-talks" data-cy="EventAppearances">
       <div class="image-container">
         <img alt="Moe giving talks" src="~/assets/images/talks.jpeg" class=" img-header"/>
       </div>
       <TableOverview :contents="appearances"/>
-    </section>
+    </main>
 
     <section class="talks-refer handdraw-line" data-cy="PastTalks">
       <div class="handdraw-line"></div>
@@ -41,7 +41,12 @@ export default {
       title: 'Attending',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'conferences-description',
+          name: 'conferences',
+          content: 'Take a look at all events I\'ll visit or attended before.'
+        }
       ]
     }
   },

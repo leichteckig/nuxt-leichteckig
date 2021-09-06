@@ -1,9 +1,9 @@
 <template>
-  <div class="outer-frame handdraw-border" data-cy="Polaroid">
+  <section class="outer-frame handdraw-border" data-cy="Polaroid">
     <div class="inner-image handdraw-border">
       <img class="image" :src="imagePath" alt="Ramona">
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -47,12 +47,26 @@ export default {
 .image {
   margin-left: auto;
   width: 260px;
-  height: auto;
+  height: 260px;
   bottom: 0;
 }
 
 .inner-image {
   margin: 30px 30px 130px 30px;
-  background-color: var(--bg);
+  background-color: var(--color);
+}
+
+@media (max-width: 450px) {
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 350px) {
+  .image {
+    width: 150px;
+    height: 150px;
+  }
 }
 </style>

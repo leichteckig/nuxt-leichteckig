@@ -64,4 +64,9 @@ export default {
   border: solid 3px var(--color-primary);
 }
 
+@media (max-width: 800px) {
+  summary-detail__tag {
+    flex-basis: 30%;
+  }
+}
 </style>

@@ -20,7 +20,7 @@
         <div
           v-if="article.tags"
           v-for="tag in article.tags"
-          class="summary-detail__tag handdraw-border"
+          class="summary-detail__tag"
         >
           {{ tag }}
         </div>
@@ -87,6 +87,7 @@ export default {
 
 .summary-detail__tag-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .summary-detail__tag {
@@ -94,6 +95,10 @@ export default {
   color: var(--color-primary);
   padding: 5px;
   margin: 5px;
+  max-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .gradient {
@@ -105,5 +110,11 @@ export default {
     var(--bg) 1px,
     var(--bg) 10px
   );
+}
+
+@media (min-width: 800px) {
+  summary-detail__tag {
+    flex-basis: 30%;
+  }
 }
 </style>

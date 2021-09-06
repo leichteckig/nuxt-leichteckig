@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <ul>
       <li
         v-for="color of colors"
@@ -8,13 +8,14 @@
         class="color-item"
         :class="getClasses(color)"
         :data-cy="`${color}switch`"
+        role="button"
       >
         <component
           :is="`icon-${color}`"
         />
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
