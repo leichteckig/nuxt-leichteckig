@@ -1,12 +1,9 @@
 ---
-title: Let's get visual
+title: 🇩🇪 Let's get visual
 description: Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit einem vorherigen Stand.
-img: first-blog-post.jpg
-alt: Flaky tests - Fighting nightmares
 author:
   name: Ramona Schwering
-  bio: All about Leichteckig
-  image: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
+  image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
   - SymfonyWorld Germany
   - CypressDE Meetup
@@ -20,3 +17,9 @@ Also was nun? Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit ein
 
 Ich nutze visuelles Testing schon eine Weile und es hat mir schon einpaar mal meinen Hals gerettet. Lasst uns meine Reise einmal gemeinsam anschauen und erforschen, ob und wie Visual Testing auch in euren Projekten helfen kann.
 
+## Slides
+
+<media-grid :media="[{
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
+}]"></media-grid>

@@ -35,6 +35,16 @@ export default {
     TableOverview
   },
 
+  head() {
+    return {
+      title: 'Attending',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   async asyncData({ $content }) {
     const appearances = await $content('conferences')
       .only(['title', 'description', 'img', 'tags', 'alt'])

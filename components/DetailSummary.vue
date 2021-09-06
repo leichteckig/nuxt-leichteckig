@@ -36,10 +36,6 @@ export default {
     }
   },
 
-  created() {
-    console.log('this article', this.article)
-  },
-
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }

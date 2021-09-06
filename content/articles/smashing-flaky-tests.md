@@ -9,6 +9,10 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine
+- Flakiness
+- Unit Tests
+- End-To-End Tests
+- Integration Tests
 ---
 Unreliable tests are a living nightmare for anyone who writes automated tests or pays attention to the results. Flaky tests have even given folks nightmares and sleepless nights. In this article, Ramona Schwering shares her experiences to help you get out of this hell or avoid getting into it.
 
@@ -304,7 +308,7 @@ I hope I was able to relieve at least some of your pain and concerns about flaki
 ## Further reading
 
 * This article was originally posted in [Smashing magazine](https://www.smashingmagazine.com/2021/04/flaky-tests-living-nightmare/):
-* Articles about “flake,” Cypress.io
-* “Retrying Your Tests Is Actually a Good Thing (If Your Approach Is Right),” Filip Hric, Cypress.io
-* “Test Flakiness: Methods for Identifying and Dealing With Flaky Tests,” Jason Palmer, Spotify R&D Engineering
-* “Flaky Tests at Google and How We Mitigate Them,” John Micco, Google Testing Blog
+* Articles about "[flake](https://cypress.io/blog/tag/flake/)", Cypress.io
+* [Retrying Your Tests Is Actually a Good Thing (If Your Approach Is Right)](https://www.cypress.io/blog/2020/09/25/guest-post-retrying-your-tests-is-actually-a-good-thing-if-your-approach-is-right/), Filip Hric, Cypress.io
+* [Test Flakiness: Methods for Identifying and Dealing With Flaky Tests Jason Palmer](https://engineering.atspotify.com/2019/11/18/test-flakiness-methods-for-identifying-and-dealing-with-flaky-tests/), Spotify R&D Engineering
+* [Flaky Tests at Google and How We Mitigate Them John Micco](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html), Google Testing Blog

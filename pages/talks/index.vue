@@ -48,7 +48,7 @@ export default {
 
   head() {
     return {
-      title: 'My conference appearances and talks',
+      title: 'Speaking',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -59,13 +59,14 @@ export default {
   async asyncData({ $content, params }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc').limit(6)
+      .sortBy('updatedAt', 'desc')
+      .limit(6)
       .fetch();
 
 
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch();
 
