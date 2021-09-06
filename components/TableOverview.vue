@@ -3,9 +3,9 @@
     <table>
       <thead>
       <tr class="handdraw-line">
-        <th>Talk title</th>
+        <th>Talk or event title</th>
         <th>Conference / Event</th>
-        <th>Date / Slot</th>
+        <th>Date</th>
       </tr>
       </thead>
       <tbody>
