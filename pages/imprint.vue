@@ -10,7 +10,7 @@
         </p>
         <h3>Contact</h3><br/>
         <p>
-          E-Mail: rschwering19@gmail.com<br/>
+          E-Mail: hello@<span class="mail">schwering</span>ramona.codes<br/>
           Source: https://www.e-recht24.de/impressum-generator.html<br/>
         </p>
       </section>
@@ -23,7 +23,7 @@
         </p>
         <h3>Kontakt</h3><br/>
         <p>
-          E-Mail: rschwering19@gmail.com<br/>
+          E-Mail: hello@<span class="mail">schwering</span>ramona.codes<br/>
           Quelle: https://www.e-recht24.de/impressum-generator.html<br/>
         </p>
       </section>
@@ -60,5 +60,7 @@ export default {
 </script>
 
 <style scoped>
-
+p span.mail {
+  display: none;
+}
 </style>
