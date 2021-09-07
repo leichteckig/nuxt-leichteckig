@@ -21,6 +21,9 @@ $ npm run generate
 
 ```
 # Run all tests
+$ npm test
+
+# Run jest tests
 $ npm run jest
 
 # Start test watcher for development
