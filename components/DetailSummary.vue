@@ -4,10 +4,12 @@
     <div class="gradient"></div>
     <div class="summary-detail__summary-card handdraw-line">
       <div class="summary-detail__author-card">
-        <img v-if="article.author.image"
+        <img
+          v-if="article.author.image"
           class="summary-detail__author-img"
           :src="article.author.image"
-          :alt="article.author.name">
+          :alt="article.author.name"
+        >
         <div class="summary-detail__basic-info summary-detail__text-muted">
           <div class="summary-detail__author-name">{{ article.author.name }}</div>
           <p>{{ formatDate(article.createdAt) }}</p>
@@ -15,9 +17,11 @@
       </div>
       <p class="summary-detail__description">{{ article.description }}</p>
       <div class="summary-detail__tag-container">
-        <div v-if="article.tags"
-             v-for="tag in article.tags"
-             class="summary-detail__tag handdraw-border">
+        <div
+          v-if="article.tags"
+          v-for="tag in article.tags"
+          class="summary-detail__tag handdraw-border"
+        >
           {{ tag }}
         </div>
       </div>
@@ -27,7 +31,7 @@
 
 <script>
 export default {
-  name: "DetailSummary",
+  name: 'DetailSummary',
 
   props: {
     article: {
@@ -43,11 +47,9 @@ export default {
     }
   }
 }
-
-
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .summary-detail__author-img {
   width: 30px;
   height: 30px;
@@ -69,10 +71,10 @@ export default {
 
 .summary-detail__basic-info {
   display: flex;
-}
 
-.summary-detail__basic-info  p {
-  margin: auto;
+  p {
+    margin: auto;
+  }
 }
 
 .summary-detail__text-muted {

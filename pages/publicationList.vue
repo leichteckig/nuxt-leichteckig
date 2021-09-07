@@ -14,10 +14,10 @@
 
 <script>
 import LinkTile from "@/components/LinkTile";
-import Hero from "@/components/Hero";
 
 export default {
   name: 'publicationList',
+
   components: {
     LinkTile
   },
@@ -38,7 +38,6 @@ export default {
       .sortBy('createdAt', 'asc').limit(6)
       .fetch();
 
-
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
@@ -53,7 +52,6 @@ export default {
 </script>
 
 <style scoped>
-
 h2 {
   margin: 50px 0;
   text-align: center;

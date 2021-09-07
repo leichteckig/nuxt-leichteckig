@@ -2,7 +2,8 @@
   <img
     class="hero-image"
     :src="`/${img.path}`"
-    :alt="img.alt" />
+    :alt="img.alt"
+  />
 </template>
 
 <script>
