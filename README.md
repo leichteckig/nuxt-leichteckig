@@ -17,4 +17,15 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Run tests
+
+```
+# Run all tests
+$ npm test
+
+# Run jest tests
+$ npm run jest
+
+# Start test watcher for development
+$ npm run jest-watch
+```

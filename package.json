@@ -7,7 +7,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "test": "jest",
+    "jest": "jest",
+    "jest-watch": "jest --watch"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
