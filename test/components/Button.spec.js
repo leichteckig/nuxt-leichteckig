@@ -14,6 +14,6 @@ describe('Button component', () => {
       }
     });
 
-    expect(wrapper.find('.button').text()).toBe('Read article now');
+    expect(wrapper.find('.button').text()).toBe('Read article');
   });
 })
