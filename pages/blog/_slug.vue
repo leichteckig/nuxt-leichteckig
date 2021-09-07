@@ -44,7 +44,58 @@ export default {
   }
 }
 </script>
-<style>
+
+<style lang="scss">
+  .blog-detail {
+    ul {
+      line-height: 1.75;
+    }
+
+    p {
+      line-height: 1.75;
+    }
+
+    li {
+      line-height: 1.75;
+
+      &::marker {
+        color: var(--color-primary);
+      }
+    }
+
+    blockquote {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    code,
+    .nuxt-content-highlight pre[class*="language-"] {
+      border: solid 3px var(--bg-secondary);
+      background: var(--bg-secondary);
+      color: var(--color);
+      text-shadow: none;
+      width: 100%;
+      margin: 0 auto;
+      font-family: var(--font-family-mono);
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-bottom-left-radius:15px 255px;
+
+      .keyword {
+        color: var(--color-primary);
+      }
+
+      .token.boolean {
+        color: var(--color);
+      }
+
+      .token.operator {
+        background-color: var(--bg-secondary);
+      }
+    }
+  }
+
   .blog-detail__img {
     height: 160px;
     width: 100%;
@@ -82,55 +133,6 @@ export default {
 
   .blog-detail__summary-card {
     padding: 30px;
-  }
-
-  .blog-detail ul {
-    line-height: 1.75;
-  }
-
-  .blog-detail p {
-    line-height: 1.75;
-  }
-
-  .blog-detail li {
-    line-height: 1.75;
-  }
-
-  .blog-detail li::marker {
-    color: var(--color-primary);
-  }
-
-  .blog-detail code,
-  .blog-detail .nuxt-content-highlight pre[class*="language-"] {
-    border: solid 3px var(--bg-secondary);
-    background: var(--bg-secondary);
-    color: var(--color);
-    text-shadow: none;
-    width: 100%;
-    margin: 0 auto;
-    font-family: var(--font-family-mono);
-
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-bottom-left-radius:15px 255px;
-  }
-
-  .blog-detail .nuxt-content-highlight pre[class*="language-"] .keyword {
-    color: var(--color-primary);
-  }
-
-  .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.boolean {
-    color: var(--color);
-  }
-
-  .blog-detail .nuxt-content-highlight pre[class*="language-"] .token.operator {
-    background-color: var(--bg-secondary);
-  }
-
-  .blog-detail blockquote {
-    color: var(--color-primary);
-    font-style: italic;
   }
 
   .blog-detail__detail-content iframe {
