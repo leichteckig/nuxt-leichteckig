@@ -21,8 +21,8 @@ $ npm run generate
 
 ```
 # Run all tests
-$ npm run test
+$ npm run jest
 
 # Start test watcher for development
-$ npm run test-watch
+$ npm run jest-watch
 ```
