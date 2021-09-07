@@ -11,3 +11,19 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm test
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          build: npm run generate
+          start: npm run start
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'http://localhost:3000'

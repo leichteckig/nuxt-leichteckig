@@ -13,6 +13,8 @@
     "test": "jest",
     "cypress:run": "./node_modules/.bin/cypress run",
     "cypress:open": "./node_modules/.bin/cypress open"
+    "cy:run": "./node_modules/.bin/cypress run",
+    "cy:open": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
