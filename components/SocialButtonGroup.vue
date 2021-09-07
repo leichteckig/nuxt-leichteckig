@@ -73,11 +73,11 @@ export default {
   width: 50px;
   cursor: pointer;
   background: repeating-linear-gradient(
-      45deg,
-      var(--color-secondary),
-      var(--color-secondary) 1px,
-      var(--bg) 1px,
-      var(--bg) 10px
+    45deg,
+    var(--color-secondary),
+    var(--color-secondary) 1px,
+    var(--bg) 1px,
+    var(--bg) 10px
   );
 
   svg {
