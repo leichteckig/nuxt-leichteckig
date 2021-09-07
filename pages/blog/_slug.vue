@@ -108,7 +108,7 @@ export default {
     text-shadow: none;
     width: 100%;
     margin: 0 auto;
-    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    font-family: var(--font-family-mono);
 
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 255px;
