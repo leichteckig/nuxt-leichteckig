@@ -8,13 +8,15 @@
       target="_blank"
     >
       <h3 class="post__title">
-          {{ entry.title }}
+        {{ entry.title }}
       </h3>
       <p v-if="entry.description">{{ entry.description }}</p>
       <div class="link-tile__tag-container">
-        <div v-if="entry.tags"
-             v-for="tag in entry.tags"
-             class="link-tile__tag handdraw-border">
+        <div
+          v-if="entry.tags"
+          v-for="tag in entry.tags"
+          class="link-tile__tag handdraw-border"
+        >
           {{ tag }}
         </div>
       </div>
@@ -24,7 +26,7 @@
 
 <script>
 export default {
-  name: "LinkTile",
+  name: 'LinkTile',
 
   props: {
     contents: {
@@ -36,7 +38,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .link-tile {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -46,12 +48,16 @@ export default {
 .post {
   padding: 50px 25px;
   max-height: 570px;
-}
 
-.post p {
-  margin-bottom: 30px;
-  color: var(--color);
-  height: auto;
+  p {
+    margin-bottom: 30px;
+    color: var(--color);
+    height: auto;
+  }
+
+  &:hover {
+    border: solid 3px var(--color-primary);
+  }
 }
 
 .post__title {
@@ -59,14 +65,10 @@ export default {
   margin-bottom: 20px;
   color: var(--color-primary);
   top: 0;
-}
 
-.post__title a {
-  text-decoration: none;
-}
-
-.post:hover {
-  border: solid 3px var(--color-primary);
+  a {
+    text-decoration: none;
+  }
 }
 
 .link-tile__tag-container {
@@ -80,5 +82,4 @@ export default {
   padding: 5px;
   margin: 5px;
 }
-
 </style>
