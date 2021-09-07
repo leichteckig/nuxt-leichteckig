@@ -4,21 +4,12 @@ describe('Check Home page', () => {
   });
 
   it('should load home page', () => {
-    cy.intercept('POST', '/_content/articles').as('getPosts');
-
-    cy.wait('@getPosts')
-      .its('response.statusCode').should('equal', 200);
     cy.get('[data-cy=Polaroid]').should('be.visible');
     cy.contains('[data-cy=Welcome]', 'Hi, I\'m Ramona').should('be.visible');
     cy.get('[data-cy=FeaturedPosts]').should('be.visible');
   });
 
   it('should change color mode to dark and light', () => {
-    cy.intercept('POST', '/_content/articles').as('getPosts');
-
-    cy.wait('@getPosts')
-      .its('response.statusCode').should('equal', 200);
-
     cy.get('[data-cy=lightswitch]').should('be.visible');
     cy.get('[data-cy=lightswitch]').click();
 
@@ -39,10 +30,6 @@ describe('Check Home page', () => {
   });
 
   it('should open imprint', () => {
-    cy.intercept('POST', '/_content/articles').as('getPosts');
-
-    cy.wait('@getPosts')
-      .its('response.statusCode').should('equal', 200);
     cy.get('[data-cy=Footer]').scrollIntoView();
     cy.get('[data-cy=NavToImprint]').click()
     cy.contains('[data-cy=Title]', 'Imprint').should('be.visible');

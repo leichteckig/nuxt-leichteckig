@@ -19,6 +19,8 @@ $ npm run generate
 
 ## Run tests
 
+### Run Jest tests
+
 ```
 # Run all tests
 $ npm test
@@ -28,4 +30,14 @@ $ npm run jest
 
 # Start test watcher for development
 $ npm run jest-watch
+```
+
+### Run end-to-end tests
+
+```
+# Open Cypress' test runner
+$ npm run cy:open
+
+# Run Cypress tests headlessly
+$ npm run cy:run
 ```

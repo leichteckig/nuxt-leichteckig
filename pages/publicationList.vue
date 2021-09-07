@@ -3,7 +3,7 @@
     <section>
     </section>
     <section class="other-publications">
-      <h2>Guest contributions and appearances</h2>
+      <h2 data-cy="PublicationListingTitle">Guest contributions and appearances</h2>
       <div class="featured-posts">
         <LinkTile :contents="publications">
         </LinkTile>
