@@ -5,7 +5,7 @@
       }">
     <section>
     </section>
-    <section class="past-talks handdraw-line">
+    <section class="past-talks handdraw-line" data-cy="PastTalkOverview">
       <h2>Talks I held in the past</h2>
       <div class="featured-posts">
         <SmallTile
@@ -14,20 +14,24 @@
         />
       </div>
       <div class="more__button">
-        <Button @click.native="$router.push({ name: 'talkList' })">
+        <Button
+          @click.native="$router.push({ name: 'talkList' })"
+          data-cy="ButtonToTalks">
           See more
         </Button>
       </div>
     </section>
 
-    <section class="guest-contributions">
+    <section class="guest-contributions" data-cy="PublicationOverview">
       <h2>Guest contributions and appearances</h2>
       <div class="featured-posts">
         <LinkTile :contents="publications">
         </LinkTile>
       </div>
       <div class="more__button">
-        <Button @click.native="$router.push({ name: 'publicationList' })">
+        <Button
+          @click.native="$router.push({ name: 'publicationList' })"
+          data-cy="ButtonToPublications">
           See more
         </Button>
       </div>
@@ -50,13 +54,13 @@ export default {
     return {
       title: 'Speaking',
       meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        {charset: 'utf-8'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
       ]
     }
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({$content, params}) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')

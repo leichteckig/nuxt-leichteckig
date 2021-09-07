@@ -1,5 +1,5 @@
 <template>
-  <div class="outer-frame handdraw-border">
+  <div class="outer-frame handdraw-border" data-cy="Polaroid">
     <div class="inner-image handdraw-border">
       <img class="image" :src="imagePath" alt="Ramona">
     </div>

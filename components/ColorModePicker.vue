@@ -7,6 +7,7 @@
         @click="$colorMode.preference = color"
         class="color-item"
         :class="getClasses(color)"
+        :data-cy="`${color}switch`"
       >
         <component
           :is="`icon-${color}`"

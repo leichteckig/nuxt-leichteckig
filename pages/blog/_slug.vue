@@ -6,8 +6,8 @@
     <main>
       <DetailSummary :article="article"></DetailSummary>
 
-      <article class="blog-detail__detail-content">
-        <nuxt-content :document="article" />
+      <article class="blog-detail__detail-content" data-cy="BlogDetailContent">
+        <nuxt-content :document="article" data-cy="BlogDetailContent" />
       </article>
     </main>
   </Page>

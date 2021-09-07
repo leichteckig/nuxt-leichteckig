@@ -3,8 +3,8 @@
     <section class="hero handdraw-line">
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 class="hero__title">Hi, I'm Ramona</h1>
-          <p class="hero__sub-title">A frontend-developer<br> who ❤️ test automation and JavaScript</p>
+          <h1 class="hero__title" data-cy="Welcome">Hi, I'm Ramona</h1>
+          <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ test automation and JavaScript</p>
           <SocialButtonGroup name="twitter"></SocialButtonGroup>
         </div>
         <Polaroid imagePath="/moe.jpg" />
@@ -21,7 +21,7 @@
       <div class="gradient"></div>
       <div class="handdraw-line"></div>
     </section>
-    <section class="featured-posts">
+    <section class="featured-posts" data-cy="FeaturedPosts">
       <div class="container">
         <h2>Featured Posts</h2>
         <SmallTile

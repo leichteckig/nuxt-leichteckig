@@ -4,7 +4,7 @@
       v-for="article in contents"
       class="post handdraw-border"
       @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
-    >
+      data-cy="SingleArticle">
       <h3 class="post__title">
         <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
           {{ article.title }}

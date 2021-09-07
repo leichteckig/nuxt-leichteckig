@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section data-cy="DetailSummary">
     <div class="handdraw-line"></div>
     <div class="gradient"></div>
     <div class="summary-detail__summary-card handdraw-line">
@@ -15,7 +15,7 @@
           <p>{{ formatDate(article.createdAt) }}</p>
         </div>
       </div>
-      <p class="summary-detail__description">{{ article.description }}</p>
+      <p class="summary-detail__description" data-cy="DetailSummaryDescription">{{ article.description }}</p>
       <div class="summary-detail__tag-container">
         <div
           v-if="article.tags"

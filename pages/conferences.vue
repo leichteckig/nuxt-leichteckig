@@ -1,14 +1,14 @@
 <template>
   <Page title="Events I attend">
     <h2>Meet me at...</h2>
-    <section class="conference-talks">
+    <section class="conference-talks" data-cy="EventAppearances">
       <div class="image-container">
         <img alt="Moe giving talks" src="~/assets/images/talks.jpeg" class=" img-header"/>
       </div>
       <TableOverview :contents="appearances"/>
     </section>
 
-    <section class="talks-refer handdraw-line">
+    <section class="talks-refer handdraw-line" data-cy="PastTalks">
       <div class="handdraw-line"></div>
       <div class="gradient"></div>
       <div class="talks__inner">
@@ -17,7 +17,8 @@
           <p class="talks__sub-title">Head over to the talks site for an overview!</p>
           <Button
             variant="secondary"
-            @click.native="$router.push({ name: 'talkList' })">
+            @click.native="$router.push({ name: 'talkList' })"
+            data-cy="ButtonToTalks">
             Talks
           </Button>
         </div>
