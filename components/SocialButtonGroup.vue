@@ -1,16 +1,15 @@
 <template>
-  <div>
+  <div class="social-button-group">
     <ul>
       <li
         v-for="icon of socialIcons"
-        :key="icon"
+        :key="icon.key"
         @click.prevent="openSocialLink(icon.link)"
         class="button-item"
       >
-          <component
-            :is="`icon-${icon.key}`"
-          >
-          </component>
+        <component
+          :is="`icon-${icon.key}`"
+        />
       </li>
     </ul>
   </div>
@@ -23,7 +22,8 @@ import IconLinkedin from '@/assets/icons/linkedin.svg?inline';
 import IconXing from '@/assets/icons/xing.svg?inline';
 
 export default {
-  name: "SocialButtonGroup",
+  name: 'SocialButtonGroup',
+
   components: {
     IconTwitter,
     IconGithub,
@@ -62,25 +62,7 @@ export default {
 }
 </script>
 
-<style scoped>
-.button-item svg {
-  color: var(--color);
-
-}
-
-.button-item svg:hover {
-  color: var(--color-primary);
-
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 5px;
-}
-
+<style lang="scss" scoped>
 .button-item {
   display: inline-flex;
   align-items: center;
@@ -90,18 +72,30 @@ ul {
   height: 50px;
   width: 50px;
   cursor: pointer;
-
   background: repeating-linear-gradient(
-    45deg,
-    var(--color-secondary),
-    var(--color-secondary) 1px,
-    var(--bg) 1px,
-    var(--bg) 10px
+      45deg,
+      var(--color-secondary),
+      var(--color-secondary) 1px,
+      var(--bg) 1px,
+      var(--bg) 10px
   );
+
+  svg {
+    color: var(--color);
+    margin: 7px;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
 }
 
-svg {
-  margin: 7px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 5px;
 }
 
 p {
