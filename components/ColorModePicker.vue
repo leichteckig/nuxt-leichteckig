@@ -8,7 +8,8 @@
         class="color-item"
         :class="getClasses(color)"
         :data-cy="`${color}switch`"
-        role="button">
+        role="button"
+        :aria-label="`${color}switch`">
         <component
           :is="`icon-${color}`"
         />

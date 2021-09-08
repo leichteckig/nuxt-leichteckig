@@ -4,10 +4,10 @@
       <li
         v-for="icon of socialIcons"
         :key="icon.key"
-        role="button"
-        @click.prevent="openSocialLink(icon.link)"
         class="button-item"
-      >
+        role="button"
+        aria-label="SocialMediaButtons"
+        @click.prevent="openSocialLink(icon.link)">
         <component
           :is="`icon-${icon.name}`"
         />

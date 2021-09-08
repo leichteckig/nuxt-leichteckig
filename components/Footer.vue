@@ -2,7 +2,13 @@
   <footer class="main-footer" data-cy="Footer">
     <div class="container main-footer__links">
       <SocialButtonGroup class="main-footer__social-links"/>
-      <a role="button" class="main-footer__link" href="/imprint" data-cy="NavToImprint">Imprint</a>
+      <a href="/imprint"
+         class="main-footer__link"
+         data-cy="NavToImprint"
+         role="button"
+         aria-label="ImprintLink">
+        Imprint
+      </a>
     </div>
   </footer>
 </template>
@@ -34,11 +40,12 @@ export default {
   .main-footer__link {
     display: inline-block;
     text-decoration: none;
+    color: #d3604d;
   }
 
   .main-footer__social-links .button-item {
     svg {
-      color: var(--color-primary);
+      color: #d3604d;
     }
   }
 </style>

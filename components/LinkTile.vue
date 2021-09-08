@@ -6,7 +6,8 @@
       class="post handdraw-border"
       :href="entry.img"
       target="_blank"
-      role="button">
+      role="button"
+      :aria-label="entry.title.replace(' ', '-')">
       <h3 class="post__title">
         {{ entry.title }}
       </h3>

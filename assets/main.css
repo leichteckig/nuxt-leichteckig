@@ -16,10 +16,10 @@
 .dark-mode {
   --color: #ebf4f1;
   --color-primary: #C05746;
-  --color-secondary: #07141F;
+  --color-secondary: #15344b;
   --bg: #091a28;
   --bg-secondary: #071521;
-  --border-color: #061019;
+  --border-color: #15344b;
 }
 
 * {

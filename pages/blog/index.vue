@@ -3,7 +3,8 @@
     <main>
       <LargeTile
         :contents="articles"
-        slugName="blog">
+        slugName="blog"
+        data-cy="BlogListing">
       </LargeTile>
     </main>
 
