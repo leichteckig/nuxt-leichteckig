@@ -40,12 +40,12 @@ export default {
   .main-footer__link {
     display: inline-block;
     text-decoration: none;
-    color: #d3604d;
+    color: var(--color-primary);
   }
 
   .main-footer__social-links .button-item {
     svg {
-      color: #d3604d;
+      color: var(--color-primary);
     }
   }
 </style>
