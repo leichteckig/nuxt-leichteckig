@@ -4,6 +4,8 @@ Hello! 👋 It's seems that you found your way to my personal website. Nice to m
 
 If you want, clone it, check it out and if you have some feedback, please keep me posted.
 
+![image](https://user-images.githubusercontent.com/29896429/132575441-23582f2d-240e-4574-b397-5ca3e6704a58.png)
+
 ## Build Setup
 
 ```bash
