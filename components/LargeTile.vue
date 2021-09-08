@@ -5,6 +5,7 @@
       :key="article.slug"
       class="blog-card handdraw-border"
       @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
+      data-cy="SinglePost"
     >
       <div class="blog-card__author text-muted">
         <img

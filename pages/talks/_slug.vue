@@ -1,8 +1,8 @@
 <template>
   <Page :title="talk.title">
-    <main class="talk--content">
+    <main class="talk--content" data-cy="TalkDetailContent">
       <DetailSummary :article="talk"></DetailSummary>
-      <nuxt-content :document="talk" />
+      <nuxt-content :document="talk" data-cy="TalkDetailContent" />
     </main>
   </Page>
 </template>

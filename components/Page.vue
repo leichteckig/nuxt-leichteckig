@@ -2,7 +2,7 @@
   <div class="page">
     <section class="page__title">
       <div class="container">
-        <h1>{{ title }}</h1>
+        <h1 data-cy="Title">{{ title }}</h1>
       </div>
     </section>
     <section v-if="img">

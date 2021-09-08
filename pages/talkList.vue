@@ -4,7 +4,7 @@
     <section>
     </section>
     <section class="past-talks">
-      <h2>Talks I held in the past</h2>
+      <h2 data-cy="PastTalkHeader">Talks I held in the past</h2>
       <div class="featured-posts">
         <SmallTile
           :contents="pastTalks"
