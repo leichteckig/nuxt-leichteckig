@@ -1,22 +1,31 @@
 <template>
   <footer class="main-footer" data-cy="Footer">
     <div class="container main-footer__links">
-      <a class="main-footer__link" rel="noopener" href="https://twitter.com/leichteckig" target="_blank">Twitter</a>
-      <a class="main-footer__link" rel="noopener" href="https://www.linkedin.com/in/%F0%9F%92%99-ramona-schwering-7a56b215b/" target="_blank">LinkedIn</a>
-      <a class="main-footer__link" rel="noopener" href="https://www.xing.com/profile/Ramona_Schwering2/cv" target="_blank">Xing</a>
-      <a class="main-footer__link" rel="noopener" href="https://github.com/leichteckig" target="_blank">GitHub</a>
-      <a class="main-footer__link" href="/imprint" data-cy="NavToImprint">Imprint</a>
+      <SocialButtonGroup class="main-footer__social-links"/>
+      <a href="/imprint"
+         class="main-footer__link"
+         data-cy="NavToImprint"
+         role="button"
+         aria-label="ImprintLink">
+        Imprint
+      </a>
     </div>
   </footer>
 </template>
 
 <script>
+import SocialButtonGroup from '@/components/SocialButtonGroup';
+
 export default {
-  name: "Footer"
+  name: "Footer",
+
+  components: {
+    SocialButtonGroup
+  },
 }
 </script>
 
-<style scoped>
+<style lang="scss">
   .main-footer {
     height: 80px;
     line-height: 80px;
@@ -31,5 +40,12 @@ export default {
   .main-footer__link {
     display: inline-block;
     text-decoration: none;
+    color: #d3604d;
+  }
+
+  .main-footer__social-links .button-item {
+    svg {
+      color: #d3604d;
+    }
   }
 </style>

@@ -1,18 +1,19 @@
 <template>
-  <div class="social-button-group">
+  <section class="social-button-group">
     <ul>
       <li
         v-for="icon of socialIcons"
         :key="icon.key"
-        @click.prevent="openSocialLink(icon.link)"
         class="button-item"
-      >
+        role="button"
+        aria-label="SocialMediaButtons"
+        @click.prevent="openSocialLink(icon.link)">
         <component
-          :is="`icon-${icon.key}`"
+          :is="`icon-${icon.name}`"
         />
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -20,6 +21,7 @@ import IconTwitter from '@/assets/icons/twitter.svg?inline';
 import IconGithub from '@/assets/icons/github.svg?inline';
 import IconLinkedin from '@/assets/icons/linkedin.svg?inline';
 import IconXing from '@/assets/icons/xing.svg?inline';
+import socials from '@/content/json/social.json'
 
 export default {
   name: 'SocialButtonGroup',
@@ -33,25 +35,12 @@ export default {
 
   data() {
     return {
-      socialIcons: [
-        {
-          key: 'twitter',
-          link: 'https://twitter.com/leichteckig'
-        },
-        {
-          key: 'github',
-          link: 'https://github.com/leichteckig'
-        },
-        {
-          key: 'linkedin',
-          link: 'https://www.linkedin.com/in/ramona-schwering-7a56b215b/'
-        },
-        {
-          key: 'xing',
-          link: 'https://www.xing.com/profile/Ramona_Schwering2/cv'
-        }
-      ]
+      socialIcons: []
     }
+  },
+
+  created() {
+    this.socialIcons = socials;
   },
 
   methods: {
@@ -62,45 +51,45 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.button-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
+<style lang="scss">
+.social-button-group {
   margin: auto 0;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--color-secondary),
-    var(--color-secondary) 1px,
-    var(--bg) 1px,
-    var(--bg) 10px
-  );
 
-  svg {
-    color: var(--color);
-    margin: 7px;
+  .button-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin: auto 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 
-    &:hover {
+    svg {
+      margin: 7px;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    svg:hover {
       color: var(--color-primary);
     }
   }
-}
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 5px;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 5px;
+  }
 
-p {
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 20px;
+  p {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
 }
 </style>

@@ -18,7 +18,12 @@ export default {
       title: this.talk.title,
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: this.talk.title.replace(' ', '-'),
+          name: this.talk.title,
+          content: this.talk.description
+        }
       ]
     }
   },
@@ -43,10 +48,6 @@ export default {
 </script>
 
 <style scoped>
-  .text-muted {
-    color: var(--color-text-muted);
-  }
-
   .talk--content p code,
   .talk--content .nuxt-content-highlight pre[class*="language-"] {
     border: solid 3px var(--border-color);
@@ -72,7 +73,10 @@ export default {
     color: var(--color-primary);
     font-style: italic;
   }
-  h3 {
-    color: var(--color);
+
+  @media (min-width: 800px) {
+    summary-detail__tag {
+      flex-basis: 30%;
+    }
   }
 </style>

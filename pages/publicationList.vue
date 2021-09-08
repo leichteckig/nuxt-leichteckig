@@ -1,14 +1,12 @@
 <template>
   <Page title="My content and other publications">
-    <section>
-    </section>
-    <section class="other-publications">
+    <main class="other-publications">
       <h2 data-cy="PublicationListingTitle">Guest contributions and appearances</h2>
       <div class="featured-posts">
         <LinkTile :contents="publications">
         </LinkTile>
       </div>
-    </section>
+    </main>
   </Page>
 </template>
 
@@ -27,12 +25,17 @@ export default {
       title: 'Guest appearances',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'publication-description',
+          name: 'publicatoin',
+          content: 'Are you searching for other publication I contributed to? Look no further!'
+        }
       ]
     }
   },
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'asc').limit(6)

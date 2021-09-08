@@ -3,39 +3,39 @@
         path: 'recording-moe.jpg',
         alt: 'Me, recording things'
       }">
-    <section>
-    </section>
-    <section class="past-talks handdraw-line" data-cy="PastTalkOverview">
-      <h2>Talks I held in the past</h2>
-      <div class="featured-posts">
-        <SmallTile
-          :contents="pastTalks"
-          slugName="talks"
-        />
-      </div>
-      <div class="more__button">
-        <Button
+    <main>
+      <section class="past-talks handdraw-line" data-cy="PastTalkOverview">
+        <h2>Talks I held in the past</h2>
+        <div class="featured-posts">
+          <SmallTile
+            :contents="pastTalks"
+            slugName="talks"
+          />
+        </div>
+        <div class="more__button">
+          <Button
           @click.native="$router.push({ name: 'talkList' })"
           data-cy="ButtonToTalks">
-          See more
-        </Button>
-      </div>
-    </section>
+            See more
+          </Button>
+        </div>
+      </section>
 
-    <section class="guest-contributions" data-cy="PublicationOverview">
-      <h2>Guest contributions and appearances</h2>
-      <div class="featured-posts">
-        <LinkTile :contents="publications">
-        </LinkTile>
-      </div>
-      <div class="more__button">
-        <Button
+      <section class="guest-contributions" data-cy="PublicationOverview">
+        <h2>Guest contributions and appearances</h2>
+        <div class="featured-posts">
+          <LinkTile :contents="publications">
+          </LinkTile>
+        </div>
+        <div class="more__button">
+          <Button
           @click.native="$router.push({ name: 'publicationList' })"
           data-cy="ButtonToPublications">
-          See more
-        </Button>
-      </div>
-    </section>
+            See more
+          </Button>
+        </div>
+      </section>
+    </main>
   </Page>
 </template>
 
@@ -44,7 +44,7 @@ import LinkTile from "@/components/LinkTile";
 import Hero from "@/components/Hero";
 
 export default {
-  name: 'talks',
+  name: 'speaking',
   components: {
     LinkTile,
     Hero
@@ -55,12 +55,17 @@ export default {
       title: 'Speaking',
       meta: [
         {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {
+          hid: 'speaking-description',
+          name: 'speaking',
+          content: 'These are all speaking contributions of me, Ramona.'
+        }
       ]
     }
   },
 
-  async asyncData({$content, params}) {
+  async asyncData({ $content }) {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')

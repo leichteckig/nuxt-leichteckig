@@ -1,12 +1,13 @@
 <template>
-  <div class="link-tile">
+  <section class="link-tile">
     <!-- entry.img is used as link. Strange but serves the aim of getting a link only -->
     <a
       v-for="entry in contents"
       class="post handdraw-border"
       :href="entry.img"
       target="_blank"
-    >
+      role="button"
+      :aria-label="entry.title.replace(' ', '-')">
       <h3 class="post__title">
         {{ entry.title }}
       </h3>
@@ -21,7 +22,7 @@
         </div>
       </div>
     </a>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="large-tile">
+  <section class="large-tile">
     <article
       v-for="article of contents"
       :key="article.slug"
@@ -30,7 +30,7 @@
       <p class="blog-card__description">{{ article.description }}</p>
 
     </article>
-  </div>
+  </section>
 </template>
 
 <script>

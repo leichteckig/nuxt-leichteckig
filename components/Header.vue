@@ -18,24 +18,28 @@
         <nuxt-link
           class="header-main__link first__link"
           to="/"
+          @click.native="toggleMobileMenu"
           data-cy="Home">
           Home
         </nuxt-link>
         <nuxt-link
           class="header-main__link second__link"
           to="/blog"
+          @click.native="toggleMobileMenu"
           data-cy="Writing">
           Writing
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
           to="/talks"
+          @click.native="toggleMobileMenu"
           data-cy="Speaking">
           Speaking
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
           to="/conferences"
+          @click.native="toggleMobileMenu"
           data-cy="Attending">
           Attending
         </nuxt-link>
@@ -174,7 +178,17 @@ export default {
   margin-left: auto;
 }
 
-@media screen and (min-width: 600px) {
+@media (max-width: 600px) {
+    .header-main__link {
+
+      &.nuxt-link-exact-active {
+        border-bottom: 3px solid var(--color-primary);
+        border-bottom-left-radius: 255px 15px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
   .header-main__nav-links {
     position: static;
     width: auto;

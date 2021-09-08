@@ -1,5 +1,5 @@
 <template>
-  <div class="talk-event-table">
+  <section class="talk-event-table">
     <table>
       <thead>
       <tr class="handdraw-line">
@@ -17,9 +17,13 @@
         </td>
         <td data-label="Conference">
           <!-- entry.img == link of the event -->
-          <a v-if="entry.img" :href="entry.img" target="_blank" rel="noopener">
+          <a v-if="entry.img"
+             class="talk-event-table__url"
+             :href="entry.img"
+             target="_blank"
+             rel="noopener">
 
-            <!-- entry.description == link of the event -->
+            <!-- entry.description == Event title -->
             {{ entry.description }}
           </a>
           <span v-else>
@@ -37,7 +41,7 @@
       </tr>
       </tbody>
     </table>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -123,6 +127,10 @@ export default {
   }
 
   @media screen and (max-width: 700px) {
+    tr :last-child {
+      margin-bottom: 10px;
+    }
+
     .talk-event-table thead {
       display: none;
     }
@@ -149,6 +157,10 @@ export default {
       width: min-content;
       min-width: 110px;
       font-weight: bold;
+    }
+
+    .talk--old td {
+      text-decoration: line-through;
     }
   }
 </style>

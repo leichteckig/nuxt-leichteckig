@@ -9,7 +9,7 @@ describe('Polaroid component', () => {
       }
     });
 
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.vm).toBeTruthy();
   });
 
   it('should render image path', () => {
@@ -21,4 +21,4 @@ describe('Polaroid component', () => {
 
     expect(wrapper.find('.image').attributes().src).toBe('test/images/amazing.png');
   });
-})
+});
