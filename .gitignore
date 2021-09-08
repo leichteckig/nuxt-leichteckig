@@ -69,7 +69,8 @@ typings/
 .nuxt
 
 # Nuxt generate
-dist
+dist/*
+!dist/.gitkeep
 .nuxt
 nuxt-dist
 
