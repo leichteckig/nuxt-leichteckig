@@ -8,8 +8,7 @@
         class="color-item"
         :class="getClasses(color)"
         :data-cy="`${color}switch`"
-        role="button"
-      >
+        role="button">
         <component
           :is="`icon-${color}`"
         />
@@ -24,6 +23,8 @@ import IconLight from '@/assets/icons/light.svg?inline'
 import IconDark from '@/assets/icons/dark.svg?inline'
 
 export default {
+  name: 'ColorModePicker',
+
   components: {
     IconSystem,
     IconLight,
@@ -36,7 +37,7 @@ export default {
     }
   },
   methods: {
-    getClasses (color) {
+    getClasses(color) {
       // Does not set classes on ssr when preference is system (because we don't know the preference until client-side)
       if (this.$colorMode.unknown) {
         return {}
@@ -81,7 +82,7 @@ ul {
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius:15px 255px;
+  border-bottom-left-radius: 15px 255px;
 }
 
 p {

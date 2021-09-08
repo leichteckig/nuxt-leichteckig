@@ -17,9 +17,13 @@
         </td>
         <td data-label="Conference">
           <!-- entry.img == link of the event -->
-          <a v-if="entry.img" :href="entry.img" target="_blank" rel="noopener">
+          <a v-if="entry.img"
+             class="talk-event-table__url"
+             :href="entry.img"
+             target="_blank"
+             rel="noopener">
 
-            <!-- entry.description == link of the event -->
+            <!-- entry.description == Event title -->
             {{ entry.description }}
           </a>
           <span v-else>

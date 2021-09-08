@@ -41,7 +41,6 @@ export default {
 
   created() {
     this.socialIcons = socials;
-    console.log(this.socialIcons)
   },
 
   methods: {

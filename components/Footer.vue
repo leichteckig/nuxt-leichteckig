@@ -8,8 +8,14 @@
 </template>
 
 <script>
+import SocialButtonGroup from '@/components/SocialButtonGroup';
+
 export default {
-  name: "Footer"
+  name: "Footer",
+
+  components: {
+    SocialButtonGroup
+  },
 }
 </script>
 
