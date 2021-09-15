@@ -31,7 +31,13 @@ describe('Check Home page', () => {
 
   it('should open imprint', () => {
     cy.get('[data-cy=Footer]').scrollIntoView();
-    cy.get('[data-cy=NavToImprint]').click()
+    cy.get('[data-cy=NavToImprint]').click();
     cy.contains('[data-cy=Title]', 'Imprint').should('be.visible');
+  });
+
+  it('should open data protection page', () => {
+    cy.get('[data-cy=Footer]').scrollIntoView();
+    cy.get('[data-cy=NavToDP]').click();
+    cy.contains('[data-cy=Title]', 'Data Protection').should('be.visible');
   });
 });

@@ -11,7 +11,7 @@
       </a>
       <a href="/privacy"
          class="main-footer__link"
-         data-cy="NavToImprint"
+         data-cy="NavToDP"
          role="button"
          aria-label="DataProtectionLink">
         Data protection
