@@ -3,8 +3,8 @@
     <div
       v-for="entry in media"
       :key="entry.name">
-      <div v-if="entry.name.includes('Slides')" class="slides">
-        <p v-if="media.length === 1">You can find the slides on speakerdeck:</p>
+      <div v-if="entry.name" class="slides">
+        <p v-if="entry.name.includes('Slides') && media.length === 1">You can find the slides on speakerdeck:</p>
         <Button
           class="slide-btn"
           variant="secondary"

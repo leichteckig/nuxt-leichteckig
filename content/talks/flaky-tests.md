@@ -30,8 +30,8 @@ url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a6
 
 <media-grid :media="[{
   name: 'CityJS',
-  url: 'https://www.youtube.com/embed/5VMvCZaGW_c'
+  url: 'https://www.youtube-nocookie.com/embed/5VMvCZaGW_c'
   }, {
   name: 'eCommerce Camp Jena',
-  url: 'https://www.youtube.com/embed/tf4tQKDcww0'
+  url: 'https://www.youtube-nocookie.com/embed/tf4tQKDcww0'
 }]"></media-grid>

@@ -111,10 +111,4 @@ export default {
     var(--bg) 10px
   );
 }
-
-@media (min-width: 800px) {
-  summary-detail__tag {
-    flex-basis: 30%;
-  }
-}
 </style>

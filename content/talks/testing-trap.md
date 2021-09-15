@@ -25,5 +25,5 @@ url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitf
 
 <media-grid :media="[{
 name: 'Front-End Test Fest',
-url: 'https://www.youtube.com/embed/uvJwWQLaVqU'
+url: 'https://www.youtube-nocookie.com/embed/uvJwWQLaVqU'
 }]"></media-grid>

@@ -9,6 +9,13 @@
          aria-label="ImprintLink">
         Imprint
       </a>
+      <a href="/privacy"
+         class="main-footer__link"
+         data-cy="NavToImprint"
+         role="button"
+         aria-label="DataProtectionLink">
+        Data protection
+      </a>
     </div>
   </footer>
 </template>
@@ -46,6 +53,20 @@ export default {
   .main-footer__social-links .button-item {
     svg {
       color: var(--color-primary);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .main-footer__links {
+      display: block;
+    }
+
+    .social-button-group ul {
+      display: block;
+    }
+
+    .main-footer__link {
+      margin: 0 10px;
     }
   }
 </style>

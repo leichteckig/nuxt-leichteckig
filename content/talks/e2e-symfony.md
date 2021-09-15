@@ -33,5 +33,5 @@ url: 'https://speakerdeck.com/leichteckig/symfony-meets-cypress-e2e-testing-for-
 
 <media-grid :media="[{
 name: 'Sfugos (Symfony User Group Osnabrück)',
-url: 'https://www.youtube.com/embed/-vekdbWRWvI'
+url: 'https://www.youtube-nocookie.com/embed/-vekdbWRWvI'
 }]"></media-grid>

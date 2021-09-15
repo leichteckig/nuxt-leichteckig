@@ -23,5 +23,5 @@ url: 'https://speakerdeck.com/leichteckig/a-matter-of-trust-test'
 
 <media-grid :media="[{
 name: 'SCD\'21',
-url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
+url: 'https://www.youtube-nocookie.com/embed/sxvQoWF4KS0'
 }]"></media-grid>
