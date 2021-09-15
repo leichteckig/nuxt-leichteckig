@@ -1,6 +1,6 @@
 # leichteckig
 
-Hello! 👋 It's seems that you found your way to my personal website. Nice to meet you! ♥️ 
+Hello! 👋 It's seems that you found your way to my [personal website](https://www.ramona.codes). Nice to meet you! ♥️ 
 
 If you want, clone it, check it out and if you have some feedback, please keep me posted.
 
