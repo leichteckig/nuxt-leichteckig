@@ -4,7 +4,7 @@
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 class="hero__title" data-cy="Welcome">Hi, I'm Ramona</h1>
-          <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ test automation and JavaScript</p>
+          <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ Test Automation and JavaScript</p>
           <SocialButtonGroup/>
         </div>
         <Polaroid imagePath="/moe.webp" />
@@ -14,7 +14,7 @@
       <div class="container moe__inner">
         <div class="moe__text">
           <h2 class="moe__title">Who dis?</h2>
-          <p class="moe__sub-title">Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️</p>
+          <p class="moe__sub-title">Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️</p>
           <p class="moe__description">After my education as an application developer, I contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. I own both views of the product - that of a tester and that of a developer: I use this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.</p>
         </div>
       </div>

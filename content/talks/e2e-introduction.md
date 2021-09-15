@@ -36,5 +36,5 @@ url: 'https://speakerdeck.com/player/07e15cdcb53f471387099a032a25f198'
 
 <media-grid :media="[{
 name: 'eCommerce Camp Jena',
-url: 'https://www.youtube.com/embed/jA12oktG1rU'
+url: 'https://www.youtube-nocookie.com/embed/jA12oktG1rU'
 }]"></media-grid>
