@@ -49,7 +49,7 @@ export default {
 
   head() {
     return {
-      title: 'Ramona codes',
+      title: 'Ramona Schwering',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
