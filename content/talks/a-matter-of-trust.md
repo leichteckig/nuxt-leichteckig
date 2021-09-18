@@ -7,6 +7,10 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - SCD'21
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/a-matter-of-trust
 ---
 
 ## Abstract

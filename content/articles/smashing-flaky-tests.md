@@ -14,6 +14,10 @@ tags:
 - Unit Tests
 - End-To-End Tests
 - Integration Tests
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/blog/smashing-flaky-tests
 ---
 
 There is a fable that I think about a lot these days. The fable was told to me as a child. It’s called “The Boy Who Cried Wolf” by Aesop. It is about a boy who tends the sheep of his village. He gets bored and pretends that a wolf is attacking the flock, calling out to the villagers for help — only for them to disappointedly realize that it is a false alarm and leave the boy alone. Then, when a wolf actually appears and the boy calls for help, the villagers believe it is another false alarm and do not come to the rescue, and the sheep end up getting eaten by the wolf.

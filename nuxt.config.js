@@ -70,9 +70,28 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
+    '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'EN',
+        file: 'en-US.js'
+      },
+      {
+        code: 'de',
+        name: 'DE',
+        file: 'de-DE.js'
+      }
+    ],
+    lazy: true,
+    langDir: 'locales/',
+    defaultLocale: 'en',
+    fallbackLocale: 'en'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

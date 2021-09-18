@@ -60,6 +60,10 @@ describe('Conference page', () => {
         Page: Page,
         TableOverview: { template: '<div></div>' },
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
+      }
     }, []);
     expect(wrapper.vm).toBeTruthy();
   });

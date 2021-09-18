@@ -9,6 +9,10 @@ tags:
 - SCD'21
 - FemTechConf'21
 - Unkonf'21
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/conferences-introvert
 ---
 
 ## Abstract

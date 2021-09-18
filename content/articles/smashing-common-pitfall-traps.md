@@ -1,7 +1,7 @@
 ---
 title: It’s A (Front-End Testing) Trap!
 description: When writing front-end tests, you’ll find a lot of pitfalls along the way. In sum, they can lead to lousy maintainability, slow execution time, and — in the worst case — tests you cannot trust. But it doesn’t have to be that way.
-img: shopware-testing-bugs/bug.png
+img: smashing-testing-pitfalls/1-frontend-testing-pitfalls.png
 alt: common testing traps
 createdAt: 2021-07-01T22:50:54.724Z
 author:
@@ -13,14 +13,16 @@ tags:
 - Unit Tests
 - End-To-End Tests
 - Testing pitfalls
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/blog/smashing-common-pitfall-traps
 ---
 As I was rewatching a movie I loved as a child, one quote in particular stood out. It’s from the 1983 Star Wars film [“Return of the Jedi”](https://en.wikipedia.org/wiki/Return_of_the_Jedi). The line is said during the Battle of Endor, where the Alliance mobilizes its forces in a concentrated effort to destroy the Death Star. There, Admiral Ackbar, leader of the Mon Calamari rebels, says his memorable line:
 
 ![“It’s a trap!” — Admiral Akbar ](/smashing-testing-pitfalls/1-frontend-testing-pitfalls.png "It’s a trap!")
 
 “It’s a trap!” This line alerts us to an unexpected ambush, an imminent danger. All right, but what does this have to do with testing? Well, it’s simply an apt allegory when it comes to dealing with tests in a code base. These traps might feel like an unexpected ambush when you’re working on a code base, especially when doing so for a long time.
-
-> “A liar will not be believed, even when he speaks the truth.”
 
 In this article, I’ll tell you the pitfalls I’ve run into in my career — some of which were my fault. In this context, I need to give a bit of disclaimer: My daily business is heavily influenced by my use of the Jest framework for unit testing, and by the Cypress framework for end-to-end testing. I’ll try my best to keep my analysis abstract, so that you can use the advice with other frameworks as well. If you find that’s not possible, please comment below so that we can talk about it! Some examples might even be applicable to all test types, whether unit, integration, or end-to-end testing.
 
@@ -325,7 +327,8 @@ This test is supposed to check whether a product can be created and read. In thi
 * For the name of a t-shirt product, I want to use “T-Shirt Akbar”.
 * For the manufacturer’s name, “Space Company” is one idea.
 
-<hint type="info" title="Little hint" message="You don’t need to invent all of the product names, though. You could auto-generate data or, even more prettily, import it from your production state. Anyway, I want to stick to the golden rule, even when it comes to naming.">
+<hint type="info" title="Little hint">
+You don’t need to invent all of the product names, though. You could auto-generate data or, even more prettily, import it from your production state. Anyway, I want to stick to the golden rule, even when it comes to naming.
 </hint>
 
 ### Look at selectors you must
@@ -369,7 +372,8 @@ cy.get('[data-test=sw-select-product__select_manufacturer]')
 
 False positives are just one trouble we get into when testing implementation details. The opposite, false negatives, can happen as well when testing implementation details. A false positive happens when a test passes even when the application has a bug. The result is that testing again eats up headspace, contradicting our golden rule. So, we need to avoid this as much as possible.
 
-<hint type="info" title="Note" message="This topic is huge, so it would be better dealt with in another article. Until then, I’d suggest heading over to Dodds’ article to learn more on the topic.">
+<hint type="info" title="Note">
+This topic is huge, so it would be better dealt with in another article. Until then, I’d suggest heading over to Dodds’ article to learn more on the topic.
 </hint>
 
 ### Wait for it!

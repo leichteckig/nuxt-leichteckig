@@ -50,6 +50,10 @@ describe('About page', () => {
         ProjectTile: { template: '<div></div>' },
         Hero: { template: '<div></div>' },
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
+      }
     });
 
     expect(wrapper.vm).toBeTruthy();

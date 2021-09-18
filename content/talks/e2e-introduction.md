@@ -11,6 +11,10 @@ tags:
 - eCommerce Camp Jena
 - Reacticon
 - c't webdev
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/e2e-introduction
 ---
 
 ## Disclaimer
@@ -31,14 +35,10 @@ In my session, I want to introduce Cypress to you and explore its possibilities 
 name: 'Slides',
 description: 'You can find the slides of the talk at Developer-Week on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
-}, {
+},{
 name: 'Slides',
-description: 'You can find the slides of the talk at eCommerce Camp Jena on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/e2e-testing-as-it-should-be'
-}, {
-name: 'Slides',
-description: 'You can find the slides of the talk at Reacticon on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-as-it-should-be-an-introduction-to-cypress'
+description: 'You can find the slides of the talk at <\c\'t webdev\> on speakerdeck',
+url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
 }]"></media-grid>
 
 ## Recordings
@@ -46,7 +46,4 @@ url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-as-it-should-be-an-
 <media-grid :media="[{
 name: 'Reacticon\'21',
 url: 'https://www.youtube-nocookie.com/embed/f1LOWUkaQPU?start=15021'
-}, {
-name: 'eCommerce Camp Jena',
-url: 'https://www.youtube-nocookie.com/embed/jA12oktG1rU'
 }]"></media-grid>

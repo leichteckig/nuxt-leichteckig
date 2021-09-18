@@ -5,10 +5,10 @@
       :key="article.title"
       class="post handdraw-border"
       data-cy="SingleArticle"
-      @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
+      @click="$router.push(localePath({ name: `${slugName}-slug`, params: { slug: article.slug } }))"
     >
       <h3 class="post__title">
-        <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
+        <NuxtLink :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
           {{ article.title }}
         </NuxtLink>
       </h3>

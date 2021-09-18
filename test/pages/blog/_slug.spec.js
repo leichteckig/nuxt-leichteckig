@@ -23,12 +23,26 @@ describe('Conference page', () => {
         slug
       },
       $content: () => {
-          return {
-            fetch: () => {
-              return slug
-            },
-          }
+        return {
+          fetch: () => {
+            return slug
+          },
+          where: () => {
+            return {
+              fetch: () => {
+                return []
+              },
+            }
+          },
+        }
       },
+      i18n: () => {
+        return {
+          locale: () => {
+            return 'de'
+          },
+        }
+      }
     });
     const head =  await component.head();
     component.data = function () {
@@ -49,6 +63,10 @@ describe('Conference page', () => {
         Hero: { template: '<div></div>' },
         NuxtContent: { template: '<div></div>' }
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
+      }
     }, {
       title: 'Past talk on conference',
       img: 'http://localhost:3000/moe.jpg',

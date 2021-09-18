@@ -20,15 +20,15 @@
       >
         <nuxt-link
           class="header-main__link first__link"
-          to="/"
+          :to="localePath('/')"
           data-cy="Home"
           @click.native="toggleMobileMenu"
         >
-          Home
+          {{ $t('home') }}
         </nuxt-link>
         <nuxt-link
           class="header-main__link second__link"
-          to="/about/"
+          :to="localePath('/about/')"
           data-cy="About"
           @click.native="toggleMobileMenu"
         >
@@ -36,48 +36,58 @@
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
-          to="/blog/"
+          :to="localePath('/blog/')"
           data-cy="Writing"
           @click.native="toggleMobileMenu"
         >
-          Writing
+          {{ $t('writingMenuTitle') }}
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
-          to="/talks/"
+          :to="localePath('/talks/')"
           data-cy="Speaking"
           @click.native="toggleMobileMenu"
         >
-          Speaking
+          {{ $t('speakingMenuTitle') }}
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
-          to="/conferences/"
+          :to="localePath('/conferences/')"
           data-cy="Attending"
           @click.native="toggleMobileMenu"
         >
-          Attending
+          {{ $t('attendingMenuTitle') }}
         </nuxt-link>
       </div>
-      <ColorModePicker class="color-mode__container" />
+      <ColorModePicker class="color-mode__button-group" />
+      <LanguagePicker
+        v-if="!isContentPage"
+        class="locale-mode__button-group" />
     </nav>
   </header>
 </template>
 
 <script>
 import ColorModePicker from '@/components/ColorModePicker'
+import LanguagePicker from '@/components/LanguagePicker'
 
 export default {
   name: 'Header',
 
   components: {
-    ColorModePicker
+    ColorModePicker,
+    LanguagePicker
   },
 
   data() {
     return {
       isMobileMenuActive: false
     }
+  },
+  computed: {
+    isContentPage() {
+      return this.$route.name?.includes('slug');
+    },
   },
 
   methods: {
@@ -188,12 +198,13 @@ export default {
   }
 }
 
-.color-mode__container {
+.color-mode__button-group {
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 57px;
   margin-left: auto;
+  margin-right: 4px;
 }
 
 @media (max-width: 600px) {

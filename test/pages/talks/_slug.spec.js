@@ -29,6 +29,13 @@ describe('Conference page', () => {
             },
           }
       },
+      i18n: () => {
+        return {
+          locale: () => {
+            return 'de'
+          },
+        }
+      }
     });
 
     const headComplement = {
@@ -51,8 +58,14 @@ describe('Conference page', () => {
       stubs: {
         Page: Page,
         NuxtContent: {template: '<div></div>'},
+        NuxtLink: {template: '<div></div>'},
         Hero: {template: '<div></div>'}
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i,
+        switchLocalePath: i => i,
+      }
     }, {
       title: 'A matter of trust – Test',
       description: 'Our daily work at Shopware',
@@ -61,7 +74,11 @@ describe('Conference page', () => {
         name: 'Ramona Schwering',
         image: 'https://avatars.githubusercontent.com/u/29896429?s=120&v=4'
       },
-      tags: ['SCD21']
+      tags: ['SCD21'],
+      otherLanguages: {
+        locale: 'en',
+        path: '/de/blog/common-shopware-testing-pitfalls',
+      }
     });
     expect(wrapper.vm).toBeTruthy();
   });

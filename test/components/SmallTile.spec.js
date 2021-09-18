@@ -11,6 +11,10 @@ describe('SmallTile component', () => {
       propsData: {
         contents: [],
         slugName: 'LargePosts'
+      },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
       }
     });
 
@@ -28,6 +32,10 @@ describe('SmallTile component', () => {
       },
       stubs: {
         NuxtLink: { template: '<div><slot></slot></div>' }
+      },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
       }
     });
 

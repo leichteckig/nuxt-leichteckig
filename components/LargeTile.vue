@@ -5,7 +5,7 @@
       :key="article.slug"
       class="blog-card handdraw-border"
       data-cy="SinglePost"
-      @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
+      @click="$router.push(localePath({ name: `${slugName}-slug`, params: { slug: article.slug } }))"
     >
       <div class="blog-card__author text-muted">
         <img
@@ -16,13 +16,14 @@
       </div>
 
       <h3 class="blog-card__title">
-        <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
+        <NuxtLink :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
           {{ article.title }}
         </NuxtLink>
       </h3>
 
-      <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
+      <NuxtLink :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
         <img
+          v-if="article.img"
           :src="`/${article.img}`"
           class="blog-card__img"
         >

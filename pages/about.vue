@@ -1,6 +1,6 @@
 <template>
   <Page
-    title="About Ramona Schwering"
+    :title="$t('aboutTitle')"
     :img="{
       path: 'stickers.jpeg',
       alt: 'stickers'
@@ -14,25 +14,20 @@
         />
         <div class="about__text">
           <h2 data-cy="AboutTitle">
-            It's nice to meet you here! 👋
+            {{ $t('aboutIntroTitle') }}
           </h2>
           <p
             class="about-titles"
             data-cy="WelcomeDescription"
           >
-            I love to share my knowledge and expertise, as well as my great love for
-            frontend development and design to others as a speaker at major conferences with a lot of power.
-            For me, one thing counts above all: I very much hope that I can become that role model that
-            I would have wished for myself.
+            {{ $t('aboutIntroDescription') }}
           </p>
           <Hint
             class="about-hint"
             type="error"
-            message="❤️ ~ Especially in love with VueJS, Cypress and Jest.️
-            Passionate about open source.
-            Trying to get back to sketch noting and drawing at times.
-            By the way, I'm open for speaking opportunities. 👩‍🏫 "
-          />
+          >
+            {{ $t('aboutIntroHint') }}
+          </Hint>
         </div>
       </section>
       <section class="about__section about__featured-stack">
@@ -41,16 +36,12 @@
           <div class="gradient" />
         </div>
         <h2 data-cy="AboutProjectsListingTitle">
-          What I do
+          {{ $t('aboutActsTitle') }}
         </h2>
         <div class="about__featured-stack--container">
           <div class="about__experience--specials">
             <p data-cy="WelcomeDescription">
-              Currently, I'm working as a
-              <span class="marked">Software Developer</span> at <span class="marked">shopware AG</span>.
-              💙 <br>
-              There, I focus on the frontend area: I contribute to building high quality
-              open source applications in Symfony and VueJS projects.
+              {{ $t('aboutActDescription') }}
             </p>
           </div>
           <div
@@ -68,20 +59,14 @@
       </section>
       <section class="about__section about__extended-bio">
         <div data-cy="ExtendedBio">
-          <h2>Bio - Extended edition</h2>
+          <h2>{{ $t('aboutBioExtendedTitle') }}</h2>
           <div class="about__polaroid-grid about__extended-bio--column">
             <div class="about__experience--specials about__experience--specials-1">
               <p data-cy="AboutBioFirst">
-                I decided to turn my hobby into a profession: In the creative field, I have been involved with IT
-                for a long time, I have done a lot of
-                drawing and painting back then and to present my work I built my own pages.
+                {{ $t('aboutBioExtendedFirst') }}
               </p>
               <p>
-                I have then
-                started an apprenticeship as an IT specialist for application development, being able to shorten my
-                training period because of my performance.
-                I already knew my current employer Shopware, since I grew up in the same town. I applied in
-                Quality assurance to use my education effectively.
+                {{ $t('aboutBioExtendedSecond') }}
               </p>
             </div>
             <Polaroid
@@ -91,16 +76,10 @@
             />
             <div class="about__experience--specials about__experience--specials-3">
               <p data-cy="AboutBioSecond">
-                However,
-                it was then quickly determined that I was capable of more and that my abilities were
-                and that my skills lie particularly in the design side of frontend development. I have been a
-                frontend developer for a couple of years now. In addition, the field of public learning is an
-                important topic for me. I write a lot of blog posts, go to conferences and give talks.
+                {{ $t('aboutBioExtendedThird') }}
               </p>
               <p data-cy="AboutBioThird">
-                I'm learning, writing and speaking about FrontEnd: It fascinates me, "how" things can function best:
-                Especially Frontend Testing, performance and a11y are MVT. In addition, I'm working hard on the
-                open-source to create more value for the web community.
+                {{ $t('aboutBioExtendedFourth') }}
               </p>
             </div>
             <div class="about__experience--specials-moe-presents about__experience--specials-4">
@@ -112,22 +91,21 @@
             </div>
             <div class="about__experience--specials about__experience--specials-5">
               <h2 data-cy="AboutProjectsListingTitle">
-                Special experience
+                {{ $t('aboutSpecialTitle') }}
               </h2>
               <ul
                 class="about-titles"
                 data-cy="WelcomeDescription"
               >
-                <li>🌲 Cypress Ambassador.</li>
-                <li>👩‍💼 Women Techmaker Ambassador.</li>
-                <li>🛠️ ISTQB: Foundation Tester Certificate.</li>
-                <li>🇳🇱 NT2 certificate: Dutch as second language.</li>
+                <li>{{ $t('aboutSpecialFirst') }}</li>
+                <li>{{ $t('aboutSpecialSecond') }}</li>
+                <li>{{ $t('aboutSpecialThird') }}</li>
               </ul>
             </div>
             <div class=" about__experience--specials-6">
               <ProjectTile
                 v-if="projects"
-                title="GitHub contributions"
+                :title="$t('aboutContributions')"
                 :contents="projects"
               />
               <div class="handdraw-line" />

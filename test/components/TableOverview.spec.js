@@ -11,6 +11,9 @@ describe('TableOverview component', () => {
       propsData: {
         contents: [],
         slugName: 'TableOverview'
+      },
+      mocks: {
+        $t: () => 'some specific text'
       }
     });
 
@@ -28,6 +31,9 @@ describe('TableOverview component', () => {
           createdAt: '2025-09-25T22:50:54.724Z'
         }],
         slugName: 'TableOverview'
+      },
+      mocks: {
+        $t: () => 'some specific text'
       }
     });
 
@@ -48,6 +54,9 @@ describe('TableOverview component', () => {
           createdAt: '2020-09-25T22:50:54.724Z'
         }],
         slugName: 'TableOverview'
+      },
+      mocks: {
+        $t: () => 'some specific text'
       }
     });
     expect(wrapper.find('.talk--old')).toBeTruthy();
@@ -70,6 +79,9 @@ describe('TableOverview component', () => {
           createdAt: '2025-09-25T22:50:54.724Z'
         }],
         slugName: 'TableOverview'
+      },
+      mocks: {
+        $t: () => 'some specific text'
       }
     });
 

@@ -13,7 +13,7 @@
         class="hint__description"
         data-cy="DetailSummaryDescription"
       >
-        {{ message }}
+        <slot></slot>
       </p>
     </div>
   </section>

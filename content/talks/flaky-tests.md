@@ -11,6 +11,10 @@ tags:
 - eCommerceCamp Jena
 - PHPUGMRN
 - c't webdev
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/flaky-tests
 ---
 
 ## Abstract

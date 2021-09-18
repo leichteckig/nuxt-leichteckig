@@ -8,7 +8,20 @@
     }"
   >
     <main>
-      <DetailSummary :article="article" />
+      <DetailSummary :article="article">
+        <p v-if="otherLanguages.length" class="blog-detail__lang">
+          {{ $t('alsoAvailableIn') }}
+          <nuxt-link
+            class="uppercase text-teal-600 hover:text-teal-800"
+            v-for="lang in otherLanguages"
+            :key="lang.locale"
+            :to="switchLocalePath(lang.locale)"
+          >
+            {{ lang.name }}
+          </nuxt-link>
+        </p>
+        {{ article.description }}
+      </DetailSummary>
 
       <article
         class="blog-detail__detail-content"
@@ -33,10 +46,11 @@ export default {
     DetailSummary
   },
 
-  async asyncData({$content, params}) {
-    const article = await $content('articles', params.slug).fetch();
+  async asyncData({ $content, params, i18n }) {
+    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
 
-    return {article}
+    const article = await $content(path, params.slug).fetch();
+    return { article }
   },
 
   head() {
@@ -71,15 +85,19 @@ export default {
 
   computed: {
     getCanonicalLink() {
-      if (!this.article.author.bio?.includes('smashing')) {
+      if (!this.article.author?.bio?.includes('smashing')) {
         return {}
       }
 
       return {
         rel: 'canonical',
-        href: this.article.author.bio?.includes('smashing') ? this.article.author.bio : undefined
+        href: this.article.author?.bio?.includes('smashing') ? this.article.author.bio : undefined
       };
-    }
+    },
+
+    otherLanguages() {
+      return this.article.otherLanguages || []
+    },
   }
 }
 </script>
@@ -194,5 +212,10 @@ export default {
 
 .hint {
   margin: 20px;
+}
+
+.blog-detail__lang {
+  font-family: 'Amatic SC';
+  font-size: xx-large;
 }
 </style>

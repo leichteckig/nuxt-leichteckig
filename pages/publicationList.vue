@@ -1,8 +1,8 @@
 <template>
-  <Page title="Ramona Schwering's content">
+  <Page :title="$t('speakingPastPubs')">
     <main class="other-publications">
       <h2 data-cy="PublicationListingTitle">
-        Guest contributions and appearances
+        {{ $t('pubSubtitle') }}
       </h2>
       <div class="featured-posts">
         <LinkTile :contents="publications" />
@@ -21,8 +21,10 @@ export default {
     LinkTile
   },
 
-  async asyncData({ $content }) {
-    const publications = await $content('publications')
+  async asyncData({ $content, i18n }) {
+    const path = i18n.locale !== 'en' ? `publications/${i18n.locale}` : 'publications';
+
+    const publications = await $content(path)
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
       .fetch();
@@ -40,7 +42,7 @@ export default {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           hid: 'publication-description',
-          name: 'publicatoin',
+          name: 'publication',
           content: 'Are you searching for other publication I contributed to? Look no further!'
         }
       ]
@@ -99,5 +101,9 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.speaking-hint {
+  margin: 0 10%
 }
 </style>

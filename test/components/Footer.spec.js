@@ -10,6 +10,10 @@ describe('Footer component', () => {
     const wrapper = shallowMount(Footer, {
       stubs: {
         NuxtLink: { template: '<div></div>' }
+      },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
       }
     });
     expect(wrapper.vm).toBeTruthy();
@@ -19,6 +23,10 @@ describe('Footer component', () => {
     const wrapper = shallowMount(Footer, {
       stubs: {
         NuxtLink: { template: '<div></div>' }
+      },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
       }
     });
 

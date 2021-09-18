@@ -22,9 +22,11 @@ export default {
     LargeTile
   },
 
-  async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author'])
+  async asyncData({ $content, i18n }) {
+    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
+
+    const articles = await $content(path)
+      .only(['title', 'description', 'img', 'slug', 'author', 'language', 'id'])
       .sortBy('createdAt', 'desc')
       .fetch();
 

@@ -4,9 +4,9 @@
     <table>
       <thead>
         <tr class="handdraw-line">
-          <th>Talk or event title</th>
-          <th>Conference / Event</th>
-          <th>Date</th>
+          <th>{{ $t('eventTitle') }}</th>
+          <th>{{ $t('eventType') }}</th>
+          <th>{{ $t('eventDate') }}</th>
         </tr>
       </thead>
       <tbody>

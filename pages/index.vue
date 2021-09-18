@@ -7,13 +7,13 @@
             class="hero__title"
             data-cy="Welcome"
           >
-            Hi, I'm Ramona
+            {{ $t('welcome') }}
           </h1>
           <p
             class="hero__sub-title"
             data-cy="WelcomeDescription"
           >
-            A frontend-developer<br> who ❤️ Test Automation and JavaScript
+            {{ $t('welcomeSummary') }}
           </p>
           <SocialButtonGroup />
         </div>
@@ -27,18 +27,13 @@
       <div class="container moe__inner">
         <div class="moe__text">
           <h2 class="moe__title">
-            Who dis?
+            {{ $t('whodis') }}
           </h2>
           <p class="moe__sub-title">
-            Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador.
-            OpenSource Lover ❤️
+            {{ $t('whodisSubtitle') }}
           </p>
           <p class="moe__description">
-            After my education as an application developer, I contributed to product development at shopware AG for
-            about six years now: First in quality assurance
-            and now, as Software Developer. I own both views of the product - that of a tester and that of a
-            developer: I use this primarily to strengthen trust in test automation and to support the testers.
-            The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.
+            {{ $t('whodisDescription') }}
           </p>
         </div>
       </div>
@@ -50,7 +45,7 @@
       data-cy="FeaturedPosts"
     >
       <div class="container">
-        <h2>Featured Posts</h2>
+        <h2>{{ $t('featuredPosts') }}</h2>
         <SmallTile
           :contents="articles"
           slug-name="blog"
@@ -74,8 +69,10 @@ export default {
     SocialButtonGroup
   },
 
-  async asyncData({ $content }) {
-    const articles = await $content('articles')
+  async asyncData({ $content, i18n }) {
+    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
+
+    const articles = await $content(path)
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'desc')
       .limit(3)

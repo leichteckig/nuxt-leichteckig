@@ -31,6 +31,10 @@ describe('Conference page', () => {
       stubs: {
         Page: Page
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
+      }
     });
     expect(wrapper.vm).toBeTruthy();
   });
