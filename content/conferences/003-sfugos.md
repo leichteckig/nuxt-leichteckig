@@ -1,9 +1,8 @@
 ---
-title: Symfony Usergroup Osnabrück
+title: Symfony meet Cypress - E2E Tests für Symfony Entwickler
 description: 🇩🇪 Symfony User Group Osnabrück #10
 img: https://www.meetup.com/de-DE/sfugos/events/275765097/
-alt: 2021.01.28
-tags:
-- old
+alt: 2020.10.12
+author:
+  name: January 28, 2022
 ---
-TBA

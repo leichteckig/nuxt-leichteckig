@@ -20,7 +20,10 @@ describe('TableOverview component', () => {
           title: 'Upcoming talk on conference',
           img: 'http://localhost:3000/moe.jpg',
           description: 'Upcoming conference',
-          alt: '2021.10.10'
+          alt: '2021.10.10',
+          author: {
+            name: 'September 25, 2020'
+          }
         }],
         slugName: 'TableOverview'
       }
@@ -29,7 +32,7 @@ describe('TableOverview component', () => {
     expect(wrapper.find('td[data-label=Title]').text()).toContain('Upcoming talk on conference');
     expect(wrapper.find('td[data-label=Conference]').text()).toContain('Upcoming conference');
     expect(wrapper.find('.talk-event-table__url').attributes().href).toBe('http://localhost:3000/moe.jpg');
-    expect(wrapper.find('td[data-label=Date]').text()).toContain('2021.10.10');
+    expect(wrapper.find('td[data-label=Date]').text()).toContain('September 25, 2020');
   });
 
   it('cross out an old conference', () => {
