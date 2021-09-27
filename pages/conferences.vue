@@ -53,8 +53,8 @@ export default {
 
   async asyncData({ $content }) {
     const appearances = await $content('conferences')
-      .only(['title', 'description', 'img', 'tags', 'alt'])
-      .sortBy('alt', 'desc')
+      .only(['title', 'description', 'img', 'tags', 'alt', 'author'])
+      .sortBy('alt', 'asc')
       .fetch();
 
     return {
