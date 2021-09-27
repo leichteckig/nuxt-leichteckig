@@ -1,5 +1,5 @@
 ---
-title: CityJS Conference
+title: Flaky Tests - Fighting nightmares
 description: CityJS London 2021
 img: https://cityjsconf.org/
 alt: 2021.3.24

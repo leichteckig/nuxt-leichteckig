@@ -1,5 +1,5 @@
 ---
-title: Symfony Usergroup Osnabrück
+title: Flaky Tests - Fighting nightmares
 description: FemTechConf
 img: https://femtechconf.com/
 alt: 2020.09.25
