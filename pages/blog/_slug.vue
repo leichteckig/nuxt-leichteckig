@@ -100,6 +100,14 @@ export default {
       .token.operator {
         background-color: var(--bg-secondary);
       }
+
+      .token.entity {
+        background-color: var(--bg-secondary);
+      }
+
+      .token.string {
+        color: var(--color);
+      }
     }
   }
 
@@ -150,5 +158,9 @@ export default {
     border-top-right-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;
     border-bottom-left-radius:15px 255px;
+  }
+
+  .hint {
+    margin: 20px;
   }
 </style>

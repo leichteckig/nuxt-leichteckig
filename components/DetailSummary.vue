@@ -66,7 +66,7 @@ export default {
 }
 
 .summary-detail__description {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .summary-detail__basic-info {
