@@ -1,6 +1,7 @@
 ---
 title: A matter of trust – Test
 description: Our daily work at Shopware, but also at agencies, ends up in the hands of people who trust us not only to have done our best, but also that it works.
+createdAt: 2020-07-19T22:50:54.724Z
 author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4

@@ -1,5 +1,5 @@
 <template>
-  <Page title="My content and other publications">
+  <Page title="Ramona Schwering's content">
     <main class="other-publications">
       <h2 data-cy="PublicationListingTitle">Guest contributions and appearances</h2>
       <div class="featured-posts">
@@ -22,7 +22,7 @@ export default {
 
   head() {
     return {
-      title: 'Guest appearances',
+      title: "Ramona Schwering\'s guest appearances",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

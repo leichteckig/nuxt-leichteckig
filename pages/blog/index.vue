@@ -1,5 +1,5 @@
 <template>
-  <Page title="Blog" class="blog">
+  <Page title="Ramona Schwering's blog" class="blog">
     <main>
       <LargeTile
         :contents="articles"
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import LargeTile from "@/components/LargeTile";
+import LargeTile from '@/components/LargeTile';
 
 export default {
   name: 'blogIndex',
@@ -38,7 +38,7 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(3)
       .fetch();
 

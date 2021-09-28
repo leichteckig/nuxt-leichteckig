@@ -1,6 +1,7 @@
 ---
 title: 🇩🇪 Let's get visual
 description: Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit einem vorherigen Stand.
+createdAt: 2021-04-16T22:50:54.724Z
 author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4

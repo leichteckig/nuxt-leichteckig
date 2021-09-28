@@ -1,6 +1,7 @@
 ---
 title: End-to-End testing as it should be
 description: When it comes to UI testing, some developers tend to be reluctant a lot. Are those tests slow, flaky, hard to write and maintain?
+createdAt: 2020-03-13T22:50:54.724Z
 author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
