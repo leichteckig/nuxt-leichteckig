@@ -1,5 +1,5 @@
 <template>
-  <Page title="Past talks"
+  <Page title="Ramona Schwering's Past talks"
       class="talk-list">
     <main class="past-talks">
       <h2 data-cy="PastTalkHeader">Talks I held in the past</h2>
@@ -24,7 +24,7 @@ export default {
 
   head() {
     return {
-      title: 'Talks',
+      title: "Ramona Schwering\'s Talks",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

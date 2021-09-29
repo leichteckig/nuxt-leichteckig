@@ -3,6 +3,7 @@ title: Flaky Tests
 description: Getting Rid Of A Living Nightmare In Testing
 img: smashing-flakiness/heisenbug.png
 alt: flaky test
+createdAt: 2021-04-07T22:50:54.724Z
 author:
   name: Ramona Schwering
   bio: https://www.smashingmagazine.com/2021/04/flaky-tests-living-nightmare/

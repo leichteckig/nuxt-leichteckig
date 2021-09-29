@@ -12,10 +12,10 @@
       <tr v-if="contents.length"
           v-for="entry in contents"
           class="handdraw-line">
-        <td data-label="Title" v-if="getPastDate(entry.alt)">
+        <td data-label="Title" v-if="getPastDate(entry.createdAt)">
           {{ entry.title }}
         </td>
-        <td v-if="getPastDate(entry.alt)" data-label="Conference">
+        <td v-if="getPastDate(entry.createdAt)" data-label="Conference">
           <!-- entry.img == link of the event -->
           <a v-if="entry.img"
              class="talk-event-table__url"
@@ -32,10 +32,10 @@
             {{ entry.description }}
           </span>
         </td>
-        <td v-if="getPastDate(entry.alt)" data-label="Date">
-          <!-- entry.author.name == Date of the event in more pretty -->
-          <span v-if="entry.author">
-          {{ entry.author.name }}
+        <td v-if="getPastDate(entry.createdAt)" data-label="Date">
+          <!-- entry.alt == Date of the event in more pretty -->
+          <span v-if="entry.alt">
+          {{ entry.alt }}
           </span>
         </td>
       </tr>
@@ -56,13 +56,13 @@
       </tr>
       <tr v-for="entry in contents"
           class="handdraw-line talk--old">
-        <td v-if="!getPastDate(entry.alt)" data-label="Title">
+        <td v-if="!getPastDate(entry.createdAt)" data-label="Title">
           <!-- entry.img == link of the event -->
           <span>
             {{ entry.title }}
           </span>
         </td>
-        <td v-if="!getPastDate(entry.alt)" data-label="Conference">
+        <td v-if="!getPastDate(entry.createdAt)" data-label="Conference">
           <!-- entry.img == link of the event -->
           <a v-if="entry.img"
              class="talk-event-table__url"
@@ -77,10 +77,10 @@
             {{ entry.description }}
           </span>
         </td>
-        <td v-if="!getPastDate(entry.alt)" data-label="Date">
-          <!-- entry.author.name == Date of the event in more pretty -->
-          <span v-if="entry.author">
-          {{ entry.author.name }}
+        <td v-if="!getPastDate(entry.createdAt)" data-label="Date">
+          <!-- entry.alt == Date of the event in more pretty -->
+          <span v-if="entry.alt">
+          {{ entry.alt }}
           </span>
         </td>
       </tr>
@@ -101,15 +101,6 @@ export default {
     }
   },
 
-  data() {
-    return {
-      currentDate: ''
-    }
-  },
-
-  created() {
-  },
-
   methods: {
     getTableClasses(entry) {
       if(entry.tags?.includes('placeholder')) {
@@ -127,10 +118,7 @@ export default {
     },
 
     getPastDate(eventDate) {
-      const today = new Date();
-      const date = `${eventDate} 00:00:00 GMT`;
-
-      if(Date.now() < Date.parse(date)) {
+      if(Date.now() < Date.parse(eventDate)) {
         return true;
       }
     }

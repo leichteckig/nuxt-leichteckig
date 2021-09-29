@@ -2,7 +2,8 @@
 title: It’s A (Front-End Testing) Trap!
 description: Six Common Testing Pitfalls And How To Solve Them
 img: smashing-testing-pitfalls/bingo.jpg
-alt: flaky test
+alt: common testing traps
+createdAt: 2021-07-01T22:50:54.724Z
 author:
   name: Ramona Schwering
   bio: https://www.smashingmagazine.com/2021/07/frontend-testing-pitfalls/

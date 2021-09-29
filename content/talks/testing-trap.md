@@ -1,6 +1,7 @@
 ---
 title: It's a (Testing) Trap! - Common Testing Pitfalls and How to Solve Them
 description: “It’s a trap” - a call or feeling we all might be familiar with, not only when it comes to Star Wars.
+createdAt: 2021-06-08T22:50:54.724Z
 author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4

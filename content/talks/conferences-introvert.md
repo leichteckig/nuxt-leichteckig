@@ -1,6 +1,7 @@
 ---
 title: How to survive conferences as an introvert
 description: Large crowds full of strangers. Many sounds. Senses on overdrive. A large, noisy conference is the antithesis of what we introverts prefer and crave.
+createdAt: 2021-09-02T22:50:54.724Z
 author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
