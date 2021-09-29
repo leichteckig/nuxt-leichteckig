@@ -1,6 +1,6 @@
 ---
-title: Flaky Tests
-description: Getting Rid Of A Living Nightmare In Testing
+title: Flaky Tests - Getting Rid Of A Living Nightmare In Testing
+description: Unreliable tests are a living nightmare for anyone who writes automated tests or pays attention to the results. Flaky tests have even given folks nightmares and sleepless nights. In this article, I want to share my experiences to help you get out of this hell or avoid getting into it.
 img: smashing-flakiness/heisenbug.png
 alt: flaky test
 createdAt: 2021-04-07T22:50:54.724Z
@@ -15,7 +15,6 @@ tags:
 - End-To-End Tests
 - Integration Tests
 ---
-Unreliable tests are a living nightmare for anyone who writes automated tests or pays attention to the results. Flaky tests have even given folks nightmares and sleepless nights. In this article, Ramona Schwering shares her experiences to help you get out of this hell or avoid getting into it.
 
 There is a fable that I think about a lot these days. The fable was told to me as a child. It’s called “The Boy Who Cried Wolf” by Aesop. It is about a boy who tends the sheep of his village. He gets bored and pretends that a wolf is attacking the flock, calling out to the villagers for help — only for them to disappointedly realize that it is a false alarm and leave the boy alone. Then, when a wolf actually appears and the boy calls for help, the villagers believe it is another false alarm and do not come to the rescue, and the sheep end up getting eaten by the wolf.
 

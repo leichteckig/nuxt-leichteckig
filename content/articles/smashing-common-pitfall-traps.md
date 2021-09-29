@@ -1,6 +1,6 @@
 ---
 title: It’s A (Front-End Testing) Trap!
-description: Six Common Testing Pitfalls And How To Solve Them
+description: When writing front-end tests, you’ll find a lot of pitfalls along the way. In sum, they can lead to lousy maintainability, slow execution time, and — in the worst case — tests you cannot trust. But it doesn’t have to be that way.
 img: smashing-testing-pitfalls/bingo.jpg
 alt: common testing traps
 createdAt: 2021-07-01T22:50:54.724Z
@@ -12,10 +12,8 @@ tags:
 - Smashing magazine
 - Unit Tests
 - End-To-End Tests
-- Integration Tests
+- Testing pitfalls
 ---
-When writing front-end tests, you’ll find a lot of pitfalls along the way. In sum, they can lead to lousy maintainability, slow execution time, and — in the worst case — tests you cannot trust. But it doesn’t have to be that way. In this article, I will talk about common mistakes developers make, at least in my experience, and, of course, how to avoid them. Testing doesn’t need to be painful, after all.
-
 As I was rewatching a movie I loved as a child, one quote in particular stood out. It’s from the 1983 Star Wars film [“Return of the Jedi”](https://en.wikipedia.org/wiki/Return_of_the_Jedi). The line is said during the Battle of Endor, where the Alliance mobilizes its forces in a concentrated effort to destroy the Death Star. There, Admiral Ackbar, leader of the Mon Calamari rebels, says his memorable line:
 
 ![“It’s a trap!” — Admiral Akbar ](/smashing-testing-pitfalls/1-frontend-testing-pitfalls.png "It’s a trap!")
@@ -74,7 +72,7 @@ beforeEach(() => {
     cy.setInitialState()
        .then(() => {
            return cy.login();
-       })
+       });
 });
 ```
 
@@ -101,7 +99,7 @@ Cypress.Commands.add('loginViaApi', () => {
 
 Such documentation might be essential in this case because **it will help your future self and your team understand the test better**. You see, some best practices for production code are not suitable for test code. Tests are simply not production code, and we should never treat them as such. Of course, we should treat test code with the same care as production code. However, some conventions and best practices might conflict with comprehensibility. In such cases, remember the golden rule, and put the developer experience first.
 
-##Traps In Test Design
+## Traps In Test Design
 
 In the first few examples in this section, I’ll talk about how to avoid falling into testing traps in the first place. After that, I’ll talk about test design. If you’re already working on a longstanding project, this should still be useful.
 
@@ -327,7 +325,8 @@ This test is supposed to check whether a product can be created and read. In thi
 * For the name of a t-shirt product, I want to use “T-Shirt Akbar”.
 * For the manufacturer’s name, “Space Company” is one idea.
 
-You don’t need to invent all of the product names, though. You could auto-generate data or, even more prettily, import it from your production state. Anyway, I want to stick to the golden rule, even when it comes to naming.
+<hint type="info" title="Little hint" message="You don’t need to invent all of the product names, though. You could auto-generate data or, even more prettily, import it from your production state. Anyway, I want to stick to the golden rule, even when it comes to naming.">
+</hint>
 
 ### Look at selectors you must
 
@@ -370,7 +369,8 @@ cy.get('[data-test=sw-select-product__select_manufacturer]')
 
 False positives are just one trouble we get into when testing implementation details. The opposite, false negatives, can happen as well when testing implementation details. A false positive happens when a test passes even when the application has a bug. The result is that testing again eats up headspace, contradicting our golden rule. So, we need to avoid this as much as possible.
 
-*Note: This topic is huge, so it would be better dealt with in another article. Until then, I’d suggest heading over to Dodds’ article on “[Testing Implementation Details](https://kentcdodds.com/blog/testing-implementation-details)” to learn more on the topic.*
+<hint type="info" title="Note" message="This topic is huge, so it would be better dealt with in another article. Until then, I’d suggest heading over to Dodds’ article to learn more on the topic.">
+</hint>
 
 ### Wait for it!
 
