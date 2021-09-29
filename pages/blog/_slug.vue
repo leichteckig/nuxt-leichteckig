@@ -28,21 +28,20 @@ export default {
   head() {
     return {
       title: this.article.title,
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { property: 'og:title', hid:'og:title', content: this.article.title? this.article.title : 'Ramona Schwering' },
+        { property: 'og:description', hid:'og:description', content: this.article.description? this.article.description : 'Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.' },
+        { hid: 'og:image', property: 'og:image', content: this.article.img? `https://www.ramona.codes/${this.article.img}` : 'https://www.ramona.codes/ogimage.png'},
+        { name: 'twitter:card', hid:'twitter:card', content: 'summary_large_image' }
+      ],
       link: [
         {
           rel: 'canoncial',
           href: this.article.author.bio.includes('smashing') ? this.article.author.bio : undefined
         },
       ],
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: this.article.title.replace(' ', '-'),
-          name: this.article.title,
-          content: this.article.description
-        }
-      ]
     }
   },
 
