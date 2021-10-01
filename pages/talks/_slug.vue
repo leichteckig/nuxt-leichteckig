@@ -23,7 +23,9 @@ export default {
           hid: this.talk.title.replace(' ', '-'),
           name: this.talk.title,
           content: this.talk.description
-        }
+        },
+        { name: 'og:title', hid:'og:title', content: this.talk.title },
+        { name: 'og:description', hid:'og:description', content: this.talk.description },
       ]
     }
   },
