@@ -6,7 +6,7 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- Shopware Community Day 2020
+- SCD'21
 ---
 
 ## Abstract
