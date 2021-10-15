@@ -1,6 +1,6 @@
 <template>
   <Page title="My content and other publications" :img="{
-        path: 'recording-moe.jpg',
+        path: 'recording-ramona-schwering.jpg',
         alt: 'Me, recording things'
       }">
     <main>
@@ -20,7 +20,22 @@
           </Button>
         </div>
       </section>
-
+      <section class="talks-refer handdraw-line" data-cy="PastTalks">
+        <div class="handdraw-line"></div>
+        <div class="gradient"></div>
+        <div class="talks__inner">
+          <div class="talks__text">
+            <h2 class="talks__title">See my Speakerdeck!</h2>
+            <p class="talks__sub-title">Here you can see all of my Slides in one place! 🙌 </p>
+            <Button
+              variant="secondary"
+              @click.native="openLink('https://speakerdeck.com/leichteckig')"
+              data-cy="ButtonToTalks">
+              Talks
+            </Button>
+          </div>
+        </div>
+      </section>
       <section class="guest-contributions" data-cy="PublicationOverview">
         <h2>Guest contributions and appearances</h2>
         <div class="featured-posts">
@@ -84,6 +99,11 @@ export default {
     }
   },
 
+  methods: {
+    openLink(link) {
+      window.open(link, '_blank',  'noopener');
+    }
+  }
 }
 </script>
 

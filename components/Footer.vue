@@ -2,20 +2,20 @@
   <footer class="main-footer" data-cy="Footer">
     <div class="container main-footer__links">
       <SocialButtonGroup class="main-footer__social-links"/>
-      <a href="/imprint"
+      <nuxt-link to="/imprint"
          class="main-footer__link"
          data-cy="NavToImprint"
          role="button"
          aria-label="ImprintLink">
         Imprint
-      </a>
-      <a href="/privacy"
+      </nuxt-link>
+      <nuxt-link to="/privacy"
          class="main-footer__link"
          data-cy="NavToDP"
          role="button"
          aria-label="DataProtectionLink">
         Data protection
-      </a>
+      </nuxt-link>
     </div>
   </footer>
 </template>

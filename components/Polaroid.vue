@@ -53,7 +53,7 @@ export default {
 
 .inner-image {
   margin: 30px 30px 130px 30px;
-  background-color: var(--color);
+  background-color: var(--color-primary);
 }
 
 @media (max-width: 450px) {

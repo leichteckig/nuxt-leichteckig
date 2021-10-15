@@ -7,7 +7,7 @@
           <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ Test Automation and JavaScript</p>
           <SocialButtonGroup/>
         </div>
-        <Polaroid imagePath="/moe.webp" />
+        <Polaroid imagePath="/Moe-portrait.webp" />
       </div>
     </section>
     <section class="moe-refer">
