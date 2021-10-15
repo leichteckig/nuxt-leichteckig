@@ -45,7 +45,7 @@ export default {
 
   methods: {
     openSocialLink(link) {
-      window.open(link, '_blank');
+      window.open(link, '_blank', 'noopener');
     }
   }
 }

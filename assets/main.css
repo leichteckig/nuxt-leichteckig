@@ -3,7 +3,7 @@
   --color-text-default: #e3e3e3;
   --color-text-muted: #aaaaaa;
   --color: #091A28;
-  --color-primary: #d3604d;
+  --color-primary: #C05746;
   --color-secondary: #E4E1E1;
   --bg: #FFFFFF;
   --bg-secondary: #ececec;
@@ -15,7 +15,7 @@
 
 .dark-mode {
   --color: #ebf4f1;
-  --color-primary: #d3604d;
+  --color-primary: #C05746;
   --color-secondary: #15344b;
   --bg: #091a28;
   --bg-secondary: #071521;

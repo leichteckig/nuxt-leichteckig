@@ -3,7 +3,7 @@
     <h2>Meet me at...</h2>
     <main class="conference-talks" data-cy="EventAppearances">
       <div class="image-container">
-        <img alt="Moe giving talks" src="~/assets/images/talks.jpeg" class=" img-header"/>
+        <img alt="Moe giving talks" src="/ramona-schwering-talks-small.jpeg" class=" img-header"/>
       </div>
       <TableOverview :contents="appearances"/>
     </main>
