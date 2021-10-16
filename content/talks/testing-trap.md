@@ -4,6 +4,7 @@ description: “It’s a trap” - a call or feeling we all might be familiar wi
 createdAt: 2021-06-08T22:50:54.724Z
 author:
   name: Ramona Schwering
+  bio: https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - FrontendTestFest 2021

@@ -26,7 +26,13 @@ export default {
         },
         { name: 'og:title', hid:'og:title', content: this.talk.title },
         { name: 'og:description', hid:'og:description', content: this.talk.description },
-      ]
+      ],
+      link: [
+        {
+          rel: 'canoncial',
+          href: this.talk.author.bio.includes('speakerdeck') ? this.talk.author.bio : undefined
+        },
+      ],
     }
   },
 
@@ -42,7 +48,7 @@ export default {
   },
 
   async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch()
+    const talk = await $content('talks', params.slug).fetch();
 
     return { talk }
   },
