@@ -92,13 +92,16 @@ export default {
   line-height: 57px;
   padding: 10px 20px;
   text-decoration: none;
+  color: #d0604d;
 
   &.nuxt-link-exact-active {
     border-bottom: 3px solid var(--color-primary);
+    color: #d0604d;
   }
 
   &.first__link.nuxt-link-exact-active {
     border-bottom-left-radius: 255px 15px;
+    color: #d0604d;
   }
 }
 

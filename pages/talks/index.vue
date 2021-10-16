@@ -4,7 +4,7 @@
         alt: 'Me, recording things'
       }">
     <main>
-      <section class="past-talks handdraw-line" data-cy="PastTalkOverview">
+      <section class="past-talks" data-cy="PastTalkOverview">
         <h2>Talks I held in the past</h2>
         <div class="featured-posts">
           <SmallTile
@@ -24,13 +24,14 @@
         <div class="handdraw-line"></div>
         <div class="gradient"></div>
         <div class="talks__inner">
+          <div class="gradient"></div>
           <div class="talks__text">
             <h2 class="talks__title">See my Speakerdeck!</h2>
-            <p class="talks__sub-title">Here you can see all of my Slides in one place! 🙌 </p>
+            <p class="talks__sub-title">Here you can see all of my slides in one place! 🙌 </p>
             <Button
               variant="secondary"
               @click.native="openLink('https://speakerdeck.com/leichteckig')"
-              data-cy="ButtonToTalks">
+              data-cy="ButtonToSlideDeck">
               Talks
             </Button>
           </div>
@@ -84,14 +85,14 @@ export default {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')
-      .limit(6)
+      .limit(3)
       .fetch();
 
 
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
-      .limit(6)
+      .limit(3)
       .fetch();
 
     return {
@@ -114,32 +115,6 @@ h2 {
   text-align: center;
 }
 
-.publication .handdraw-line {
-  margin: 0;
-  overflow: hidden;
-  z-index: 3;
-}
-
-.publication__title {
-  font-size: 60px;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.publication__sub-title {
-  font-size: 30px;
-  font-weight: normal;
-  margin-bottom: 30px;
-  color: var(--color-primary);
-}
-
-.publication__inner {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
 .gradient {
   height: 30px;
 
@@ -157,5 +132,36 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.talks__title {
+  font-size: 60px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.talks__sub-title {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.talks__inner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gradient {
+  height: 30px;
+
+  background: repeating-linear-gradient(
+    45deg,
+    var(--border-color),
+    var(--border-color) 1px,
+    var(--bg) 1px,
+    var(--bg) 10px
+  );
 }
 </style>

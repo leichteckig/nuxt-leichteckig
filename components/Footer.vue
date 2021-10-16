@@ -47,12 +47,12 @@ export default {
   .main-footer__link {
     display: inline-block;
     text-decoration: none;
-    color: var(--color-primary);
+    color: #d0604d;
   }
 
   .main-footer__social-links .button-item {
     svg {
-      color: var(--color-primary);
+      color: #d0604d;
     }
   }
 
