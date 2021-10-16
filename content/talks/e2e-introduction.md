@@ -4,6 +4,7 @@ description: When it comes to UI testing, some developers tend to be reluctant a
 createdAt: 2020-03-13T22:50:54.724Z
 author:
   name: Ramona Schwering
+  bio: https://speakerdeck.com/leichteckig/end-to-end-testing-as-it-should-be-an-introduction-to-cypress
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Symfony UK Meetup

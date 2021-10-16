@@ -4,6 +4,7 @@ description: A liar will not be believed even if he tells the truth.
 createdAt: 2020-09-25T22:50:54.724Z
 author:
   name: Ramona Schwering
+  bio: https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - CityJS London
