@@ -19,6 +19,5 @@ describe('Footer component', () => {
     });
 
     expect(wrapper.find('.main-footer__social-links')).toBeTruthy();
-    expect(wrapper.find('.main-footer__link').attributes().href).toBe('/imprint');
   });
 });
