@@ -15,39 +15,27 @@ export default {
 
   head() {
     return {
-      title: this.talk.title,
+      title: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          hid: this.talk.title.replace(' ', '-'),
-          name: this.talk.title,
-          content: this.talk.description
+          hid: this.talk?.title ? this.talk.title.replace(' ', '-') : 'Ramona-Schwering-Blog',
+          name: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
+          content: this.talk?.description ? this.talk.description : 'Frontend Developer',
         },
-        { name: 'og:title', hid:'og:title', content: this.talk.title },
-        { name: 'og:description', hid:'og:description', content: this.talk.description },
-      ],
-      link: [
-        this.getCanonicalLink,
-      ],
+        { name: 'og:title', hid:'og:title', content: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog' },
+        {
+          name: 'og:description',
+          hid:'og:description',
+          content: this.talk?.description ? this.talk.description : 'Frontend Developer'
+        },
+      ]
     }
   },
 
   components: {
     DetailSummary
-  },
-
-  computed: {
-    getCanonicalLink() {
-      if (!this.talk.author.bio?.includes('speakerdeck')) {
-        return {}
-      }
-
-      return {
-        rel: 'canonical',
-        href: this.talk.author.bio
-      };
-    },
   },
 
   methods: {

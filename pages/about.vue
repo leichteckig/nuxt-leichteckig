@@ -196,17 +196,18 @@ export default {
             && !project.description?.includes('example')
             && !project.description?.includes('Leichteckig')
           );
-        }).then(() => {
-        fetch(ownStarsUrl)
-          .then((resp) => resp.json())
-          .then((data) => {
-            let someStars = data.filter(project => project.full_name.includes('3stadt')
-              || project.full_name.includes('platform')
-              || project.full_name.includes('FriendsOfShopware')
-            );
-            this.projects = [...this.projects, ...someStars]
-          });
-      });
+        })
+        .then(() => {
+          fetch(ownStarsUrl)
+            .then((resp) => resp.json())
+            .then((data) => {
+              let someStars = data.filter(project => project.full_name.includes('3stadt')
+                || project.full_name.includes('platform')
+                || project.full_name.includes('FriendsOfShopware')
+              );
+              this.projects = [ ...this.projects, ...someStars]
+            });
+        });
     }
   },
 }

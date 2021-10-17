@@ -113,21 +113,6 @@ export default {
   },
 
   methods: {
-    getTableClasses(entry) {
-      if(entry.tags?.includes('placeholder')) {
-        return 'handdraw-line talk--placeholder'
-      }
-
-      if(entry.tags?.includes('CypressDE')) {
-        return 'handdraw-line talk--cyde'
-      }
-
-      if(entry.tags?.includes('old')) {
-        return 'handdraw-line talk--old'
-      }
-      return 'handdraw-line';
-    },
-
     getPastDate(eventDate) {
       if(Date.now() < Date.parse(eventDate)) {
         return true;

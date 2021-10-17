@@ -14,7 +14,8 @@
         <Button
           class="media-grid__btn"
           variant="secondary"
-          @click.native="openSocialLink(entry.url)">
+          @click.native="openSlideLink(entry.url)"
+          data-cy="OpenSlides">
           {{ entry.name }}
         </Button>
       </div>
@@ -34,8 +35,10 @@ export default {
   },
 
   methods: {
-    openSocialLink(link) {
+    openSlideLink(link) {
       window.open(link, '_blank');
+
+      this.$emit('open');
     }
   }
 }
