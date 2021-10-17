@@ -1,28 +1,45 @@
 <template>
   <Page title="Ramona Schwering's content">
     <main class="other-publications">
-      <h2 data-cy="PublicationListingTitle">Guest contributions and appearances</h2>
+      <h2 data-cy="PublicationListingTitle">
+        Guest contributions and appearances
+      </h2>
       <div class="featured-posts">
-        <LinkTile :contents="publications">
-        </LinkTile>
+        <LinkTile :contents="publications" />
       </div>
     </main>
   </Page>
 </template>
 
 <script>
-import LinkTile from "@/components/LinkTile";
+import LinkTile from '@/components/LinkTile'
 
 export default {
-  name: 'publicationList',
+  name: 'PublicationList',
 
   components: {
     LinkTile
   },
 
-  head() {
+  async asyncData ({ $content }) {
+    const pastTalks = await $content('talks')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('createdAt', 'asc').limit(6)
+      .fetch()
+
+    const publications = await $content('publications')
+      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
+      .sortBy('createdAt', 'desc')
+      .fetch()
+
     return {
-      title: "Ramona Schwering\'s guest appearances",
+      pastTalks, publications
+    }
+  },
+
+  head () {
+    return {
+      title: 'Ramona Schwering\'s guest appearances',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -33,23 +50,7 @@ export default {
         }
       ]
     }
-  },
-
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc').limit(6)
-      .fetch();
-
-    const publications = await $content('publications')
-      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      pastTalks, publications
-    }
-  },
+  }
 
 }
 </script>

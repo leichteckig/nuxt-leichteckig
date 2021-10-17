@@ -8,10 +8,10 @@ describe('SmallTile component', () => {
         contents: [],
         slugName: 'LargePosts'
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   it('should display article data', () => {
     const wrapper = shallowMount(SmallTile, {
@@ -25,8 +25,8 @@ describe('SmallTile component', () => {
       stubs: {
         NuxtLink: { template: '<div><slot></slot></div>' }
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
-});
+    expect(wrapper.vm).toBeTruthy()
+  })
+})

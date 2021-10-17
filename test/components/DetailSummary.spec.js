@@ -11,7 +11,7 @@ describe('DetailSummary component', () => {
           }
         }
       }
-    });
-    expect(wrapper.vm).toBeTruthy();
-  });
-});
+    })
+    expect(wrapper.vm).toBeTruthy()
+  })
+})

@@ -2,14 +2,14 @@
   <header class="header-main" data-cy="HeaderMain">
     <nav class="header-main__inner container">
       <button
-        @click="toggleMobileMenu"
         class="header-main__hamburger"
         :class="{ 'is--active': isMobileMenuActive }"
         aria-label="Open menu"
+        @click="toggleMobileMenu"
       >
-        <span class="top"></span>
-        <span class="center"></span>
-        <span class="bottom"></span>
+        <span class="top" />
+        <span class="center" />
+        <span class="bottom" />
       </button>
       <div
         class="header-main__nav-links"
@@ -18,33 +18,37 @@
         <nuxt-link
           class="header-main__link first__link"
           to="/"
+          data-cy="Home"
           @click.native="toggleMobileMenu"
-          data-cy="Home">
+        >
           Home
         </nuxt-link>
         <nuxt-link
           class="header-main__link second__link"
           to="/blog"
+          data-cy="Writing"
           @click.native="toggleMobileMenu"
-          data-cy="Writing">
+        >
           Writing
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
           to="/talks"
+          data-cy="Speaking"
           @click.native="toggleMobileMenu"
-          data-cy="Speaking">
+        >
           Speaking
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
           to="/conferences"
+          data-cy="Attending"
           @click.native="toggleMobileMenu"
-          data-cy="Attending">
+        >
           Attending
         </nuxt-link>
       </div>
-      <ColorModePicker class="color-mode__container"/>
+      <ColorModePicker class="color-mode__container" />
     </nav>
   </header>
 </template>
@@ -59,15 +63,15 @@ export default {
     ColorModePicker
   },
 
-  data() {
+  data () {
     return {
       isMobileMenuActive: false
     }
   },
 
   methods: {
-    toggleMobileMenu() {
-      this.isMobileMenuActive = !this.isMobileMenuActive;
+    toggleMobileMenu () {
+      this.isMobileMenuActive = !this.isMobileMenuActive
     }
   }
 }

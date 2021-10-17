@@ -3,19 +3,19 @@
     class="hero-image"
     :src="`/${img.path}`"
     :alt="img.alt"
-  />
+  >
 </template>
 
 <script>
 export default {
-  name: "Hero",
+  name: 'Hero',
 
   props: {
     img: {
       type: Object,
       required: true
     }
-  },
+  }
 }
 </script>
 

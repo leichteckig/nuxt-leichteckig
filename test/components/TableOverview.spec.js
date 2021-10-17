@@ -1,4 +1,4 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import TableOverview from '@/components/TableOverview.vue'
 
 describe('TableOverview component', () => {
@@ -8,10 +8,10 @@ describe('TableOverview component', () => {
         contents: [],
         slugName: 'TableOverview'
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   it('should display an upcoming conference', () => {
     const wrapper = shallowMount(TableOverview, {
@@ -25,13 +25,13 @@ describe('TableOverview component', () => {
         }],
         slugName: 'TableOverview'
       }
-    });
+    })
 
-    expect(wrapper.find('td[data-label=Title]').text()).toContain('Upcoming talk on conference');
-    expect(wrapper.find('td[data-label=Conference]').text()).toContain('Upcoming conference');
-    expect(wrapper.find('.talk-event-table__url').attributes().href).toBe('http://localhost:3000/moe.jpg');
-    expect(wrapper.find('td[data-label=Date]').text()).toContain('September 25, 2025');
-  });
+    expect(wrapper.find('td[data-label=Title]').text()).toContain('Upcoming talk on conference')
+    expect(wrapper.find('td[data-label=Conference]').text()).toContain('Upcoming conference')
+    expect(wrapper.find('.talk-event-table__url').attributes().href).toBe('http://localhost:3000/moe.jpg')
+    expect(wrapper.find('td[data-label=Date]').text()).toContain('September 25, 2025')
+  })
 
   it('cross out an old conference', () => {
     const wrapper = shallowMount(TableOverview, {
@@ -45,7 +45,7 @@ describe('TableOverview component', () => {
         }],
         slugName: 'TableOverview'
       }
-    });
-    expect(wrapper.find('.talk--old')).toBeTruthy();
-  });
-});
+    })
+    expect(wrapper.find('.talk--old')).toBeTruthy()
+  })
+})

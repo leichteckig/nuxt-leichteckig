@@ -1,4 +1,4 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import MediaGrid from '@/components/MediaGrid.vue'
 
 describe('MediaGrid component', () => {
@@ -10,11 +10,11 @@ describe('MediaGrid component', () => {
           url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
         }]
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
-  
+    expect(wrapper.vm).toBeTruthy()
+  })
+
   it.skip('should render image path', () => {
     const wrapper = shallowMount(MediaGrid, {
       propsData: {
@@ -23,8 +23,8 @@ describe('MediaGrid component', () => {
           url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
         }]
       }
-    });
+    })
 
-    expect(wrapper.find('iframe').attributes().src).toBe('https://www.youtube.com/embed/sxvQoWF4KS0');
-  });
-});
+    expect(wrapper.find('iframe').attributes().src).toBe('https://www.youtube.com/embed/sxvQoWF4KS0')
+  })
+})

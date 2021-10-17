@@ -9,12 +9,12 @@ describe('ColorModePicker component', () => {
       },
       mocks: {
         $colorMode: 'unknown'
-      },
-    });
+      }
+    })
     wrapper.setData({
       colors: ['system', 'light', 'dark']
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
-});
+    expect(wrapper.vm).toBeTruthy()
+  })
+})

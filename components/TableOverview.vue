@@ -2,88 +2,101 @@
   <section class="talk-event-table">
     <table>
       <thead>
-      <tr class="handdraw-line">
-        <th>Talk or event title</th>
-        <th>Conference / Event</th>
-        <th>Date</th>
-      </tr>
+        <tr class="handdraw-line">
+          <th>Talk or event title</th>
+          <th>Conference / Event</th>
+          <th>Date</th>
+        </tr>
       </thead>
       <tbody>
-      <tr v-if="contents.length"
+        <tr
           v-for="entry in contents"
-          class="handdraw-line">
-        <td data-label="Title" v-if="getPastDate(entry.createdAt)">
-          {{ entry.title }}
-        </td>
-        <td v-if="getPastDate(entry.createdAt)" data-label="Conference">
-          <!-- entry.img == link of the event -->
-          <a v-if="entry.img"
-             class="talk-event-table__url"
-             :href="entry.img"
-             target="_blank"
-             rel="noopener">
-
-            <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </a>
-          <span v-else>
-
-          <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </span>
-        </td>
-        <td v-if="getPastDate(entry.createdAt)" data-label="Date">
-          <!-- entry.alt == Date of the event in more pretty -->
-          <span v-if="entry.alt">
-          {{ entry.alt }}
-          </span>
-        </td>
-      </tr>
-      <tr class="handdraw-line talk--placeholder">
-        <td data-label="Title"></td>
-        <td data-label="Conference"></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr class="handdraw-line talk--cyde">
-        <td data-label="Title">Not always as a speaker, but it's our Cypress Germany meetup! ❤️</td>
-        <td data-label="Conference"><a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr class="handdraw-line talk--placeholder">
-        <td data-label="Title"></td>
-        <td data-label="Conference"></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr v-for="entry in contents"
-          class="handdraw-line talk--old">
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Title">
-          <!-- entry.img == link of the event -->
-          <span>
+          :key="entry.title"
+          class="handdraw-line"
+        >
+          <td v-if="getPastDate(entry.createdAt)" data-label="Title">
             {{ entry.title }}
-          </span>
-        </td>
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Conference">
-          <!-- entry.img == link of the event -->
-          <a v-if="entry.img"
-             class="talk-event-table__url"
-             :href="entry.img"
-             target="_blank"
-             rel="noopener">
-            <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </a>
-          <span v-else>
-          <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </span>
-        </td>
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Date">
-          <!-- entry.alt == Date of the event in more pretty -->
-          <span v-if="entry.alt">
-          {{ entry.alt }}
-          </span>
-        </td>
-      </tr>
+          </td>
+          <td v-if="getPastDate(entry.createdAt)" data-label="Conference">
+            <!-- entry.img == link of the event -->
+            <a
+              v-if="entry.img"
+              class="talk-event-table__url"
+              :href="entry.img"
+              target="_blank"
+              rel="noopener"
+            >
+
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </a>
+            <span v-else>
+
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </span>
+          </td>
+          <td v-if="getPastDate(entry.createdAt)" data-label="Date">
+            <!-- entry.alt == Date of the event in more pretty -->
+            <span v-if="entry.alt">
+              {{ entry.alt }}
+            </span>
+          </td>
+        </tr>
+        <tr class="handdraw-line talk--placeholder">
+          <td data-label="Title" />
+          <td data-label="Conference" />
+          <td data-label="Date" />
+        </tr>
+        <tr class="handdraw-line talk--cyde">
+          <td data-label="Title">
+            Not always as a speaker, but it's our Cypress Germany meetup! ❤️
+          </td>
+          <td data-label="Conference">
+            <a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a>
+          </td>
+          <td data-label="Date" />
+        </tr>
+        <tr class="handdraw-line talk--placeholder">
+          <td data-label="Title" />
+          <td data-label="Conference" />
+          <td data-label="Date" />
+        </tr>
+        <tr
+          v-for="entry in contents"
+          :key="entry.tile"
+          class="handdraw-line talk--old"
+        >
+          <td v-if="!getPastDate(entry.createdAt)" data-label="Title">
+            <!-- entry.img == link of the event -->
+            <span>
+              {{ entry.title }}
+            </span>
+          </td>
+          <td v-if="!getPastDate(entry.createdAt)" data-label="Conference">
+            <!-- entry.img == link of the event -->
+            <a
+              v-if="entry.img"
+              class="talk-event-table__url"
+              :href="entry.img"
+              target="_blank"
+              rel="noopener"
+            >
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </a>
+            <span v-else>
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </span>
+          </td>
+          <td v-if="!getPastDate(entry.createdAt)" data-label="Date">
+            <!-- entry.alt == Date of the event in more pretty -->
+            <span v-if="entry.alt">
+              {{ entry.alt }}
+            </span>
+          </td>
+        </tr>
       </tbody>
     </table>
   </section>
@@ -92,7 +105,7 @@
 <script>
 
 export default {
-  name: "TableOverview",
+  name: 'TableOverview',
 
   props: {
     contents: {
@@ -102,24 +115,24 @@ export default {
   },
 
   methods: {
-    getTableClasses(entry) {
-      if(entry.tags?.includes('placeholder')) {
+    getTableClasses (entry) {
+      if (entry.tags?.includes('placeholder')) {
         return 'handdraw-line talk--placeholder'
       }
 
-      if(entry.tags?.includes('CypressDE')) {
+      if (entry.tags?.includes('CypressDE')) {
         return 'handdraw-line talk--cyde'
       }
 
-      if(entry.tags?.includes('old')) {
+      if (entry.tags?.includes('old')) {
         return 'handdraw-line talk--old'
       }
-      return 'handdraw-line';
+      return 'handdraw-line'
     },
 
-    getPastDate(eventDate) {
-      if(Date.now() < Date.parse(eventDate)) {
-        return true;
+    getPastDate (eventDate) {
+      if (Date.now() < Date.parse(eventDate)) {
+        return true
       }
     }
   }

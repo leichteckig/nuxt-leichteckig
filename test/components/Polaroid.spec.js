@@ -7,18 +7,18 @@ describe('Polaroid component', () => {
       propsData: {
         imagePath: 'test/images/amazing.png'
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   it('should render image path', () => {
     const wrapper = shallowMount(Polaroid, {
       propsData: {
         imagePath: 'test/images/amazing.png'
       }
-    });
+    })
 
-    expect(wrapper.find('.image').attributes().src).toBe('test/images/amazing.png');
-  });
-});
+    expect(wrapper.find('.image').attributes().src).toBe('test/images/amazing.png')
+  })
+})

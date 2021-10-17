@@ -1,37 +1,46 @@
 <template>
-  <Page title="My content and other publications" :img="{
-        path: 'recording-ramona-schwering.jpg',
-        alt: 'Me, recording things'
-      }">
+  <Page
+    title="My content and other publications"
+    :img="{
+      path: 'recording-ramona-schwering.jpg',
+      alt: 'Me, recording things'
+    }"
+  >
     <main>
       <section class="past-talks" data-cy="PastTalkOverview">
         <h2>Talks I held in the past</h2>
         <div class="featured-posts">
           <SmallTile
             :contents="pastTalks"
-            slugName="talks"
+            slug-name="talks"
           />
         </div>
         <div class="more__button">
           <Button
-          @click.native="$router.push({ name: 'talkList' })"
-          data-cy="ButtonToTalks">
+            data-cy="ButtonToTalks"
+            @click.native="$router.push({ name: 'talkList' })"
+          >
             See more
           </Button>
         </div>
       </section>
       <section class="talks-refer handdraw-line" data-cy="PastTalks">
-        <div class="handdraw-line"></div>
-        <div class="gradient"></div>
+        <div class="handdraw-line" />
+        <div class="gradient" />
         <div class="talks__inner">
-          <div class="gradient"></div>
+          <div class="gradient" />
           <div class="talks__text">
-            <h2 class="talks__title">See my Speakerdeck!</h2>
-            <p class="talks__sub-title">Here you can see all of my slides in one place! 🙌 </p>
+            <h2 class="talks__title">
+              See my Speakerdeck!
+            </h2>
+            <p class="talks__sub-title">
+              Here you can see all of my slides in one place! 🙌
+            </p>
             <Button
               variant="secondary"
+              data-cy="ButtonToSlideDeck"
               @click.native="openLink('https://speakerdeck.com/leichteckig')"
-              data-cy="ButtonToSlideDeck">
+            >
               Talks
             </Button>
           </div>
@@ -40,13 +49,13 @@
       <section class="guest-contributions" data-cy="PublicationOverview">
         <h2>Guest contributions and appearances</h2>
         <div class="featured-posts">
-          <LinkTile :contents="publications">
-          </LinkTile>
+          <LinkTile :contents="publications" />
         </div>
         <div class="more__button">
           <Button
-          @click.native="$router.push({ name: 'publicationList' })"
-          data-cy="ButtonToPublications">
+            data-cy="ButtonToPublications"
+            @click.native="$router.push({ name: 'publicationList' })"
+          >
             See more
           </Button>
         </div>
@@ -56,22 +65,38 @@
 </template>
 
 <script>
-import LinkTile from "@/components/LinkTile";
-import Hero from "@/components/Hero";
+import LinkTile from '@/components/LinkTile'
 
 export default {
-  name: 'speaking',
+  name: 'Speaking',
   components: {
-    LinkTile,
-    Hero
+    LinkTile
   },
 
-  head() {
+  async asyncData ({ $content }) {
+    const pastTalks = await $content('talks')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('updatedAt', 'desc')
+      .limit(3)
+      .fetch()
+
+    const publications = await $content('publications')
+      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
+      .sortBy('createdAt', 'desc')
+      .limit(3)
+      .fetch()
+
+    return {
+      pastTalks, publications
+    }
+  },
+
+  head () {
     return {
       title: 'Speaking',
       meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           hid: 'speaking-description',
           name: 'speaking',
@@ -81,28 +106,9 @@ export default {
     }
   },
 
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('updatedAt', 'desc')
-      .limit(3)
-      .fetch();
-
-
-    const publications = await $content('publications')
-      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'desc')
-      .limit(3)
-      .fetch();
-
-    return {
-      pastTalks, publications
-    }
-  },
-
   methods: {
-    openLink(link) {
-      window.open(link, '_blank',  'noopener');
+    openLink (link) {
+      window.open(link, '_blank', 'noopener')
     }
   }
 }

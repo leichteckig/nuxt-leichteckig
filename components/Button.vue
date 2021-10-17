@@ -2,8 +2,9 @@
   <button
     v-bind="$attrs"
     class="button"
-    :class="[ 'button--' + variant ]">
-    <slot></slot>
+    :class="[ 'button--' + variant ]"
+  >
+    <slot />
   </button>
 </template>
 

@@ -1,12 +1,16 @@
 <template>
-  <Page title="Ramona Schwering's Past talks"
-      class="talk-list">
+  <Page
+    title="Ramona Schwering's Past talks"
+    class="talk-list"
+  >
     <main class="past-talks">
-      <h2 data-cy="PastTalkHeader">Talks I held in the past</h2>
+      <h2 data-cy="PastTalkHeader">
+        Talks I held in the past
+      </h2>
       <div class="featured-posts">
         <SmallTile
           :contents="pastTalks"
-          slugName="talks"
+          slug-name="talks"
         />
       </div>
     </main>
@@ -14,17 +18,23 @@
 </template>
 
 <script>
-import LinkTile from "@/components/LinkTile";
-
 export default {
-  name: 'talkList',
-  components: {
-    LinkTile
+  name: 'TalkList',
+
+  async asyncData ({ $content }) {
+    const pastTalks = await $content('talks')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('updatedAt', 'desc')
+      .fetch()
+
+    return {
+      pastTalks
+    }
   },
 
-  head() {
+  head () {
     return {
-      title: "Ramona Schwering\'s Talks",
+      title: 'Ramona Schwering\'s Talks',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -35,18 +45,7 @@ export default {
         }
       ]
     }
-  },
-
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('updatedAt', 'desc')
-      .fetch();
-
-    return {
-      pastTalks
-    }
-  },
+  }
 
 }
 </script>

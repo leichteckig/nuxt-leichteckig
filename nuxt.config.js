@@ -15,28 +15,47 @@ export default {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8'},
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       {
         hid: 'description',
         name: 'description',
         content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.'
       },
-      {property: 'og:title', hid: 'og:title', content: 'Ramona Schwering'},
+      { property: 'og:title', hid: 'og:title', content: 'Ramona Schwering' },
       {
         property: 'og:description',
         hid: 'og:description',
         content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
       },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:image', property: 'og:image', content: 'https://www.ramona.codes/ogimage.png' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://www.ramona.codes/ogimage.png'
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@nuxt_js'
+      },
       {
         hid: 'twitter:url',
         name: 'twitter:url',
-        content: 'https://www.ramona.codes',
+        content: 'https://www.ramona.codes'
       },
-      { name: 'twitter:card', hid:'twitter:card', content: 'summary_large_image' }
+      {
+        name: 'twitter:card',
+        hid: 'twitter:card',
+        content: 'summary_large_image'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -59,7 +78,8 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/svg',
     '@nuxtjs/google-fonts',
-    '@/modules/sitemapRouteGenerator'
+    '@/modules/sitemapRouteGenerator',
+    '@nuxt/typescript-build'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -77,7 +97,7 @@ export default {
     hostname: 'https://www.ramona.codes',
     cacheTime: 1000 * 60 * 15,
     defaults: {
-      lastmod: new Date(),
+      lastmod: new Date()
     }
   },
 
@@ -91,7 +111,7 @@ export default {
     base64: true,
     families: {
       Roboto: true,
-      'Amatic+SC': true,
+      'Amatic+SC': true
     }
   }
 }

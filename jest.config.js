@@ -3,7 +3,7 @@ module.exports = {
     '^.+/(.*\\.svg)\\?inline$': '<rootDir>/assets/icons/$1',
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js',
+    '^vue$': 'vue/dist/vue.common.js'
   },
   moduleFileExtensions: [
     'js',
@@ -13,7 +13,7 @@ module.exports = {
   transform: {
     '^.+\\.svg$': '<rootDir>/svgTransform.js',
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest',
+    '.*\\.(vue)$': 'vue-jest'
   },
   collectCoverage: true,
   collectCoverageFrom: [
@@ -21,6 +21,6 @@ module.exports = {
     '<rootDir>/pages/**/*.vue'
   ],
   testPathIgnorePatterns: [
-    "<rootDir>/cypress/"
+    '<rootDir>/cypress/'
   ]
 }

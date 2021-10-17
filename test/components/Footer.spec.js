@@ -7,17 +7,17 @@ describe('Footer component', () => {
       stubs: {
         NuxtLink: { template: '<div></div>' }
       }
-    });
-    expect(wrapper.vm).toBeTruthy();
-  });
+    })
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   it('should provide navigation to major areas', () => {
     const wrapper = shallowMount(Footer, {
       stubs: {
         NuxtLink: { template: '<div></div>' }
       }
-    });
+    })
 
-    expect(wrapper.find('.main-footer__social-links')).toBeTruthy();
-  });
-});
+    expect(wrapper.find('.main-footer__social-links')).toBeTruthy()
+  })
+})

@@ -7,7 +7,8 @@
         class="button-item"
         role="button"
         aria-label="SocialMediaButtons"
-        @click.prevent="openSocialLink(icon.link)">
+        @click.prevent="openSocialLink(icon.link)"
+      >
         <component
           :is="`icon-${icon.name}`"
         />
@@ -17,10 +18,10 @@
 </template>
 
 <script>
-import IconTwitter from '@/assets/icons/twitter.svg?inline';
-import IconGithub from '@/assets/icons/github.svg?inline';
-import IconLinkedin from '@/assets/icons/linkedin.svg?inline';
-import IconXing from '@/assets/icons/xing.svg?inline';
+import IconTwitter from '@/assets/icons/twitter.svg?inline'
+import IconGithub from '@/assets/icons/github.svg?inline'
+import IconLinkedin from '@/assets/icons/linkedin.svg?inline'
+import IconXing from '@/assets/icons/xing.svg?inline'
 import socials from '@/content/json/social.json'
 
 export default {
@@ -33,19 +34,19 @@ export default {
     IconXing
   },
 
-  data() {
+  data () {
     return {
       socialIcons: []
     }
   },
 
-  created() {
-    this.socialIcons = socials;
+  created () {
+    this.socialIcons = socials
   },
 
   methods: {
-    openSocialLink(link) {
-      window.open(link, '_blank', 'noopener');
+    openSocialLink (link) {
+      window.open(link, '_blank', 'noopener')
     }
   }
 }

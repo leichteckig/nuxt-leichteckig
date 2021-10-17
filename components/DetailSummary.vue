@@ -1,7 +1,7 @@
 <template>
   <section data-cy="DetailSummary">
-    <div class="handdraw-line"></div>
-    <div class="gradient"></div>
+    <div class="handdraw-line" />
+    <div class="gradient" />
     <div class="summary-detail__summary-card handdraw-line">
       <div class="summary-detail__author-card">
         <img
@@ -11,15 +11,19 @@
           :alt="article.author.name"
         >
         <div class="summary-detail__basic-info summary-detail__text-muted">
-          <div class="summary-detail__author-name">{{ article.author.name }}</div>
+          <div class="summary-detail__author-name">
+            {{ article.author.name }}
+          </div>
           <p>{{ formatDate(article.createdAt) }}</p>
         </div>
       </div>
-      <p class="summary-detail__description" data-cy="DetailSummaryDescription">{{ article.description }}</p>
-      <div class="summary-detail__tag-container">
+      <p class="summary-detail__description" data-cy="DetailSummaryDescription">
+        {{ article.description }}
+      </p>
+      <div v-if="article.tag" class="summary-detail__tag-container">
         <div
-          v-if="article.tags"
           v-for="tag in article.tags"
+          :key="tag"
           class="summary-detail__tag"
         >
           {{ tag }}
@@ -41,7 +45,7 @@ export default {
   },
 
   methods: {
-    formatDate(date) {
+    formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }

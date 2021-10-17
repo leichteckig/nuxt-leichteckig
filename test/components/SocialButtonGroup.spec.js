@@ -3,8 +3,8 @@ import SocialButtonGroup from '@/components/SocialButtonGroup.vue'
 
 describe('ColorModePicker component', () => {
   it('should be a Vue instance', () => {
-    const wrapper = shallowMount(SocialButtonGroup);
+    const wrapper = shallowMount(SocialButtonGroup)
 
-    expect(wrapper.vm).toBeTruthy();
-  });
-});
+    expect(wrapper.vm).toBeTruthy()
+  })
+})

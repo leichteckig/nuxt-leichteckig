@@ -3,24 +3,34 @@
     <main>
       <LargeTile
         :contents="articles"
-        slugName="blog"
-        data-cy="BlogListing">
-      </LargeTile>
+        slug-name="blog"
+        data-cy="BlogListing"
+      />
     </main>
-
   </Page>
 </template>
 
 <script>
-import LargeTile from '@/components/LargeTile';
+import LargeTile from '@/components/LargeTile'
 
 export default {
-  name: 'blogIndex',
+  name: 'BlogIndex',
   components: {
     LargeTile
   },
 
-  head() {
+  async asyncData ({ $content }) {
+    const articles = await $content('articles')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('createdAt', 'desc')
+      .fetch()
+
+    return {
+      articles
+    }
+  },
+
+  head () {
     return {
       title: 'Writing',
       meta: [
@@ -32,17 +42,6 @@ export default {
           content: 'Sometimes I write article and stuff. Head over to this list if you want to read them.'
         }
       ]
-    }
-  },
-
-  async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      articles
     }
   }
 }

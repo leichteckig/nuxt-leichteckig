@@ -8,7 +8,7 @@ describe('LargeTile component', () => {
         contents: [],
         slugName: 'LargePosts'
       }
-    });
-    expect(wrapper.vm).toBeTruthy();
-  });
-});
+    })
+    expect(wrapper.vm).toBeTruthy()
+  })
+})

@@ -2,27 +2,33 @@
   <section class="video-grid">
     <div
       v-for="entry in media"
-      :key="entry.name">
+      :key="entry.name"
+    >
       <div v-if="entry.name" class="slides">
-        <p v-if="entry.name.includes('Slides') && media.length === 1">You can find the slides on speakerdeck:</p>
+        <p v-if="entry.name.includes('Slides') && media.length === 1">
+          You can find the slides on speakerdeck:
+        </p>
         <Button
           class="slide-btn"
           variant="secondary"
-          @click.native="openSocialLink(entry.url)">
+          @click.native="openSocialLink(entry.url)"
+        >
           {{ entry.name }}
         </Button>
       </div>
       <div v-else class="video">
-        <h3 v-if="entry.name">{{ entry.name }}</h3>
-        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <h3 v-if="entry.name">
+          {{ entry.name }}
+        </h3>
+        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen />
       </div>
-   </div>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "MediaGrid",
+  name: 'MediaGrid',
 
   props: {
     media: {
@@ -32,8 +38,8 @@ export default {
   },
 
   methods: {
-    openSocialLink(link) {
-      window.open(link, '_blank');
+    openSocialLink (link) {
+      window.open(link, '_blank')
     }
   }
 }

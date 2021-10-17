@@ -3,22 +3,26 @@
     <!-- entry.img is used as link. Strange but serves the aim of getting a link only -->
     <a
       v-for="entry in contents"
+      :key="entry.slug"
       class="post handdraw-border"
       :href="entry.img"
       target="_blank"
       role="button"
-      :aria-label="entry.title.replace(' ', '-')">
+      :aria-label="entry.title.replace(' ', '-')"
+    >
       <h3 class="post__title">
         {{ entry.title }}
       </h3>
       <p v-if="entry.description">{{ entry.description }}</p>
       <div class="link-tile__tag-container">
-        <div
-          v-if="entry.tags"
-          v-for="tag in entry.tags"
-          class="link-tile__tag handdraw-border"
-        >
-          {{ tag }}
+        <div v-if="entry.tags">
+          <div
+            v-for="tag in entry.tags"
+            :key="tag"
+            class="link-tile__tag handdraw-border"
+          >
+            {{ tag }}
+          </div>
         </div>
       </div>
     </a>

@@ -3,22 +3,27 @@
     <h2>Meet me at...</h2>
     <main class="conference-talks" data-cy="EventAppearances">
       <div class="image-container">
-        <img alt="Moe giving talks" src="/ramona-schwering-talks-small.jpeg" class=" img-header"/>
+        <img alt="Moe giving talks" src="/ramona-schwering-talks-small.jpeg" class=" img-header">
       </div>
-      <TableOverview :contents="appearances"/>
+      <TableOverview :contents="appearances" />
     </main>
 
     <section class="talks-refer handdraw-line" data-cy="PastTalks">
-      <div class="handdraw-line"></div>
-      <div class="gradient"></div>
+      <div class="handdraw-line" />
+      <div class="gradient" />
       <div class="talks__inner">
         <div class="talks__text">
-          <h2 class="talks__title">Looking for my past talks?</h2>
-          <p class="talks__sub-title">Head over to the talks site for an overview!</p>
+          <h2 class="talks__title">
+            Looking for my past talks?
+          </h2>
+          <p class="talks__sub-title">
+            Head over to the talks site for an overview!
+          </p>
           <Button
             variant="secondary"
+            data-cy="ButtonToTalks"
             @click.native="$router.push({ name: 'talkList' })"
-            data-cy="ButtonToTalks">
+          >
             Talks
           </Button>
         </div>
@@ -28,15 +33,26 @@
 </template>
 
 <script>
-import TableOverview from "@/components/TableOverview";
+import TableOverview from '@/components/TableOverview'
 
 export default {
-  name: 'conferences',
+  name: 'Conferences',
   components: {
     TableOverview
   },
 
-  head() {
+  async asyncData ({ $content }) {
+    const appearances = await $content('conferences')
+      .only(['title', 'description', 'img', 'alt', 'createdAt'])
+      .sortBy('createdAt', 'asc')
+      .fetch()
+
+    return {
+      appearances
+    }
+  },
+
+  head () {
     return {
       title: 'Attending',
       meta: [
@@ -48,17 +64,6 @@ export default {
           content: 'Take a look at all events I\'ll visit or attended before.'
         }
       ]
-    }
-  },
-
-  async asyncData({ $content }) {
-    const appearances = await $content('conferences')
-      .only(['title', 'description', 'img', 'alt', 'createdAt'])
-      .sortBy('createdAt', 'asc')
-      .fetch();
-
-    return {
-      appearances
     }
   }
 }

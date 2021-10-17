@@ -6,7 +6,9 @@
           {{ title }}
         </span>
       </div>
-      <p class="hint__description" data-cy="DetailSummaryDescription">{{ message }}</p>
+      <p class="hint__description" data-cy="DetailSummaryDescription">
+        {{ message }}
+      </p>
     </div>
   </section>
 </template>
@@ -27,21 +29,21 @@ export default {
     type: {
       type: String,
       required: true
-    },
+    }
   },
 
   computed: {
-    getClasses() {
-      if (this.type === 'info') {
-        return 'hint hint-info';
+    getClasses () {
+      switch (this.type) {
+        case 'info':
+          return 'hint hint-info'
+        case 'error':
+          return 'hint hint-error'
+        default:
+          return 'hint hint-success'
       }
-      if (this.type === 'error') {
-        return 'hint hint-error';
-
-      }
-      return 'hint hint-success';
     }
-  },
+  }
 }
 </script>
 

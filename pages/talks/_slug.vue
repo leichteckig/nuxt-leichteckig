@@ -1,19 +1,29 @@
 <template>
   <Page :title="talk.title">
     <main class="talk--content" data-cy="TalkDetailContent">
-      <DetailSummary :article="talk"></DetailSummary>
+      <DetailSummary :article="talk" />
       <nuxt-content :document="talk" data-cy="TalkDetailContent" />
     </main>
   </Page>
 </template>
 
 <script>
-import DetailSummary from "@/components/DetailSummary";
+import DetailSummary from '@/components/DetailSummary'
 
 export default {
-  name: 'talkDetail',
+  name: 'TalkDetail',
 
-  head() {
+  components: {
+    DetailSummary
+  },
+
+  async asyncData ({ $content, params }) {
+    const talk = await $content('talks', params.slug).fetch()
+
+    return { talk }
+  },
+
+  head () {
     return {
       title: this.talk.title,
       meta: [
@@ -24,34 +34,24 @@ export default {
           name: this.talk.title,
           content: this.talk.description
         },
-        { name: 'og:title', hid:'og:title', content: this.talk.title },
-        { name: 'og:description', hid:'og:description', content: this.talk.description },
+        { name: 'og:title', hid: 'og:title', content: this.talk.title },
+        { name: 'og:description', hid: 'og:description', content: this.talk.description }
       ],
       link: [
         {
           rel: 'canoncial',
           href: this.talk.author.bio.includes('speakerdeck') ? this.talk.author.bio : undefined
-        },
-      ],
+        }
+      ]
     }
-  },
-
-  components: {
-    DetailSummary
   },
 
   methods: {
-    formatDate(date) {
+    formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
-  },
-
-  async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch();
-
-    return { talk }
-  },
+  }
 }
 </script>
 

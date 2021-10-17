@@ -10,10 +10,10 @@ describe('Hero component', () => {
           alt: 'moe'
         }
       }
-    });
+    })
 
-    expect(wrapper.vm).toBeTruthy();
-  });
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   it('should render image path', () => {
     const wrapper = shallowMount(Hero, {
@@ -23,9 +23,8 @@ describe('Hero component', () => {
           alt: 'moe'
         }
       }
-    });
+    })
 
-    expect(wrapper.find('.hero-image').attributes().src).toBe('/test/images/amazing.png');
-  });
-});
-
+    expect(wrapper.find('.hero-image').attributes().src).toBe('/test/images/amazing.png')
+  })
+})
