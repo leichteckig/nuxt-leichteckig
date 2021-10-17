@@ -21,7 +21,7 @@ export default {
       { property: 'og:title', hid:'og:title', content: 'Ramona Schwering' },
       { property: 'og:description', hid:'og:description', content: 'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:image', property: 'og:image', content: 'https://deploy-preview-46--suspicious-stonebraker-5d79a0.netlify.app/ogimage.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://www.ramona.codes/ogimage.png' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
       {
         hid: 'twitter:url',
