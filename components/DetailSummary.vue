@@ -33,8 +33,10 @@
   </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'DetailSummary',
 
   props: {
@@ -45,12 +47,11 @@ export default {
   },
 
   methods: {
-    formatDate (date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
+    formatDate (date: string):string {
+      return new Date(date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

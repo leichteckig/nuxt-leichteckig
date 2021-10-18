@@ -5,7 +5,25 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   generate: {
-    fallback: true
+    fallback: true,
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map((file) => {
+        const [catagory, path] = file.path.substring(1).split('/')
+
+        switch (catagory) {
+          case 'articles':
+            return `/blog/${path}`
+          case 'talks':
+            return `/talks/${path}`
+          default:
+            return false
+        }
+      }).filter(path => path)
+    }
+
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

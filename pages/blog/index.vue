@@ -10,10 +10,11 @@
   </Page>
 </template>
 
-<script>
-import LargeTile from '@/components/LargeTile'
+<script lang="ts">
+import Vue from 'vue'
+import LargeTile from '@/components/LargeTile.vue'
 
-export default {
+export default Vue.extend({
   name: 'BlogIndex',
   components: {
     LargeTile
@@ -44,7 +45,7 @@ export default {
       ]
     }
   }
-}
+})
 </script>
 
 <style scoped>

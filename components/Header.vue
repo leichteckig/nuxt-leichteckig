@@ -53,10 +53,11 @@
   </header>
 </template>
 
-<script>
-import ColorModePicker from '@/components/ColorModePicker'
+<script lang="ts">
+import Vue from 'vue'
+import ColorModePicker from '@/components/ColorModePicker.vue'
 
-export default {
+export default Vue.extend({
   name: 'Header',
 
   components: {
@@ -74,7 +75,7 @@ export default {
       this.isMobileMenuActive = !this.isMobileMenuActive
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

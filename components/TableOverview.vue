@@ -11,13 +11,13 @@
       <tbody>
         <tr
           v-for="entry in contents"
-          :key="entry.title"
+          :key="entry.path"
           class="handdraw-line"
         >
-          <td v-if="getPastDate(entry.createdAt)" data-label="Title">
+          <td v-if="isPastDate(entry.createdAt)" data-label="Title">
             {{ entry.title }}
           </td>
-          <td v-if="getPastDate(entry.createdAt)" data-label="Conference">
+          <td v-if="isPastDate(entry.createdAt)" data-label="Conference">
             <!-- entry.img == link of the event -->
             <a
               v-if="entry.img"
@@ -36,7 +36,7 @@
               {{ entry.description }}
             </span>
           </td>
-          <td v-if="getPastDate(entry.createdAt)" data-label="Date">
+          <td v-if="isPastDate(entry.createdAt)" data-label="Date">
             <!-- entry.alt == Date of the event in more pretty -->
             <span v-if="entry.alt">
               {{ entry.alt }}
@@ -64,16 +64,16 @@
         </tr>
         <tr
           v-for="entry in contents"
-          :key="entry.tile"
+          :key="entry.path"
           class="handdraw-line talk--old"
         >
-          <td v-if="!getPastDate(entry.createdAt)" data-label="Title">
+          <td v-if="!isPastDate(entry.createdAt)" data-label="Title">
             <!-- entry.img == link of the event -->
             <span>
               {{ entry.title }}
             </span>
           </td>
-          <td v-if="!getPastDate(entry.createdAt)" data-label="Conference">
+          <td v-if="!isPastDate(entry.createdAt)" data-label="Conference">
             <!-- entry.img == link of the event -->
             <a
               v-if="entry.img"
@@ -90,7 +90,7 @@
               {{ entry.description }}
             </span>
           </td>
-          <td v-if="!getPastDate(entry.createdAt)" data-label="Date">
+          <td v-if="!isPastDate(entry.createdAt)" data-label="Date">
             <!-- entry.alt == Date of the event in more pretty -->
             <span v-if="entry.alt">
               {{ entry.alt }}
@@ -101,10 +101,10 @@
     </table>
   </section>
 </template>
+<script lang="ts">
+import Vue from 'vue'
 
-<script>
-
-export default {
+export default Vue.extend({
   name: 'TableOverview',
 
   props: {
@@ -115,28 +115,14 @@ export default {
   },
 
   methods: {
-    getTableClasses (entry) {
-      if (entry.tags?.includes('placeholder')) {
-        return 'handdraw-line talk--placeholder'
-      }
-
-      if (entry.tags?.includes('CypressDE')) {
-        return 'handdraw-line talk--cyde'
-      }
-
-      if (entry.tags?.includes('old')) {
-        return 'handdraw-line talk--old'
-      }
-      return 'handdraw-line'
-    },
-
-    getPastDate (eventDate) {
+    isPastDate (eventDate: string) {
       if (Date.now() < Date.parse(eventDate)) {
         return true
       }
+      return false
     }
   }
-}
+})
 </script>
 
 <style scoped>

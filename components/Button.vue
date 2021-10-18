@@ -8,8 +8,10 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'Button',
 
   props: {
@@ -19,7 +21,7 @@ export default {
       required: false
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

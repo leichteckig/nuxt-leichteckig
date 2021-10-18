@@ -24,16 +24,17 @@
   </footer>
 </template>
 
-<script>
-import SocialButtonGroup from '@/components/SocialButtonGroup'
+<script lang="ts">
+import Vue from 'vue'
+import SocialButtonGroup from '@/components/SocialButtonGroup.vue'
 
-export default {
+export default Vue.extend({
   name: 'Footer',
 
   components: {
     SocialButtonGroup
   }
-}
+})
 </script>
 
 <style lang="scss">

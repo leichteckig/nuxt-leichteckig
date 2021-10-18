@@ -32,10 +32,11 @@
   </Page>
 </template>
 
-<script>
-import TableOverview from '@/components/TableOverview'
+<script lang="ts">
+import Vue from 'vue'
+import TableOverview from '@/components/TableOverview.vue'
 
-export default {
+export default Vue.extend({
   name: 'Conferences',
   components: {
     TableOverview
@@ -66,7 +67,7 @@ export default {
       ]
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

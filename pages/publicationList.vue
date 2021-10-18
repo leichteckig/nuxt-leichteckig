@@ -11,10 +11,11 @@
   </Page>
 </template>
 
-<script>
-import LinkTile from '@/components/LinkTile'
+<script lang="ts">
+import Vue from 'vue'
+import LinkTile from '@/components/LinkTile.vue'
 
-export default {
+export default Vue.extend({
   name: 'PublicationList',
 
   components: {
@@ -51,8 +52,7 @@ export default {
       ]
     }
   }
-
-}
+})
 </script>
 
 <style scoped>

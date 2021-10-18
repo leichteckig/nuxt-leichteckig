@@ -26,8 +26,10 @@
   </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'MediaGrid',
 
   props: {
@@ -38,11 +40,11 @@ export default {
   },
 
   methods: {
-    openSocialLink (link) {
+    openSocialLink (link: string) {
       window.open(link, '_blank')
     }
   }
-}
+})
 </script>
 
 <style scoped>

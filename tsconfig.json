@@ -24,8 +24,10 @@
         ]
       },
       "types": [
+        "./types/index.d.ts",
         "@nuxt/types",
         "@nuxt/content",
+        "@nuxtjs/color-mode",
         "@types/node"
       ]
     },

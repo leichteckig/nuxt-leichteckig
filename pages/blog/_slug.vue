@@ -17,10 +17,12 @@
   </Page>
 </template>
 
-<script>
-import DetailSummary from '@/components/DetailSummary'
+<script lang="ts">
+import Vue from 'vue'
+import { IContentDocument } from '@nuxt/content/types/content'
+import DetailSummary from '@/components/DetailSummary.vue'
 
-export default {
+export default Vue.extend({
   name: 'BlogDetail',
 
   components: {
@@ -28,7 +30,11 @@ export default {
   },
 
   async asyncData ({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
+    const article = await $content('articles', params.slug).fetch() as IContentDocument & {img?: string}
+
+    if (article.img) {
+      article.img = `https://www.ramona.codes/${article.img}`
+    }
 
     return { article }
   },
@@ -37,14 +43,16 @@ export default {
     return {
       article: {
         title: 'Ramona Schwering',
-        description: 'Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.'
+        description: 'Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.',
+        img: 'https://www.ramona.codes/ogimage.png'
       }
     }
   },
 
   head () {
+    const article = this.$data.article
     return {
-      title: this.article.title,
+      title: article.title,
       meta: [
         { charset: 'utf-8' },
         {
@@ -54,29 +62,29 @@ export default {
         {
           property: 'og:title',
           hid: 'og:title-detail',
-          content: this.article.title
+          content: article.title
         },
         {
           property: 'og:description',
           hid: 'og:description-detail',
-          content: this.article.description
+          content: article.description
         },
         {
           hid: 'og:image-detail',
           property: 'og:image',
-          content: this.article.img ? `https://www.ramona.codes/${this.article.img}` : 'https://www.ramona.codes/ogimage.png'
+          content: article.img
         },
         { name: 'twitter:card', hid: 'twitter:card-detail', content: 'summary_large_image' }
       ],
       link: [
         {
           rel: 'canoncial',
-          href: this.article.author.bio.includes('smashing') ? this.article.author.bio : undefined
+          href: article.author.bio.includes('smashing') ? article.author.bio : undefined
         }
       ]
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

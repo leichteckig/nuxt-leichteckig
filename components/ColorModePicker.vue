@@ -19,12 +19,13 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import IconSystem from '@/assets/icons/system.svg?inline'
 import IconLight from '@/assets/icons/light.svg?inline'
 import IconDark from '@/assets/icons/dark.svg?inline'
 
-export default {
+export default Vue.extend({
   name: 'ColorModePicker',
 
   components: {
@@ -38,8 +39,9 @@ export default {
       colors: ['system', 'light', 'dark']
     }
   },
+
   methods: {
-    getClasses (color) {
+    getClasses (color: string): { preferred?: boolean, selected?: boolean } {
       // Does not set classes on ssr when preference is system
       // (because we don't know the preference until client-side)
       if (this.$colorMode.unknown) {
@@ -51,7 +53,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped>

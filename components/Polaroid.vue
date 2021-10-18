@@ -6,9 +6,10 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   name: 'Polaroid',
 
   props: {
@@ -17,7 +18,7 @@ export default {
       required: true
     }
   }
-}
+})
 </script>
 
 <style scoped>

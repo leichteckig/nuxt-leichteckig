@@ -1,13 +1,15 @@
 <template>
   <img
     class="hero-image"
-    :src="`/${img.path}`"
+    :src="img.path"
     :alt="img.alt"
   >
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'Hero',
 
   props: {
@@ -16,7 +18,7 @@ export default {
       required: true
     }
   }
-}
+})
 </script>
 
 <style scoped>

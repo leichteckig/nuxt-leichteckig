@@ -7,10 +7,11 @@
   </Page>
 </template>
 
-<script>
-import DetailSummary from '@/components/DetailSummary'
+<script lang="ts">
+import Vue from 'vue'
+import DetailSummary from '@/components/DetailSummary.vue'
 
-export default {
+export default Vue.extend({
   name: 'TalkDetail',
 
   components: {
@@ -24,35 +25,47 @@ export default {
   },
 
   head () {
+    const talk = this.$data.talk
+
     return {
-      title: this.talk.title,
+      title: talk.title,
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          hid: this.talk.title.replace(' ', '-'),
-          name: this.talk.title,
-          content: this.talk.description
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
         },
-        { name: 'og:title', hid: 'og:title', content: this.talk.title },
-        { name: 'og:description', hid: 'og:description', content: this.talk.description }
+        {
+          hid: talk.title.replace(' ', '-'),
+          name: talk.title,
+          content: talk.description
+        },
+        {
+          name: 'og:title',
+          hid: 'og:title',
+          content: talk.title
+        },
+        {
+          name: 'og:description',
+          hid: 'og:description',
+          content: talk.description
+        }
       ],
       link: [
         {
           rel: 'canoncial',
-          href: this.talk.author.bio.includes('speakerdeck') ? this.talk.author.bio : undefined
+          href: talk.author.bio.includes('speakerdeck') ? talk.author.bio : undefined
         }
       ]
     }
   },
 
   methods: {
-    formatDate (date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
+    formatDate (date: string) {
+      return new Date(date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
     }
   }
-}
+})
 </script>
 
 <style scoped>

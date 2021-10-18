@@ -46,12 +46,13 @@
   </main>
 </template>
 
-<script>
-import SmallTile from '../components/SmallTile'
-import Polaroid from '../components/Polaroid'
-import SocialButtonGroup from '~/components/SocialButtonGroup'
+<script lang="ts">
+import Vue from 'vue'
+import SmallTile from '@/components/SmallTile.vue'
+import Polaroid from '@/components/Polaroid.vue'
+import SocialButtonGroup from '@/components/SocialButtonGroup.vue'
 
-export default {
+export default Vue.extend({
   name: 'Index',
 
   components: {
@@ -87,7 +88,7 @@ export default {
       ]
     }
   }
-}
+})
 </script>
 
 <style>
