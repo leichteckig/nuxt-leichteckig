@@ -9,6 +9,7 @@
     "generate": "nuxt generate",
     "test": "jest",
     "jest": "jest",
+    "jest-clear": "jest --clearCache",
     "jest-watch": "jest --watch",
     "cy:run": "./node_modules/.bin/cypress run",
     "cy:open": "./node_modules/.bin/cypress open",

@@ -18,15 +18,18 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
     message: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
     type: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
   },
 
