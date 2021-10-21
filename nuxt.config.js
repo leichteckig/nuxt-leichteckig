@@ -51,16 +51,24 @@ export default {
   buildModules: [
     '@nuxtjs/color-mode',
     '@nuxtjs/svg',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@/modules/sitemapRouteGenerator'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://www.ramona.codes',
+    cacheTime: 1000 * 60 * 15,
   },
 
   googleFonts: {
