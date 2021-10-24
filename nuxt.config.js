@@ -15,11 +15,19 @@ export default {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8' },
+      { charset: 'utf-8'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.' },
-      { property: 'og:title', hid:'og:title', content: 'Ramona Schwering' },
-      { property: 'og:description', hid:'og:description', content: 'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.'
+      },
+      {property: 'og:title', hid: 'og:title', content: 'Ramona Schwering'},
+      {
+        property: 'og:description',
+        hid: 'og:description',
+        content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:image', property: 'og:image', content: 'https://www.ramona.codes/ogimage.png' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
@@ -41,8 +49,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -58,17 +65,25 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://www.ramona.codes',
     cacheTime: 1000 * 60 * 15,
+    defaults: {
+      lastmod: new Date(),
+    }
+  },
+
+  robots: {
+    UserAgent: 'Googlebot',
+    Disallow: () => ' */smashing-'
   },
 
   googleFonts: {
