@@ -19,7 +19,7 @@ describe('Hero component', () => {
     const wrapper = shallowMount(Hero, {
       propsData: {
         img: {
-          path: 'test/images/amazing.png',
+          path: '/test/images/amazing.png',
           alt: 'moe'
         }
       }
