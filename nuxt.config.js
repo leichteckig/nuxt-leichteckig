@@ -83,7 +83,8 @@ export default {
 
   robots: {
     UserAgent: 'Googlebot',
-    Disallow: () => ' */smashing-'
+    Disallow: () => ' */smashing-',
+    Sitemap: 'https://www.ramona.codes/sitemap.xml'
   },
 
   googleFonts: {
