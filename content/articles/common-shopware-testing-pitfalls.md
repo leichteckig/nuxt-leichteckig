@@ -6,7 +6,6 @@ createdAt: 2021-09-28T00:00:00.724Z
 alt: common Shopware testing traps
 author:
   name: Ramona Schwering
-  bio: https://www.smashingmagazine.com/2021/07/frontend-testing-pitfalls/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Shopware
