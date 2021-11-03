@@ -22,7 +22,7 @@ export default {
         name: 'description',
         content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.'
       },
-      {property: 'og:title', hid: 'og:title', content: 'Ramona Schwering'},
+      { property: 'og:title', hid: 'og:title', content: 'Ramona Schwering' },
       {
         property: 'og:description',
         hid: 'og:description',
@@ -36,7 +36,8 @@ export default {
         name: 'twitter:url',
         content: 'https://www.ramona.codes',
       },
-      { name: 'twitter:card', hid:'twitter:card', content: 'summary_large_image' }
+      { name: 'twitter:card', hid:'twitter:card', content: 'summary_large_image' },
+      { name: 'google-site-verification', content: 'ySo2miRK4qu8z_acSgFSPF7-HkA4TqcpydymQASt5gw' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
