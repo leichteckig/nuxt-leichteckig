@@ -1,7 +1,7 @@
 ---
 title: It’s A (Front-End Testing) Trap!
 description: When writing front-end tests, you’ll find a lot of pitfalls along the way. In sum, they can lead to lousy maintainability, slow execution time, and — in the worst case — tests you cannot trust. But it doesn’t have to be that way.
-img: smashing-testing-pitfalls/bingo.jpg
+img: shopware-testing-bugs/bug.png
 alt: common testing traps
 createdAt: 2021-07-01T22:50:54.724Z
 author:
