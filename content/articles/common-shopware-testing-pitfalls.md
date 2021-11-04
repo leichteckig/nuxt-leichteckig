@@ -1,7 +1,7 @@
 ---
 title: Moe's notes on Shopware's test automation pitfalls
 description: Sometimes, our pipelines fail. If that happens on our own merge requests, we need to fix it - I can imagine you feel the same if you're working with Shopware's tests. These are my notes on common test automation traps in the context of working with Shopware.
-img: shopware-testing-bugs/bug.png
+img: smashing-testing-pitfalls/bingo.jpg
 createdAt: 2021-09-28T00:00:00.724Z
 alt: common Shopware testing traps
 author:
