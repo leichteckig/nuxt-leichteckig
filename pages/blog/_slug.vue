@@ -7,7 +7,7 @@
       <DetailSummary :article="article"></DetailSummary>
 
       <article class="blog-detail__detail-content" data-cy="BlogDetailContent">
-        <nuxt-content :document="article" data-cy="BlogDetailContent" />
+        <nuxt-content :document="article" data-cy="BlogDetailContent"/>
       </article>
     </main>
   </Page>
@@ -19,10 +19,10 @@ import DetailSummary from "@/components/DetailSummary";
 export default {
   name: 'blogDetail',
 
-  async asyncData({ $content, params }) {
+  async asyncData({$content, params}) {
     const article = await $content('articles', params.slug).fetch();
 
-    return { article }
+    return {article}
   },
 
   head() {
@@ -37,11 +37,21 @@ export default {
         { name: 'twitter:card', hid:'twitter:card-detail', content: 'summary_large_image' }
       ],
       link: [
-        {
-          rel: 'canoncial',
-          href: this.article.author.bio.includes('smashing') ? this.article.author.bio : undefined
-        },
+        this.getCanonicalLink,
       ],
+    }
+  },
+
+  computed: {
+    getCanonicalLink() {
+      if (!this.article.author.bio?.includes('smashing')) {
+        return {}
+      }
+
+      return {
+        rel: 'canonical',
+        href: this.article.author.bio?.includes('smashing') ? this.article.author.bio : undefined
+      };
     }
   },
 
@@ -52,114 +62,114 @@ export default {
 </script>
 
 <style lang="scss">
-  .blog-detail {
-    ul {
-      line-height: 1.75;
-    }
+.blog-detail {
+  ul {
+    line-height: 1.75;
+  }
 
-    p {
-      line-height: 1.75;
-    }
+  p {
+    line-height: 1.75;
+  }
 
-    li {
-      line-height: 1.75;
+  li {
+    line-height: 1.75;
 
-      &::marker {
-        color: var(--color-primary);
-      }
-    }
-
-    blockquote {
+    &::marker {
       color: var(--color-primary);
-      font-style: italic;
-    }
-
-    code,
-    .nuxt-content-highlight pre[class*="language-"] {
-      border: solid 3px var(--bg-secondary);
-      background: var(--bg-secondary);
-      color: var(--color);
-      text-shadow: none;
-      width: 100%;
-      margin: 0 auto;
-      font-family: var(--font-family-mono);
-      border-top-left-radius: 255px 15px;
-      border-top-right-radius: 15px 255px;
-      border-bottom-right-radius: 225px 15px;
-      border-bottom-left-radius:15px 255px;
-
-      .keyword {
-        color: var(--color-primary);
-      }
-
-      .token.boolean {
-        color: var(--color);
-      }
-
-      .token.operator {
-        background-color: var(--bg-secondary);
-      }
-
-      .token.entity {
-        background-color: var(--bg-secondary);
-      }
-
-      .token.string {
-        color: var(--color);
-      }
     }
   }
 
-  .blog-detail__img {
-    height: 160px;
+  blockquote {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  code,
+  .nuxt-content-highlight pre[class*="language-"] {
+    border: solid 3px var(--bg-secondary);
+    background: var(--bg-secondary);
+    color: var(--color);
+    text-shadow: none;
     width: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-  }
-
-  .blog-detail__detail-content img {
-    max-width: 800px;
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .blog-detail__author-img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .blog-detail__author-card {
-    display: flex;
-  }
-
-  .blog-detail__author-name {
-    margin: auto 10px;
-  }
-
-  .blog-detail__text-muted {
-    color: var(--color-text-muted);
-  }
-
-  .blog-detail__summary-card {
-    padding: 30px;
-  }
-
-  .blog-detail__detail-content iframe {
-    border: solid 3px var(--border-color);
     margin: 0 auto;
-
+    font-family: var(--font-family-mono);
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;
-    border-bottom-left-radius:15px 255px;
-  }
+    border-bottom-left-radius: 15px 255px;
 
-  .hint {
-    margin: 20px;
+    .keyword {
+      color: var(--color-primary);
+    }
+
+    .token.boolean {
+      color: var(--color);
+    }
+
+    .token.operator {
+      background-color: var(--bg-secondary);
+    }
+
+    .token.entity {
+      background-color: var(--bg-secondary);
+    }
+
+    .token.string {
+      color: var(--color);
+    }
   }
+}
+
+.blog-detail__img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.blog-detail__detail-content img {
+  max-width: 800px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-detail__author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blog-detail__author-card {
+  display: flex;
+}
+
+.blog-detail__author-name {
+  margin: auto 10px;
+}
+
+.blog-detail__text-muted {
+  color: var(--color-text-muted);
+}
+
+.blog-detail__summary-card {
+  padding: 30px;
+}
+
+.blog-detail__detail-content iframe {
+  border: solid 3px var(--border-color);
+  margin: 0 auto;
+
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 15px 255px;
+}
+
+.hint {
+  margin: 20px;
+}
 </style>
