@@ -31,6 +31,7 @@ export default {
   // Writing
   writingMenuTitle: 'Blog',
   writingTitle: 'Blog',
+  writingDescription: 'Themen:',
 
   // Speaking
   speakingMenuTitle: 'Vorträge',
