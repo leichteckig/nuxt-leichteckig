@@ -2,14 +2,14 @@
   <footer class="main-footer" data-cy="Footer">
     <div class="container main-footer__links">
       <SocialButtonGroup class="main-footer__social-links"/>
-      <nuxt-link to="/imprint"
+      <nuxt-link to="/imprint/"
          class="main-footer__link"
          data-cy="NavToImprint"
          role="button"
          aria-label="ImprintLink">
         Imprint
       </nuxt-link>
-      <nuxt-link to="/privacy"
+      <nuxt-link to="/privacy/"
          class="main-footer__link"
          data-cy="NavToDP"
          role="button"

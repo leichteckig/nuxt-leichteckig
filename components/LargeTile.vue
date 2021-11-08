@@ -23,7 +23,7 @@
 
       <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
         <img
-          :src="article.img"
+          :src="`/${article.img}`"
           class="blog-card__img"
         >
       </NuxtLink>
