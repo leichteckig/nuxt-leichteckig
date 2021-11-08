@@ -8,6 +8,10 @@ export default {
     fallback: true
   },
 
+  router: {
+    trailingSlash: true,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Ramona Schwering\'s Blog',
@@ -77,14 +81,15 @@ export default {
     path: '/sitemap.xml',
     hostname: 'https://www.ramona.codes',
     cacheTime: 1000 * 60 * 15,
+    trailingSlash: true,
     defaults: {
       lastmod: new Date(),
     }
   },
 
   robots: {
-    UserAgent: 'Googlebot',
-    Disallow: () => ' */smashing-',
+    UserAgent: '*',
+    Disallow: ['*/smashing-', '/imprint', '/privacy'],
     Sitemap: 'https://www.ramona.codes/sitemap.xml'
   },
 

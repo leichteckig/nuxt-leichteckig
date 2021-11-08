@@ -20,8 +20,8 @@ describe('Header component', () => {
 
     expect(wrapper.find('.color-mode__container')).toBeTruthy();
     expect(wrapper.find('.first__link').attributes().to).toBe('/');
-    expect(wrapper.find('.second__link').attributes().to).toBe('/blog');
-    expect(wrapper.find('.header-main__link:nth-of-type(3)').attributes().to).toBe('/talks');
-    expect(wrapper.find('.header-main__link:nth-of-type(4)').attributes().to).toBe('/conferences');
+    expect(wrapper.find('.second__link').attributes().to).toBe('/blog/');
+    expect(wrapper.find('.header-main__link:nth-of-type(3)').attributes().to).toBe('/talks/');
+    expect(wrapper.find('.header-main__link:nth-of-type(4)').attributes().to).toBe('/conferences/');
   });
 });

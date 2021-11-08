@@ -24,21 +24,21 @@
         </nuxt-link>
         <nuxt-link
           class="header-main__link second__link"
-          to="/blog"
+          to="/blog/"
           @click.native="toggleMobileMenu"
           data-cy="Writing">
           Writing
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
-          to="/talks"
+          to="/talks/"
           @click.native="toggleMobileMenu"
           data-cy="Speaking">
           Speaking
         </nuxt-link>
         <nuxt-link
           class="header-main__link"
-          to="/conferences"
+          to="/conferences/"
           @click.native="toggleMobileMenu"
           data-cy="Attending">
           Attending
