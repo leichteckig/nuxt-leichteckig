@@ -9,13 +9,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-if="contents.length"
-          v-for="entry in contents"
+      <tr v-if="upcomingTalks.length"
+          v-for="entry in upcomingTalks"
           class="handdraw-line">
-        <td data-label="Title" v-if="getPastDate(entry.createdAt)">
+        <td data-label="Title">
           {{ entry.title }}
         </td>
-        <td v-if="getPastDate(entry.createdAt)" data-label="Conference">
+        <td data-label="Conference">
           <!-- entry.img == link of the event -->
           <a v-if="entry.img"
              class="talk-event-table__url"
@@ -32,57 +32,58 @@
             {{ entry.description }}
           </span>
         </td>
-        <td v-if="getPastDate(entry.createdAt)" data-label="Date">
+        <td data-label="Date">
           <!-- entry.alt == Date of the event in more pretty -->
           <span v-if="entry.alt">
           {{ entry.alt }}
           </span>
         </td>
       </tr>
-      <tr class="handdraw-line talk--placeholder">
+      <tr class="talk--placeholder handdraw-line">
         <td data-label="Title"></td>
         <td data-label="Conference"></td>
         <td data-label="Date"></td>
       </tr>
-      <tr class="handdraw-line talk--cyde">
+      <tr class="talk--cyde handdraw-line">
         <td data-label="Title">Not always as a speaker, but it's our Cypress Germany meetup! ❤️</td>
         <td data-label="Conference"><a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a></td>
         <td data-label="Date"></td>
       </tr>
-      <tr class="handdraw-line talk--placeholder">
+      <tr class="talk--placeholder handdraw-line">
         <td data-label="Title"></td>
         <td data-label="Conference"></td>
         <td data-label="Date"></td>
       </tr>
-      <tr v-for="entry in contents"
-          class="handdraw-line talk--old">
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Title">
-          <!-- entry.img == link of the event -->
-          <span>
-            {{ entry.title }}
-          </span>
-        </td>
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Conference">
-          <!-- entry.img == link of the event -->
-          <a v-if="entry.img"
-             class="talk-event-table__url"
-             :href="entry.img"
-             target="_blank"
-             rel="noopener">
+      <tr v-if="pastTalks.length"
+        v-for="entry in pastTalks"
+        class="handdraw-line talk--old">
+          <td data-label="Title">
+            <!-- entry.img == link of the event -->
+            <span>
+              {{ entry.title }}
+            </span>
+          </td>
+          <td data-label="Conference">
+            <!-- entry.img == link of the event -->
+            <a v-if="entry.img"
+               class="talk-event-table__url"
+               :href="entry.img"
+               target="_blank"
+               rel="noopener">
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </a>
+            <span v-else>
             <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </a>
-          <span v-else>
-          <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </span>
-        </td>
-        <td v-if="!getPastDate(entry.createdAt)" data-label="Date">
-          <!-- entry.alt == Date of the event in more pretty -->
-          <span v-if="entry.alt">
-          {{ entry.alt }}
-          </span>
-        </td>
+              {{ entry.description }}
+            </span>
+          </td>
+          <td data-label="Date">
+            <!-- entry.alt == Date of the event in more pretty -->
+            <span v-if="entry.alt">
+            {{ entry.alt }}
+            </span>
+          </td>
       </tr>
       </tbody>
     </table>
@@ -98,6 +99,16 @@ export default {
     contents: {
       type: Array,
       required: true
+    }
+  },
+
+  computed: {
+    upcomingTalks() {
+      return this.contents.filter(talk => this.getPastDate(talk.createdAt));
+    },
+
+    pastTalks() {
+      return this.contents.filter(talk => !this.getPastDate(talk.createdAt));
     }
   },
 
@@ -204,7 +215,7 @@ export default {
     }
 
     .talk-event-table td::before {
-      content:attr(data-label);
+      content: attr(data-label);
       width: min-content;
       min-width: 110px;
       font-weight: bold;
