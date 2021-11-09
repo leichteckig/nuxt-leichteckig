@@ -4,7 +4,6 @@ description: Our daily work at Shopware, but also at agencies, ends up in the ha
 createdAt: 2020-07-19T22:50:54.724Z
 author:
   name: Ramona Schwering
-  bio: https://speakerdeck.com/leichteckig/a-matter-of-trust-test
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - SCD'21
