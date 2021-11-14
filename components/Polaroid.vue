@@ -1,6 +1,6 @@
 <template>
   <section class="outer-frame handdraw-border" data-cy="Polaroid">
-    <div class="inner-image handdraw-border">
+    <div :class="getClasses">
       <img class="image" :src="imagePath" alt="Ramona">
     </div>
   </section>
@@ -15,6 +15,26 @@ export default {
     imagePath: {
       type: String,
       required: true
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'line'
+    }
+  },
+
+  computed: {
+    getClasses() {
+      if (this.type === 'purple') {
+        return 'handdraw-border purple';
+      }
+       else if (this.type === 'primary') {
+        return 'handdraw-border primary';
+      }
+       else if (this.type === 'rose') {
+        return 'handdraw-border rose';
+      }
+      return 'handdraw-border line';
     }
   }
 }
@@ -51,9 +71,24 @@ export default {
   bottom: 0;
 }
 
-.inner-image {
+.purple {
+  margin: 30px 30px 130px 30px;
+  background-color: #9da1ff;
+}
+
+.line {
+  margin: 30px 30px 130px 30px;
+  background-color: var(--color);
+}
+
+.primary {
   margin: 30px 30px 130px 30px;
   background-color: var(--color-primary);
+}
+
+.rose {
+  margin: 30px 30px 130px 30px;
+  background-color: #C05746;
 }
 
 @media (max-width: 450px) {

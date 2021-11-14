@@ -24,6 +24,13 @@
         </nuxt-link>
         <nuxt-link
           class="header-main__link second__link"
+          to="/about/"
+          @click.native="toggleMobileMenu"
+          data-cy="About">
+          About me
+        </nuxt-link>
+        <nuxt-link
+          class="header-main__link"
           to="/blog/"
           @click.native="toggleMobileMenu"
           data-cy="Writing">
@@ -169,7 +176,7 @@ export default {
     display: flex;
     flex-direction: column;
     opacity: 1;
-    height: 320px;
+    height: 400px;
   }
 }
 
@@ -191,7 +198,7 @@ export default {
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
   .header-main__nav-links {
     position: static;
     width: auto;
