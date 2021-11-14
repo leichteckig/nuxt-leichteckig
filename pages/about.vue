@@ -80,7 +80,7 @@
                 open-source to create more value for the web community.
               </p>
             </div>
-            <div class="about__experience--specials-moe-presents">
+            <div class="about__experience--specials-moe-presents about__polaroid-grid">
               <Polaroid class="about__scribble" type="rose" imagePath="/Moe-Coding.webp" />
             </div>
             <div class="about__experience--specials">
@@ -225,8 +225,6 @@ export default {
   }
 
   .about__scribble {
-    width: auto;
-    max-height: 500px;
     margin:  0 auto;
   }
 
@@ -256,11 +254,14 @@ export default {
   }
 }
 
-@media screen and (min-width: 440px) {
-  .about__scribble {
-    max-width: 330px;
-    margin: 0;
-  }
+.about__polaroid-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about__polaroid-grid--reversed {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 @media screen and (min-width: 800px) {
@@ -277,7 +278,6 @@ export default {
       margin: 10px;
     }
   }
-
 
   .about__polaroid-grid {
     display: grid;
