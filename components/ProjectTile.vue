@@ -63,6 +63,8 @@ export default {
     top: 0;
     line-height: 1em;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     a {
       text-decoration: none;

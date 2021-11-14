@@ -48,8 +48,6 @@
           und verweist auf die betroffenen Personen.</p>
         <h3>Arten der verarbeiteten Daten</h3>
         <ul>
-<!--          <li>Bestandsdaten (z.B. Namen, Adressen).</li>-->
-<!--          <li>Inhaltsdaten (z.B. Eingaben in Onlineformularen).</li>-->
           <li>Kontaktdaten (z.B. E-Mail, Telefonnummern).</li>
           <li>Meta-/Kommunikationsdaten (z.B. Geräte-Informationen, IP-Adressen).</li>
           <li>Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten).</li>
@@ -62,8 +60,6 @@
         <h3>Zwecke der Verarbeitung</h3>
         <ul>
           <li>Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.</li>
-<!--          <li>Direktmarketing (z.B. per E-Mail oder postalisch).</li>-->
-<!--          <li>Feedback (z.B. Sammeln von Feedback via Online-Formular).</li>-->
           <li>Marketing.</li>
           <li>Kontaktanfragen und Kommunikation.</li>
           <li>Sicherheitsmaßnahmen.</li>
@@ -144,7 +140,7 @@
           zum Schutz der Rechte einer anderen natürlichen oder juristischen Person erforderlich ist.</p>
         <p>Unsere Datenschutzhinweise können ferner weitere Angaben zu der Aufbewahrung und Löschung von Daten
           beinhalten, die für die jeweiligen Verarbeitungen vorrangig gelten.</p>
-        <!--h2 id="m134">Einsatz von Cookies</h2>
+        <h2 id="m134">Einsatz von Cookies</h2>
         <p>Cookies sind Textdateien, die Daten von besuchten Websites oder Domains enthalten und von einem Browser auf
           dem Computer des Benutzers gespeichert werden. Ein Cookie dient in erster Linie dazu, die Informationen über
           einen Benutzer während oder nach seinem Besuch innerhalb eines Onlineangebotes zu speichern. Zu den
@@ -222,7 +218,7 @@
           <li><strong>Rechtsgrundlagen:</strong> Einwilligung (Art. 6 Abs. 1 S. 1 lit. a. DSGVO), Berechtigte Interessen
             (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).
           </li>
-        </ul-->
+        </ul>
         <h2 id="m225">Bereitstellung des Onlineangebotes und Webhosting</h2>
         <p>Um unser Onlineangebot sicher und effizient bereitstellen zu können, nehmen wir die Leistungen von einem oder
           mehreren Webhosting-Anbietern in Anspruch, von deren Servern (bzw. von ihnen verwalteten Servern) das
@@ -622,85 +618,87 @@
           to protect the rights of another natural or legal person.</p>
         <p>Our data protection notices may also contain further information on the retention and deletion of data.
           which have priority for the respective processing operations.</p>
-        <!--h2 id="m134">Einsatz von Cookies</h2>
-        <p>Cookies sind Textdateien, die Daten von besuchten Websites oder Domains enthalten und von einem Browser auf
-          dem Computer des Benutzers gespeichert werden. Ein Cookie dient in erster Linie dazu, die Informationen über
-          einen Benutzer während oder nach seinem Besuch innerhalb eines Onlineangebotes zu speichern. Zu den
-          gespeicherten Angaben können z.B. die Spracheinstellungen auf einer Webseite, der Loginstatus, ein Warenkorb
-          oder die Stelle, an der ein Video geschaut wurde, gehören. Zu dem Begriff der Cookies zählen wir ferner andere
-          Technologien, die die gleichen Funktionen wie Cookies erfüllen (z.B. wenn Angaben der Nutzer anhand
-          pseudonymer Onlinekennzeichnungen gespeichert werden, auch als "Nutzer-IDs" bezeichnet)</p>
-        <p><strong>Die folgenden Cookie-Typen und Funktionen werden unterschieden:</strong></p>
+        <h2 id="m134">Use of cookies</h2>
+        <p>Cookies are text files that contain data from visited websites or domains and are stored on the user's computer by a browser.
+          the user's computer. The primary purpose of a cookie is to store information about a
+          a user during or after his visit within an online offer. The
+          stored information may include, for example, the language settings on a website, the login status, a shopping cart
+          or the location at which a video was watched, for example. We further include in the term cookies other
+          technologies that perform the same functions as cookies (e.g., when user information is stored using
+          pseudonymous online identifiers are stored, also referred to as "user IDs")</p>
+        <p><strong>The following cookie types and functions are distinguished:</strong></p>
         <ul>
-          <li><strong>Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong>&nbsp;Temporäre Cookies werden
-            spätestens gelöscht, nachdem ein Nutzer ein Online-Angebot verlassen und seinen Browser geschlossen hat.
+          <li><strong>Temporary cookies (also: session cookies or session cookies):</strong>&nbsp;Temporary cookies are
+            deleted at the latest after a user has left an online offer and closed his browser.
           </li>
-          <li><strong>Permanente Cookies:</strong>&nbsp;Permanente Cookies bleiben auch nach dem Schließen des Browsers
-            gespeichert. So kann beispielsweise der Login-Status gespeichert oder bevorzugte Inhalte direkt angezeigt
-            werden, wenn der Nutzer eine Website erneut besucht. Ebenso können die Interessen von Nutzern, die zur
-            Reichweitenmessung oder zu Marketingzwecken verwendet werden, in einem solchen Cookie gespeichert werden.
+          <li><strong>Permanent Cookies:</strong>&nbsp;Permanent cookies remain stored even after closing the browser.
+            stored. For example, the login status can be stored or preferred content can be displayed directly
+            when the user visits a website again. Likewise, the interests of users, which are used for
+            measurement or for marketing purposes can also be stored in such a cookie..
           </li>
-          <li><strong>First-Party-Cookies:</strong>&nbsp;First-Party-Cookies werden von uns selbst gesetzt.</li>
-          <li><strong>Third-Party-Cookies (auch: Drittanbieter-Cookies)</strong>: Drittanbieter-Cookies werden
-            hauptsächlich von Werbetreibenden (sog. Dritten) verwendet, um Benutzerinformationen zu verarbeiten.
+          <li><strong>First-Party-Cookies:</strong>&nbsp;First-party cookies are set by ourselves.</li>
+          <li><strong>Third-Party-Cookies (auch: Drittanbieter-Cookies)</strong>: Third-party cookies are
+            mainly used by advertisers (so-called third parties) to process user information.
           </li>
-          <li><strong>Notwendige (auch: essentielle oder unbedingt erforderliche) Cookies:</strong> Cookies können zum
-            einen für den Betrieb einer Webseite unbedingt erforderlich sein (z.B. um Logins oder andere Nutzereingaben
-            zu speichern oder aus Gründen der Sicherheit).
+          <li><strong>Necessary (also: essential or absolutely necessary) cookies:</strong> Cookies can be
+            may be absolutely necessary for the operation of a website (e.g. to store logins or other user input
+            or for security reasons).
           </li>
-          <li><strong>Statistik-, Marketing- und Personalisierungs-Cookies</strong>: Ferner werden Cookies im Regelfall
-            auch im Rahmen der Reichweitenmessung eingesetzt sowie dann, wenn die Interessen eines Nutzers oder sein
-            Verhalten (z.B. Betrachten bestimmter Inhalte, Nutzen von Funktionen etc.) auf einzelnen Webseiten in einem
-            Nutzerprofil gespeichert werden. Solche Profile dienen dazu, den Nutzern z.B. Inhalte anzuzeigen, die ihren
-            potentiellen Interessen entsprechen. Dieses Verfahren wird auch als "Tracking", d.h., Nachverfolgung der
-            potentiellen Interessen der Nutzer bezeichnet. Soweit wir Cookies oder "Tracking"-Technologien einsetzen,
-            informieren wir Sie gesondert in unserer Datenschutzerklärung oder im Rahmen der Einholung einer
-            Einwilligung.
+          <li><strong>Statistical, marketing and personalization cookies</strong>: Furthermore, cookies are usually
+            also used within the scope of range measurement and when the interests of a user or his or her
+            behavior (e.g. viewing certain content, use of functions, etc.) on individual websites are stored in a
+            stored in a user profile. Such profiles are used, for example, to display content to users that corresponds to their
+            their potential interests. This process is also referred to as "tracking", i.e., following up the
+            potential interests of the users. Insofar as we use cookies or "tracking" technologies,
+            we will inform you separately in our privacy policy or in the context of obtaining your
+            consent.
           </li>
         </ul>
-        <p><strong>Hinweise zu Rechtsgrundlagen: </strong> Auf welcher Rechtsgrundlage wir Ihre personenbezogenen Daten
-          mit Hilfe von Cookies verarbeiten, hängt davon ab, ob wir Sie um eine Einwilligung bitten. Falls dies zutrifft
-          und Sie in die Nutzung von Cookies einwilligen, ist die Rechtsgrundlage der Verarbeitung Ihrer Daten die
-          erklärte Einwilligung. Andernfalls werden die mithilfe von Cookies verarbeiteten Daten auf Grundlage unserer
-          berechtigten Interessen (z.B. an einem betriebswirtschaftlichen Betrieb unseres Onlineangebotes und dessen
-          Verbesserung) verarbeitet oder, wenn der Einsatz von Cookies erforderlich ist, um unsere vertraglichen
-          Verpflichtungen zu erfüllen.</p>
-        <p><strong>Speicherdauer: </strong>Sofern wir Ihnen keine expliziten Angaben zur Speicherdauer von permanenten
-          Cookies mitteilen (z. B. im Rahmen eines sog. Cookie-Opt-Ins), gehen Sie bitte davon aus, dass die
-          Speicherdauer bis zu zwei Jahre betragen kann.</p>
-        <p><strong>Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out): </strong> Abhängig davon, ob die
-          Verarbeitung auf Grundlage einer Einwilligung oder gesetzlichen Erlaubnis erfolgt, haben Sie jederzeit die
-          Möglichkeit, eine erteilte Einwilligung zu widerrufen oder der Verarbeitung Ihrer Daten durch
-          Cookie-Technologien zu widersprechen (zusammenfassend als "Opt-Out" bezeichnet). Sie können Ihren Widerspruch
-          zunächst mittels der Einstellungen Ihres Browsers erklären, z.B., indem Sie die Nutzung von Cookies
-          deaktivieren (wobei hierdurch auch die Funktionsfähigkeit unseres Onlineangebotes eingeschränkt werden kann).
-          Ein Widerspruch gegen den Einsatz von Cookies zu Zwecken des Onlinemarketings kann auch mittels einer Vielzahl
-          von Diensten, vor allem im Fall des Trackings, über die Webseiten <a href="https://optout.aboutads.info"
+        <p><strong>Hinweise zu Rechtsgrundlagen: </strong> The legal basis on which we process your personal data
+          we process using cookies depends on whether we ask you for consent. If this is the case
+          and you consent to the use of cookies, the legal basis for processing your data is the
+          declared consent. Otherwise, the data processed with the help of cookies is processed on the basis of our
+          legitimate interests (e.g. in the business management of our online offering and its
+          improvement) or if the use of cookies is necessary to fulfill our contractual obligations.
+          fulfill our contractual obligations.</p>
+        <p><strong>Save duration: </strong>If we do not provide you with any explicit information on the storage period of permanent
+          cookies (e.g. within the scope of a so-called cookie opt-in), please assume that the storage period
+          storage period can be up to two years.</p>
+        <p><strong>General information on revocation and objection (Opt-Out): </strong> Depending on whether the
+          processing is carried out on the basis of consent or legal permission, you have the option at any time to
+          possibility to revoke a given consent or to object to the processing of your data by means of
+          Cookie Technologies (collectively referred to as "opt-out"). You can raise your objection
+          by means of the settings of your browser, e.g. by deactivating the use of cookies (this also deactivates the use of cookies).
+          (whereby this may also restrict the functionality of our online offer).
+          An objection to the use of cookies for online marketing purposes can also be made by means of a variety of
+          of services, especially in the case of tracking, via the websites. <a href="https://optout.aboutads.info"
                                                                                target="_blank">https://optout.aboutads.info</a>
-          und <a href="https://www.youronlinechoices.com/" target="_blank">https://www.youronlinechoices.com/</a>
-          erklärt werden. Daneben können Sie weitere Widerspruchshinweise im Rahmen der Angaben zu den eingesetzten
-          Dienstleistern und Cookies erhalten.</p>
-        <p><strong>Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung</strong>: Wir setzen ein Verfahren zum
-          Cookie-Einwilligungs-Management ein, in dessen Rahmen die Einwilligungen der Nutzer in den Einsatz von
-          Cookies, bzw. der im Rahmen des Cookie-Einwilligungs-Management-Verfahrens genannten Verarbeitungen und
-          Anbieter eingeholt sowie von den Nutzern verwaltet und widerrufen werden können. Hierbei wird die
-          Einwilligungserklärung gespeichert, um deren Abfrage nicht erneut wiederholen zu müssen und die Einwilligung
-          entsprechend der gesetzlichen Verpflichtung nachweisen zu können. Die Speicherung kann serverseitig und/oder
-          in einem Cookie (sogenanntes Opt-In-Cookie, bzw. mithilfe vergleichbarer Technologien) erfolgen, um die
-          Einwilligung einem Nutzer, bzw. dessen Gerät zuordnen zu können. Vorbehaltlich individueller Angaben zu den
-          Anbietern von Cookie-Management-Diensten, gelten die folgenden Hinweise: Die Dauer der Speicherung der
-          Einwilligung kann bis zu zwei Jahren betragen. Hierbei wird ein pseudonymer Nutzer-Identifikator gebildet und
-          mit dem Zeitpunkt der Einwilligung, Angaben zur Reichweite der Einwilligung (z. B. welche Kategorien von
-          Cookies und/oder Diensteanbieter) sowie dem Browser, System und verwendeten Endgerät gespeichert.</p>
+          and <a href="https://www.youronlinechoices.com/" target="_blank">https://www.youronlinechoices.com/</a>
+          explained. In addition, you can receive further objection notices in the context of the information on the used
+          service providers and cookies.</p>
+        <p><strong>Processing of cookie data on the basis of consent</strong>: We use a cookie consent management procedure.
+          cookie consent management procedure, under which the consent of the users to the use of
+          cookies, or the processing and providers mentioned in the cookie consent management procedure.
+          providers mentioned in the cookie consent management procedure, and can be managed and revoked by the users. Here the
+          declaration of consent is stored so that it does not have to be repeated and so that the consent can be
+          to be able to prove consent in accordance with the legal obligation. The storage can be server-side and/or
+          in a cookie (so-called opt-in cookie, or with the aid of comparable technologies) in order to be able to
+          consent to a user or his device. Subject to individual information on the
+          providers of cookie management services, the following information applies: The duration of the storage of the
+          consent can be up to two years. In this case, a pseudonymous user identifier is created and
+          with the time of consent, information about the scope of consent (e.g., which categories of
+          cookies and/or service providers) as well as the browser, system and end device used are stored..</p>
         <ul class="m-elements">
-          <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten,
-            Zugriffszeiten), Meta-/Kommunikationsdaten (z.B. Geräte-Informationen, IP-Adressen).
+          <li><strong>Types of data processed:</strong> N
+            Usage data (e.g. web pages visited, interest in content,
+            access times), meta/communication data (e.g. device information, IP addresses).
+            Types of data processed
           </li>
-          <li><strong>Betroffene Personen:</strong> Nutzer (z.B. Webseitenbesucher, Nutzer von Onlinediensten).</li>
-          <li><strong>Rechtsgrundlagen:</strong> Einwilligung (Art. 6 Abs. 1 S. 1 lit. a. DSGVO), Berechtigte Interessen
-            (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).
+          <li><strong>Persons concerned:</strong> User (e.g. website visitors, users of online services)..</li>
+          <li><strong>Legal basis:</strong> Consent (Art. 6 para. 1 p. 1 lit. a. DSGVO), Legitimate Interests
+            (Art. 6 para. 1 p. 1 lit. f. DSGVO).
           </li>
-        </ul-->
+        </ul>
         <h2 id="m225">Provision of the online offer and web hosting</h2>
         <p>In order to be able to provide our online offer securely and efficiently, we make use of the services of one or more
           providers from whose servers (or servers managed by them) the online offer can be accessed.
