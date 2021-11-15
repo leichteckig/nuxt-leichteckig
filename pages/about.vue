@@ -50,10 +50,10 @@
       </section>
       <section class="about__section about__extended-bio">
         <div data-cy="ExtendedBio">
-          <h2>Bio - Extended edition!?</h2>
+          <h2>Bio - Extended edition</h2>
           <div class="about__polaroid-grid about__extended-bio--column">
-            <div class="about__experience--specials">
-              <p data-cy="WelcomeDescription">
+            <div class="about__experience--specials about__experience--specials-1">
+              <p data-cy="AboutBioFirst">
                 I decided to turn my hobby into a profession: In the creative field, I have been involved with IT for a long time, I have done a lot of
                 drawing and painting back then and to present my work I built my own pages.
               </p>
@@ -65,25 +65,25 @@
                 Quality assurance to use my education effectively.
               </p>
             </div>
-            <Polaroid class="about__scribble" type="purple" imagePath="/Moe-presents.webp" />
-            <div class="about__experience--specials">
-              <p data-cy="WelcomeDescription">
+            <Polaroid class="about__scribble about__experience--specials-2" type="purple" imagePath="/Moe-presents.webp" />
+            <div class="about__experience--specials about__experience--specials-3">
+              <p data-cy="AboutBioSecond">
                 However,
                 it was then quickly determined that I was capable of more and that my abilities were
                 and that my skills lie particularly in the design side of frontend development. I have been a
                 frontend developer for a couple of years now. In addition, the field of public learning is an
                 important topic for me. I write a lot of blog posts, go to conferences and give talks.
               </p>
-              <p data-cy="WelcomeDescription">
+              <p data-cy="AboutBioThird">
                 I'm learning, writing and speaking about FrontEnd: It fascinates me, "how" things can function best:
                 Especially Frontend Testing, performance and a11y are MVT. In addition, I'm working hard on the
                 open-source to create more value for the web community.
               </p>
             </div>
-            <div class="about__experience--specials-moe-presents about__polaroid-grid">
+            <div class="about__experience--specials-moe-presents about__experience--specials-4">
               <Polaroid class="about__scribble" type="rose" imagePath="/Moe-Coding.webp" />
             </div>
-            <div class="about__experience--specials">
+            <div class="about__experience--specials about__experience--specials-5">
               <h2 data-cy="AboutProjectsListingTitle">Special experience</h2>
               <ul class="about-titles" data-cy="WelcomeDescription">
                 <li>🌲 Cypress ambassador.</li>
@@ -92,7 +92,7 @@
                 <li>🇳🇱 NT2 certificate: Dutch as second language.</li>
               </ul>
             </div>
-            <div>
+            <div class=" about__experience--specials-6">
               <ProjectTile v-if="projects" title="GitHub contributions" :contents="projects">
               </ProjectTile>
               <div class="handdraw-line"></div>
@@ -254,14 +254,25 @@ export default {
   }
 }
 
-.about__polaroid-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+@media screen and (min-width: 400px) {
+  .about__polaroid-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  .about__polaroid-grid--reversed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
+.about__polaroid-grid {
+    display: block;
+  }
+
 .about__polaroid-grid--reversed {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: block;
 }
 
 @media screen and (min-width: 800px) {
@@ -282,7 +293,14 @@ export default {
   .about__polaroid-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+
+    .about__experience--specials-1 {
+      grid-row: 2;
+    }
+
+    .about__experience--specials-2 {
+      grid-row: 1;
+    }
   }
 
   .about__polaroid-grid--reversed {
@@ -310,6 +328,14 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+
+    .about__experience--specials-1 {
+      grid-row: 1;
+    }
+
+    .about__experience--specials-2 {
+      grid-row: 2;
+    }
   }
 
   .about__polaroid-grid--reversed {

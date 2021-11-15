@@ -19,6 +19,6 @@ describe('Polaroid component', () => {
       }
     });
 
-    expect(wrapper.find('.image').attributes().src).toBe('test/images/amazing.png');
+    expect(wrapper.find('.polaroid__image').attributes().src).toBe('test/images/amazing.png');
   });
 });
