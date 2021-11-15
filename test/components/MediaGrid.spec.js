@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import {shallowMount} from '@vue/test-utils'
 import MediaGrid from '@/components/MediaGrid.vue'
 
@@ -14,7 +18,7 @@ describe('MediaGrid component', () => {
 
     expect(wrapper.vm).toBeTruthy();
   });
-  
+
   it.skip('should render image path', () => {
     const wrapper = shallowMount(MediaGrid, {
       propsData: {

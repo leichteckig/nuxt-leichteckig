@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { shallowMount } from '@vue/test-utils'
 import Hero from '@/components/Hero.vue'
 
