@@ -85,14 +85,14 @@ export default {
     const pastTalks = await $content('talks')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')
-      .limit(3)
+      .limit(6)
       .fetch();
 
 
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
-      .limit(3)
+      .limit(6)
       .fetch();
 
     return {

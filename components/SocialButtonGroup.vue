@@ -21,7 +21,6 @@ import IconTwitter from '@/assets/icons/twitter.svg?inline';
 import IconGithub from '@/assets/icons/github.svg?inline';
 import IconLinkedin from '@/assets/icons/linkedin.svg?inline';
 import IconXing from '@/assets/icons/xing.svg?inline';
-import socials from '@/content/json/social.json'
 
 export default {
   name: 'SocialButtonGroup',
@@ -35,12 +34,20 @@ export default {
 
   data() {
     return {
-      socialIcons: []
+      socialIcons: [{
+        name: 'twitter',
+        link: 'https://twitter.com/leichteckig'
+      }, {
+        name: 'github',
+        link: 'https://github.com/leichteckig'
+      }, {
+        name: 'linkedin',
+        link: 'https://www.linkedin.com/in/ramona-schwering/'
+      }, {
+        name: 'xing',
+        link: 'https://www.xing.com/profile/Ramona_Schwering2/cv'
+      }]
     }
-  },
-
-  created() {
-    this.socialIcons = socials;
   },
 
   methods: {
