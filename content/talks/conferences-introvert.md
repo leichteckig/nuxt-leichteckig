@@ -19,5 +19,14 @@ Large crowds full of strangers. Many sounds. Senses on overdrive. A large, noisy
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-introvert'
+}]"></media-grid>
+
+## Recordings
+
+<media-grid :media="[{
+name: 'Shopware TV',
+description: 'This is Episode 08 - The SCD Tech Stage. Find my talk at TC 4:09:04 or use the chapter selection.',
+url: 'https://tv.shopware.com/en/video/1151503/'
 }]"></media-grid>

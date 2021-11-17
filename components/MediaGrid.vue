@@ -1,20 +1,22 @@
 <template>
-  <section class="video-grid">
+  <section class="media-grid">
     <div
       v-for="entry in media"
+      class="media-grid__recording-links"
       :key="entry.name">
-      <div v-if="entry.name" class="slides">
-        <p v-if="entry.name.includes('Slides') && media.length === 1">You can find the slides on speakerdeck:</p>
+      <div v-if="entry.url.includes('youtube')" class="media-grid__video">
+        <h3 v-if="entry.name">{{ entry.name }}</h3>
+        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div v-else class="media-grid__link handdraw-border">
+        <h3 v-if="!entry.url.includes('speakerdeck')">{{ entry.name }}</h3>
+        <p>{{ entry.description }}</p>
         <Button
-          class="slide-btn"
+          class="media-grid__btn"
           variant="secondary"
           @click.native="openSocialLink(entry.url)">
           {{ entry.name }}
         </Button>
-      </div>
-      <div v-else class="video">
-        <h3 v-if="entry.name">{{ entry.name }}</h3>
-        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
    </div>
   </section>
@@ -39,40 +41,56 @@ export default {
 }
 </script>
 
-<style scoped>
-.video-grid {
-  display: flex;
-}
+<style lang="scss" scoped>
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
 
-.video {
-  margin: 15px;
-}
+  .media-grid__video {
+    margin: 15px;
 
-.video iframe {
-  border: solid 3px var(--border-color);
+    iframe {
+      border: solid 3px var(--border-color);
 
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius:15px 255px;
-}
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-bottom-left-radius:15px 255px;
+    }
+  }
 
-.link-tile {
-  display: flex;
-}
+  .media-grid__recording-links {
 
-.post {
-  padding: 25px;
-}
+    .media-grid__link {
+      padding: 25px;
+    }
+  }
 
-.slide-btn {
-  margin: 0 20px;
+  .media-grid__btn {
+    display: flex;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 800px) {
-  iframe {
-    width: 600px;
-    height: 300px;
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    iframe {
+      width: 600px;
+      height: 300px;
+    }
+
+
+    .media-grid__recording-links {
+
+      .media-grid__link {
+        padding: 25px;
+      }
+    }
   }
 }
 </style>

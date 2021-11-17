@@ -22,5 +22,6 @@ Ich nutze visuelles Testing schon eine Weile und es hat mir schon einpaar mal me
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
 }]"></media-grid>

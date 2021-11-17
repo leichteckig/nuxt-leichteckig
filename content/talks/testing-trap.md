@@ -20,6 +20,7 @@ When writing frontend tests, there are lots of pitfalls on the way. In sum, they
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them'
 }]"></media-grid>
 

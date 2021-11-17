@@ -27,13 +27,16 @@ In my session, I want to introduce Cypress to you and explore its possibilities 
 ## Slides
 
 <media-grid :media="[{
-name: 'Slides: Developer-Week',
+name: 'Slides',
+description: 'You can find the slides of the talk at Developer-Week on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
 }, {
-name: 'Slides: eCommerce Camp Jena',
+name: 'Slides',
+description: 'You can find the slides of the talk at eCommerce Camp Jena on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/e2e-testing-as-it-should-be'
 }, {
-name: 'Slides: Reacticon',
+name: 'Slides',
+description: 'You can find the slides of the talk at Reacticon on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-as-it-should-be-an-introduction-to-cypress'
 }]"></media-grid>
 
