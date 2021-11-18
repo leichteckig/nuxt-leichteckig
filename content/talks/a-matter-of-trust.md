@@ -17,6 +17,7 @@ Our daily work at Shopware, but also at agencies, ends up in the hands of people
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/a-matter-of-trust-test'
 }]"></media-grid>
 

@@ -27,6 +27,7 @@ In my session, I want to introduce Cypress to you and explore its possibilities 
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/symfony-meets-cypress-e2e-testing-for-symfony-developers'
 }]"></media-grid>
 

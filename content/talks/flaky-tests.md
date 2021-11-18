@@ -24,6 +24,7 @@ I've spent hours and hours on such tests, and I want to share my path through th
 
 <media-grid :media="[{
 name: 'Slides',
+description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
 }]"></media-grid>
 
