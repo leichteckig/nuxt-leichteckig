@@ -36,18 +36,13 @@ export default {
   },
 
   async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'asc').limit(6)
-      .fetch();
-
     const publications = await $content('publications')
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
       .fetch();
 
     return {
-      pastTalks, publications
+      publications
     }
   },
 

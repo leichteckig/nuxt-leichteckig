@@ -1,6 +1,6 @@
 ---
-title: 🇩🇪 Let's get visual
-description: Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit einem vorherigen Stand.
+title: Let's get visual - Visual testing in your project
+description: Visual testing compares the appearance of your application with a previous state.
 createdAt: 2021-04-16T22:50:54.724Z
 author:
   name: Ramona Schwering
@@ -8,20 +8,23 @@ author:
 tags:
   - SymfonyWorld Germany
   - CypressDE Meetup
+  - WeAreDevelopers JavaScript Congress
 ---
 
 ## Abstract
 
-In Deinem Projekt sind Tests wichtig: Das weißt Du wahrscheinlich schon und so erledigst Du es selbst - oder deine lieben Tester. Doch sobald Dein Projekt immer weiter wächst, wird das immer mühsamer - Jede Deiner Änderungen kann etwas in Deinem Projekt brechen, ohne das Du es merkst. Aber nach jedem Merge mit einer Checkliste diesen Seiteneffekten hinterher zu rennen ist auch keine Lösung. Doch End-to-end Tests machen nur das, was Du ihnen sagst - schauen also nicht nach rechts oder links. So können zB. Fehler im Styling unbemerkt bleiben.
+Testing is important: You probably already know that and so you do it yourself - or your dear testers do, at least. But as your project grows, this becomes more and more tedious - each of your changes can break something in your project without you noticing it. But chasing these side-effects with a checklist after every merge is no solution either. However, end-to-end tests only do what you tell them to do - so they don't look left or right. For example, styling errors can go unnoticed.
 
-Also was nun? Visuelles Testing vergleicht das Aussehen Deiner Anwendung mit einem vorherigen Stand. Wenn Veränderungen deutlich werden, kannst Du diese erlauben oder halt nicht. Somit hast Du oder Deine Tester seine Augen überall - ohne den Zwang, immer wieder manuell zu prüfen.
+So what now? Visual testing compares the appearance of your application with a previous state. If changes become visible, you can react to them. So you or your testers have their eyes everywhere - without the need to check manually over and over again.
 
-Ich nutze visuelles Testing schon eine Weile und es hat mir schon einpaar mal meinen Hals gerettet. Lasst uns meine Reise einmal gemeinsam anschauen und erforschen, ob und wie Visual Testing auch in euren Projekten helfen kann.
+I've been using visual testing for a while now and it has saved my neck a few times. Let's take a look at my journey together and explore if and how visual testing can help in your projects as well.
 
 ## Slides
 
 <media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
+name: 'Folien',
 url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
-}]"></media-grid>
+},{
+name: 'Slides',
+url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visual-testing-in-your-project'
+} ]"></media-grid>
