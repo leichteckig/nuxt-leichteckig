@@ -24,7 +24,6 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg": "^0.3.0",
     "core-js": "^3.19.1",
-    "fibers": "^5.0.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
