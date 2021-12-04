@@ -74,6 +74,7 @@ export default {
 
 .link-tile__tag-container {
   display: flex;
+  flex-wrap: wrap;
   bottom: 0;
 }
 
