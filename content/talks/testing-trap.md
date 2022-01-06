@@ -8,6 +8,7 @@ author:
 tags:
 - FrontendTestFest 2021
 - MOONCOM 2021
+- TestJS Summit 2021
 ---
 
 ## Abstract
@@ -27,6 +28,9 @@ url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitf
 ## Recording
 
 <media-grid :media="[{
+name: 'TestJS Summit',
+url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
+}, {
 name: 'Front-End Test Fest',
 url: 'https://www.youtube-nocookie.com/embed/uvJwWQLaVqU'
 }]"></media-grid>
