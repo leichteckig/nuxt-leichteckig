@@ -1,5 +1,7 @@
 # leichteckig
 
+[![Tests CI](https://github.com/leichteckig/nuxt-leichteckig/actions/workflows/tests.yml/badge.svg)](https://github.com/leichteckig/nuxt-leichteckig/actions/workflows/tests.yml)
+
 Hello! 👋 It's seems that you found your way to my [personal website](https://www.ramona.codes). Nice to meet you! ♥️ 
 
 If you want, clone it, check it out and if you have some feedback, please keep me posted.
