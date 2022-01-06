@@ -3,10 +3,14 @@ describe('Check Home page', () => {
     cy.visit('/');
   });
 
-  it('should load home page', () => {
+  it('should load home page (visual)', () => {
     cy.get('[data-cy=Polaroid]').should('be.visible');
     cy.contains('[data-cy=Welcome]', 'Hi, I\'m Ramona').should('be.visible');
+
     cy.get('[data-cy=FeaturedPosts]').should('be.visible');
+    if (Cypress.env('percy')) {
+      cy.percySnapshot('Home page');
+    }
   });
 
   it('should change color mode to dark and light', () => {

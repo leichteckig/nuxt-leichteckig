@@ -13,7 +13,7 @@
           image-path="/moe.webp"
         />
         <div class="about__text">
-          <h2 data-cy="PublicationListingTitle">
+          <h2 data-cy="AboutTitle">
             It's nice to meet you here! 👋
           </h2>
           <p
