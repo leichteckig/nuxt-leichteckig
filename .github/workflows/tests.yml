@@ -1,13 +1,13 @@
 name: Tests CI
 on: [push]
 jobs:
-  eslint:
+  static-elsint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run lint
-  jest:
+  unit-integration-jest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm test
-  cypress-run:
+  e2e-cypress:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
