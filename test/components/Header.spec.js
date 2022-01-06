@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {mount, shallowMount} from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Header from '@/components/Header.vue'
 
 describe('Header component', () => {
