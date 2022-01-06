@@ -13,7 +13,7 @@ module.exports = {
   transform: {
     '^.+\\.svg$': '<rootDir>/svgTransform.js',
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest',
+    "^.+\\.vue$": "@vue/vue2-jest"
   },
   collectCoverage: true,
   collectCoverageFrom: [
@@ -21,6 +21,6 @@ module.exports = {
     '<rootDir>/pages/**/*.vue'
   ],
   testPathIgnorePatterns: [
-    "<rootDir>/cypress/"
+    '<rootDir>/cypress/'
   ]
 }

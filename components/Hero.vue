@@ -3,7 +3,7 @@
     class="hero-image"
     :src="`/${img.path}`"
     :alt="img.alt"
-  />
+  >
 </template>
 
 <script>

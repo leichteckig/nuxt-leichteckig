@@ -1,7 +1,13 @@
 name: Tests CI
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
-  jest:
+  static-elsint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run lint
+  unit-integration-jest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,14 +17,14 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm test
-  cypress-run:
+  ui-cypress:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
@@ -26,3 +32,7 @@ jobs:
           build: npm run generate
           start: npm run start
           wait-on: 'http://localhost:3000'
+      - name: Percy Test
+        run: npx percy exec -- cypress run --browser chrome --headless --env percy=treu,grep=visual
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

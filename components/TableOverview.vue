@@ -1,62 +1,75 @@
 <template>
+  <!-- eslint-disable vue/no-use-v-if-with-v-for -->
   <section class="talk-event-table">
     <table>
       <thead>
-      <tr class="handdraw-line">
-        <th>Talk or event title</th>
-        <th>Conference / Event</th>
-        <th>Date</th>
-      </tr>
+        <tr class="handdraw-line">
+          <th>Talk or event title</th>
+          <th>Conference / Event</th>
+          <th>Date</th>
+        </tr>
       </thead>
       <tbody>
-      <tr v-if="upcomingTalks.length"
+        <tr
           v-for="entry in upcomingTalks"
-          class="handdraw-line">
-        <td data-label="Title">
-          {{ entry.title }}
-        </td>
-        <td data-label="Conference">
-          <!-- entry.img == link of the event -->
-          <a v-if="entry.img"
-             class="talk-event-table__url"
-             :href="entry.img"
-             target="_blank"
-             rel="noopener">
+          v-if="upcomingTalks.length"
+          :key="entry.title"
+          class="handdraw-line"
+        >
+          <td data-label="Title">
+            {{ entry.title }}
+          </td>
+          <td data-label="Conference">
+            <!-- entry.img == link of the event -->
+            <a
+              v-if="entry.img"
+              class="talk-event-table__url"
+              :href="entry.img"
+              target="_blank"
+              rel="noopener"
+            >
 
-            <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </a>
-          <span v-else>
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </a>
+            <span v-else>
 
-          <!-- entry.description == Event title -->
-            {{ entry.description }}
-          </span>
-        </td>
-        <td data-label="Date">
-          <!-- entry.alt == Date of the event in more pretty -->
-          <span v-if="entry.alt">
-          {{ entry.alt }}
-          </span>
-        </td>
-      </tr>
-      <tr class="talk--placeholder handdraw-line">
-        <td data-label="Title"></td>
-        <td data-label="Conference"></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr class="talk--cyde handdraw-line">
-        <td data-label="Title">Not always as a speaker, but it's our Cypress Germany meetup! ❤️</td>
-        <td data-label="Conference"><a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr class="talk--placeholder handdraw-line">
-        <td data-label="Title"></td>
-        <td data-label="Conference"></td>
-        <td data-label="Date"></td>
-      </tr>
-      <tr v-if="pastTalks.length"
-        v-for="entry in pastTalks"
-        class="handdraw-line talk--old">
+              <!-- entry.description == Event title -->
+              {{ entry.description }}
+            </span>
+          </td>
+          <td data-label="Date">
+            <!-- entry.alt == Date of the event in more pretty -->
+            <span v-if="entry.alt">
+              {{ entry.alt }}
+            </span>
+          </td>
+        </tr>
+        <tr class="talk--placeholder handdraw-line">
+          <td data-label="Title" />
+          <td data-label="Conference" />
+          <td data-label="Date" />
+        </tr>
+        <tr class="talk--cyde handdraw-line">
+          <td data-label="Title">
+            Not always as a speaker, but it's our Cypress Germany meetup! ❤️
+          </td>
+          <td data-label="Conference">
+            <a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a>
+          </td>
+          <td data-label="Date" />
+        </tr>
+        <tr class="talk--placeholder handdraw-line">
+          <td data-label="Title" />
+          <td data-label="Conference" />
+          <td data-label="Date" />
+        </tr>
+        <tr
+          v-for="entry in pastTalks"
+          v-if="pastTalks.length"
+          :key="entry.title"
+          class="handdraw-line talk--old"
+        >
           <td data-label="Title">
             <!-- entry.img == link of the event -->
             <span>
@@ -65,26 +78,28 @@
           </td>
           <td data-label="Conference">
             <!-- entry.img == link of the event -->
-            <a v-if="entry.img"
-               class="talk-event-table__url"
-               :href="entry.img"
-               target="_blank"
-               rel="noopener">
+            <a
+              v-if="entry.img"
+              class="talk-event-table__url"
+              :href="entry.img"
+              target="_blank"
+              rel="noopener"
+            >
               <!-- entry.description == Event title -->
               {{ entry.description }}
             </a>
             <span v-else>
-            <!-- entry.description == Event title -->
+              <!-- entry.description == Event title -->
               {{ entry.description }}
             </span>
           </td>
           <td data-label="Date">
             <!-- entry.alt == Date of the event in more pretty -->
             <span v-if="entry.alt">
-            {{ entry.alt }}
+              {{ entry.alt }}
             </span>
           </td>
-      </tr>
+        </tr>
       </tbody>
     </table>
   </section>
@@ -113,21 +128,6 @@ export default {
   },
 
   methods: {
-    getTableClasses(entry) {
-      if(entry.tags?.includes('placeholder')) {
-        return 'handdraw-line talk--placeholder'
-      }
-
-      if(entry.tags?.includes('CypressDE')) {
-        return 'handdraw-line talk--cyde'
-      }
-
-      if(entry.tags?.includes('old')) {
-        return 'handdraw-line talk--old'
-      }
-      return 'handdraw-line';
-    },
-
     getPastDate(eventDate) {
       if(Date.now() < Date.parse(eventDate)) {
         return true;

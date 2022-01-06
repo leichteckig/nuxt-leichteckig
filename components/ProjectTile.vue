@@ -2,12 +2,15 @@
   <section class="project-tile">
     <h2>{{ title }}</h2>
     <div class="project-tile__listing fade-out mostly-customized-scrollbar">
-      <a v-for="entry in contents"
+      <a
+        v-for="entry in contents"
+        :key="entry.full_name"
         :href="entry.html_url"
         target="_blank"
         rel="noopener"
         role="button"
-        :aria-label="entry.full_name.replace(' ', '-')">
+        :aria-label="entry.full_name.replace(' ', '-')"
+      >
         <div class="project__link-tile handdraw-border">
           <h3 class="project__title">
             {{ entry.full_name }}

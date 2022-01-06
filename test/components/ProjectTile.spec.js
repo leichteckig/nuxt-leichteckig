@@ -22,14 +22,19 @@ describe('ProjectTile component', () => {
       propsData: {
         contents: [{
           full_name: 'leichteckig/my-project',
-          description: 'Lorem ipsum'
+          description: 'Lorem ipsum',
+          html_url: 'https://github.com/leichteckig'
         }],
-        title: 'LargePosts'
+        title: 'Github thingy'
       },
       stubs: {
         NuxtLink: { template: '<div><slot></slot></div>' }
       }
     });
-    expect(wrapper.vm).toBeTruthy();
+
+    expect(wrapper.find('h2').text()).toBe('Github thingy');
+    expect(wrapper.find('.project__title').text()).toBe('leichteckig/my-project');
+    expect(wrapper.find('.project__link-tile p').text()).toBe('Lorem ipsum');
+    expect(wrapper.find('.project-tile__listing a').attributes().href).toBe('https://github.com/leichteckig');
   });
 });

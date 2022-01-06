@@ -1,13 +1,23 @@
 <template>
-  <Page class="blog-detail" :title="article.title" :img="{
-    path: article.img,
-    alt: article.alt
-  }">
+  <Page
+    class="blog-detail"
+    :title="article.title"
+    :img="{
+      path: article.img,
+      alt: article.alt
+    }"
+  >
     <main>
-      <DetailSummary :article="article"></DetailSummary>
+      <DetailSummary :article="article" />
 
-      <article class="blog-detail__detail-content" data-cy="BlogDetailContent">
-        <nuxt-content :document="article" data-cy="BlogDetailContent"/>
+      <article
+        class="blog-detail__detail-content"
+        data-cy="BlogDetailContent"
+      >
+        <nuxt-content
+          :document="article"
+          data-cy="BlogDetailContent"
+        />
       </article>
     </main>
   </Page>
@@ -17,7 +27,11 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
-  name: 'blogDetail',
+  name: 'BlogDetail',
+
+  components: {
+    DetailSummary
+  },
 
   async asyncData({$content, params}) {
     const article = await $content('articles', params.slug).fetch();
@@ -27,13 +41,26 @@ export default {
 
   head() {
     return {
-      title: this.article.title,
+      title: this.article?.title ? this.article.title : 'Ramona Schwering\'s Blog',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { property: 'og:title', hid:'og:title-detail', content: this.article.title? this.article.title : 'Ramona Schwering' },
-        { property: 'og:description', hid:'og:description-detail', content: this.article.description? this.article.description : 'Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.' },
-        { hid: 'og:image-detail', property: 'og:image', content: this.article.img? `https://www.ramona.codes/${this.article.img}` : 'https://www.ramona.codes/ogimage.png'},
+        {
+          property: 'og:title',
+          hid:'og:title-detail',
+          content: this.article?.title? this.article.title : 'Ramona Schwering'
+        },
+        {
+          property: 'og:description',
+          hid:'og:description-detail',
+          content: this.article?.description? this.article.description : 'Ramona Schwering.'
+        },
+        { hid: 'og:image-detail',
+          property: 'og:image',
+          content: this.article?.img ?
+            `https://www.ramona.codes/${this.article.img}`
+            : 'https://www.ramona.codes/ogimage.png'
+        },
         { name: 'twitter:card', hid:'twitter:card-detail', content: 'summary_large_image' }
       ],
       link: [
@@ -53,10 +80,6 @@ export default {
         href: this.article.author.bio?.includes('smashing') ? this.article.author.bio : undefined
       };
     }
-  },
-
-  components: {
-    DetailSummary
   }
 }
 </script>

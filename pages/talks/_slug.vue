@@ -1,8 +1,14 @@
 <template>
   <Page :title="talk.title">
-    <main class="talk--content" data-cy="TalkDetailContent">
-      <DetailSummary :article="talk"></DetailSummary>
-      <nuxt-content :document="talk" data-cy="TalkDetailContent" />
+    <main
+      class="talk--content"
+      data-cy="TalkDetailContent"
+    >
+      <DetailSummary :article="talk" />
+      <nuxt-content
+        :document="talk"
+        data-cy="TalkDetailContent"
+      />
     </main>
   </Page>
 </template>
@@ -11,43 +17,37 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
-  name: 'talkDetail',
-
-  head() {
-    return {
-      title: this.talk.title,
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: this.talk.title.replace(' ', '-'),
-          name: this.talk.title,
-          content: this.talk.description
-        },
-        { name: 'og:title', hid:'og:title', content: this.talk.title },
-        { name: 'og:description', hid:'og:description', content: this.talk.description },
-      ],
-      link: [
-        this.getCanonicalLink,
-      ],
-    }
-  },
+  name: 'TalkDetail',
 
   components: {
     DetailSummary
   },
 
-  computed: {
-    getCanonicalLink() {
-      if (!this.talk.author.bio?.includes('speakerdeck')) {
-        return {}
-      }
+  async asyncData({ $content, params }) {
+    const talk = await $content('talks', params.slug).fetch();
 
-      return {
-        rel: 'canonical',
-        href: this.talk.author.bio
-      };
-    },
+    return { talk }
+  },
+
+  head() {
+    return {
+      title: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: this.talk?.title ? this.talk.title.replace(' ', '-') : 'Ramona-Schwering-Blog',
+          name: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
+          content: this.talk?.description ? this.talk.description : 'Frontend Developer',
+        },
+        { name: 'og:title', hid:'og:title', content: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog' },
+        {
+          name: 'og:description',
+          hid:'og:description',
+          content: this.talk?.description ? this.talk.description : 'Frontend Developer'
+        },
+      ]
+    }
   },
 
   methods: {
@@ -55,12 +55,6 @@ export default {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
-  },
-
-  async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch();
-
-    return { talk }
   },
 }
 </script>
