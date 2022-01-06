@@ -1,10 +1,11 @@
 <template>
   <Page title="Ramona Schwering's content">
     <main class="other-publications">
-      <h2 data-cy="PublicationListingTitle">Guest contributions and appearances</h2>
+      <h2 data-cy="PublicationListingTitle">
+        Guest contributions and appearances
+      </h2>
       <div class="featured-posts">
-        <LinkTile :contents="publications">
-        </LinkTile>
+        <LinkTile :contents="publications" />
       </div>
     </main>
   </Page>
@@ -14,10 +15,21 @@
 import LinkTile from "@/components/LinkTile";
 
 export default {
-  name: 'publicationList',
+  name: 'PublicationList',
 
   components: {
     LinkTile
+  },
+
+  async asyncData({ $content }) {
+    const publications = await $content('publications')
+      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
+      .sortBy('createdAt', 'desc')
+      .fetch();
+
+    return {
+      publications
+    }
   },
 
   head() {
@@ -32,17 +44,6 @@ export default {
           content: 'Are you searching for other publication I contributed to? Look no further!'
         }
       ]
-    }
-  },
-
-  async asyncData({ $content }) {
-    const publications = await $content('publications')
-      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      publications
     }
   },
 

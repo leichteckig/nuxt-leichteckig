@@ -2,9 +2,11 @@
   <div class="small-tile">
     <article
       v-for="article in contents"
+      :key="article.title"
       class="post handdraw-border"
+      data-cy="SingleArticle"
       @click="$router.push({ name: `${slugName}-slug`, params: { slug: article.slug } })"
-      data-cy="SingleArticle">
+    >
       <h3 class="post__title">
         <NuxtLink :to="{ name: `${slugName}-slug`, params: { slug: article.slug } }">
           {{ article.title }}

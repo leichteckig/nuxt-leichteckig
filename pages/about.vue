@@ -1,14 +1,25 @@
 <template>
-  <Page title="About Ramona Schwering" :img="{
-        path: 'stickers.jpeg',
-        alt: 'stickers'
-      }">
+  <Page
+    title="About Ramona Schwering"
+    :img="{
+      path: 'stickers.jpeg',
+      alt: 'stickers'
+    }"
+  >
     <main class="about-content">
       <section class="about__section about__polaroid-grid--reversed">
-        <Polaroid class="about__scribble" imagePath="/moe.webp" />
+        <Polaroid
+          class="about__scribble"
+          image-path="/moe.webp"
+        />
         <div class="about__text">
-          <h2 data-cy="PublicationListingTitle">It's nice to meet you here! 👋</h2>
-          <p class="about-titles" data-cy="WelcomeDescription">
+          <h2 data-cy="PublicationListingTitle">
+            It's nice to meet you here! 👋
+          </h2>
+          <p
+            class="about-titles"
+            data-cy="WelcomeDescription"
+          >
             I love to share my knowledge and expertise, as well as my great love for
             frontend development and design to others as a speaker at major conferences with a lot of power.
             For me, one thing counts above all: I very much hope that I can become that role model that
@@ -20,33 +31,40 @@
             message="❤️ ~ Especially in love with VueJS, Cypress and Jest.️
             Passionate about open source.
             Trying to get back to sketch noting and drawing at times.
-            By the way, I'm open for speaking opportunities. 👩‍🏫 " >
-          </Hint>
+            By the way, I'm open for speaking opportunities. 👩‍🏫 "
+          />
         </div>
       </section>
       <section class="about__section about__featured-stack">
         <div>
-          <div class="handdraw-line"></div>
-          <div class="gradient"></div>
+          <div class="handdraw-line" />
+          <div class="gradient" />
         </div>
-        <h2 data-cy="AboutProjectsListingTitle">What I do</h2>
+        <h2 data-cy="AboutProjectsListingTitle">
+          What I do
+        </h2>
         <div class="about__featured-stack--container">
           <div class="about__experience--specials">
             <p data-cy="WelcomeDescription">
-              Currently, I'm working as a <span class="marked">Software Developer</span> at <span class="marked">shopware AG</span>.
-              💙 <br/>
-              There, I focus on the frontend area: I contribute to building high quality open source applications in Symfony and VueJS projects.
+              Currently, I'm working as a
+              <span class="marked">Software Developer</span> at <span class="marked">shopware AG</span>.
+              💙 <br>
+              There, I focus on the frontend area: I contribute to building high quality
+              open source applications in Symfony and VueJS projects.
             </p>
           </div>
-          <div class="about__featured-stack--list" data-cy="FeaturedStack">
+          <div
+            class="about__featured-stack--list"
+            data-cy="FeaturedStack"
+          >
             <component
+              :is="`icon-${image}`"
               v-for="image in stack"
               :key="image"
-              :is="`icon-${image}`"
             />
           </div>
         </div>
-        <div class="handdraw-line"></div>
+        <div class="handdraw-line" />
       </section>
       <section class="about__section about__extended-bio">
         <div data-cy="ExtendedBio">
@@ -54,7 +72,8 @@
           <div class="about__polaroid-grid about__extended-bio--column">
             <div class="about__experience--specials about__experience--specials-1">
               <p data-cy="AboutBioFirst">
-                I decided to turn my hobby into a profession: In the creative field, I have been involved with IT for a long time, I have done a lot of
+                I decided to turn my hobby into a profession: In the creative field, I have been involved with IT
+                for a long time, I have done a lot of
                 drawing and painting back then and to present my work I built my own pages.
               </p>
               <p>
@@ -65,7 +84,11 @@
                 Quality assurance to use my education effectively.
               </p>
             </div>
-            <Polaroid class="about__scribble about__experience--specials-2" type="purple" imagePath="/Moe-presents.webp" />
+            <Polaroid
+              class="about__scribble about__experience--specials-2"
+              type="purple"
+              image-path="/Moe-presents.webp"
+            />
             <div class="about__experience--specials about__experience--specials-3">
               <p data-cy="AboutBioSecond">
                 However,
@@ -81,11 +104,20 @@
               </p>
             </div>
             <div class="about__experience--specials-moe-presents about__experience--specials-4">
-              <Polaroid class="about__scribble" type="rose" imagePath="/Moe-Coding.webp" />
+              <Polaroid
+                class="about__scribble"
+                type="rose"
+                image-path="/Moe-Coding.webp"
+              />
             </div>
             <div class="about__experience--specials about__experience--specials-5">
-              <h2 data-cy="AboutProjectsListingTitle">Special experience</h2>
-              <ul class="about-titles" data-cy="WelcomeDescription">
+              <h2 data-cy="AboutProjectsListingTitle">
+                Special experience
+              </h2>
+              <ul
+                class="about-titles"
+                data-cy="WelcomeDescription"
+              >
                 <li>🌲 Cypress ambassador.</li>
                 <li>🛠️ ISTQB: Foundation Tester Certificate.</li>
                 <li>👩‍💼 Certified Scrum Master.</li>
@@ -93,10 +125,13 @@
               </ul>
             </div>
             <div class=" about__experience--specials-6">
-              <ProjectTile v-if="projects" title="GitHub contributions" :contents="projects">
-              </ProjectTile>
-              <div class="handdraw-line"></div>
-              <div class="gradient"></div>
+              <ProjectTile
+                v-if="projects"
+                title="GitHub contributions"
+                :contents="projects"
+              />
+              <div class="handdraw-line" />
+              <div class="gradient" />
             </div>
           </div>
         </div>
@@ -124,7 +159,25 @@ import IconPHP from '@/assets/icons/php.svg?inline';
 import IconGit from '@/assets/icons/git.svg?inline';
 
 export default {
-  name: 'about',
+  name: 'About',
+
+  components: {
+    Hint,
+    LinkTile,
+    ProjectTile,
+    IconHtml,
+    IconCss,
+    IconJavaScript,
+    IconVue,
+    IconCypress,
+    IconJest,
+    IconSymfony,
+    IconTwig,
+    IconSass,
+    IconNuxt,
+    IconPHP,
+    IconGit
+  },
 
   data() {
     return {
@@ -145,24 +198,6 @@ export default {
       projectUrl: 'https://api.github.com/users/leichteckig',
       projects: []
     };
-  },
-
-  components: {
-    Hint,
-    LinkTile,
-    ProjectTile,
-    IconHtml,
-    IconCss,
-    IconJavaScript,
-    IconVue,
-    IconCypress,
-    IconJest,
-    IconSymfony,
-    IconTwig,
-    IconSass,
-    IconNuxt,
-    IconPHP,
-    IconGit
   },
 
   head() {

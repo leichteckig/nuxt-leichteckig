@@ -1,8 +1,14 @@
 <template>
   <Page :title="talk.title">
-    <main class="talk--content" data-cy="TalkDetailContent">
-      <DetailSummary :article="talk"></DetailSummary>
-      <nuxt-content :document="talk" data-cy="TalkDetailContent" />
+    <main
+      class="talk--content"
+      data-cy="TalkDetailContent"
+    >
+      <DetailSummary :article="talk" />
+      <nuxt-content
+        :document="talk"
+        data-cy="TalkDetailContent"
+      />
     </main>
   </Page>
 </template>
@@ -11,7 +17,17 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
-  name: 'talkDetail',
+  name: 'TalkDetail',
+
+  components: {
+    DetailSummary
+  },
+
+  async asyncData({ $content, params }) {
+    const talk = await $content('talks', params.slug).fetch();
+
+    return { talk }
+  },
 
   head() {
     return {
@@ -34,21 +50,11 @@ export default {
     }
   },
 
-  components: {
-    DetailSummary
-  },
-
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
-  },
-
-  async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch();
-
-    return { talk }
   },
 }
 </script>

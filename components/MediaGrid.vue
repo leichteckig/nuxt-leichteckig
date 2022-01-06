@@ -2,24 +2,41 @@
   <section class="media-grid">
     <div
       v-for="entry in media"
+      :key="entry.name"
       class="media-grid__recording-links"
-      :key="entry.name">
-      <div v-if="entry.url.includes('youtube')" class="media-grid__video">
-        <h3 v-if="entry.name">{{ entry.name }}</h3>
-        <iframe :src="entry.url" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    >
+      <div
+        v-if="entry.url.includes('youtube')"
+        class="media-grid__video"
+      >
+        <h3 v-if="entry.name">
+          {{ entry.name }}
+        </h3>
+        <iframe
+          :src="entry.url"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+        />
       </div>
-      <div v-else class="media-grid__link handdraw-border">
-        <h3 v-if="!entry.url.includes('speakerdeck')">{{ entry.name }}</h3>
+      <div
+        v-else
+        class="media-grid__link handdraw-border"
+      >
+        <h3 v-if="!entry.url.includes('speakerdeck')">
+          {{ entry.name }}
+        </h3>
         <p>{{ entry.description }}</p>
         <Button
           class="media-grid__btn"
           variant="secondary"
+          data-cy="OpenSlides"
           @click.native="openSlideLink(entry.url)"
-          data-cy="OpenSlides">
+        >
           {{ entry.name }}
         </Button>
       </div>
-   </div>
+    </div>
   </section>
 </template>
 

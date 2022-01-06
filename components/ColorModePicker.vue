@@ -4,12 +4,13 @@
       <li
         v-for="color of colors"
         :key="color"
-        @click="$colorMode.preference = color"
         class="color-item"
         :class="getClasses(color)"
         :data-cy="`${color}switch`"
         role="button"
-        :aria-label="`${color}switch`">
+        :aria-label="`${color}switch`"
+        @click="$colorMode.preference = color"
+      >
         <component
           :is="`icon-${color}`"
         />
@@ -39,7 +40,6 @@ export default {
   },
   methods: {
     getClasses(color) {
-      // Does not set classes on ssr when preference is system (because we don't know the preference until client-side)
       if (this.$colorMode.unknown) {
         return {}
       }

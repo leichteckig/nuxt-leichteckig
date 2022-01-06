@@ -2,12 +2,13 @@
   <div class="page">
     <section class="page__title">
       <div class="container">
-        <h1 data-cy="Title">{{ title }}</h1>
+        <h1 data-cy="Title">
+          {{ title }}
+        </h1>
       </div>
     </section>
     <section v-if="img">
-      <Hero :img="img">
-      </Hero>
+      <Hero :img="img" />
     </section>
     <section class="page__content">
       <div class="container">

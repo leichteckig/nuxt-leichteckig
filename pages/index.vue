@@ -3,31 +3,58 @@
     <section class="hero handdraw-line">
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 class="hero__title" data-cy="Welcome">Hi, I'm Ramona</h1>
-          <p class="hero__sub-title" data-cy="WelcomeDescription">A frontend-developer<br> who ❤️ Test Automation and JavaScript</p>
-          <SocialButtonGroup/>
+          <h1
+            class="hero__title"
+            data-cy="Welcome"
+          >
+            Hi, I'm Ramona
+          </h1>
+          <p
+            class="hero__sub-title"
+            data-cy="WelcomeDescription"
+          >
+            A frontend-developer<br> who ❤️ Test Automation and JavaScript
+          </p>
+          <SocialButtonGroup />
         </div>
-        <Polaroid imagePath="/Moe-portrait.webp" type="rose" />
+        <Polaroid
+          image-path="/Moe-portrait.webp"
+          type="rose"
+        />
       </div>
     </section>
     <section class="moe-refer">
       <div class="container moe__inner">
         <div class="moe__text">
-          <h2 class="moe__title">Who dis?</h2>
-          <p class="moe__sub-title">Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️</p>
-          <p class="moe__description">After my education as an application developer, I contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. I own both views of the product - that of a tester and that of a developer: I use this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.</p>
+          <h2 class="moe__title">
+            Who dis?
+          </h2>
+          <p class="moe__sub-title">
+            Ramona Schwering. Software Developer @shopware. International Speaker. Cypress Ambassador.
+            OpenSource Lover ❤️
+          </p>
+          <p class="moe__description">
+            After my education as an application developer,
+            I contributed to product development at shopware AG for about six years now: First in quality assurance
+            and now, as Software Developer. I own both views of the product - that of a tester and that of a
+            developer: I use this primarily to strengthen trust in test automation and to support the testers.
+            The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.
+          </p>
         </div>
       </div>
-      <div class="gradient"></div>
-      <div class="handdraw-line"></div>
+      <div class="gradient" />
+      <div class="handdraw-line" />
     </section>
-    <section class="featured-posts" data-cy="FeaturedPosts">
+    <section
+      class="featured-posts"
+      data-cy="FeaturedPosts"
+    >
       <div class="container">
         <h2>Featured Posts</h2>
         <SmallTile
           :contents="articles"
-          slugName="blog">
-        </SmallTile>
+          slug-name="blog"
+        />
       </div>
     </section>
   </main>
@@ -39,12 +66,24 @@ import Polaroid from "../components/Polaroid";
 import SocialButtonGroup from "~/components/SocialButtonGroup";
 
 export default {
-  name: 'index',
+  name: 'Index',
 
   components: {
     Polaroid,
     SmallTile,
     SocialButtonGroup
+  },
+
+  async asyncData({ $content }) {
+    const articles = await $content('articles')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('createdAt', 'desc')
+      .limit(3)
+      .fetch();
+
+    return {
+      articles
+    }
   },
 
   head() {
@@ -60,18 +99,6 @@ export default {
             'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
         }
       ]
-    }
-  },
-
-  async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .limit(3)
-      .fetch();
-
-    return {
-      articles
     }
   }
 }

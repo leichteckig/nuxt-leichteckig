@@ -1,7 +1,14 @@
 <template>
-  <section class="polaroid__outer-frame handdraw-border" data-cy="Polaroid">
+  <section
+    class="polaroid__outer-frame handdraw-border"
+    data-cy="Polaroid"
+  >
     <div :class="getClasses">
-      <img class="polaroid__image" :src="imagePath" alt="Ramona">
+      <img
+        class="polaroid__image"
+        :src="imagePath"
+        alt="Ramona"
+      >
     </div>
   </section>
 </template>

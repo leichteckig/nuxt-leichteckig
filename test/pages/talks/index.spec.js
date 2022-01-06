@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {shallowMount, createLocalVue, mount} from '@vue/test-utils';
+import { shallowMount, createLocalVue, mount } from '@vue/test-utils';
 import index from '@/pages/talks/index.vue';
 import Page from '@/components/Page.vue';
 import Button from '@/components/Button.vue';

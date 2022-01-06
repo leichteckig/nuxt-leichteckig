@@ -1,12 +1,16 @@
 <template>
-  <Page title="Ramona Schwering's Past talks"
-      class="talk-list">
+  <Page
+    title="Ramona Schwering's Past talks"
+    class="talk-list"
+  >
     <main class="past-talks">
-      <h2 data-cy="PastTalkHeader">Talks I held in the past</h2>
+      <h2 data-cy="PastTalkHeader">
+        Talks I held in the past
+      </h2>
       <div class="featured-posts">
         <SmallTile
           :contents="pastTalks"
-          slugName="talks"
+          slug-name="talks"
         />
       </div>
     </main>
@@ -14,12 +18,23 @@
 </template>
 
 <script>
-import LinkTile from "@/components/LinkTile";
+import SmallTile from "@/components/SmallTile";
 
 export default {
-  name: 'talkList',
+  name: 'TalkList',
   components: {
-    LinkTile
+    SmallTile
+  },
+
+  async asyncData({ $content }) {
+    const pastTalks = await $content('talks')
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('updatedAt', 'desc')
+      .fetch();
+
+    return {
+      pastTalks
+    }
   },
 
   head() {
@@ -34,17 +49,6 @@ export default {
           content: 'If you want to rewatch my past talks, you can find all of them here.'
         }
       ]
-    }
-  },
-
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('updatedAt', 'desc')
-      .fetch();
-
-    return {
-      pastTalks
     }
   },
 

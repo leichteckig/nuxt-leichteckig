@@ -1,13 +1,23 @@
 <template>
-  <Page class="blog-detail" :title="article.title" :img="{
-    path: article.img,
-    alt: article.alt
-  }">
+  <Page
+    class="blog-detail"
+    :title="article.title"
+    :img="{
+      path: article.img,
+      alt: article.alt
+    }"
+  >
     <main>
-      <DetailSummary :article="article"></DetailSummary>
+      <DetailSummary :article="article" />
 
-      <article class="blog-detail__detail-content" data-cy="BlogDetailContent">
-        <nuxt-content :document="article" data-cy="BlogDetailContent"/>
+      <article
+        class="blog-detail__detail-content"
+        data-cy="BlogDetailContent"
+      >
+        <nuxt-content
+          :document="article"
+          data-cy="BlogDetailContent"
+        />
       </article>
     </main>
   </Page>
@@ -17,7 +27,11 @@
 import DetailSummary from "@/components/DetailSummary";
 
 export default {
-  name: 'blogDetail',
+  name: 'BlogDetail',
+
+  components: {
+    DetailSummary
+  },
 
   async asyncData({$content, params}) {
     const article = await $content('articles', params.slug).fetch();
@@ -66,10 +80,6 @@ export default {
         href: this.article.author.bio?.includes('smashing') ? this.article.author.bio : undefined
       };
     }
-  },
-
-  components: {
-    DetailSummary
   }
 }
 </script>

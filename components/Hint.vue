@@ -1,12 +1,20 @@
 <template>
-  <section data-cy="Hint" :class="getClasses">
+  <section
+    data-cy="Hint"
+    :class="getClasses"
+  >
     <div class="hint__summary-card handdraw-border">
       <div class="hint__title">
         <span>
           {{ title }}
         </span>
       </div>
-      <p class="hint__description" data-cy="DetailSummaryDescription">{{ message }}</p>
+      <p
+        class="hint__description"
+        data-cy="DetailSummaryDescription"
+      >
+        {{ message }}
+      </p>
     </div>
   </section>
 </template>
