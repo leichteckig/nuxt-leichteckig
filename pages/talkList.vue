@@ -1,6 +1,6 @@
 <template>
   <Page
-    title="Ramona Schwering's Past talks"
+    title="Past talks"
     class="talk-list"
   >
     <main class="past-talks">
