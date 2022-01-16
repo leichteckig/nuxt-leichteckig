@@ -63,9 +63,6 @@ export default {
 
 <style lang="scss" scoped>
 .media-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
 
   .media-grid__video {
     margin: 15px;
@@ -93,10 +90,31 @@ export default {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
   .media-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+
+    iframe {
+      width: 600px;
+      height: 300px;
+    }
+
+
+    .media-grid__recording-links {
+
+      .media-grid__link {
+        padding: 25px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
 
     iframe {

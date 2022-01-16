@@ -31,6 +31,9 @@ url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitf
 name: 'TestJS Summit',
 url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
 }, {
+name: 'MOONCOM',
+url: 'https://www.youtube-nocookie.com/embed/N5P5enWKVkM'
+}, {
 name: 'Front-End Test Fest',
 url: 'https://www.youtube-nocookie.com/embed/uvJwWQLaVqU'
 }]"></media-grid>
