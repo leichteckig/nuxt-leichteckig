@@ -23,9 +23,6 @@
         v-else
         class="media-grid__link handdraw-border"
       >
-        <h3 v-if="!entry.url.includes('speakerdeck')">
-          {{ entry.name }}
-        </h3>
         <p>{{ entry.description }}</p>
         <Button
           class="media-grid__btn"

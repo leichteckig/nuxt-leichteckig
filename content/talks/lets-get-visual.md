@@ -23,8 +23,17 @@ I've been using visual testing for a while now and it has saved my neck a few ti
 
 <media-grid :media="[{
 name: 'Folien',
+description: 'These are slides in german language.',
 url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
 },{
 name: 'Slides',
+description: 'These is the english version of the slides.',
 url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visual-testing-in-your-project'
 } ]"></media-grid>
+
+## Recordings
+
+<media-grid :media="[{
+name: 'JavaScript Congress\' 21',
+url: 'https://www.wearedevelopers.com/en/videos/let-s-get-visual-visual-testing-in-your-project'
+}]"></media-grid>
