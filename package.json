@@ -32,7 +32,10 @@
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-nuxt": "^3.1.0",
-    "nuxt": "^2.15.8"
+    "nanoid": "3.1.31",
+    "node-fetch": "2.6.7",
+    "nuxt": "^2.15.8",
+    "postcss": "8.2.13"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.74",

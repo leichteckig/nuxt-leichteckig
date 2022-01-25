@@ -13,7 +13,7 @@ describe('Check Home page', () => {
     }
   });
 
-  it('should change color mode to dark and light', () => {
+  it('should change color mode to dark and light (visual)', () => {
     cy.get('[data-cy=lightswitch]').should('be.visible');
     cy.get('[data-cy=lightswitch]').click();
 
@@ -31,6 +31,10 @@ describe('Check Home page', () => {
       .should('have.css', 'background-color', 'rgb(9, 26, 40)');
     cy.get('[data-cy=WelcomeDescription]')
       .should('have.css', 'color', 'rgb(235, 244, 241)');
+
+    if (Cypress.env('percy')) {
+      cy.percySnapshot('Home page - Dark mode');
+    }
   });
 
   it('should open imprint', () => {
