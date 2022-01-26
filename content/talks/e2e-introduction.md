@@ -44,6 +44,9 @@ url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-as-it-should-be-an-
 ## Recordings
 
 <media-grid :media="[{
+name: 'Reacticon\'21',
+url: 'https://www.youtube-nocookie.com/embed/f1LOWUkaQPU?start=15021'
+}, {
 name: 'eCommerce Camp Jena',
 url: 'https://www.youtube-nocookie.com/embed/jA12oktG1rU'
 }]"></media-grid>
