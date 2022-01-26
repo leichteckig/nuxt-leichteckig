@@ -118,9 +118,9 @@
                 class="about-titles"
                 data-cy="WelcomeDescription"
               >
-                <li>🌲 Cypress ambassador.</li>
+                <li>🌲 Cypress Ambassador.</li>
+                <li>👩‍💼 Women Techmaker Ambassador.</li>
                 <li>🛠️ ISTQB: Foundation Tester Certificate.</li>
-                <li>👩‍💼 Certified Scrum Master.</li>
                 <li>🇳🇱 NT2 certificate: Dutch as second language.</li>
               </ul>
             </div>
