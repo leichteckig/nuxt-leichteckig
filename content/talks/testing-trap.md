@@ -9,6 +9,10 @@ tags:
 - FrontendTestFest 2021
 - MOONCOM 2021
 - TestJS Summit 2021
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/testing-trap
 ---
 
 ## Abstract

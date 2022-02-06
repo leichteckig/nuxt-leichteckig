@@ -21,7 +21,7 @@
         class="summary-detail__description"
         data-cy="DetailSummaryDescription"
       >
-        {{ article.description }}
+        <slot></slot>
       </p>
       <div
         v-if="article.tags"

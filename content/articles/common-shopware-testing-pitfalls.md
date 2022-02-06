@@ -1,7 +1,7 @@
 ---
 title: Moe's notes on Shopware's test automation pitfalls
 description: Sometimes, our pipelines fail. If that happens on our own merge requests, we need to fix it - I can imagine you feel the same if you're working with Shopware's tests. These are my notes on common test automation traps in the context of working with Shopware.
-img: smashing-testing-pitfalls/bingo.jpg
+img: shopware-testing-bugs/bingo.jpg
 createdAt: 2021-09-28T00:00:00.724Z
 alt: common Shopware testing traps
 author:
@@ -12,12 +12,17 @@ tags:
 - Unit Tests
 - End-To-End Tests
 - Testing pitfalls
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/blog/common-shopware-testing-pitfalls
 ---
 This article should be a part of specific help resources to guide you on how to inspect, debug and fix failing pipelines. 
 In a way, it's like a remark sheet for all those little hassles I encounter in my daily routine or as questions in 
 StackOverflow or via [Shopware's community slack](http://shopwarecommunity.slack.com). Notes serve like a check point for thoughts, right? 
 
-<hint type="info" title="Updated on September 28, 2021" message="It's a living document, so feel free to contribute, reach out to me and check at a later date, to see if new pitfalls were discovered.">
+<hint type="info" title="Updated on September 28, 2021">
+It's a living document, so feel free to contribute, reach out to me and check at a later date, to see if new pitfalls were discovered.
 </hint>
 
 ## General things
@@ -210,13 +215,10 @@ When working in CI, use a temporary wait to check the timing:
 cy.wait(500); // Time in ms, so this will wait for half a second
 ```
 
-#### 
-
-
-
-<hint type="error" title="Be cautious!" message="Only use fixed waiting times temporarily, in order to debug. Replace this wait with a dynamic assertion if the
+<hint type="error" title="Be cautious!">
+Only use fixed waiting times temporarily, in order to debug. Replace this wait with a dynamic assertion if the
 flakiness is caused by timing issues. See our best practises and Cypress Best practices for further information.
-Needless to say, you should remove the loop as well, as soon as you're done with debugging.">
+Needless to say, you should remove the loop as well, as soon as you're done with debugging.
 </hint>
 
 If you want to learn more on this topic, there's an article by me on [flakiness](smashing-flaky-tests).

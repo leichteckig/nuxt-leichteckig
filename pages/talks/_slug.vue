@@ -4,7 +4,20 @@
       class="talk--content"
       data-cy="TalkDetailContent"
     >
-      <DetailSummary :article="talk" />
+      <DetailSummary :article="talk">
+        <p class="talk-detail__lang">
+          {{ $t('alsoAvailableIn') }}
+          <nuxt-link
+            class="uppercase text-teal-600 hover:text-teal-800"
+            v-for="lang in otherLanguages"
+            :key="lang.locale"
+            :to="switchLocalePath(lang.locale)"
+          >
+            {{ lang.name }}
+          </nuxt-link>
+        </p>
+        {{ talk.description }}
+      </DetailSummary>
       <nuxt-content
         :document="talk"
         data-cy="TalkDetailContent"
@@ -23,8 +36,10 @@ export default {
     DetailSummary
   },
 
-  async asyncData({ $content, params }) {
-    const talk = await $content('talks', params.slug).fetch();
+  async asyncData({ $content, params, i18n }) {
+    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
+
+    const talk = await $content(path, params.slug).fetch();
 
     return { talk }
   },
@@ -48,6 +63,12 @@ export default {
         },
       ]
     }
+  },
+
+  computed: {
+    otherLanguages() {
+      return this.talk.otherLanguages || []
+    },
   },
 
   methods: {
@@ -84,6 +105,11 @@ export default {
   .talk--content blockquote {
     color: var(--color-primary);
     font-style: italic;
+  }
+
+  .talk-detail__lang {
+    font-family: 'Amatic SC';
+    font-size: xx-large;
   }
 
   @media (min-width: 800px) {

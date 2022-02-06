@@ -1,11 +1,11 @@
 <template>
   <Page
-    title="Past talks"
+    :title="$t('speakingPastTalks')"
     class="talk-list"
   >
     <main class="past-talks">
       <h2 data-cy="PastTalkHeader">
-        Talks I held in the past
+        {{ $t('talkSubtitle') }}
       </h2>
       <div class="featured-posts">
         <SmallTile
@@ -26,8 +26,10 @@ export default {
     SmallTile
   },
 
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
+  async asyncData({ $content, i18n }) {
+    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
+
+    const pastTalks = await $content(path)
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')
       .fetch();
@@ -46,7 +48,7 @@ export default {
         {
           hid: 'past-talk-description',
           name: 'past-talks',
-          content: 'If you want to rewatch my past talks, you can find all of them here.'
+          content: 'If you want to re-watch my past talks, you can find all of them here.'
         }
       ]
     }
@@ -70,5 +72,9 @@ h2 {
 
 .talk-list .hero-image {
   object-position: 70% 30%;
+}
+
+.speaking-hint {
+  margin: 0 10%
 }
 </style>

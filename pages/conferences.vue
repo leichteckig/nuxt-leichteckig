@@ -1,6 +1,6 @@
 <template>
-  <Page title="Events I attend">
-    <h2>Meet me at...</h2>
+  <Page :title="$t('attendingTitle')">
+    <h2>{{ $t('attendingSubtitle') }}</h2>
     <main
       class="conference-talks"
       data-cy="EventAppearances"
@@ -24,17 +24,17 @@
       <div class="talks__inner">
         <div class="talks__text">
           <h2 class="talks__title">
-            Looking for my past talks?
+            {{ $t('pastTalkTitle') }}
           </h2>
           <p class="talks__sub-title">
-            Head over to the talks site for an overview!
+            {{ $t('pastTalkSubtitle') }}
           </p>
           <Button
             variant="secondary"
             data-cy="ButtonToTalks"
-            @click.native="$router.push({ name: 'talkList' })"
+            @click.native="$router.push(localePath({ name: 'talkList' }))"
           >
-            Talks
+            {{ $t('pastTalkButton') }}
           </Button>
         </div>
       </div>

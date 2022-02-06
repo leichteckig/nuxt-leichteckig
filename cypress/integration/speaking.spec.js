@@ -16,7 +16,7 @@ describe('Check "Speaking" area', () => {
     cy.get('[data-cy=ButtonToTalks]').scrollIntoView();
     cy.get('[data-cy=ButtonToTalks]').click();
 
-    cy.contains('[data-cy=Title]', 'Past talks').should('be.visible');
+    cy.contains('[data-cy=Title]', 'Ramona Schwering\'s past talks').should('be.visible');
     cy.get('[data-cy=SingleArticle]').first().should('be.visible');
     cy.get('[data-cy=SingleArticle]').first().click();
     cy.get('[data-cy="TalkDetailContent"]').should('be.visible');

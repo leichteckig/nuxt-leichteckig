@@ -12,6 +12,10 @@ tags:
 - Smashing magazine
 - Cypress
 - End-To-End Tests
+otherLanguages:
+- locale: de
+  name: german
+  path: /de/blog/smashing-cypress-introduction
 ---
 *(Photo by [Aleksey Boev](https://unsplash.com/@alanveob?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/cypress?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText))*
 
@@ -159,7 +163,8 @@ describe('Find authors at smashing', () => {
 });
 ```
 
-<hint type="info" title="Little hint" message="If you’re familiar with Mocha, you might have noticed some similarities. Cypress is built on top of Mocha, so the syntax is the same.">
+<hint type="info" title="Little hint">
+If you’re familiar with Mocha, you might have noticed some similarities. Cypress is built on top of Mocha, so the syntax is the same.
 </hint>
 
 All right, let’s proceed. If we run our test in Cypress’ test runner, we’ll notice that Cypress will open a browser to run the test. This browser is seen in the screenshot below:

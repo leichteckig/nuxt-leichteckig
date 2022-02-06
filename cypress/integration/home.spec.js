@@ -37,15 +37,32 @@ describe('Check Home page', () => {
     }
   });
 
+  it('should change to german locale (visual)', () => {
+    cy.contains('[data-cy=lang-de]', 'DE').should('be.visible');
+    cy.get('[data-cy=lang-de]').click();
+
+    cy.contains('[data-cy=lang-en]', 'EN').should('be.visible');
+    cy.contains('[data-cy=Welcome]', 'Hallo, ich bin Ramona Schwering!').should('be.visible');
+    cy.contains('[data-cy=Writing]', 'Blog').should('be.visible');
+    cy.contains('[data-cy=Speaking]', 'Vorträge').should('be.visible');
+    cy.contains('[data-cy=Attending]', 'Events').should('be.visible');
+
+    if (Cypress.env('percy')) {
+      cy.percySnapshot('Home page - German');
+    }
+  });
+
   it('should open imprint', () => {
     cy.get('[data-cy=Footer]').scrollIntoView();
+    cy.get('[data-cy=Footer]').should('be.visible');
     cy.get('[data-cy=NavToImprint]').click();
     cy.contains('[data-cy=Title]', 'Imprint').should('be.visible');
   });
 
   it('should open data protection page', () => {
     cy.get('[data-cy=Footer]').scrollIntoView();
+    cy.get('[data-cy=Footer]').should('be.visible');
     cy.get('[data-cy=NavToDP]').click();
-    cy.contains('[data-cy=Title]', 'Data Protection').should('be.visible');
+    cy.contains('[data-cy=Title]', 'Privacy Notice').should('be.visible');
   });
 });

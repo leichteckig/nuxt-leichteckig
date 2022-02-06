@@ -6,22 +6,22 @@
     <div class="container main-footer__links">
       <SocialButtonGroup class="main-footer__social-links" />
       <nuxt-link
-        to="/imprint/"
+        :to="localePath('/imprint/')"
         class="main-footer__link"
         data-cy="NavToImprint"
         role="button"
         aria-label="ImprintLink"
       >
-        Imprint
+        {{ $t('imprintTitle') }}
       </nuxt-link>
       <nuxt-link
-        to="/privacy/"
+        :to="localePath('/privacy/')"
         class="main-footer__link"
         data-cy="NavToDP"
         role="button"
         aria-label="DataProtectionLink"
       >
-        Data protection
+        {{ $t('privacyTitle') }}
       </nuxt-link>
     </div>
   </footer>

@@ -40,6 +40,13 @@ describe('Conference page', () => {
           }
         }
       },
+      i18n: () => {
+        return {
+          locale: () => {
+            return 'de'
+          },
+        }
+      }
     });
 
     const head = await component.head();
@@ -60,6 +67,10 @@ describe('Conference page', () => {
         Page: Page,
         LinkTile: { template: '<div></div>' }
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i
+      }
     });
     expect(wrapper.vm).toBeTruthy();
   });

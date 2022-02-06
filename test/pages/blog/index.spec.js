@@ -35,11 +35,33 @@ describe('Conference page', () => {
                     return []
                   },
                 }
+              }
+            }
+          },
+          where: () => {
+            return {
+              only: () => {
+                return {
+                  sortBy: () => {
+                    return {
+                      fetch: () => {
+                        return []
+                      },
+                    }
+                  }
+                }
               },
             }
           }
         }
       },
+      i18n: () => {
+        return {
+          locale: () => {
+            return 'de'
+          },
+        }
+      }
     });
 
     const head = await component.head();
@@ -60,6 +82,13 @@ describe('Conference page', () => {
         Page: Page,
         LargeTile: { template: '<div></div>' }
       },
+      mocks: {
+        $t: () => 'some specific text',
+        localePath: i => i,
+        i18n: {
+          locale: 'de'
+        }
+      }
     });
     expect(wrapper.vm).toBeTruthy();
   });

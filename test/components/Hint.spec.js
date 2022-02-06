@@ -23,6 +23,9 @@ describe('Hint component', () => {
         title: 'A little info',
         message: 'Here, you can set your message',
         type: 'info',
+      },
+      slots: {
+        default: 'Here, you can set your message'
       }
     });
 
@@ -37,6 +40,9 @@ describe('Hint component', () => {
         title: 'A little error',
         message: 'Here, you can set your message',
         type: 'error',
+      },
+      slots: {
+        default: 'Here, you can set your message'
       }
     });
 
@@ -51,6 +57,9 @@ describe('Hint component', () => {
         title: 'A little success',
         message: 'Here, you can set your message',
         type: 'success',
+      },
+      slots: {
+        default: 'Here, you can set your message'
       }
     });
 

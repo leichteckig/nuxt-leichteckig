@@ -1,6 +1,6 @@
 <template>
   <Page
-    title="My content and other publications"
+    :title="$t('speakingTitle')"
     :img="{
       path: 'recording-ramona-schwering.jpg',
       alt: 'Me, recording things'
@@ -11,7 +11,7 @@
         class="past-talks"
         data-cy="PastTalkOverview"
       >
-        <h2>Talks I held in the past</h2>
+        <h2>{{ $t('talkSubtitle') }}</h2>
         <div class="featured-posts">
           <SmallTile
             :contents="pastTalks"
@@ -21,9 +21,9 @@
         <div class="more__button">
           <Button
             data-cy="ButtonToTalks"
-            @click.native="$router.push({ name: 'talkList' })"
+            @click.native="$router.push(localePath({ name: 'talkList' }))"
           >
-            See more
+            {{ $t('speakingMore') }}
           </Button>
         </div>
       </section>
@@ -37,17 +37,17 @@
           <div class="gradient" />
           <div class="talks__text">
             <h2 class="talks__title">
-              See my Speakerdeck!
+              {{ $t('speakingDeckTitle') }}
             </h2>
             <p class="talks__sub-title">
-              Here you can see all of my slides in one place! 🙌
+              {{ $t('speakingDeckDescription') }}
             </p>
             <Button
               variant="secondary"
               data-cy="ButtonToSlideDeck"
               @click.native="openLink('https://speakerdeck.com/leichteckig')"
             >
-              Talks
+              {{ $t('speakingMore') }}
             </Button>
           </div>
         </div>
@@ -56,16 +56,16 @@
         class="guest-contributions"
         data-cy="PublicationOverview"
       >
-        <h2>Guest contributions and appearances</h2>
+        <h2>{{ $t('pubSubtitle') }}</h2>
         <div class="featured-posts">
           <LinkTile :contents="publications" />
         </div>
         <div class="more__button">
           <Button
             data-cy="ButtonToPublications"
-            @click.native="$router.push({ name: 'publicationList' })"
+            @click.native="$router.push(localePath({ name: 'publicationList' }))"
           >
-            See more
+            {{ $t('speakingMore') }}
           </Button>
         </div>
       </section>
@@ -84,15 +84,18 @@ export default {
     SmallTile
   },
 
-  async asyncData({ $content }) {
-    const pastTalks = await $content('talks')
+  async asyncData({ $content, i18n }) {
+    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
+    const pathPub = i18n.locale !== 'en' ? `publications/${i18n.locale}` : 'publications';
+
+    const pastTalks = await $content(path)
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('updatedAt', 'desc')
       .limit(6)
       .fetch();
 
 
-    const publications = await $content('publications')
+    const publications = await $content(pathPub)
       .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
       .sortBy('createdAt', 'desc')
       .limit(6)
@@ -143,6 +146,10 @@ h2 {
     var(--bg) 1px,
     var(--bg) 10px
   );
+}
+
+.speaking-hint {
+ margin: 0 10%
 }
 
 .more__button {

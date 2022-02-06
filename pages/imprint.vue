@@ -1,42 +1,26 @@
 <template>
-  <!-- eslint-disable vue/max-len -->
-  <Page title="Imprint">
+  <Page :title="$t('imprintTitle')">
     <main class="index">
       <section class="imprint--english">
-        <h2>🇺🇸 Imprint</h2>
-        <h3>Data in accordance with § 5 TMG</h3>
+        <h2>{{ $t('imprintSubtitle') }}</h2>
         <p>
-          Ramona Schwering<br>
-          Hochstraße 67<br>
-          42105 Wuppertal<br>
+          {{ $t('imprintAddressName') }}<br>
+          {{ $t('imprintAddressStreet') }}<br>
+          {{ $t('imprintAddressCity') }}<br>
+          {{ $t('imprintAddressCounty') }}
         </p>
-        <h3>Contact</h3><br>
+        <h2>{{ $t('imprintContactTitle') }}</h2>
         <p>
-          E-Mail: hello@<span class="mail">schwering</span>ramona.codes<br>
-          Source: https://www.e-recht24.de/impressum-generator.html<br>
-        </p>
-      </section>
-      <section class="imprint--english">
-        <h2>🇩🇪 Impressum</h2>
-        <h3>Angaben gemäß § 5 TMG</h3>
-        <p>
-          Ramona Schwering<br>
-          Hochstraße 67<br>
-          42105 Wuppertal<br>
-        </p>
-        <h3>Kontakt</h3><br>
-        <p>
-          E-Mail: hello@<span class="mail">schwering</span>ramona.codes<br>
-          Quelle: https://www.e-recht24.de/impressum-generator.html<br>
+          {{ $t('imprintContactMail') }}<span class="mail">{{ $t('imprintContactLastname') }}</span>{{ $t('imprintContactDomain') }}<br>
+          {{ $t('imprintSource') }}<br>
         </p>
       </section>
       <section>
-        <h2>Disclaimer</h2>
-        <h3>Fontawesome icons</h3>
+        <h2>{{ $t('faDisclaimer') }}</h2>
+        <h3>{{ $t('faDisclaimerTitle') }}</h3>
         <p>
-          A couple of icons were taken from <a href="https://fontawesome.com/">Fontawesome</a>, so the copyright is theirs. Their free icons are
-          published under Creative Commons Attribution 4.0 International license. Read more on Fontawesome's own
-          <a href="https://fontawesome.com/license">licence</a> as well, no changes were made.
+          {{ $t('faText1') }} <a href="https://fontawesome.com/">Fontawesome</a>, {{ $t('faText2') }}
+          <a href="https://fontawesome.com/license">{{ $t('faText3') }}</a>, {{ $t('faText4') }}
         </p>
       </section>
     </main>
@@ -45,7 +29,7 @@
 
 <script>
 export default {
-  name: 'Imprint',
+  name: "Imprint",
 
   head() {
     return {
@@ -60,9 +44,9 @@ export default {
           content: 'This is the imprint of my site.'
         }
       ]
-    }
-  },
-}
+    };
+  }
+};
 </script>
 
 <style scoped>
