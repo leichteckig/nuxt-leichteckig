@@ -10,6 +10,7 @@ export default {
   alsoAvailableIn: 'This content is also available in ',
 
   // About
+  aboutMenuTitle: 'About me',
   aboutTitle: 'About Ramona Schwering',
   aboutIntroTitle: 'It\'s nice to meet you here! 👋❤️',
   aboutIntroDescription: 'I love to share my knowledge and expertise, as well as my great love for frontend development and design to others as a speaker at major conferences with a lot of power. For me, one thing counts above all: I very much hope that I can become that role model that I would have wished for myself.',

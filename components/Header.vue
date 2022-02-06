@@ -32,7 +32,7 @@
           data-cy="About"
           @click.native="toggleMobileMenu"
         >
-          About me
+          {{ $t('aboutMenuTitle') }}
         </nuxt-link>
         <nuxt-link
           class="header-main__link"

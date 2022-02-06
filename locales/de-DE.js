@@ -10,6 +10,7 @@ export default {
   alsoAvailableIn: 'Dieser Inhalt ist auch in folgender Sprache verfügbar: ',
 
   // About
+  aboutMenuTitle: 'Über mich',
   aboutTitle: 'Über Ramona Schwering',
   aboutIntroTitle: 'Schön, Dich hier zu treffen! 👋❤️',
   aboutIntroDescription: 'Ich liebe es, mein Wissen und meine Expertise sowie meine große Liebe zur Frontend-Entwicklung und zum Design als Referent auf großen Konferenzen mit viel Herzblut an andere weiterzugeben. Für mich zählt vor allem eines: Ich hoffe sehr, dass ich das Vorbild werden kann, das ich mir selbst gewünscht hätte.',
