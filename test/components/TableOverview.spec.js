@@ -70,7 +70,7 @@ describe('TableOverview component', () => {
           img: 'http://localhost:3000/moe.jpg',
           description: 'Upcoming conference',
           alt: 'September 25, 2020',
-          createdAt: '2020-09-25T22:50:54.724Z'
+          createdAt: '2025-09-25T22:50:54.724Z'
         },{
           title: 'Upcoming talk on conference',
           img: 'http://localhost:3000/moe.jpg',
@@ -87,6 +87,7 @@ describe('TableOverview component', () => {
 
     expect(wrapper.find('.talk--placeholder')).toBeTruthy();
     expect(wrapper.find('.talk--cyde')).toBeTruthy();
+
     expect(wrapper.find('.talk--cyde').text())
       .toContain('Not always as a speaker, but it\'s our Cypress Germany meetup! ❤️');
   });

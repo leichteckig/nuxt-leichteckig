@@ -84,6 +84,7 @@ export default {
       isMobileMenuActive: false
     }
   },
+
   computed: {
     isContentPage() {
       return this.$route.name?.includes('slug');
