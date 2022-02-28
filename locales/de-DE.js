@@ -38,6 +38,7 @@ export default {
   speakingMore: 'Mehr dazu...',
   talkSubtitle: 'Vorträge, die ich in der Vergangenheit gehalten habe',
   pubSubtitle: 'Gastbeiträge und Auftritte',
+  pastEventsTitle: 'Vergangene Events',
   speakingPastTalks: 'Vorträge von Ramona Schwering',
   speakingPastPubs: 'Veröffentlichungen von Ramona Schwering',
   speakingDeckTitle: 'Mein Speakerdeck ansehen!',

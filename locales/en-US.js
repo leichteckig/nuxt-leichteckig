@@ -48,6 +48,7 @@ export default {
   attendingMenuTitle: 'Attending',
   attendingTitle: 'Events I attend',
   attendingSubtitle: 'Meet me at...',
+  pastEventsTitle: 'Past Events',
   pastTalkTitle: 'Looking for my past talks?',
   pastTalkSubtitle: 'Head over to the talks site for an overview!',
   pastTalkButton: 'Talks',

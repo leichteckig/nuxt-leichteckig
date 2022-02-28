@@ -38,6 +38,7 @@ export default {
       colors: ['system', 'light', 'dark']
     }
   },
+
   methods: {
     getClasses(color) {
       if (this.$colorMode.unknown) {

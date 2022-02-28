@@ -45,12 +45,12 @@
             </span>
           </td>
         </tr>
-        <tr class="talk--placeholder handdraw-line">
+        <tr v-if="!pastTalks.length" class="talk--placeholder handdraw-line">
           <td data-label="Title" />
           <td data-label="Conference" />
           <td data-label="Date" />
         </tr>
-        <tr class="talk--cyde handdraw-line">
+        <tr v-if="!pastTalks.length" class="talk--cyde handdraw-line">
           <td data-label="Title">
             Not always as a speaker, but it's our Cypress Germany meetup! ❤️
           </td>
@@ -59,7 +59,7 @@
           </td>
           <td data-label="Date" />
         </tr>
-        <tr class="talk--placeholder handdraw-line">
+        <tr v-if="!pastTalks.length" class="talk--placeholder handdraw-line">
           <td data-label="Title" />
           <td data-label="Conference" />
           <td data-label="Date" />

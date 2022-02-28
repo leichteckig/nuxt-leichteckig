@@ -12,7 +12,16 @@
           class=" img-header"
         >
       </div>
-      <TableOverview :contents="appearances" />
+      <TableOverview :contents="futureEvents"/>
+      <div></div>
+      <div v-if="pastEvents" class="talks__past-conference">
+        <h3 class="talks__past-conference--title" @click="pastHidden = !pastHidden" :class="{ talks__active: !pastHidden }">
+          {{ $t('pastEventsTitle') }}
+        </h3>
+        <div class="talks__past-inner" :class="{ talks__active: !pastHidden }">
+          <TableOverview :contents="pastEvents"/>
+        </div>
+      </div>
     </main>
 
     <section
@@ -57,8 +66,11 @@ export default {
       .sortBy('createdAt', 'asc')
       .fetch();
 
+    let futureEvents = appearances.filter(event => Date.now() < Date.parse(event.createdAt));
+    let pastEvents = appearances.filter(event => Date.now() > Date.parse(event.createdAt));
+
     return {
-      appearances
+      futureEvents, pastEvents
     }
   },
 
@@ -75,6 +87,30 @@ export default {
         }
       ]
     }
+  },
+
+  data() {
+    return {
+      years: [2020, 2021],
+      pastHidden: true,
+      futureEvents: [],
+    }
+  },
+
+  computed: {
+    getAccordionClasses() {
+      if (this.hidden) {
+        return 'talks__block';
+      }
+      return '.talks__hidden';
+    },
+  },
+
+  methods: {
+    characterItemClick() {
+      this.hidden = !this.hidden;
+      console.log('this.hidden', this.hidden)
+    },
   }
 }
 </script>
@@ -136,6 +172,44 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.talks__past-conference--title {
+  cursor: pointer;
+  padding: 18px 0;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  color: var(--color-primary);
+}
+
+.talks__past-conference--title:after {
+  content: '+'; /* Unicode character for "plus" sign (+) */
+  color: var(--color-primary);
+  float: left;
+  margin-right: 10px;
+  font-size: 46px;
+  line-height: 46px;
+}
+
+.talks__past-inner {
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+
+  &.talks__active {
+    // Workaround to animate height with CSS only
+    // Set max-height to a value which is unlikely to happen
+    // Otherwise the real height needs to be grabbed by JS
+    max-height: 5000px;
+    opacity: 1;
+  }
+}
+
+.talks__active:after {
+  content: "-"; /* Unicode character for "minus" sign (-) */
 }
 
 .gradient {
