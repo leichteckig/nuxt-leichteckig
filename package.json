@@ -39,7 +39,8 @@
     "node-fetch": "2.6.7",
     "nth-check": "2.0.1",
     "nuxt": "^2.15.8",
-    "postcss": "8.2.13"
+    "postcss": "8.2.13",
+    "prismjs": "1.27.0"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.74",

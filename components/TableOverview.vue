@@ -13,7 +13,7 @@
         <tr
           v-for="entry in upcomingTalks"
           v-if="upcomingTalks.length"
-          :key="entry.title"
+          :key="entry.createdAt"
           class="handdraw-line"
         >
           <td data-label="Title">
@@ -67,7 +67,7 @@
         <tr
           v-for="entry in pastTalks"
           v-if="pastTalks.length"
-          :key="entry.title"
+          :key="entry.createdAt"
           class="handdraw-line talk--old"
         >
           <td data-label="Title">
@@ -129,7 +129,7 @@ export default {
 
   methods: {
     getPastDate(eventDate) {
-      if(Date.now() < Date.parse(eventDate)) {
+      if(Date.now() <= Date.parse(eventDate)) {
         return true;
       }
     }
