@@ -1,5 +1,5 @@
 ---
-title: TBA
+title: The pyramid is dead, long live the pyramid
 description: DevTalks 2022
 img: https://www.devtalks.ro/
 alt: June 8 - 10, 2022
