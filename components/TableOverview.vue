@@ -52,12 +52,24 @@
         </tr>
         <tr v-if="!pastTalks.length" class="talk--cyde handdraw-line">
           <td data-label="Title">
-            Not always as a speaker, but it's our Cypress Germany meetup! ❤️
+            Not always as a speaker, but as meetup host! ❤️
           </td>
           <td data-label="Conference">
-            <a href="https://www.meetup.com/de-DE/cypress-de-community/">Cypress DE Community</a>
+            <a
+              href="https://www.meetup.com/de-DE/cypress-de-community/"
+              target="_blank"
+              rel="noopener">
+              Cypress DE Community
+            </a>
           </td>
-          <td data-label="Date" />
+          <td data-label="Date">
+            <a
+              href="https://www.meetup.com/de-DE/athenas-wits/"
+              target="_blank"
+              rel="noopener">
+              Athena's WITs
+            </a>
+          </td>
         </tr>
         <tr v-if="!pastTalks.length" class="talk--placeholder handdraw-line">
           <td data-label="Title" />

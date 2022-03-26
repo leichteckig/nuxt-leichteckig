@@ -89,7 +89,7 @@ describe('TableOverview component', () => {
     expect(wrapper.find('.talk--cyde')).toBeTruthy();
 
     expect(wrapper.find('.talk--cyde').text())
-      .toContain('Not always as a speaker, but it\'s our Cypress Germany meetup! ❤️');
+      .toContain('Not always as a speaker, but as meetup host! ❤️');
   });
 });
 
