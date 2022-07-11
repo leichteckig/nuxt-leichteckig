@@ -1,7 +1,7 @@
 <template>
   <section data-cy="DetailSummary">
-    <div class="handdraw-line" />
-    <div class="gradient" />
+    <div class="handdraw-line"></div>
+    <div class="gradient"></div>
     <div class="summary-detail__summary-card handdraw-line">
       <div class="summary-detail__author-card">
         <img
@@ -17,12 +17,12 @@
           <p>{{ formatDate(article.createdAt) }}</p>
         </div>
       </div>
-      <p
+      <div
         class="summary-detail__description"
         data-cy="DetailSummaryDescription"
       >
         <slot></slot>
-      </p>
+      </div>
       <div
         v-if="article.tags"
         :key="article.title"
@@ -78,6 +78,7 @@ export default {
 
 .summary-detail__description {
   font-size: 20px;
+  line-height: 1.75;
 }
 
 .summary-detail__basic-info {
