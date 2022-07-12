@@ -31,6 +31,7 @@ export default {
   // Writing
   writingMenuTitle: 'Writing',
   writingTitle: 'Blog',
+  writingDescription: 'You can choose a topic: Which one interests yTopics:?',
 
   // Speaking
   speakingMenuTitle: 'Speaking',

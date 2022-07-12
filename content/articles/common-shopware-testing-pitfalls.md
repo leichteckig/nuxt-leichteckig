@@ -11,7 +11,6 @@ tags:
 - Shopware
 - Unit Tests
 - End-To-End Tests
-- Testing pitfalls
 otherLanguages:
 - locale: de
   name: german

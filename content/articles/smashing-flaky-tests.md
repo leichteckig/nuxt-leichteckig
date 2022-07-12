@@ -9,11 +9,8 @@ author:
   bio: https://www.smashingmagazine.com/2021/04/flaky-tests-living-nightmare/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- Smashing magazine
-- Flakiness
 - Unit Tests
 - End-To-End Tests
-- Integration Tests
 otherLanguages:
 - locale: de
   name: german
