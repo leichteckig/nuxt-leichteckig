@@ -9,6 +9,9 @@ tags:
 - FrontendTestFest 2021
 - MOONCOM 2021
 - TestJS Summit 2021
+- VueJS Amsterdam 2022
+- EnterJS 2022
+- Developer Week 2022
 otherLanguages:
 - locale: de
   name: german
@@ -32,6 +35,9 @@ url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitf
 ## Recording
 
 <media-grid :media="[{
+name: 'VueJS Amsterdam 2022',
+url: 'https://www.youtube-nocookie.com/embed/lA50-SDoyOM'
+},{
 name: 'TestJS Summit',
 url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
 }, {

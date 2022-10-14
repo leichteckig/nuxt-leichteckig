@@ -9,10 +9,12 @@ tags:
   - SymfonyWorld Germany
   - CypressDE Meetup
   - WeAreDevelopers JavaScript Congress
+  - TECH(K)NOWDAY 2022
+  - Developer Week 2022
 otherLanguages:
-- locale: de
-  name: german
-  path: /de/lets-get-visual
+  - locale: de
+    name: german
+    path: /de/lets-get-visual
 ---
 
 ## Abstract
