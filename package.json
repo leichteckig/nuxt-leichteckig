@@ -42,9 +42,10 @@
     "nth-check": "2.0.1",
     "nuxt": "^2.15.8",
     "parse-path": "5.0.0",
-    "parse-url": "6.0.1",
+    "parse-url": "8.1.0",
     "postcss": "8.4.12",
-    "prismjs": "1.27.0"
+    "prismjs": "1.27.0",
+    "terser": "5.14.2"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.74",
