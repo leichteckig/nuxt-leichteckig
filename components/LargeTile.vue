@@ -11,6 +11,8 @@
         <img
           class="blog-card__author-img"
           :src="article.author.image"
+          height="160px"
+          width="100%"
         >
         {{ article.author.name }}
       </div>

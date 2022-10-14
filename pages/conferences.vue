@@ -10,6 +10,8 @@
           alt="Moe giving talks"
           src="/ramona-schwering-talks-small.jpeg"
           class=" img-header"
+          height="550"
+          width="250px"
         >
       </div>
       <TableOverview :contents="futureEvents"/>

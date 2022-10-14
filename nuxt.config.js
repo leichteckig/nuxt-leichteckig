@@ -114,6 +114,7 @@ export default {
 
   googleFonts: {
     download: true,
+    prefetch: true,
     base64: true,
     families: {
       Roboto: true,
