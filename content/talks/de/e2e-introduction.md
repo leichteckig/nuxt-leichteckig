@@ -12,6 +12,8 @@ tags:
 - eCommerce Camp Jena
 - Reacticon
 - c't webdev
+- NeosCon 2022
+- Web Summer Camp 2022
 otherLanguages:
 - locale: en
   name: english

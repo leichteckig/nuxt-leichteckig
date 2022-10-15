@@ -9,6 +9,7 @@ tags:
   - SymfonyWorld Germany
   - CypressDE Meetup
   - WeAreDevelopers JavaScript Congress
+  - Developer Week 2022
 otherLanguages:
 - locale: en
   name: english
