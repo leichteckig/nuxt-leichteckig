@@ -1,8 +1,0 @@
-{
-  "baseUrl": "http://localhost:3000",
-  "video": false,
-  "projectId": "",
-  "env": {
-    "percy": false
-  }
-}
