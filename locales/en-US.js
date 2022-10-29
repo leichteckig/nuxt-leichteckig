@@ -23,9 +23,10 @@ export default {
   aboutBioExtendedThird: 'However, it was then quickly determined that I was capable of more and that my abilities were and that my skills lie particularly in the design side of frontend development. I have been a frontend developer for a couple of years now. In addition, the field of public learning is an important topic for me. I write a lot of blog posts, go to conferences and give talks.',
   aboutBioExtendedFourth: 'I\'m learning, writing and speaking about FrontEnd: It fascinates me, "how" things can function best: Especially Frontend Testing, performance and a11y are most valuable things. In addition, I\'m working hard on the open-source to create more value for the web community.',
   aboutSpecialTitle: 'Special experience',
-  aboutSpecialFirst: '🌲 Cypress ambassador.',
+  aboutSpecialFirst: '👩‍💻 Google Developer Expert for Web Technologies',
   aboutSpecialSecond: '👩‍💼 Women Techmaker ambassador.',
-  aboutSpecialThird: '🇳🇱 NT2 certificate: Dutch as second language.',
+  aboutSpecialThird: '🌲 Cypress ambassador.',
+  aboutSpecialFourth: '🇳🇱 NT2 certificate: Dutch as second language.',
   aboutContributions: 'GitHub contributions',
 
   // Writing

@@ -2,8 +2,8 @@
   <Page
     :title="$t('speakingTitle')"
     :img="{
-      path: 'recording-ramona-schwering.jpg',
-      alt: 'Me, recording things'
+      path: 'vuejsamsterdam.jpeg',
+      alt: 'Me, being about to speak at Vue.js Amsterdam',
     }"
   >
     <main>

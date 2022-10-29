@@ -100,6 +100,7 @@
                 <li>{{ $t('aboutSpecialFirst') }}</li>
                 <li>{{ $t('aboutSpecialSecond') }}</li>
                 <li>{{ $t('aboutSpecialThird') }}</li>
+                <li>{{ $t('aboutSpecialFourth') }}</li>
               </ul>
             </div>
             <div class=" about__experience--specials-6">

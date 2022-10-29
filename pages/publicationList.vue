@@ -1,5 +1,11 @@
 <template>
-  <Page :title="$t('speakingPastPubs')">
+  <Page
+    :title="$t('speakingPastPubs')"
+    :img="{
+      path: 'recording-ramona-schwering.jpg',
+      alt: 'Me, recording things'
+    }"
+  >
     <main class="other-publications">
       <h2 data-cy="PublicationListingTitle">
         {{ $t('pubSubtitle') }}

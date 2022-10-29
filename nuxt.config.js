@@ -44,7 +44,8 @@ export default {
       { name: 'google-site-verification', content: 'ySo2miRK4qu8z_acSgFSPF7-HkA4TqcpydymQASt5gw' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'me', href: 'https://vue.land/@leichteckig', content: 'Mastodon' }
     ]
   },
 
