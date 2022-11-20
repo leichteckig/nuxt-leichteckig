@@ -23,9 +23,10 @@ export default {
   aboutBioExtendedThird: 'Es stellte sich dann jedoch schnell heraus, dass ich zu mehr fähig war und meine Fähigkeiten vor allem in der Design-Seite der Frontend-Entwicklung liegen. Seit ein paar Jahren bin ich nun Frontend-Entwicklerin. Darüber hinaus ist der Bereich des Public Learning ein wichtiges Thema für mich. Ich schreibe viele Blogbeiträge, gehe auf Konferenzen und halte Vorträge.',
   aboutBioExtendedFourth: 'Ich lerne, schreibe und spreche über Frontend Entwicklung: Es fasziniert mich, "wie" Dinge am besten funktionieren können: Vor allem Frontend Testing, Performance und a11y sind sehr wertvoll für mich. Außerdem arbeite ich intensiv an der Entwicklung im Bereich Open-Source, um mehr Mehrwert für die Web-Community zu schaffen.',
   aboutSpecialTitle: 'Besondere Kenntnisse',
-  aboutSpecialFirst: '🌲 Cypress ambassador.',
+  aboutSpecialFirst: '👩‍💻 Google Developer Expert for Web Technologies',
   aboutSpecialSecond: '👩‍💼 Women Techmaker ambassador.',
-  aboutSpecialThird: '🇳🇱 NT2 Zertifikat: Niederländisch als zweite Sprache.',
+  aboutSpecialThird: '🌲 Cypress ambassador.',
+  aboutSpecialFourth: '🇳🇱 NT2 Zertifikat: Niederländisch als zweite Sprache.',
   aboutContributions: 'GitHub Mitwirkung',
 
   // Writing
