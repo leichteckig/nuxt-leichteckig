@@ -7,6 +7,7 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - NG-DE
+- Javascript Days
 otherLanguages:
 - locale: de
   name: german
