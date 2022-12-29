@@ -43,10 +43,12 @@ url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
 ## Recordings
 
 <media-grid :media="[{
-name: 'Sfugos (Symfony User Group Osnabrück)',
+name: 'Neos Conference\'22',
+url: 'https://www.youtube-nocookie.com/embed/hzJPLKVarMw'
+}, {
+name: 'Symfony User Group Osnabrück',
 url: 'https://www.youtube-nocookie.com/embed/-vekdbWRWvI'
 }, {
 name: '🇺🇸 Reacticon\'21',
 url: 'https://www.youtube-nocookie.com/embed/f1LOWUkaQPU?start=15021'
 }]"></media-grid>
-
