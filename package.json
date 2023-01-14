@@ -45,7 +45,11 @@
     "parse-url": "8.1.0",
     "postcss": "8.4.12",
     "prismjs": "1.27.0",
-    "terser": "5.14.2"
+    "terser": "5.14.2",
+    "loader-utils": "2.0.4",
+    "json5": "2.2.2",
+    "minimatch": "3.0.5",
+    "decode-uri-component": "0.2.1"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.74",
