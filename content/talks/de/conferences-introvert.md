@@ -27,7 +27,7 @@ description: 'Du kannst meine Folien auf Speakerdeck finden',
 url: 'https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-introvert'
 }]"></media-grid>
 
-## Recordings
+## Aufzeichnungen
 
 <media-grid :media="[{
 name: '🇺🇸 Shopware TV',

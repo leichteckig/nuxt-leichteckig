@@ -6,9 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- FrontendTestFest 2021
-- MOONCOM 2021
-- TestJS Summit 2021
+- FrontendTestFest'21
+- MOONCOM'21
+- TestJS Summit'21
+- VueJS Amsterdam'22
+- EnterJS'22
+- Developer Week'22
 otherLanguages:
 - locale: en
   name: english
@@ -29,9 +32,12 @@ description: 'Du kannst meine Folien auf Speakerdeck finden',
 url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them'
 }]"></media-grid>
 
-## Recording
+## Aufzeichnungen
 
 <media-grid :media="[{
+name: '🇺🇸 VueJS Amsterdam 2022',
+url: 'https://www.youtube-nocookie.com/embed/lA50-SDoyOM'
+},{
 name: '🇺🇸 TestJS Summit',
 url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
 }, {

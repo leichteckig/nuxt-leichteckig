@@ -1,5 +1,7 @@
 <template>
-  <Page :title="talk.title">
+  <Page
+    :title="talk.title"
+    :img="talkImg">
     <main
       class="talk--content"
       data-cy="TalkDetailContent"
@@ -68,6 +70,14 @@ export default {
   computed: {
     otherLanguages() {
       return this.talk.otherLanguages || []
+    },
+    talkImg() {
+      if (!this.talk.img) return null;
+
+      return {
+        path: this.talk.img,
+        alt: this.talk.alt,
+      };
     },
   },
 

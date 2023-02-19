@@ -2,6 +2,10 @@
   <Page
     :title="$t('speakingPastTalks')"
     class="talk-list"
+    :img="{
+      path: 'scuc.jpg',
+      alt: 'Me, sitting in front of one of my slides during a panel discussion'
+    }"
   >
     <main class="past-talks">
       <h2 data-cy="PastTalkHeader">
@@ -31,7 +35,7 @@ export default {
 
     const pastTalks = await $content(path)
       .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('updatedAt', 'desc')
+      .sortBy('createdAt', 'desc')
       .fetch();
 
     return {

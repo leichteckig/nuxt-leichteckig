@@ -89,8 +89,8 @@ export default {
     const pathPub = i18n.locale !== 'en' ? `publications/${i18n.locale}` : 'publications';
 
     const pastTalks = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('updatedAt', 'desc')
+      .only(['title', 'description', 'img', 'slug', 'author', 'alt'])
+      .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch();
 

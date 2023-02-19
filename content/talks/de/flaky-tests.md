@@ -6,11 +6,11 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- CityJS London
-- FemTechConf
-- eCommerceCamp Jena
-- PHPUGMRN
-- c't webdev
+- CityJS London'20
+- FemTechConf'20
+- eCommerceCamp Jena'20
+- PHPUGMRN'20
+- c't webdev'21
 otherLanguages:
 - locale: en
   name: english
@@ -33,7 +33,7 @@ description: 'Du kannst meine Folien auf Speakerdeck finden',
 url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
 }]"></media-grid>
 
-## Recordings
+## Aufzeichnungen
 
 <media-grid :media="[{
   name: '🇺🇸 CityJS',
