@@ -25,7 +25,7 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress Run
-        uses: cypress-io/github-action@v4.2.0
+        uses: cypress-io/github-action@v5.1.0
         with:
           browser: chrome
           headless: true
@@ -33,7 +33,7 @@ jobs:
           projectId: ${{ secrets.CY_DASHBOARD_ID }}
           build: npm run generate
           start: npm run start
-          wait-on: 'http://localhost:3000'
+#          wait-on: 'http://localhost:3000'
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
