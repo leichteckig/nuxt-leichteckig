@@ -6,12 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- FrontendTestFest 2021
-- MOONCOM 2021
-- TestJS Summit 2021
-- VueJS Amsterdam 2022
-- EnterJS 2022
-- Developer Week 2022
+- FrontendTestFest'21
+- MOONCOM'21
+- TestJS Summit'21
+- VueJS Amsterdam'22
+- EnterJS'22
+- Developer Week'22
 otherLanguages:
 - locale: de
   name: german

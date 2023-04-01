@@ -4,7 +4,7 @@ export default {
   welcomeSummary: 'A frontend developer who ❤️ Test Automation and JavaScript',
   whodis: 'Who dis?',
   whodisSubtitle: 'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover ❤️',
-  whodisDescription: 'After my education as an application developer, I contributed to product development at shopware AG for about six years now: First in quality assurance and now, as Software Developer. I own both views of the product - that of a tester and that of a developer: I use this primarily to strengthen trust in test automation and to support the testers. The automation in the end-to-end area of shopware originates from my pen, and I continue to push it firmly.',
+  whodisDescription: 'I am a software engineer with roots in quality assurance. I own both views of the product - that of a tester and a developer. Primarily, I\'m using it to strengthen trust in test automation and support the testers and developers alike and became a Google Developer Expert in Web Technologies, Women Techmaker Ambassador, and Cypress Ambassador in the process.',
   featuredPosts: 'Featured Posts',
   home: 'Home',
   alsoAvailableIn: 'This content is also available in ',

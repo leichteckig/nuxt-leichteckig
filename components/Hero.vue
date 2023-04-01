@@ -1,5 +1,6 @@
 <template>
   <img
+    v-if="img"
     class="hero-image"
     :src="`/${img.path}`"
     :alt="img.alt"

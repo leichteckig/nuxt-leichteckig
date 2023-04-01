@@ -6,11 +6,11 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- CityJS London
-- FemTechConf
-- eCommerceCamp Jena
-- PHPUGMRN
-- c't webdev
+- CityJS London'20
+- FemTechConf'20
+- eCommerceCamp Jena'20
+- PHPUGMRN'20
+- c't webdev'21
 otherLanguages:
 - locale: de
   name: german

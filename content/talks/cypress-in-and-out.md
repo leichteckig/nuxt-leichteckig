@@ -6,8 +6,9 @@ author:
   name: Tobias Struckmeier & Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- NG-DE
-- Javascript Days
+- NG-DE'22
+- Javascript Days'22
+- Javascript Days'23
 otherLanguages:
 - locale: de
   name: german

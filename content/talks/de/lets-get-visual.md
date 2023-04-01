@@ -6,10 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-  - SymfonyWorld Germany
-  - CypressDE Meetup
-  - WeAreDevelopers JavaScript Congress
-  - Developer Week 2022
+- SymfonyWorld Germany'21
+- CypressDE Meetup'21
+- WeAreDevelopers JavaScript Congress'21
+- Developer Week'22
+- VueJS Nation'23
+- WeAreDevelopers VueJS Day'23
 otherLanguages:
 - locale: en
   name: english
@@ -32,9 +34,9 @@ description: 'Du kannst meine Folien auf Speakerdeck finden',
 url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
 }]"></media-grid>
 
-## Recordings
+## Aufzeichnungen
 
 <media-grid :media="[{
-name: '🇺🇸 JavaScript Congress\' 21',
-url: 'https://www.wearedevelopers.com/en/videos/let-s-get-visual-visual-testing-in-your-project'
+name: '🇺🇸 VueJS Nation',
+url: 'https://www.youtube-nocookie.com/embed/OUOdPPjIVCQ'
 }]"></media-grid>

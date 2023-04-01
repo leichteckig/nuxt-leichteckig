@@ -6,7 +6,7 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- SCD'21
+- SCD'20
 otherLanguages:
 - locale: de
   name: german
