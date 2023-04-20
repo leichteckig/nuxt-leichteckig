@@ -8,7 +8,7 @@ author:
 tags:
 - VueJS Amsterdam 2023
 otherLanguages:
-- locale: en
+- locale: de
   name: german
   path: /de/ecommerce-as-easy-as-a-ui-component
 ---
