@@ -1,7 +1,7 @@
 <template>
   <Page
     class="blog-detail"
-    :title="article.title"
+    :title="article.title ?? 'Ramona Schwering'"
     :img="{
       path: article.img,
       alt: article.alt
@@ -11,14 +11,14 @@
       <DetailSummary :article="article">
         <p v-if="otherLanguages.length" class="blog-detail__lang">
           {{ $t('alsoAvailableIn') }}
-          <nuxt-link
+          <NuxtLink
             class="uppercase text-teal-600 hover:text-teal-800"
             v-for="lang in otherLanguages"
             :key="lang.locale"
             :to="switchLocalePath(lang.locale)"
           >
             {{ lang.name }}
-          </nuxt-link>
+          </NuxtLink>
         </p>
         {{ article.description }}
       </DetailSummary>
@@ -27,8 +27,8 @@
         class="blog-detail__detail-content"
         data-cy="BlogDetailContent"
       >
-        <nuxt-content
-          :document="article"
+        <ContentRenderer
+          :value="article"
           data-cy="BlogDetailContent"
         />
       </article>
@@ -36,70 +36,62 @@
   </Page>
 </template>
 
-<script>
-import DetailSummary from "@/components/DetailSummary";
+<script lang="ts" setup>
+import type { Article } from '@/types'
 
-export default {
-  name: 'BlogDetail',
+import DetailSummary from "@/components/DetailSummary.vue";
+import Page from "@/components/Page.vue";
 
-  components: {
-    DetailSummary
-  },
+const { locale } = useI18n();
+const route = useRoute()
 
-  async asyncData({ $content, params, i18n }) {
-    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
+const switchLocalePath = useSwitchLocalePath()
 
-    const article = await $content(path, params.slug).fetch();
-    return { article }
-  },
+const path = locale.value !== 'en' ? `articles/${locale.value}` : 'articles/';
+console.log(path + route.params.slug)
+const article = await queryContent<Article>(path + route.params.slug).findOne();
 
-  head() {
-    return {
-      title: this.article?.title ? this.article.title : 'Ramona Schwering\'s Blog',
+const canonicalLink = computed(() => {
+  if (!article.author.bio?.includes('smashing')) {
+    return {}
+  }
+
+  return {
+    rel: 'canonical',
+    href: article.author.bio?.includes('smashing') ? article.author.bio : undefined
+  };
+});
+
+const otherLanguages = computed(() => {
+  return article.otherLanguages || [];
+});
+
+useHead(() => {
+  return {
+  title: article?.title ?? 'Ramona Schwering\'s Blog',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           property: 'og:title',
           hid:'og:title-detail',
-          content: this.article?.title? this.article.title : 'Ramona Schwering'
+          content: article?.title ?? 'Ramona Schwering'
         },
         {
           property: 'og:description',
           hid:'og:description-detail',
-          content: this.article?.description? this.article.description : 'Ramona Schwering.'
+          content: article?.description ?? 'Ramona Schwering.'
         },
         { hid: 'og:image-detail',
           property: 'og:image',
-          content: this.article?.img ?
-            `https://www.ramona.codes/${this.article.img}`
-            : 'https://www.ramona.codes/ogimage.png'
-        },
+          content: `https://www.ramona.codes/${article.img ?? 'ogimage.png'}`},
         { name: 'twitter:card', hid:'twitter:card-detail', content: 'summary_large_image' }
       ],
       link: [
-        this.getCanonicalLink,
+        canonicalLink
       ],
-    }
-  },
-
-  computed: {
-    getCanonicalLink() {
-      if (!this.article.author?.bio?.includes('smashing')) {
-        return {}
-      }
-
-      return {
-        rel: 'canonical',
-        href: this.article.author?.bio?.includes('smashing') ? this.article.author.bio : undefined
-      };
-    },
-
-    otherLanguages() {
-      return this.article.otherLanguages || []
-    },
-  }
-}
+    };
+})
 </script>
 
 <style lang="scss">

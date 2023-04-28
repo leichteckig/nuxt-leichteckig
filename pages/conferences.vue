@@ -51,67 +51,46 @@
   </Page>
 </template>
 
-<script>
-import TableOverview from "@/components/TableOverview";
+<script lang="ts" setup>
+import type { Conference } from "~/types";
 
-export default {
-  name: 'Conferences',
-  components: {
-    TableOverview
-  },
+import TableOverview from "@/components/TableOverview.vue";
 
-  async asyncData({ $content }) {
-    const appearances = await $content('conferences')
-      .only(['title', 'description', 'img', 'alt', 'createdAt'])
-      .sortBy('createdAt', 'asc')
-      .fetch();
+const localePath = useLocalePath();
 
-    let futureEvents = appearances.filter(event => Date.now() < Date.parse(event.createdAt));
-    let pastEvents = appearances.filter(event => Date.now() > Date.parse(event.createdAt));
+const appearances = await queryContent<Conference>('conferences')
+  .only(['title', 'description', 'img', 'alt', 'createdAt'])
+  .sort({ createdAt: -1 })
+  .find();
 
-    return {
-      futureEvents, pastEvents
-    }
-  },
+const futureEvents = appearances.filter(event => Date.now() < Date.parse(event.createdAt));
+const pastEvents = appearances.filter(event => Date.now() > Date.parse(event.createdAt));
 
-  head() {
-    return {
-      title: 'Attending',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'conferences-description',
-          name: 'conferences',
-          content: 'Take a look at all events I\'ll visit or attended before.'
-        }
-      ]
-    }
-  },
+useHead(() => ({  
+  title: 'Attending',
+  meta: [{
+      charset: 'utf-8'
+    }, {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    }, {
+      hid: 'conferences-description',
+      name: 'conferences',
+      content: 'Take a look at all events I\'ll visit or attended before.'
+  }]
+}));
 
-  data() {
-    return {
-      years: [2020, 2021],
-      pastHidden: true,
-      futureEvents: [],
-    }
-  },
+const pastHidden = ref(true);
 
-  computed: {
-    getAccordionClasses() {
-      if (this.hidden) {
-        return 'talks__block';
-      }
-      return '.talks__hidden';
-    },
-  },
-
-  methods: {
-    characterItemClick() {
-      this.hidden = !this.hidden;
-      console.log('this.hidden', this.hidden)
-    },
+const accordionClasses = computed(() => {
+  if (pastHidden.value) {
+    return 'talks__block';
   }
+  return '.talks__hidden';    
+});
+
+function characterItemClick() {
+  pastHidden.value = !pastHidden.value;
 }
 </script>
 

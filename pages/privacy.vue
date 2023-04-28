@@ -424,26 +424,20 @@
   </Page>
 </template>
 
-<script>
-export default {
-  name: 'DataProtection',
-
-  head() {
-    return {
-      title: 'Data protection',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'robots', name: 'robots', content: 'noindex' },
-        {
-          hid: 'data-protection-description',
-          name: 'data-protection',
-          content: 'This is the data protection page of my site.'
-        }
-      ]
-    }
-  },
-}
+<script lang="ts" setup>
+useHead(() => ({
+    title: 'Data protection',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'robots', name: 'robots', content: 'noindex' },
+      {
+        hid: 'data-protection-description',
+        name: 'data-protection',
+        content: 'This is the data protection page of my site.'
+      }
+    ]
+}))
 </script>
 
 <style scoped>

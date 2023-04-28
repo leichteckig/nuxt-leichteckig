@@ -55,50 +55,35 @@
   </main>
 </template>
 
-<script>
-import SmallTile from "../components/SmallTile";
-import Polaroid from "../components/Polaroid";
-import SocialButtonGroup from "~/components/SocialButtonGroup";
+<script lang="ts" setup>
+import SmallTile from "../components/SmallTile.vue";
+import Polaroid from "../components/Polaroid.vue";
+import SocialButtonGroup from "~/components/SocialButtonGroup.vue";
 
-export default {
-  name: 'Index',
+import type { Article } from '@/types'
 
-  components: {
-    Polaroid,
-    SmallTile,
-    SocialButtonGroup
-  },
+const { locale } = useI18n();
+const path = locale.value !== 'en' ? `articles/${locale.value}` : 'articles';
 
-  async asyncData({ $content, i18n }) {
-    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
+const articles = await queryContent<Article>(path)
+  .only(['title', 'description', 'img', 'slug', 'author', 'alt'])
+  .sort({ createdAt: -1 })
+  .limit(3)
+  .find();
 
-    const articles = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .limit(3)
-      .fetch();
-
-    return {
-      articles
-    }
-  },
-
-  head() {
-    return {
-      title: 'Ramona Schwering',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'index-description',
-          name: 'index',
-          content: 'Hi, I\'m Ramona. ' +
-            'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
-        }
-      ]
-    }
-  }
-}
+useHead(() => ({
+    title: 'Ramona Schwering',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'index-description',
+        name: 'index',
+        content: 'Hi, I\'m Ramona. ' +
+          'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
+      }
+    ]
+}));
 </script>
 
 <style>

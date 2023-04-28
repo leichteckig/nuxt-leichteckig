@@ -163,9 +163,9 @@ describe('Find authors at smashing', () => {
 });
 ```
 
-<hint type="info" title="Little hint">
+::hint={type="info",title="Little hint"}
 Wenn Du mit Mocha vertraut bist, hast Du vielleicht einige Ähnlichkeiten bemerkt. Cypress baut auf Mocha auf, die Syntax ist also die gleiche.
-</hint>
+::
 
 Gut, fahren wir fort. Wenn wir unseren Test in Cypress' Test Runner ausführen, werden wir feststellen, dass Cypress einen Browser öffnet, um den Test auszuführen. Dieser Browser ist auf dem folgenden Screenshot zu sehen:
 

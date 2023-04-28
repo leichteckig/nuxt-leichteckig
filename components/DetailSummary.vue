@@ -40,24 +40,22 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'DetailSummary',
-
-  props: {
-    article: {
-      type: Object,
-      required: true
-    }
+<script lang="ts" setup>
+defineProps<{ article: {
+  title: string
+  description: string
+  img: string,
+  createdAt: string,
+  author: {
+    name: string,
+    image: string
   },
+  tags: string[]
+} }>()
 
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
-    }
-  }
-}
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
+}  
 </script>
 
 <style lang="scss" scoped>

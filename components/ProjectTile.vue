@@ -22,22 +22,13 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'ProjectTile',
+<script lang="ts" setup>
+import { Project } from '@/types'
 
-  props: {
-    contents: {
-      type: Array,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    }
-  }
-}
-
+defineProps<{
+  contents: Project[]
+  title: string
+}>()
 </script>
 
 <style lang="scss" scoped>

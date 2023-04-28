@@ -17,45 +17,30 @@
   </Page>
 </template>
 
-<script>
-import LinkTile from "@/components/LinkTile";
+<script lang="ts" setup>
+import LinkTile from "@/components/LinkTile.vue";
 
-export default {
-  name: 'PublicationList',
+const { locale } = useI18n();
+const path = locale.value !== 'en' ? `publications/${locale.value}` : 'publications';
 
-  components: {
-    LinkTile
-  },
+const publications = await queryContent(path)
+  .only(['title', 'description', 'img', 'slug', 'author', 'tags', 'createdAt'])
+  .sort({ createdAt: -1 })
+  .find();
 
-  async asyncData({ $content, i18n }) {
-    const path = i18n.locale !== 'en' ? `publications/${i18n.locale}` : 'publications';
-
-    const publications = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      publications
-    }
-  },
-
-  head() {
-    return {
-      title: "Ramona Schwering\'s guest appearances",
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'publication-description',
-          name: 'publication',
-          content: 'Are you searching for other publication I contributed to? Look no further!'
-        }
-      ]
-    }
-  },
-
-}
+useHead(() => ({
+    title: "Ramona Schwering\'s guest appearances",
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'publication-description',
+        name: 'publication',
+        content: 'Are you searching for other publication I contributed to? Look no further!'
+      }
+    ]
+  }
+))
 </script>
 
 <style scoped>

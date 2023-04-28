@@ -7,17 +7,10 @@
   >
 </template>
 
-<script>
-export default {
-  name: "Hero",
+<script lang="ts" setup>
+import type { Media } from '@/types'
 
-  props: {
-    img: {
-      type: Object,
-      required: true
-    }
-  },
-}
+defineProps<{img: Media}>()
 </script>
 
 <style scoped>

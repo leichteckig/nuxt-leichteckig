@@ -2,15 +2,16 @@
   <div class="app">
     <div class="wrapper">
       <Header />
-      <Nuxt />
+      <NuxtPage />
     </div>
     <Footer />
   </div>
 </template>
-
-<style>
-
-.wrapper {
-  min-height: calc(100vh - 80px);
-}
-</style>
+  
+  <style>
+  
+  .wrapper {
+    min-height: calc(100vh - 80px);
+  }
+  </style>
+  

@@ -3,7 +3,7 @@
     class="polaroid__outer-frame handdraw-border"
     data-cy="Polaroid"
   >
-    <div :class="getClasses">
+    <div :class="polaroidClasses">
       <img
         class="polaroid__image"
         :src="imagePath"
@@ -13,38 +13,26 @@
   </section>
 </template>
 
-<script>
+<script lang="ts" setup>
+const props = withDefaults(defineProps<{
+  imagePath: string
+  type: string
+}>(), {
+  type: 'line'
+})
 
-export default {
-  name: "Polaroid",
-
-  props: {
-    imagePath: {
-      type: String,
-      required: true
-    },
-    type: {
-      type: String,
-      required: false,
-      default: 'line'
-    }
-  },
-
-  computed: {
-    getClasses() {
-      if (this.type === 'purple') {
-        return 'handdraw-border polaroid__purple';
-      }
-       else if (this.type === 'primary') {
-        return 'handdraw-border polaroid__primary';
-      }
-       else if (this.type === 'rose') {
-        return 'handdraw-border polaroid__rose';
-      }
-      return 'handdraw-border polaroid__line';
-    }
+const polaroidClasses = computed(() => {
+  if (props.type === 'purple') {
+    return 'handdraw-border polaroid__purple';
   }
-}
+   else if (props.type === 'primary') {
+    return 'handdraw-border polaroid__primary';
+  }
+   else if (props.type === 'rose') {
+    return 'handdraw-border polaroid__rose';
+  }
+  return 'handdraw-border polaroid__line';
+})
 </script>
 
 <style lang="scss" scoped>

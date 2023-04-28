@@ -17,21 +17,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "SmallTile",
+<script lang="ts" setup>
+const localePath = useLocalePath();
 
-  props: {
-    contents: {
-      type: Array,
-      required: true
-    },
-    slugName: {
-      type: String,
-      required: true
-    }
-  }
-}
+defineProps<{
+  contents: {
+    title: string
+    description: string
+    slug: string
+  }[]
+  slugName: string
+}>()
 </script>
 
 <style scoped>

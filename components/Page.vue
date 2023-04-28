@@ -18,23 +18,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Page',
+<script lang="ts" setup>
+import type { Media } from '@/types'
 
-  props: {
-    title: {
-      type: String,
-      required: false,
-      default: 'Page title'
-    },
-    img: {
-      type: Object,
-      required: false,
-      default: null
-    }
-  }
-}
+defineProps<{
+  title: string
+  img?: Media
+}>()
 </script>
 
 <style scoped>

@@ -321,9 +321,9 @@ Dieser Test soll prüfen, ob ein Produkt erstellt und gelesen werden kann. In di
 * Für den Namen eines T-Shirt-Produkts möchte ich "T-Shirt Akbar" verwenden.
 * Für den Namen des Herstellers ist "Space Company" eine Idee.
 
-<hint type="info" title="Kleiner Hinweis">
+::hint{type="info",title="Kleiner Hinweis"}
 Du musst aber nicht alle Produktnamen selbst erfinden. Du könntest die Daten automatisch generieren oder, was noch schöner ist, sie aus deinem Produktionssystem importieren. Wie auch immer, ich möchte mich an die goldene Regel halten, selbst bei der Namensgebung.
-</hint>
+::
 
 ### Look at selectors you must
 
@@ -367,9 +367,9 @@ cy.get('[data-test=sw-select-product__select_manufacturer]')
 
 Falsch positive Ergebnisse sind nur eines der Probleme, die wir beim Testen von Implementierungsdetails bekommen. Auch das Gegenteil, falsch negative Ergebnisse, kann beim Testen von Implementierungsdetails auftreten. Ein falsches Positiv liegt vor, wenn ein Test erfolgreich ist, obwohl die Anwendung einen Fehler aufweist. Das Ergebnis ist, dass das Testen wieder viel Zeit in Anspruch nimmt, was im Widerspruch zu unserer goldenen Regel steht. Wir müssen dies also so weit wie möglich vermeiden.
 
-<hint type="info" title="Hinweis">
+::hint{type="info",title="Hinweis"}
 Dieses Thema ist so umfangreich, dass es besser in einem eigenen Artikel behandelt werden sollte. Bis dahin empfehle ich Dir, den Artikel von Dodds zu lesen, um mehr über das Thema zu erfahren.
-</hint>
+::
 
 ### Wait for it!
 

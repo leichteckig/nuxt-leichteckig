@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable vue/no-use-v-if-with-v-for -->
   <section class="talk-event-table">
     <table>
       <thead>
@@ -12,7 +11,6 @@
       <tbody>
         <tr
           v-for="entry in upcomingTalks"
-          v-if="upcomingTalks.length"
           :key="entry.createdAt"
           class="handdraw-line"
         >
@@ -117,34 +115,29 @@
   </section>
 </template>
 
-<script>
+<script lang="ts" setup>
+const props = defineProps<{
+  contents: {
+    title: string;
+    description: string;
+    img: string;
+    alt: string;
+    createdAt: string;
+  }[];
+}>();
 
-export default {
-  name: "TableOverview",
+const upcomingTalks = computed(() => {
+  return props.contents.filter(talk => getPastDate(talk.createdAt));
+});
 
-  props: {
-    contents: {
-      type: Array,
-      required: true
-    }
-  },
+const pastTalks = computed(() => {
+  return props.contents.filter(talk => !getPastDate(talk.createdAt));
+});
 
-  computed: {
-    upcomingTalks() {
-      return this.contents.filter(talk => this.getPastDate(talk.createdAt));
-    },
 
-    pastTalks() {
-      return this.contents.filter(talk => !this.getPastDate(talk.createdAt));
-    }
-  },
-
-  methods: {
-    getPastDate(eventDate) {
-      if(Date.now() <= Date.parse(eventDate)) {
-        return true;
-      }
-    }
+function getPastDate(eventDate: string) {
+  if(Date.now() <= Date.parse(eventDate)) {
+    return true;
   }
 }
 </script>

@@ -14,7 +14,7 @@
         <h2>{{ $t('talkSubtitle') }}</h2>
         <div class="featured-posts">
           <SmallTile
-            :contents="pastTalks"
+            :contents="talks"
             slug-name="talks"
           />
         </div>
@@ -73,59 +73,44 @@
   </Page>
 </template>
 
-<script>
-import LinkTile from "@/components/LinkTile";
-import SmallTile from "@/components/SmallTile";
+<script lang="ts" setup>
+import type { Talk, Publication } from '@/types'
 
-export default {
-  name: 'Speaking',
-  components: {
-    LinkTile,
-    SmallTile
-  },
+const { locale } = useI18n();
+const route = useRoute()
 
-  async asyncData({ $content, i18n }) {
-    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
-    const pathPub = i18n.locale !== 'en' ? `publications/${i18n.locale}` : 'publications';
+const localePath = useLocalePath();
 
-    const pastTalks = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author', 'alt'])
-      .sortBy('createdAt', 'desc')
-      .limit(6)
-      .fetch();
+function getContent<T>(type: 'talks' | 'publications') {
+  const path = locale.value !== 'en' ? `${type}/${locale.value}` : 'articles';
+  return queryContent<T>(path + route.params.slug)
+    .only(['title', 'description', 'img', 'slug', 'author', 'alt', 'tags'])
+    .sort({ createdAt: -1 })
+    .limit(6)
+    .find();
+}
 
+const [talks, publications] = await Promise.all([
+  getContent<Talk>('talks'),
+  getContent<Publication>('publications'),
+]);
 
-    const publications = await $content(pathPub)
-      .only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-      .sortBy('createdAt', 'desc')
-      .limit(6)
-      .fetch();
+useHead(() => ({
+  title: 'Speaking',
+  meta: [{
+    charset: 'utf-8'
+  }, {
+    name: 'viewport',
+    content: 'width=device-width, initial-scale=1'
+  }, {
+    hid: 'speaking-description',
+    name: 'speaking',
+    content: 'These are all speaking contributions of me, Ramona.'
+  }]
+}))
 
-    return {
-      pastTalks, publications
-    }
-  },
-
-  head() {
-    return {
-      title: 'Speaking',
-      meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-        {
-          hid: 'speaking-description',
-          name: 'speaking',
-          content: 'These are all speaking contributions of me, Ramona.'
-        }
-      ]
-    }
-  },
-
-  methods: {
-    openLink(link) {
-      window.open(link, '_blank',  'noopener');
-    }
-  }
+function  openLink(link: string) {
+  window.open(link, '_blank',  'noopener');
 }
 </script>
 

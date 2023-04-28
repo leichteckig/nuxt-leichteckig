@@ -1,11 +1,11 @@
 <template>
   <section class="link-tile">
     <!-- entry.img is used as link. Strange but serves the aim of getting a link only -->
-    <a
+    <NuxtLink
       v-for="entry in contents"
       :key="entry.title"
       class="post handdraw-border"
-      :href="entry.img"
+      :to="entry.img"
       target="_blank"
       role="button"
       :aria-label="entry.title.replace(' ', '-')"
@@ -26,22 +26,20 @@
           {{ tag }}
         </div>
       </div>
-    </a>
+    </NuxtLink>
   </section>
 </template>
 
-<script>
-export default {
-  name: 'LinkTile',
-
-  props: {
-    contents: {
-      type: Array,
-      required: true
-    }
-  }
-}
-
+<script lang="ts" setup>
+defineProps<{
+  contents: {
+    title: string
+    description: string
+    slug: string
+    img: string
+    tags: string[]
+  }[]
+}>()
 </script>
 
 <style lang="scss" scoped>

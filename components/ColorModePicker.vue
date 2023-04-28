@@ -2,53 +2,51 @@
   <section>
     <ul>
       <li
-        v-for="color of colors"
-        :key="color"
         class="color-item"
-        :class="getClasses(color)"
-        :data-cy="`${color}switch`"
+        :class="getClasses('system')"
+        data-cy="system-switch"
         role="button"
-        :aria-label="`${color}switch`"
-        @click="$colorMode.preference = color"
+        aria-label="system-switch`"
+        @click="colorMode.preference = 'system'"
       >
-        <component
-          :is="`icon-${color}`"
-        />
+        <nuxt-icon name="system" />
+      </li>
+      <li
+        class="color-item"
+        :class="getClasses('system')"
+        data-cy="system-switch"
+        role="button"
+        aria-label="system-switch`"
+        @click="colorMode.preference = 'system'"
+      >
+        <nuxt-icon name="light" />
+      </li>
+      <li
+        class="color-item"
+        :class="getClasses('system')"
+        data-cy="system-switch"
+        role="button"
+        aria-label="system-switch`"
+        @click="colorMode.preference = 'system'"
+      >
+        <nuxt-icon name="dark" />
       </li>
     </ul>
   </section>
 </template>
 
-<script>
-import IconSystem from '@/assets/icons/system.svg?inline'
-import IconLight from '@/assets/icons/light.svg?inline'
-import IconDark from '@/assets/icons/dark.svg?inline'
+<script lang="ts" setup>
+const colorMode = useColorMode();
 
-export default {
-  name: 'ColorModePicker',
+type ColorModes = 'system' | 'light' | 'dark';
 
-  components: {
-    IconSystem,
-    IconLight,
-    IconDark
-  },
-
-  data() {
-    return {
-      colors: ['system', 'light', 'dark']
-    }
-  },
-
-  methods: {
-    getClasses(color) {
-      if (this.$colorMode.unknown) {
-        return {}
-      }
-      return {
-        preferred: color === this.$colorMode.preference,
-        selected: color === this.$colorMode.value
-      }
-    }
+function getClasses(color: ColorModes) {
+  if (colorMode.unknown) {
+    return {}
+  }
+  return {
+    preferred: color === colorMode.preference,
+    selected: color === colorMode.value
   }
 }
 </script>
