@@ -15,7 +15,7 @@ otherLanguages:
 
 ## Kurzfassung
 
-Bei der Frontend-Entwicklung geht es darum, eine Verbindung zu deinem Publikum herzustellen und ein unvergessliches Erlebnis für sie zu schaffen. Und beim eCommerce ist es sogar noch wichtiger, diese Verbindung herzustellen. Lass dich jedoch nicht von dem Gedanken einer steilen Lernkurve von eCommerce-Projekten abschrecken - du musst kein Experte sein, um mit Vue.js und Shopware Frontends zu arbeiten. Komm mit uns und wir zeigen dir, wie du eine kleine Anwendung mit eCommerce-Funktionen ausstattest und ein unterhaltsames und ansprechendes Erlebnis für deine Kunden schaffst. Lasst uns gemeinsam eine eCommerce-Geschichte entwerfen!
+Bei der Frontend-Entwicklung geht es darum, eine Verbindung zu deinem Publikum herzustellen und ein unvergessliches Erlebnis für sie zu schaffen. Und beim eCommerce ist es sogar noch wichtiger, diese Verbindung herzustellen. Lass dich aber nicht von dem Gedanken einer steilen Lernkurve von eCommerce-Projekten abschrecken - du musst kein Experte sein, um mit Vue.js und Shopware Composable Frontends zu arbeiten. Ich zeige dir, wie du eine kleine Anwendung mit eCommerce-Funktionen ausstattest und ein unterhaltsames und ansprechendes Erlebnis für deine Kunden schaffst. Lasst uns gemeinsam eine eCommerce-Geschichte entwerfen!
 
 ## Folien
 
