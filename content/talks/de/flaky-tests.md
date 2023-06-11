@@ -6,11 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- CityJS London'20
-- FemTechConf'20
-- eCommerceCamp Jena'20
-- PHPUGMRN'20
-- c't webdev'21
+- CityJS London 2020
+- FemTechConf 2020
+- eCommerceCamp Jena 2020
+- PHPUGMRN 2020
+- c't webdev 2021
+- PottJS 2023
 otherLanguages:
 - locale: en
   name: english
@@ -31,6 +32,10 @@ Ich habe viele Stunden mit solchen Tests verbracht, und ich möchte meinen Weg d
 name: 'Folien',
 description: 'Du kannst meine Folien auf Speakerdeck finden',
 url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
+},{
+name: 'Folien',
+description: 'Aktuelle Version (2023)',
+url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-92d8d440-c606-4e48-a052-b9ad27f21587'
 }]"></media-grid>
 
 ## Aufzeichnungen

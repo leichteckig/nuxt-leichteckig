@@ -1,6 +1,6 @@
 ---
 title: 🇺🇸 Ecommerce as easy as a UI component
-description: Entmystifizierung des E-Commerce mit Vue und Projekt Shopware Frontends
+description: Dein neues Tool - Composable Frontends
 createdAt: 2023-02-10T22:50:54.724Z
 author:
   name: Ramona Schwering
@@ -30,4 +30,7 @@ url: 'https://speakerdeck.com/leichteckig/ecommerce-as-easy-as-an-ui-component'
 <media-grid :media="[{
 name: 'VueJS Amsterdam 2023',
 url: 'https://www.youtube-nocookie.com/embed/VivLHGGds6c'
+},{
+name: 'Shopware Community Day 2023',
+url: 'https://www.youtube-nocookie.com/embed/hN3t96zVfpw'
 }]"></media-grid>
