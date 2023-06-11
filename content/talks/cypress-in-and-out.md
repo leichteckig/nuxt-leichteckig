@@ -1,14 +1,14 @@
 ---
-title: Cypress in and out - testing all the things'
+title: Cypress in and out - testing all the things
 description: A workshop on testing with Cypress - As full deep dive.
 createdAt: 2022-10-05T12:50:54.724Z
 author:
   name: Tobias Struckmeier & Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- NG-DE'22
-- Javascript Days'22
-- Javascript Days'23
+- NG-DE 2022
+- Javascript Days 2022
+- Javascript Days 2023
 otherLanguages:
 - locale: de
   name: german

@@ -6,12 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- SymfonyWorld Germany'21
-- CypressDE Meetup'21
-- WeAreDevelopers JavaScript Congress'21
-- Developer Week'22
-- VueJS Nation'23
-- WeAreDevelopers VueJS Day'23
+- SymfonyWorld Germany 2021
+- CypressDE Meetup 2021
+- WeAreDevelopers JavaScript Congress 2021
+- Developer Week 2022
+- VueJS Nation 2023
+- WeAreDevelopers VueJS Day 2023
 otherLanguages:
 - locale: en
   name: english
