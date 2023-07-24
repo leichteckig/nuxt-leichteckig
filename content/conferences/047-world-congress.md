@@ -1,5 +1,5 @@
 ---
-title: Measure and improve frontend performance by using test automation
+title: You belong here! On hurdles and happiness as women in IT
 description: WeAreDevelopers World Congress
 img: https://www.wearedevelopers.com/world-congress/
 alt: July 27-28, 2023
