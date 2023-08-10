@@ -6,6 +6,7 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
+- WeAreDevelopers Live 2022
 - Shopware Community Day 2021
 - FemTechConf 2021
 - Unkonf 2021
@@ -30,6 +31,10 @@ url: 'https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-intro
 ## Aufzeichnungen
 
 <media-grid :media="[{
+name: '🇺🇸 WeAreDevelopers Live',
+description: 'Aufnahme meines Talks für den Women In Tech Day.',
+url: 'https://www.wearedevelopers.com/en/videos/550/how-to-survive-conferences-as-an-introvert'
+},{
 name: '🇺🇸 Shopware TV',
 description: 'Das ist die achte Episode - Zur SCD Tech Stage. Du kannst meinen Talk auf TC 4:09:04 finden oder die Kapitelauswahl nutzen.',
 url: 'https://tv.shopware.com/en/video/1151503/'
