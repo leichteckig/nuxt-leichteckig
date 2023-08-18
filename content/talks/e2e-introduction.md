@@ -6,13 +6,13 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- Symfony UK Meetup'20
-- PHPUGMS'20
-- eCommerce Camp Jena'20
-- Reacticon'21
-- c't webdev'21
-- NeosCon'22
-- Web Summer Camp'22
+- Symfony UK Meetup 2020
+- PHPUGMS 2020
+- eCommerce Camp Jena 2020
+- Reacticon 2021
+- c't webdev 2021
+- NeosCon 2022
+- Web Summer Camp 2022
 otherLanguages:
 - locale: de
   name: german

@@ -1,6 +1,6 @@
 ---
 title: 🇺🇸 Ecommerce as easy as a UI component
-description: Entmystifizierung des E-Commerce mit Vue und Projekt Shopware Frontends
+description: Dein neues Tool - Composable Frontends
 createdAt: 2023-02-10T22:50:54.724Z
 author:
   name: Ramona Schwering
@@ -15,7 +15,7 @@ otherLanguages:
 
 ## Kurzfassung
 
-Bei der Frontend-Entwicklung geht es darum, eine Verbindung zu deinem Publikum herzustellen und ein unvergessliches Erlebnis für sie zu schaffen. Und beim eCommerce ist es sogar noch wichtiger, diese Verbindung herzustellen. Lass dich jedoch nicht von dem Gedanken einer steilen Lernkurve von eCommerce-Projekten abschrecken - du musst kein Experte sein, um mit Vue.js und Shopware Frontends zu arbeiten. Komm mit uns und wir zeigen dir, wie du eine kleine Anwendung mit eCommerce-Funktionen ausstattest und ein unterhaltsames und ansprechendes Erlebnis für deine Kunden schaffst. Lasst uns gemeinsam eine eCommerce-Geschichte entwerfen!
+Bei der Frontend-Entwicklung geht es darum, eine Verbindung zu deinem Publikum herzustellen und ein unvergessliches Erlebnis für sie zu schaffen. Und beim eCommerce ist es sogar noch wichtiger, diese Verbindung herzustellen. Lass dich aber nicht von dem Gedanken einer steilen Lernkurve von eCommerce-Projekten abschrecken - du musst kein Experte sein, um mit Vue.js und Shopware Composable Frontends zu arbeiten. Ich zeige dir, wie du eine kleine Anwendung mit eCommerce-Funktionen ausstattest und ein unterhaltsames und ansprechendes Erlebnis für deine Kunden schaffst. Lasst uns gemeinsam eine eCommerce-Geschichte entwerfen!
 
 ## Folien
 
@@ -30,4 +30,7 @@ url: 'https://speakerdeck.com/leichteckig/ecommerce-as-easy-as-an-ui-component'
 <media-grid :media="[{
 name: 'VueJS Amsterdam 2023',
 url: 'https://www.youtube-nocookie.com/embed/VivLHGGds6c'
+},{
+name: 'Shopware Community Day 2023',
+url: 'https://www.youtube-nocookie.com/embed/hN3t96zVfpw'
 }]"></media-grid>

@@ -7,8 +7,8 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - NG-DE'22
-- Javascript Days'22
-- Javascript Days'23
+- Javascript Days 2022
+- Javascript Days 2023
 otherLanguages:
 - locale: en
   name: english

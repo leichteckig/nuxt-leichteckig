@@ -6,11 +6,12 @@ author:
   name: Ramona Schwering
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
-- CityJS London'20
-- FemTechConf'20
-- eCommerceCamp Jena'20
-- PHPUGMRN'20
-- c't webdev'21
+- CityJS London 2020
+- FemTechConf 2020
+- eCommerceCamp Jena 2020
+- PHPUGMRN 2020
+- c't webdev 2021
+- PottJS 2023
 otherLanguages:
 - locale: de
   name: german
@@ -31,6 +32,10 @@ I've spent hours and hours on such tests, and I want to share my path through th
 name: 'Slides',
 description: 'You can find the slides of the talk on speakerdeck',
 url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
+},{
+name: 'Slides',
+description: 'Updated version (2023)',
+url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-92d8d440-c606-4e48-a052-b9ad27f21587'
 }]"></media-grid>
 
 ## Recordings
