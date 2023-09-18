@@ -1,5 +1,5 @@
 ---
-title: TBA 🍿
+title: Let's get visual - Visual testing in your project
 description: Wey Wey Web Malaga 
 img: https://www.weyweyweb.com/
 alt: November 23-24, 2023
