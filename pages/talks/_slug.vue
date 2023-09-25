@@ -28,66 +28,51 @@
   </Page>
 </template>
 
-<script>
-import DetailSummary from "@/components/DetailSummary";
+<script lang="ts" setup>
 
-export default {
-  name: 'TalkDetail',
+import type { Talk } from '@/types'
 
-  components: {
-    DetailSummary
-  },
+import DetailSummary from "@/components/DetailSummary.vue";
+import Page from "@/components/Page.vue";
 
-  async asyncData({ $content, params, i18n }) {
-    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
+const { locale } = useI18n();
+const route = useRoute()
 
-    const talk = await $content(path, params.slug).fetch();
+const switchLocalePath = useSwitchLocalePath()
 
-    return { talk }
-  },
+const path = locale.value !== 'en' ? `talks/${locale.value}` : 'talks';
+const talk = await queryContent<Talk>(path + route.params.slug).findOne();
 
-  head() {
-    return {
-      title: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: this.talk?.title ? this.talk.title.replace(' ', '-') : 'Ramona-Schwering-Blog',
-          name: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog',
-          content: this.talk?.description ? this.talk.description : 'Frontend Developer',
-        },
-        { name: 'og:title', hid:'og:title', content: this.talk?.title ? this.talk.title : 'Ramona Schwering\'s Blog' },
-        {
-          name: 'og:description',
-          hid:'og:description',
-          content: this.talk?.description ? this.talk.description : 'Frontend Developer'
-        },
-      ]
-    }
-  },
-
-  computed: {
-    otherLanguages() {
-      return this.talk.otherLanguages || []
+useHead(() => ({
+  title: talk?.title ? talk.title : 'Ramona Schwering\'s Blog',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: talk?.title ? talk.title.replace(' ', '-') : 'Ramona-Schwering-Blog',
+      name: talk?.title ? talk.title : 'Ramona Schwering\'s Blog',
+      content: talk?.description ? talk.description : 'Frontend Developer',
     },
-    talkImg() {
-      if (!this.talk.img) return null;
-
-      return {
-        path: this.talk.img,
-        alt: this.talk.alt,
-      };
+    { name: 'og:title', hid:'og:title', content: talk?.title ? talk.title : 'Ramona Schwering\'s Blog' },
+    {
+      name: 'og:description',
+      hid:'og:description',
+      content: talk?.description ? talk.description : 'Frontend Developer'
     },
-  },
+  ]
+}));
 
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
-    }
-  },
-}
+const otherLanguages = computed(() => talk.otherLanguages || []);
+
+
+const talkImg = computed(() => {
+  if (!talk.img) return undefined;
+
+  return {
+    path: talk.img,
+    alt: talk.alt,
+  };
+});
 </script>
 
 <style scoped>

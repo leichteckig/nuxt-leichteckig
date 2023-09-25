@@ -27,16 +27,8 @@
   </footer>
 </template>
 
-<script>
-import SocialButtonGroup from '@/components/SocialButtonGroup';
-
-export default {
-  name: "Footer",
-
-  components: {
-    SocialButtonGroup
-  },
-}
+<script lang="ts" setup>
+const localePath = useLocalePath()
 </script>
 
 <style lang="scss">

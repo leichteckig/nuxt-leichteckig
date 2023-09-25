@@ -327,9 +327,9 @@ This test is supposed to check whether a product can be created and read. In thi
 * For the name of a t-shirt product, I want to use “T-Shirt Akbar”.
 * For the manufacturer’s name, “Space Company” is one idea.
 
-<hint type="info" title="Little hint">
+::hint{type="info",title="Little hint"}
 You don’t need to invent all of the product names, though. You could auto-generate data or, even more prettily, import it from your production state. Anyway, I want to stick to the golden rule, even when it comes to naming.
-</hint>
+::
 
 ### Look at selectors you must
 
@@ -372,9 +372,9 @@ cy.get('[data-test=sw-select-product__select_manufacturer]')
 
 False positives are just one trouble we get into when testing implementation details. The opposite, false negatives, can happen as well when testing implementation details. A false positive happens when a test passes even when the application has a bug. The result is that testing again eats up headspace, contradicting our golden rule. So, we need to avoid this as much as possible.
 
-<hint type="info" title="Note">
+::hint={type="info",title="Note"}
 This topic is huge, so it would be better dealt with in another article. Until then, I’d suggest heading over to Dodds’ article to learn more on the topic.
-</hint>
+::
 
 ### Wait for it!
 

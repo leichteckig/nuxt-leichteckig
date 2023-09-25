@@ -1,27 +1,24 @@
 <template>
   <div class="language-picker">
-    <nuxt-link
+    <NuxtLink 
       v-for="locale in availableLocales"
       :key="locale.code"
-      class="language-picker-link"
       :to="switchLocalePath(locale.code)"
       :data-cy="`lang-${locale.code}`"
-    >
-      {{ locale.name }}
-    </nuxt-link>
+      class="language-picker-link"
+        >
+        {{ locale.name }}
+    </NuxtLink>
   </div>
 </template>
 
-<script>
-export default {
-  name: "LanguagePicker",
+<script lang="ts" setup>
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
-  computed: {
-    availableLocales () {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
-    }
-  }
-}
+const availableLocales = computed(() => {
+  return (locales.value).filter(i => i.code !== locale.value)
+})
 </script>
 
 <style scoped>

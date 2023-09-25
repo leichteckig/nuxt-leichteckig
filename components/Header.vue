@@ -67,35 +67,23 @@
   </header>
 </template>
 
-<script>
-import ColorModePicker from '@/components/ColorModePicker'
-import LanguagePicker from '@/components/LanguagePicker'
+<script lang="ts" setup>
+const localePath = useLocalePath();
+const router = useRouter();
+const isMobileMenuActive = ref(false);
 
-export default {
-  name: 'Header',
+const isContentPage = computed(() => {
+  const currentRouteName = router.currentRoute.value.name;
 
-  components: {
-    ColorModePicker,
-    LanguagePicker
-  },
-
-  data() {
-    return {
-      isMobileMenuActive: false
-    }
-  },
-
-  computed: {
-    isContentPage() {
-      return this.$route.name?.includes('slug');
-    },
-  },
-
-  methods: {
-    toggleMobileMenu() {
-      this.isMobileMenuActive = !this.isMobileMenuActive;
-    }
+  if(typeof currentRouteName !== 'string') {
+    return false;
   }
+
+  return currentRouteName.includes('slug');
+});
+
+function toggleMobileMenu() {
+  isMobileMenuActive.value = !isMobileMenuActive.value;
 }
 </script>
 

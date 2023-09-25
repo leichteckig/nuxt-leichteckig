@@ -37,24 +37,19 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "MediaGrid",
+<script lang="ts" setup>
+import type { SocialMediaEmbed } from '@/types';
 
-  props: {
-    media: {
-      type: Array,
-      required: true
-    }
-  },
+defineProps<{
+  media: SocialMediaEmbed[]
+}>();
 
-  methods: {
-    openSlideLink(link) {
-      window.open(link, '_blank');
+const emit = defineEmits(['open']);
 
-      this.$emit('open');
-    }
-  }
+function openSlideLink(link: string) {
+  window.open(link, '_blank');
+
+  emit('open');
 }
 </script>
 

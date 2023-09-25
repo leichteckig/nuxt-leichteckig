@@ -1,7 +1,7 @@
 <template>
   <section
     data-cy="Hint"
-    :class="getClasses"
+    :class="hintClasses"
   >
     <div class="hint__summary-card handdraw-border">
       <div class="hint__title">
@@ -19,41 +19,23 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Hint',
+<script lang="ts" setup>
+const props = defineProps<{
+  title?: string;
+  type: string;
+}>()
 
-  props: {
-    title: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    message: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    type: {
-      type: String,
-      required: false,
-      default: ''
-    },
-  },
+const hintClasses = computed(() => {
+  if (props.type === 'info') {
+    return 'hint hint-info';
+  }
+  
+  if (props.type === 'error') {
+    return 'hint hint-error';
+  }
 
-  computed: {
-    getClasses() {
-      if (this.type === 'info') {
-        return 'hint hint-info';
-      }
-      if (this.type === 'error') {
-        return 'hint hint-error';
-
-      }
-      return 'hint hint-success';
-    }
-  },
-}
+  return 'hint hint-success'
+})
 </script>
 
 <style lang="scss" scoped>

@@ -27,26 +27,20 @@
   </Page>
 </template>
 
-<script>
-export default {
-  name: "Imprint",
-
-  head() {
-    return {
-      title: 'Imprint and contact',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'robots', name: 'robots', content: 'noindex' },
-        {
-          hid: 'imprint-description',
-          name: 'imprint',
-          content: 'This is the imprint of my site.'
-        }
-      ]
-    };
-  }
-};
+<script lang="ts" setup>
+useHead(() => ({
+  title: 'Imprint and contact',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { hid: 'robots', name: 'robots', content: 'noindex' },
+    {
+      hid: 'imprint-description',
+      name: 'imprint',
+      content: 'This is the imprint of my site.'
+    }
+  ]
+}));
 </script>
 
 <style scoped>

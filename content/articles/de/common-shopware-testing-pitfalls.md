@@ -21,9 +21,9 @@ Dieser Artikel sollte Teil spezifischer Hilfsressourcen sein, die Dir zeigen, wi
 In gewisser Weise ist dies eine Art Merkblatt für all die kleinen Probleme, die mir in meiner täglichen Arbeit oder als Fragen in
 StackOverflow oder über [Shopware's community slack](http://shopwarecommunity.slack.com) helfen. Notizen dienen als Checkpoint für Gedanken, richtig?
 
-<hint type="info" title="">
+::hint{type="info",title=""}
   Aktualisiert am 28. September 2021" message="Es ist ein lebendiges Dokument, Du kannst also gerne etwas dazu beitragen, Dich bei mir melden und zu einem späteren Zeitpunkt nachsehen, ob neue Fallstricke entdeckt wurden
-</hint>
+::
 
 ## Allgemeine Dinge
 
@@ -209,11 +209,11 @@ When working in CI, use a temporary wait to check the timing:
 cy.wait(500); // Zeit in ms, d.h. es wird eine halbe Sekunde lang gewartet
 ```
 
-<hint type="error" title="Vorsicht!">
+::hint{type="error",title="Vorsicht!"}
 Verwende feste Wartezeiten nur vorübergehend, um zu debuggen. Ersetz diese Wartezeit durch eine dynamische Behauptung, wenn die
 Flakiness durch Timing-Probleme verursacht wird. Weitere Informationen findest Du in unseren Best Practices und den Cypress Best Practices.
 Natürlich solltest Du auch die Schleife entfernen, sobald Du mit dem Debuggen fertig bist.
-</hint>
+::
 
 Wenn Du mehr über dieses Thema erfahren willst, gibt es einen [Artikel von mir](/blog/smashing-flaky-tests).
 

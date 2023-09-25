@@ -13,43 +13,30 @@
   </Page>
 </template>
 
-<script>
-import LargeTile from '@/components/LargeTile';
+<script lang="ts" setup>
+import type { Article } from '@/types';
 
-export default {
-  name: 'BlogIndex',
-  components: {
-    LargeTile
-  },
+const { locale } = useI18n();
 
-  async asyncData({ $content, i18n }) {
-    const path = i18n.locale !== 'en' ? `articles/${i18n.locale}` : 'articles';
+const path = locale.value !== 'en' ? `articles/${locale.value}` : 'articles';
+const articles = await queryContent<Article>(path)
+  .only(['slug', 'id', 'title', 'description', 'img',  'author', 'language', 'createdAt'])
+  .sort({ createdAt: -1 })
+  .find();
 
-    const articles = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author', 'language', 'id'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      articles
-    }
-  },
-
-  head() {
-    return {
-      title: 'Writing',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'writing-description',
-          name: 'writing',
-          content: 'Sometimes I write article and stuff. Head over to this list if you want to read them.'
-        }
-      ]
-    }
-  }
-}
+useHead(() => ({
+  title: 'Writing',
+  meta: [{
+    charset: 'utf-8'
+  }, { 
+    name: 'viewport',
+    content: 'width=device-width, initial-scale=1'
+  }, {
+    hid: 'writing-description',
+    name: 'writing',
+    content: 'Sometimes I write article and stuff. Head over to this list if you want to read them.'
+  }]
+}))
 </script>
 
 <style scoped>

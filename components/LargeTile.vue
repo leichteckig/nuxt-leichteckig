@@ -16,7 +16,7 @@
       </div>
 
       <h3 class="blog-card__title">
-        <NuxtLink :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
+        <NuxtLink :href="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
           {{ article.title }}
         </NuxtLink>
       </h3>
@@ -35,21 +35,22 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "LargeTile",
+<script lang="ts" setup>
+const localePath = useLocalePath();
 
-  props: {
-    contents: {
-      type: Array,
-      required: true
-    },
-    slugName: {
-      type: String,
-      required: true
+defineProps<{
+  contents: {
+    title: string
+    description: string
+    slug: string
+    img?: string
+    author: {
+      name: string
+      image: string
     }
-  }
-}
+  }[]
+  slugName: string
+}>()
 </script>
 
 <style scoped>

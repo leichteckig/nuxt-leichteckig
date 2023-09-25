@@ -21,44 +21,29 @@
   </Page>
 </template>
 
-<script>
-import SmallTile from "@/components/SmallTile";
+<script lang="ts" setup>
+import SmallTile from "@/components/SmallTile.vue";
 
-export default {
-  name: 'TalkList',
-  components: {
-    SmallTile
-  },
+const { locale } = useI18n();
+const path = locale.value !== 'en' ? `talks/${locale.value}` : 'talks';
 
-  async asyncData({ $content, i18n }) {
-    const path = i18n.locale !== 'en' ? `talks/${i18n.locale}` : 'talks';
+const pastTalks = await queryContent(path)
+  .only(['title', 'description', 'img', 'slug', 'author', 'createdAt'])
+  .sort({ createdAt: -1 })
+  .find();
 
-    const pastTalks = await $content(path)
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .fetch();
-
-    return {
-      pastTalks
+useHead(() => ({
+  title: "Ramona Schwering\'s Talks",
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: 'past-talk-description',
+      name: 'past-talks',
+      content: 'If you want to re-watch my past talks, you can find all of them here.'
     }
-  },
-
-  head() {
-    return {
-      title: "Ramona Schwering\'s Talks",
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'past-talk-description',
-          name: 'past-talks',
-          content: 'If you want to re-watch my past talks, you can find all of them here.'
-        }
-      ]
-    }
-  },
-
-}
+  ]
+}));
 </script>
 
 <style scoped>

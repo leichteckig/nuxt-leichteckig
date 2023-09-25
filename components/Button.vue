@@ -8,18 +8,13 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: 'Button',
+<script lang="ts" setup>
+withDefaults(defineProps<{
+  variant: 'default' | 'secondary'
+}>(), {
+  variant: 'default'
+})
 
-  props: {
-    variant: {
-      type: String,
-      default: 'default',
-      required: false
-    }
-  }
-}
 </script>
 
 <style lang="scss">

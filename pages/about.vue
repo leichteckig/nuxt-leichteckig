@@ -48,10 +48,10 @@
             class="about__featured-stack--list"
             data-cy="FeaturedStack"
           >
-            <component
-              :is="`icon-${image}`"
+            <nuxt-icon
               v-for="image in stack"
               :key="image"
+              :name="image"
             />
           </div>
         </div>
@@ -119,111 +119,61 @@
   </Page>
 </template>
 
-<script>
-import LinkTile from "@/components/LinkTile";
-import ProjectTile from "@/components/ProjectTile";
-import Hint from "@/components/Hint";
+<script lang="ts" setup>
+import type { Project } from '@/types';
 
-import IconHtml from '@/assets/icons/html.svg?inline';
-import IconCss from '@/assets/icons/css.svg?inline';
-import IconJavaScript from '@/assets/icons/js.svg?inline';
-import IconVue from '@/assets/icons/vue.svg?inline';
-import IconCypress from '@/assets/icons/cypress.svg?inline';
-import IconJest from '@/assets/icons/jest.svg?inline';
-import IconSymfony from '@/assets/icons/symfony.svg?inline';
-import IconTwig from '@/assets/icons/twig.svg?inline';
-import IconSass from '@/assets/icons/sass.svg?inline';
-import IconNuxt from '@/assets/icons/nuxt.svg?inline';
-import IconPHP from '@/assets/icons/php.svg?inline';
-import IconGit from '@/assets/icons/git.svg?inline';
+const stack = [
+  'html',
+  'css',
+  'JavaScript',
+  'Vue',
+  'Cypress',
+  'Jest',
+  'Symfony',
+  'Twig',
+  'Sass',
+  'Nuxt',
+  'PHP',
+  'Git',
+] as const;
 
-export default {
-  name: 'About',
+const projects = ref<Project[]>([]);
 
-  components: {
-    Hint,
-    LinkTile,
-    ProjectTile,
-    IconHtml,
-    IconCss,
-    IconJavaScript,
-    IconVue,
-    IconCypress,
-    IconJest,
-    IconSymfony,
-    IconTwig,
-    IconSass,
-    IconNuxt,
-    IconPHP,
-    IconGit
-  },
-
-  data() {
-    return {
-      stack: [
-        'html',
-        'css',
-        'JavaScript',
-        'Vue',
-        'Cypress',
-        'Jest',
-        'Symfony',
-        'Twig',
-        'Sass',
-        'Nuxt',
-        'PHP',
-        'Git',
-      ],
-      projectUrl: 'https://api.github.com/users/leichteckig',
-      projects: []
-    };
-  },
-
-  head() {
-    return {
-      title: "This is Ramona Schwering",
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'publication-description',
-          name: 'publication',
-          content: 'Are you searching for other publication I contributed to? Look no further!'
-        }
-      ]
+useHead(() => ({
+  title: "This is Ramona Schwering",
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: 'publication-description',
+      name: 'publication',
+      content: 'Are you searching for other publication I contributed to? Look no further!'
     }
-  },
+  ]
+}));
 
-  created() {
-    this.getGithubProjects();
-  },
+async function loadGitHubProjects() {
+  const projectUrl = 'https://api.github.com/users/leichteckig';
+  const reposOwned = `${projectUrl}/repos?type=public`;
+  const reposStarred = `${projectUrl}/starred`;
+      
+  const reposOwnedResponse = await fetch(reposOwned);
+  const reposOwnedData = await reposOwnedResponse.json() as Project[];
 
-  methods: {
-    getGithubProjects() {
-      const ownRepoUrl = `${this.projectUrl}/repos?type=public`;
-      const ownStarsUrl = `${this.projectUrl}/starred`;
+  projects.value = reposOwnedData.filter(project => 
+    !project.fork
+    && !project.description?.includes('example')
+    && !project.description?.includes('Leichteckig')
+  );
 
-      fetch(ownRepoUrl)
-        .then((resp) => resp.json())
-        .then((data) => {
-          this.projects = data.filter(project => !project.fork
-            && !project.description?.includes('example')
-            && !project.description?.includes('Leichteckig')
-          );
-        })
-        .then(() => {
-          fetch(ownStarsUrl)
-            .then((resp) => resp.json())
-            .then((data) => {
-              let someStars = data.filter(project => project.full_name.includes('3stadt')
-                || project.full_name.includes('platform')
-                || project.full_name.includes('FriendsOfShopware')
-              );
-              this.projects = [ ...this.projects, ...someStars]
-            });
-        });
-    }
-  },
+  const reposStarredResponse = await fetch(reposStarred);
+  const reposStarredData = await reposStarredResponse.json() as Project[];
+
+  projects.value.push(...reposStarredData.filter(project => 
+    project.full_name.includes('3stadt')
+    || project.full_name.includes('platform')
+    || project.full_name.includes('FriendsOfShopware')
+  ));
 }
 </script>
 

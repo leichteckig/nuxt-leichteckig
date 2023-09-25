@@ -1,45 +1,42 @@
 module.exports = {
-  root: true,
   env: {
-    browser: true,
-    node: true
+      browser: true,
+      es2021: true,
+      node: true,
   },
   extends: [
-    'plugin:nuxt/recommended',
-    'plugin:vue/recommended',
+      'eslint:recommended',
+      'plugin:vue/vue3-recommended',
+      'plugin:@typescript-eslint/recommended',
   ],
-  plugins: [],
-  // add your custom rules here
-  rules: {
-    'vue/max-len': ['error', {
-      code: 140,
-      template: 140,
-      tabWidth: 2,
-      comments: 100,
-      ignorePattern: '',
-      ignoreComments: false,
-      ignoreTrailingComments: false,
-      ignoreUrls: false,
-      ignoreStrings: false,
-      ignoreTemplateLiterals: false,
-      ignoreRegExpLiterals: false,
-      ignoreHTMLAttributeValues: false,
-      ignoreHTMLTextContents: false
-    }],
-    'vue/multi-word-component-names': 0,
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+      parser: '@typescript-eslint/parser',
+      sourceType: 'module',
   },
-
-  overrides: [{
-    extends: [
-      'plugin:cypress/recommended',
-      'plugin:chai-friendly/recommended'
-    ],
-    files: ['**/*.spec.js', 'cypress/**/*.js', 'test/**/*.js'],
-    rules: {
-      'no-console': 0,
-      'comma-dangle': 0,
-      'max-len': 0,
-      'inclusive-language/use-inclusive-words': 0,
-    },
-  }]
-}
+  settings: {
+      'import/no-useless-path-segments': 0,
+      'import/resolver': {
+          typescript: {},
+      },
+  },
+  rules: { 
+      'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+      quotes: ['error', 'single', { 'avoidEscape': true }],
+      'vue/no-boolean-default': ['error', 'default-false'],
+      'vue/prefer-true-attribute-shorthand': ['error'],
+      'vue/no-multiple-objects-in-class': ['error'],
+      'comma-dangle': ['error', 'always-multiline'],
+      'vue/padding-line-between-blocks': ['error'],
+      'vue/next-tick-style': ['error', 'promise' ],
+      'vue/v-for-delimiter-style': ['error', 'in'],
+      'vue/html-button-has-type': ['error'],
+      'vue/multi-word-component-names': 0,
+      'vue/html-indent': ['error', 4],
+      'semi': ['error', 'always'],
+      'max-len': ['error', 125],
+      'no-extra-semi': 'error',
+      indent: ['error', 4],
+      'no-undef': 0,
+  },
+};
