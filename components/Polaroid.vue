@@ -8,6 +8,8 @@
         class="polaroid__image"
         :src="imagePath"
         alt="Ramona"
+        height="260px"
+        width="260px"
       >
     </div>
   </section>
