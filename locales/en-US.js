@@ -3,7 +3,7 @@ export default {
   welcome: 'Hi, I\'m Ramona Schwering!',
   welcomeSummary: 'A frontend developer who ❤️ Test Automation and JavaScript',
   whodis: 'Who dis?',
-  whodisSubtitle: 'Develoepr Advocate @Auth0 by Okta. International Speaker. Cypress Ambassador. OpenSource Lover ❤️',
+  whodisSubtitle: 'Developer Advocate @Auth0 by Okta. International Speaker. Cypress Ambassador. OpenSource Lover ❤️',
   whodisDescription: 'I am a software engineer with roots in quality assurance. I own both views of the product - that of a tester and a developer. Primarily, I\'m using it to strengthen trust in test automation and support the testers and developers alike and became a Google Developer Expert in Web Technologies, Women Techmaker Ambassador, and Cypress Ambassador in the process.',
   featuredPosts: 'Featured Posts',
   home: 'Home',
