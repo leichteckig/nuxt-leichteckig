@@ -24,13 +24,13 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover.'
+        content: 'Frontend Developer & Developer Advocate @Auth0. International Speaker. Cypress Ambassador. OpenSource Lover.'
       },
       { property: 'og:title', hid: 'og:title', content: 'Ramona Schwering' },
       {
         property: 'og:description',
         hid: 'og:description',
-        content: 'Frontend Developer & Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
+        content: 'Frontend Developer & Developer Advocate @Auth0. International Speaker. Cypress Ambassador. OpenSource Lover'
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:image', property: 'og:image', content: 'https://www.ramona.codes/ogimage.png' },
