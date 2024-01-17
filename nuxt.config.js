@@ -45,7 +45,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'me', href: 'https://vue.land/@leichteckig', content: 'Mastodon' }
+      { rel: 'me', href: 'https://hachyderm.io/@leichteckig', content: 'Mastodon' }
     ]
   },
 
