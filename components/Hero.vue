@@ -4,6 +4,8 @@
     class="hero-image"
     :src="`/${img.path}`"
     :alt="img.alt"
+    height="500px"
+    width="100%"
   >
 </template>
 
