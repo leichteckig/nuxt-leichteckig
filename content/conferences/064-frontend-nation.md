@@ -1,5 +1,5 @@
 ---
-title: PLants vs thieves
+title: Plants vs thieves
 description: Frontend Nation
 img: https://frontendnation.com/
 alt: June 4-7, 2024
