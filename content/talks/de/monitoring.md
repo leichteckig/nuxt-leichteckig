@@ -8,6 +8,7 @@ author:
 tags:
   - Developer Week 2023
   - WeAreDevelopers World Congress 2023
+  - Dev and Donuts 2024
 otherLanguages:
 - locale: en
   name: english

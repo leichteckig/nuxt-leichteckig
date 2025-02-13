@@ -7,6 +7,8 @@ author:
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - VueJS Amsterdam 2024
+- VueJS Live 2024
+- Vuejs.de conference 2024
 otherLanguages:
 - locale: de
   name: german

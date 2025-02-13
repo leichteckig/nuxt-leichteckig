@@ -1,5 +1,5 @@
 ---
-title: Vue Fortified
+title: Vue Fortified / Web fortified
 description: Best Practices for Web App Security
 createdAt: 2024-01-08T22:50:54.724Z
 author:
@@ -8,6 +8,8 @@ author:
 tags:
 - VueJS Nation 2024
 - CityJS London 2024
+- International Women's Day, WTM Glasgow
+- JSNation 2024
 otherLanguages:
 - locale: de
   name: german
@@ -33,4 +35,7 @@ url: 'https://speakerdeck.com/leichteckig/vue-fortified-best-practices-for-web-a
 <media-grid :media="[{
 name: 'VueJS Nation 2024',
 url: 'https://www.youtube-nocookie.com/embed/l4U6zQAEckw'
+},{
+name: 'JSNation 2024',
+url: 'https://portal.gitnation.org/contents/web-fortified-best-practices-for-web-app-security'
 }]"></media-grid>
