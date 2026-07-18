@@ -8,8 +8,6 @@
         :href="entry.html_url"
         target="_blank"
         rel="noopener"
-        role="button"
-        :aria-label="entry.full_name.replace(' ', '-')"
       >
         <div class="project__link-tile handdraw-border">
           <h3 class="project__title">

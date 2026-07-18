@@ -6,7 +6,8 @@
   --color-text-default: #e3e3e3;
   --color-text-muted: #aaaaaa;
   --color: #091A28;
-  --color-primary: #C05746;
+  /* ≥ 4.5:1 on --bg so body text in the brand color stays readable */
+  --color-primary: #B5503F;
   --color-secondary: #E4E1E1;
   --bg: #FFFFFF;
   --bg-secondary: #ececec;
@@ -18,7 +19,7 @@
 
 .dark-mode {
   --color: #ebf4f1;
-  --color-primary: #C05746;
+  --color-primary: #D2705F;
   --color-secondary: #15344b;
   --bg: #091a28;
   --bg-secondary: #071521;

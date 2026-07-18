@@ -4,14 +4,17 @@
       <li
         v-for="color of colors"
         :key="color"
-        class="color-item"
-        :class="getClasses(color)"
-        :data-cy="`${color}switch`"
-        role="button"
-        :aria-label="`${color}switch`"
-        @click="colorMode.preference = color"
       >
-        <component :is="icons[color]" />
+        <button
+          type="button"
+          class="color-item"
+          :class="getClasses(color)"
+          :data-cy="`${color}switch`"
+          :aria-label="`Use ${color} color mode`"
+          @click="colorMode.preference = color"
+        >
+          <component :is="icons[color]" />
+        </button>
       </li>
     </ul>
   </section>
@@ -76,6 +79,9 @@ ul {
   height: 40px;
   width: 40px;
   cursor: pointer;
+  padding: 0;
+  background: none;
+  color: inherit;
   border: solid 3px var(--color);
 
   border-top-left-radius: 255px 15px;
