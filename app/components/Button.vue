@@ -18,6 +18,12 @@
     :class="[ 'button--' + variant ]"
   >
     <slot />
+    <span
+      v-if="$attrs.target === '_blank'"
+      class="visually-hidden"
+    >
+      {{ $t('opensInNewTab') }}
+    </span>
   </a>
   <button
     v-else

@@ -50,6 +50,18 @@ html.dark-mode {
   box-sizing: border-box;
 }
 
+/* Screen-reader-only text, e.g. "(opens in a new tab)" hints */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

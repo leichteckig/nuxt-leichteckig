@@ -7,11 +7,11 @@
       class="post handdraw-border"
       :href="entry.img"
       target="_blank"
-      role="button"
-      :aria-label="entry.title.replace(' ', '-')"
+      rel="noopener"
     >
       <h3 class="post__title">
         {{ entry.title }}
+        <span class="visually-hidden">{{ $t('opensInNewTab') }}</span>
       </h3>
       <p v-if="entry.description">{{ entry.description }}</p>
       <div

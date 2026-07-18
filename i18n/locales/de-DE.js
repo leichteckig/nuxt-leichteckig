@@ -30,6 +30,7 @@ export default {
   "speakingMenuTitle": "Vorträge",
   "speakingTitle": "Meine Inhalte und andere Veröffentlichungen",
   "speakingMore": "Mehr dazu...",
+  "opensInNewTab": "(öffnet in neuem Tab)",
   "talkSubtitle": "Vorträge, die ich in der Vergangenheit gehalten habe",
   "pubSubtitle": "Gastbeiträge und Auftritte",
   "pastEventsTitle": "Vergangene Events",

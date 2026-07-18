@@ -30,6 +30,7 @@ export default {
   "speakingMenuTitle": "Speaking",
   "speakingTitle": "My content and other publications",
   "speakingMore": "See more...",
+  "opensInNewTab": "(opens in a new tab)",
   "talkSubtitle": "Talks I held in the past",
   "pubSubtitle": "Guest contributions and appearances",
   "speakingPastTalks": "Ramona Schwering's past talks",
