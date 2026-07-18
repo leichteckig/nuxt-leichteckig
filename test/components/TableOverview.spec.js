@@ -48,8 +48,7 @@ describe('TableOverview component', () => {
     expect(wrapper.find('.talk--old td[data-label=Title]').text()).toContain('Past talk on conference');
   });
 
-  it('show Cypress meetup and placeholders', async () => {
-    // placeholders and the meetup row are only shown while there are no past talks
+  it('renders only the actual event rows', async () => {
     const wrapper = await mountSuspended(TableOverview, {
       props: {
         contents: [{
@@ -68,10 +67,8 @@ describe('TableOverview component', () => {
       }
     });
 
-    expect(wrapper.find('.talk--placeholder').exists()).toBe(true);
-    expect(wrapper.find('.talk--cyde').exists()).toBe(true);
-
-    expect(wrapper.find('.talk--cyde').text())
-      .toContain('Not always as a speaker, but as meetup host! ❤️');
+    expect(wrapper.findAll('tbody tr').length).toBe(2);
+    expect(wrapper.find('.talk--placeholder').exists()).toBe(false);
+    expect(wrapper.find('.talk--cyde').exists()).toBe(false);
   });
 });

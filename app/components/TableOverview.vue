@@ -43,32 +43,6 @@
             </span>
           </td>
         </tr>
-        <tr v-if="!pastTalks.length" class="talk--placeholder handdraw-line">
-          <td data-label="Title" />
-          <td data-label="Conference" />
-          <td data-label="Date" />
-        </tr>
-        <tr v-if="!pastTalks.length" class="talk--cyde handdraw-line">
-          <td data-label="Title">
-
-          </td>
-          <td data-label="Conference">
-            Not always as a speaker, but as meetup host! ❤️
-          </td>
-          <td data-label="Date">
-            <a
-              href="https://www.meetup.com/de-DE/cypress-de-community/"
-              target="_blank"
-              rel="noopener">
-              Cypress DE Community
-            </a>
-          </td>
-        </tr>
-        <tr v-if="!pastTalks.length" class="talk--placeholder handdraw-line">
-          <td data-label="Title" />
-          <td data-label="Conference" />
-          <td data-label="Date" />
-        </tr>
         <tr
           v-for="entry in pastTalks"
           :key="entry.createdAt"
@@ -156,21 +130,6 @@ const pastTalks = computed(() => props.contents.filter(talk => !isUpcoming(talk.
     font-weight: bold;
   }
 
-  .talk--placeholder {
-    background: repeating-linear-gradient(
-      45deg,
-      var(--color-secondary),
-      var(--color-secondary) 1px,
-      var(--bg) 1px,
-      var(--bg) 10px
-    );
-  }
-
-  .talk--placeholder :nth-child(3) span,
-  .talk--cyde :nth-child(3) span {
-      visibility: hidden;
-  }
-
   .talk--old {
     text-decoration: line-through;
     color: gray;
@@ -189,10 +148,6 @@ const pastTalks = computed(() => props.contents.filter(talk => !isUpcoming(talk.
       float: left;
       width: 100%;
       padding: 1em 0;
-    }
-
-    .talk-event-table .talk--placeholder td {
-      display: none;
     }
 
     .talk-event-table td {
