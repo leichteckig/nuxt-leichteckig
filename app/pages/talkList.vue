@@ -3,7 +3,8 @@
     :title="$t('speakingPastTalks')"
     class="talk-list"
     :img="{
-      path: 'scuc.jpg',
+      path: 'scuc-1600.webp',
+      srcset: '/scuc-800.webp 800w, /scuc-1600.webp 1600w',
       alt: 'Me, sitting in front of one of my slides during a panel discussion'
     }"
   >

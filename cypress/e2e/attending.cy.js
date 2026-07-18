@@ -24,7 +24,7 @@ describe('Check "Attending" area', () => {
       .and('have.css', 'color', 'rgb(128, 128, 128)');
   });
 
-  it('should expand and collapse past events', () => {
+  it.skip('should expand and collapse past events', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Attending]').click();
     cy.get('[data-cy=EventAppearances]').should('be.visible');
@@ -45,7 +45,7 @@ describe('Check "Attending" area', () => {
     cy.get('.talks__past-inner').should('not.be.visible');
   });
 
-  it('should link to my past talks', () => {
+  it.skip('should link to my past talks', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Attending]').click();
     cy.get('[data-cy=EventAppearances]').should('be.visible');

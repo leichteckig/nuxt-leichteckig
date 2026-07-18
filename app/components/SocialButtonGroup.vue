@@ -3,13 +3,17 @@
     <ul>
       <li
         v-for="icon of socialIcons"
-        :key="icon.key"
+        :key="icon.name"
         class="button-item"
-        role="button"
-        aria-label="SocialMediaButtons"
-        @click.prevent="openSocialLink(icon.link)"
       >
-        <component :is="icons[icon.name]" />
+        <a
+          :href="icon.link"
+          target="_blank"
+          rel="noopener"
+          :aria-label="icon.label"
+        >
+          <component :is="icons[icon.name]" />
+        </a>
       </li>
     </ul>
   </section>
@@ -30,21 +34,21 @@ const icons = {
 
 const socialIcons = [{
   name: 'twitter',
+  label: 'Ramona on Twitter',
   link: 'https://twitter.com/leichteckig'
 }, {
   name: 'github',
+  label: 'Ramona on GitHub',
   link: 'https://github.com/leichteckig'
 }, {
   name: 'linkedin',
+  label: 'Ramona on LinkedIn',
   link: 'https://www.linkedin.com/in/ramona-schwering/'
 }, {
   name: 'xing',
+  label: 'Ramona on Xing',
   link: 'https://www.xing.com/profile/Ramona_Schwering2/cv'
 }]
-
-function openSocialLink(link) {
-  window.open(link, '_blank', 'noopener')
-}
 </script>
 
 <style lang="scss">
@@ -59,9 +63,17 @@ function openSocialLink(link) {
     margin: auto 0;
     height: 40px;
     width: 40px;
-    cursor: pointer;
 
+    a {
+      display: inline-flex;
+      color: inherit;
+    }
+
+    /* nuxt-svgo strips the icons' own dimensions, so size them here —
+       without an explicit size they collapse to 0x0 */
     svg {
+      width: 26px;
+      height: 26px;
       margin: 7px;
 
       &:hover {

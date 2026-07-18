@@ -35,7 +35,6 @@ describe('MediaGrid component', () => {
   });
 
   it('should have link to slides', async () => {
-    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => {});
     const wrapper = await mountSuspended(MediaGrid, {
       props: {
         media: [{
@@ -44,14 +43,12 @@ describe('MediaGrid component', () => {
         }]
       }
     });
-    const button = wrapper.find('[data-cy=OpenSlides]');
+    const link = wrapper.find('[data-cy=OpenSlides]');
 
-    await button.trigger('click');
-    expect(openSpy).toHaveBeenCalledWith(
-      'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt',
-      '_blank'
-    );
-    expect(wrapper.emitted('open')).toBeTruthy();
+    expect(link.attributes('href'))
+      .toBe('https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt');
+    expect(link.attributes('target')).toBe('_blank');
+    expect(link.attributes('rel')).toBe('noopener');
   });
 
   it('should render youtube video', async () => {

@@ -9,8 +9,6 @@
         :to="localePath('/imprint/')"
         class="main-footer__link"
         data-cy="NavToImprint"
-        role="button"
-        aria-label="ImprintLink"
       >
         {{ $t('imprintTitle') }}
       </nuxt-link>
@@ -18,8 +16,6 @@
         :to="localePath('/privacy/')"
         class="main-footer__link"
         data-cy="NavToDP"
-        role="button"
-        aria-label="DataProtectionLink"
       >
         {{ $t('privacyTitle') }}
       </nuxt-link>
@@ -48,12 +44,12 @@ const localePath = useLocalePath()
   .main-footer__link {
     display: inline-block;
     text-decoration: none;
-    color: #d0604d;
+    color: var(--color-primary);
   }
 
   .main-footer__social-links .button-item {
     svg {
-      color: #d0604d;
+      color: var(--color-primary);
     }
   }
 

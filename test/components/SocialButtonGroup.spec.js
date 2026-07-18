@@ -13,12 +13,12 @@ describe('SocialButtonGroup component', () => {
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('should trigger link to social media', async () => {
-    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => {});
+  it('should link to social media', () => {
     const wrapper = mount(SocialButtonGroup);
-    const button = wrapper.find('.button-item');
+    const link = wrapper.find('.button-item a');
 
-    await button.trigger('click');
-    expect(openSpy).toHaveBeenCalledWith('https://twitter.com/leichteckig', '_blank', 'noopener');
+    expect(link.attributes('href')).toBe('https://twitter.com/leichteckig');
+    expect(link.attributes('target')).toBe('_blank');
+    expect(link.attributes('rel')).toBe('noopener');
   });
 });

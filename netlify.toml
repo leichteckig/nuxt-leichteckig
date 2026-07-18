@@ -9,3 +9,9 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+# Build assets in /_nuxt are content-hashed, so they can be cached forever
+[[headers]]
+  for = "/_nuxt/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

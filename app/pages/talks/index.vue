@@ -2,7 +2,8 @@
   <Page
     :title="$t('speakingTitle')"
     :img="{
-      path: 'vuejsamsterdam.jpeg',
+      path: 'vuejsamsterdam.webp',
+      srcset: '/vuejsamsterdam-800.webp 800w, /vuejsamsterdam.webp 1500w',
       alt: 'Me, being about to speak at Vue.js Amsterdam',
     }"
   >
@@ -21,7 +22,7 @@
         <div class="more__button">
           <Button
             data-cy="ButtonToTalks"
-            @click="$router.push(localePath({ name: 'talkList' }))"
+            :to="localePath({ name: 'talkList' })"
           >
             {{ $t('speakingMore') }}
           </Button>
@@ -45,7 +46,9 @@
             <Button
               variant="secondary"
               data-cy="ButtonToSlideDeck"
-              @click="openLink('https://speakerdeck.com/leichteckig')"
+              href="https://speakerdeck.com/leichteckig"
+              target="_blank"
+              rel="noopener"
             >
               {{ $t('speakingMore') }}
             </Button>
@@ -63,7 +66,7 @@
         <div class="more__button">
           <Button
             data-cy="ButtonToPublications"
-            @click="$router.push(localePath({ name: 'publicationList' }))"
+            :to="localePath({ name: 'publicationList' })"
           >
             {{ $t('speakingMore') }}
           </Button>
@@ -108,9 +111,6 @@ useHead({
   ]
 })
 
-function openLink(link) {
-  window.open(link, '_blank', 'noopener')
-}
 </script>
 
 <style scoped>

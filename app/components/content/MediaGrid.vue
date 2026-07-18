@@ -28,7 +28,9 @@
           class="media-grid__btn"
           variant="secondary"
           data-cy="OpenSlides"
-          @click="openSlideLink(entry.url)"
+          :href="entry.url"
+          target="_blank"
+          rel="noopener"
         >
           {{ entry.name }}
         </Button>
@@ -44,14 +46,6 @@ defineProps({
     required: true
   }
 })
-
-const emit = defineEmits(['open'])
-
-function openSlideLink(link) {
-  window.open(link, '_blank')
-
-  emit('open')
-}
 </script>
 
 <style lang="scss" scoped>

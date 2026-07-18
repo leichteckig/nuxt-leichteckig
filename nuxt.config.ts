@@ -3,6 +3,20 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  features: {
+    // Inline all styles into the HTML: the CSS is tiny (a few KB) and the
+    // separate per-component files each cost a render-blocking round-trip
+    inlineStyles: true
+  },
+
+  vite: {
+    build: {
+      // One CSS bundle instead of per-chunk files, so inlineStyles catches
+      // everything and no render-blocking stylesheet links remain
+      cssCodeSplit: false
+    }
+  },
+
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -92,11 +106,14 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    // Roboto is intentionally not downloaded: --font-family-default is a
+    // system font stack that only lists it as a late fallback.
     download: true,
-    base64: true,
+    subsets: 'latin',
+    display: 'swap',
+    preload: true,
     families: {
-      Roboto: true,
-      'Amatic+SC': true
+      'Amatic+SC': [400, 700]
     }
   },
 

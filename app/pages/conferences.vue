@@ -9,7 +9,10 @@
         <img
           alt="Moe giving talks"
           src="/ramona-schwering-talks-small.jpeg"
-          class=" img-header"
+          class="img-header img-skeleton"
+          width="250"
+          height="250"
+          decoding="async"
         >
       </div>
       <TableOverview :contents="futureEvents"/>
@@ -50,7 +53,7 @@
           <Button
             variant="secondary"
             data-cy="ButtonToTalks"
-            @click="$router.push(localePath({ name: 'talkList' }))"
+            :to="localePath({ name: 'talkList' })"
           >
             {{ $t('pastTalkButton') }}
           </Button>

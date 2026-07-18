@@ -77,11 +77,12 @@ const getClasses = computed(() => {
   border-width: 2px;
 }
 
+/* light-dark() picks the variant with enough contrast for body text */
 .hint-info {
-  color: cornflowerblue;
+  color: light-dark(#3A62B8, cornflowerblue);
 
   .handdraw-border {
-    border-color: cornflowerblue;
+    border-color: light-dark(#3A62B8, cornflowerblue);
   }
 }
 
@@ -94,10 +95,10 @@ const getClasses = computed(() => {
 }
 
 .hint-success {
-  color: palegreen;
+  color: light-dark(#2E7D32, palegreen);
 
   .handdraw-border {
-    border-color: palegreen;
+    border-color: light-dark(#2E7D32, palegreen);
   }
 }
 </style>

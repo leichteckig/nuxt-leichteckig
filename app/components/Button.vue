@@ -1,5 +1,32 @@
 <template>
+  <!-- Navigation renders as a real link so it works before hydration
+       (and without JavaScript); only actions render as <button> -->
+  <NuxtLink
+    v-if="to"
+    :to="to"
+    v-bind="$attrs"
+    class="button"
+    :class="[ 'button--' + variant ]"
+  >
+    <slot />
+  </NuxtLink>
+  <a
+    v-else-if="href"
+    :href="href"
+    v-bind="$attrs"
+    class="button"
+    :class="[ 'button--' + variant ]"
+  >
+    <slot />
+    <span
+      v-if="$attrs.target === '_blank'"
+      class="visually-hidden"
+    >
+      {{ $t('opensInNewTab') }}
+    </span>
+  </a>
   <button
+    v-else
     v-bind="$attrs"
     class="button"
     :class="[ 'button--' + variant ]"
@@ -11,7 +38,7 @@
 <script setup>
 defineOptions({
   name: 'Button',
-  // attrs (incl. listeners) are bound explicitly on the root button
+  // attrs (incl. listeners) are bound explicitly on the root element
   inheritAttrs: false
 })
 
@@ -19,6 +46,16 @@ defineProps({
   variant: {
     type: String,
     default: 'default',
+    required: false
+  },
+  to: {
+    type: [String, Object],
+    default: null,
+    required: false
+  },
+  href: {
+    type: String,
+    default: null,
     required: false
   }
 })
