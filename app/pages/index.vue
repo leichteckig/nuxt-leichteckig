@@ -119,12 +119,6 @@ useHead({
   margin-bottom: 30px;
 }
 
-.container {
-  max-width: 1280px;
-  padding: 0 40px;
-  margin: 0 auto;
-}
-
 .moe__title {
   margin-bottom: 20px;
 }
@@ -144,18 +138,6 @@ useHead({
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
-}
-
-.gradient {
-  height: 30px;
-
-  background: repeating-linear-gradient(
-    45deg,
-    var(--border-color),
-    var(--border-color) 1px,
-    var(--bg) 1px,
-    var(--bg) 10px
-  );
 }
 
 @media screen and (min-width: 800px) {

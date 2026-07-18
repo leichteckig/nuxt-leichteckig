@@ -122,6 +122,26 @@ h6 {
   font-size: 20px;
 }
 
+/* Global layout utilities — used across pages/components (Header, Footer, Page, …).
+   Must live here, not in a page's <style>, so they are present on direct loads of any route. */
+.container {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.gradient {
+  height: 30px;
+
+  background: repeating-linear-gradient(
+    45deg,
+    var(--border-color),
+    var(--border-color) 1px,
+    var(--bg) 1px,
+    var(--bg) 10px
+  );
+}
+
 .handdraw-line {
   border-bottom: solid 3px var(--border-color);
   border-bottom-right-radius: 255px 15px;
