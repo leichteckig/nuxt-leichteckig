@@ -27,6 +27,27 @@ describe('Check "Attending" area', () => {
       .and('have.css', 'color', 'rgb(128, 128, 128)');
   });
 
+  it('should expand and collapse past events', () => {
+    cy.get('[data-cy=HeaderMain]').should('be.visible');
+    cy.get('[data-cy=Attending]').click();
+    cy.get('[data-cy=EventAppearances]').should('be.visible');
+    cy.waitForHydration();
+
+    cy.get('.talks__past-inner').should('not.be.visible');
+
+    cy.get('.talks__past-conference--title')
+      .should('have.attr', 'aria-expanded', 'false')
+      .click();
+
+    cy.get('.talks__past-conference--title').should('have.attr', 'aria-expanded', 'true');
+    cy.get('.talks__past-inner tr.talk--old').first().should('be.visible');
+
+    // keyboard support
+    cy.get('.talks__past-conference--title').type('{enter}');
+    cy.get('.talks__past-conference--title').should('have.attr', 'aria-expanded', 'false');
+    cy.get('.talks__past-inner').should('not.be.visible');
+  });
+
   it('should link to my past talks', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Attending]').click();

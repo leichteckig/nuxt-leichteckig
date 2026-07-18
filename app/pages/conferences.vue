@@ -15,7 +15,16 @@
       <TableOverview :contents="futureEvents"/>
       <div></div>
       <div v-if="pastEvents" class="talks__past-conference">
-        <h3 class="talks__past-conference--title" @click="pastHidden = !pastHidden" :class="{ talks__active: !pastHidden }">
+        <h3
+          class="talks__past-conference--title"
+          :class="{ talks__active: !pastHidden }"
+          role="button"
+          tabindex="0"
+          :aria-expanded="!pastHidden"
+          @click="pastHidden = !pastHidden"
+          @keydown.enter.prevent="pastHidden = !pastHidden"
+          @keydown.space.prevent="pastHidden = !pastHidden"
+        >
           {{ $t('pastEventsTitle') }}
         </h3>
         <div class="talks__past-inner" :class="{ talks__active: !pastHidden }">
@@ -167,11 +176,27 @@ h2 {
   opacity: 0;
 
   &.talks__active {
-    // Workaround to animate height with CSS only
-    // Set max-height to a value which is unlikely to happen
-    // Otherwise the real height needs to be grabbed by JS
+    // Fallback (Firefox/Safari): animate max-height with a value
+    // which is unlikely to happen, since `height: auto` can't
+    // be interpolated there yet
     max-height: 5000px;
     opacity: 1;
+  }
+}
+
+// Browsers with interpolate-size can animate to the real content
+// height instead of guessing with max-height
+@supports (interpolate-size: allow-keywords) {
+  .talks__past-inner {
+    interpolate-size: allow-keywords;
+    max-height: none;
+    block-size: 0;
+    transition: block-size 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    &.talks__active {
+      max-height: none;
+      block-size: auto;
+    }
   }
 }
 

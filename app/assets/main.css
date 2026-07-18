@@ -1,4 +1,7 @@
 :root {
+  /* Let native UI (scrollbars, form controls) follow the theme */
+  color-scheme: light dark;
+
   --color-background: #FFFFFF;
   --color-text-default: #e3e3e3;
   --color-text-muted: #aaaaaa;
@@ -22,8 +25,27 @@
   --border-color: #15344b;
 }
 
+/* @nuxtjs/color-mode sets these classes on <html> */
+html.light-mode {
+  color-scheme: light;
+}
+
+html.dark-mode {
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 body {

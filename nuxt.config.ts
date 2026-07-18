@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'color-scheme', content: 'light dark' },
         {
           name: 'description',
           content: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Cypress Ambassador. OpenSource Lover.'
