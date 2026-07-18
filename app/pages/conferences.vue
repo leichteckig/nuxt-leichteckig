@@ -50,7 +50,7 @@
           <Button
             variant="secondary"
             data-cy="ButtonToTalks"
-            @click="$router.push(localePath({ name: 'talkList' }))"
+            :to="localePath({ name: 'talkList' })"
           >
             {{ $t('pastTalkButton') }}
           </Button>
