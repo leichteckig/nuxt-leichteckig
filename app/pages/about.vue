@@ -2,7 +2,7 @@
   <Page
     :title="$t('aboutTitle')"
     :img="{
-      path: 'stickers.jpeg',
+      path: 'stickers.webp',
       alt: 'stickers'
     }"
   >
@@ -48,11 +48,17 @@
             class="about__featured-stack--list"
             data-cy="FeaturedStack"
           >
-            <component
-              :is="icon"
-              v-for="(icon, name) in stack"
-              :key="name"
-            />
+            <img
+              v-for="item in stack"
+              :key="item.name"
+              class="about__stack-img"
+              :src="`/stack/${item.file}.webp`"
+              :alt="item.name"
+              :width="item.width || 200"
+              :height="item.height || 200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
         <div class="handdraw-line" />
@@ -120,33 +126,20 @@
 </template>
 
 <script setup>
-import IconHtml from '~/assets/icons/html.svg'
-import IconCss from '~/assets/icons/css.svg'
-import IconJavaScript from '~/assets/icons/js.svg'
-import IconVue from '~/assets/icons/vue.svg'
-import IconCypress from '~/assets/icons/cypress.svg'
-import IconJest from '~/assets/icons/jest.svg'
-import IconSymfony from '~/assets/icons/symfony.svg'
-import IconTwig from '~/assets/icons/twig.svg'
-import IconSass from '~/assets/icons/sass.svg'
-import IconNuxt from '~/assets/icons/nuxt.svg'
-import IconPHP from '~/assets/icons/php.svg'
-import IconGit from '~/assets/icons/git.svg'
-
-const stack = {
-  html: IconHtml,
-  css: IconCss,
-  JavaScript: IconJavaScript,
-  Vue: IconVue,
-  Cypress: IconCypress,
-  Jest: IconJest,
-  Symfony: IconSymfony,
-  Twig: IconTwig,
-  Sass: IconSass,
-  Nuxt: IconNuxt,
-  PHP: IconPHP,
-  Git: IconGit
-}
+const stack = [
+  { name: 'HTML', file: 'html' },
+  { name: 'CSS', file: 'css' },
+  { name: 'JavaScript', file: 'javascript' },
+  { name: 'Vue', file: 'vue' },
+  { name: 'Cypress', file: 'cypress' },
+  { name: 'Jest', file: 'jest' },
+  { name: 'Symfony', file: 'symfony' },
+  { name: 'Twig', file: 'twig' },
+  { name: 'Sass', file: 'sass' },
+  { name: 'Nuxt', file: 'nuxt', width: 200, height: 169 },
+  { name: 'PHP', file: 'php', width: 200, height: 144 },
+  { name: 'Git', file: 'git' }
+]
 
 const projectUrl = 'https://api.github.com/users/leichteckig'
 const projects = ref([])
@@ -212,14 +205,13 @@ onMounted(getGithubProjects)
 
 .about__featured-stack {
   .about__featured-stack--list {
-    svg {
-      width: 75px;
-      height: 75px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     .about__stack-img {
       width: 100px;
-      height: 100px;
+      height: auto;
     }
   }
 
