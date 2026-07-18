@@ -1,7 +1,7 @@
 ---
 title: From the Crypt to the Code
 description: JSNation US
-img: https://pragvue.com/
+img: https://jsnation.us/
 alt: November 18 & 21
 createdAt: 2024-11-21T22:50:54.724Z
 ---

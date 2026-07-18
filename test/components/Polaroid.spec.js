@@ -1,14 +1,11 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import Polaroid from '@/components/Polaroid.vue'
+import Polaroid from '~/components/Polaroid.vue'
 
 describe('Polaroid component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(Polaroid, {
-      propsData: {
+      props: {
         imagePath: 'test/images/amazing.png'
       }
     });
@@ -17,7 +14,7 @@ describe('Polaroid component', () => {
 
   it('should render image path', () => {
     const wrapper = shallowMount(Polaroid, {
-      propsData: {
+      props: {
         imagePath: 'test/images/amazing.png'
       }
     });
@@ -27,31 +24,31 @@ describe('Polaroid component', () => {
 
   it('should render in primary color', () => {
     const wrapper = shallowMount(Polaroid, {
-      propsData: {
+      props: {
         imagePath: 'test/images/amazing.png',
         type: 'primary'
       }
     });
-    expect(wrapper.find('.polaroid__primary')).toBeTruthy();
+    expect(wrapper.find('.polaroid__primary').exists()).toBe(true);
   });
 
   it('should render in rose color', () => {
     const wrapper = shallowMount(Polaroid, {
-      propsData: {
+      props: {
         imagePath: 'test/images/amazing.png',
         type: 'rose'
       }
     });
-    expect(wrapper.find('.polaroid__rose')).toBeTruthy();
+    expect(wrapper.find('.polaroid__rose').exists()).toBe(true);
   });
 
   it('should render in purple color', () => {
     const wrapper = shallowMount(Polaroid, {
-      propsData: {
+      props: {
         imagePath: 'test/images/amazing.png',
         type: 'purple'
       }
     });
-    expect(wrapper.find('.polaroid__purple')).toBeTruthy();
+    expect(wrapper.find('.polaroid__purple').exists()).toBe(true);
   });
 });

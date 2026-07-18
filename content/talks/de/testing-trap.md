@@ -26,24 +26,27 @@ Beim Schreiben von Frontend-Tests gibt es eine Menge Fallstricke auf dem Weg nac
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Folien',
-description: 'Du kannst meine Folien auf Speakerdeck finden',
-url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Folien"
+    description: "Du kannst meine Folien auf Speakerdeck finden"
+    url: "https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them"
+---
+::
 
 ## Aufzeichnungen
 
-<media-grid :media="[{
-name: '🇺🇸 VueJS Amsterdam 2022',
-url: 'https://www.youtube-nocookie.com/embed/lA50-SDoyOM'
-},{
-name: '🇺🇸 TestJS Summit',
-url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
-}, {
-name: '🇺🇸 MOONCOM',
-url: 'https://www.youtube-nocookie.com/embed/N5P5enWKVkM'
-}, {
-name: '🇺🇸 Front-End Test Fest',
-url: 'https://www.youtube-nocookie.com/embed/uvJwWQLaVqU'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "🇺🇸 VueJS Amsterdam 2022"
+    url: "https://www.youtube-nocookie.com/embed/lA50-SDoyOM"
+  - name: "🇺🇸 TestJS Summit"
+    url: "https://www.youtube-nocookie.com/embed/8WFrPzdhUwA"
+  - name: "🇺🇸 MOONCOM"
+    url: "https://www.youtube-nocookie.com/embed/N5P5enWKVkM"
+  - name: "🇺🇸 Front-End Test Fest"
+    url: "https://www.youtube-nocookie.com/embed/uvJwWQLaVqU"
+---
+::

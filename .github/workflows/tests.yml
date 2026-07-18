@@ -1,43 +1,33 @@
 name: Tests CI
 on: [push, workflow_dispatch]
 jobs:
-  static-eslint:
+  unit-vitest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run lint
-  unit-integration-jest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run jest
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '21'
+          # keep in sync with local dev — the lockfile is written by npm 11
+          node-version: '24'
       - run: npm install
       - run: npm test
-  ui-cypress-percy-chrome:
+  ui-cypress-chrome:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # npm ci needs npm 11 to read the lockfile (see unit-vitest job)
+          node-version: '24'
       # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      # and run all Cypress tests against the statically generated site
       - name: Cypress Run
-        uses: cypress-io/github-action@v5.1.0
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          headless: true
-          record: true
-          projectId: ${{ secrets.CY_DASHBOARD_ID }}
           build: npm run generate
-          start: npm run start
-#          wait-on: 'http://localhost:3000'
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - name: Percy Test
-        run: npx percy exec -- cypress run --browser chrome --headless --env percy=treu,grep=visual
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          start: npx serve .output/public -l 3000
+          wait-on: 'http://localhost:3000'

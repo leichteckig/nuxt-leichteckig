@@ -29,15 +29,21 @@ I've been using visual testing for a while now and it has saved my neck a few ti
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'These is the english version of the slides.',
-url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visual-testing-in-your-project'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "These is the english version of the slides."
+    url: "https://speakerdeck.com/leichteckig/lets-get-visual-visual-testing-in-your-project"
+---
+::
 
 ## Recordings
 
-<media-grid :media="[{
-name: 'VueJS Nation',
-url: 'https://www.youtube-nocookie.com/embed/OUOdPPjIVCQ'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "VueJS Nation"
+    url: "https://www.youtube-nocookie.com/embed/OUOdPPjIVCQ"
+---
+::

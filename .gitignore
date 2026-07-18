@@ -96,3 +96,12 @@ sw.*
 cypress/videos
 cypress/screenshots
 cypress/download
+
+# Nuxt 3/4
+.output
+.data
+.nuxtrc
+dist
+
+# Local agent tooling
+.claude/

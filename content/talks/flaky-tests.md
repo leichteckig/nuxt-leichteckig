@@ -28,22 +28,26 @@ I've spent hours and hours on such tests, and I want to share my path through th
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b'
-},{
-name: 'Slides',
-description: 'Updated version (2023)',
-url: 'https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-92d8d440-c606-4e48-a052-b9ad27f21587'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-60a9a604-cbce-4ad1-8a10-664fed9d1a8b"
+  - name: "Slides"
+    description: "Updated version (2023)"
+    url: "https://speakerdeck.com/leichteckig/flaky-tests-fighting-nightmares-92d8d440-c606-4e48-a052-b9ad27f21587"
+---
+::
 
 ## Recordings
 
-<media-grid :media="[{
-  name: 'CityJS',
-  url: 'https://www.youtube-nocookie.com/embed/5VMvCZaGW_c'
-  }, {
-  name: 'eCommerce Camp Jena',
-  url: 'https://www.youtube-nocookie.com/embed/tf4tQKDcww0'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "CityJS"
+    url: "https://www.youtube-nocookie.com/embed/5VMvCZaGW_c"
+  - name: "eCommerce Camp Jena"
+    url: "https://www.youtube-nocookie.com/embed/tf4tQKDcww0"
+---
+::

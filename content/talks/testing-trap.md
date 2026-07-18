@@ -26,24 +26,27 @@ When writing frontend tests, there are lots of pitfalls on the way. In sum, they
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/its-a-testing-trap-common-testing-pitfalls-and-how-to-solve-them"
+---
+::
 
 ## Recording
 
-<media-grid :media="[{
-name: 'VueJS Amsterdam 2022',
-url: 'https://www.youtube-nocookie.com/embed/lA50-SDoyOM'
-},{
-name: 'TestJS Summit',
-url: 'https://www.youtube-nocookie.com/embed/8WFrPzdhUwA'
-}, {
-name: 'MOONCOM',
-url: 'https://www.youtube-nocookie.com/embed/N5P5enWKVkM'
-}, {
-name: 'Front-End Test Fest',
-url: 'https://www.youtube-nocookie.com/embed/uvJwWQLaVqU'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "VueJS Amsterdam 2022"
+    url: "https://www.youtube-nocookie.com/embed/lA50-SDoyOM"
+  - name: "TestJS Summit"
+    url: "https://www.youtube-nocookie.com/embed/8WFrPzdhUwA"
+  - name: "MOONCOM"
+    url: "https://www.youtube-nocookie.com/embed/N5P5enWKVkM"
+  - name: "Front-End Test Fest"
+    url: "https://www.youtube-nocookie.com/embed/uvJwWQLaVqU"
+---
+::

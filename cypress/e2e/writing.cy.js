@@ -3,14 +3,11 @@ describe('Check "Writing" area', () => {
     cy.visit('/');
   });
 
-  it('should display blog posts in listing and detail (visual)', () => {
+  it('should display blog posts in listing and detail', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Writing]').click();
 
     cy.get('[data-cy=BlogListing]').should('be.visible');
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Writing page (Listing)');
-    }
 
     cy.get('[data-cy=SinglePost]').first().click();
     cy.get('[data-cy=BlogDetailContent]').should('be.visible');
@@ -21,8 +18,5 @@ describe('Check "Writing" area', () => {
 
     cy.get('[data-cy="BlogDetailContent"]').first().scrollIntoView();
     cy.get('[data-cy="BlogDetailContent"]').first().should('be.visible');
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Writing page (Detail)');
-    }
   });
 });

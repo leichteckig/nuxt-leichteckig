@@ -22,15 +22,21 @@ Join me for a concise, practical session on fortifying your Vue.js apps against 
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/vue-fortified-best-practices-for-web-app-security'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/vue-fortified-best-practices-for-web-app-security"
+---
+::
 
 ## Recording
 
-<media-grid :media="[{
-name: 'VueJS Nation 2024',
-url: 'https://www.youtube-nocookie.com/embed/l4U6zQAEckw'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "VueJS Nation 2024"
+    url: "https://www.youtube-nocookie.com/embed/l4U6zQAEckw"
+---
+::

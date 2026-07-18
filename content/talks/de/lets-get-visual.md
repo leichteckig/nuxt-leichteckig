@@ -28,15 +28,21 @@ Ich verwende visuelle Tests schon seit einiger Zeit und sie haben mir schon eini
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Folien',
-description: 'Du kannst meine Folien auf Speakerdeck finden',
-url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Folien"
+    description: "Du kannst meine Folien auf Speakerdeck finden"
+    url: "https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt"
+---
+::
 
 ## Aufzeichnungen
 
-<media-grid :media="[{
-name: '🇺🇸 VueJS Nation',
-url: 'https://www.youtube-nocookie.com/embed/OUOdPPjIVCQ'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "🇺🇸 VueJS Nation"
+    url: "https://www.youtube-nocookie.com/embed/OUOdPPjIVCQ"
+---
+::

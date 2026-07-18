@@ -19,15 +19,21 @@ Our daily work at Shopware, but also at agencies, ends up in the hands of people
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/a-matter-of-trust-test'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/a-matter-of-trust-test"
+---
+::
 
 ## Recording
 
-<media-grid :media="[{
-name: 'SCD\'21',
-url: 'https://www.youtube-nocookie.com/embed/sxvQoWF4KS0'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "SCD'21"
+    url: "https://www.youtube-nocookie.com/embed/sxvQoWF4KS0"
+---
+::

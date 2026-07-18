@@ -19,15 +19,21 @@ Unsere tägliche Arbeit bei Shopware, aber auch bei Agenturen, landet in den Hä
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Folien',
-description: 'Du kannst meine Folien auf Speakerdeck finden',
-url: 'https://speakerdeck.com/leichteckig/a-matter-of-trust-test'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Folien"
+    description: "Du kannst meine Folien auf Speakerdeck finden"
+    url: "https://speakerdeck.com/leichteckig/a-matter-of-trust-test"
+---
+::
 
 ## Aufzeichnungen
 
-<media-grid :media="[{
-name: '🇺🇸 SCD\'21',
-url: 'https://www.youtube-nocookie.com/embed/sxvQoWF4KS0'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "🇺🇸 SCD'21"
+    url: "https://www.youtube-nocookie.com/embed/sxvQoWF4KS0"
+---
+::

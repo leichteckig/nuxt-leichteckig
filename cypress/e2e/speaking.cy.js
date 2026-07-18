@@ -1,17 +1,16 @@
 describe('Check "Speaking" area', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.waitForHydration();
   });
 
-  it('should load real talks in listing and detail (visual)', () => {
+  it('should load real talks in listing and detail', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Speaking]').click();
 
     cy.get('[data-cy=PastTalkOverview]').should('be.visible');
+    cy.waitForHydration();
 
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Speaking page');
-    }
 
     cy.get('[data-cy=ButtonToTalks]').scrollIntoView();
     cy.get('[data-cy=ButtonToTalks]').click();

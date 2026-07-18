@@ -33,22 +33,26 @@ In my session, I want to introduce Cypress to you and explore its possibilities 
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk at Developer-Week on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
-},{
-name: 'Slides',
-description: 'You can find the slides of the talk at <\c\'t webdev\> on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk at Developer-Week on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte"
+  - name: "Slides"
+    description: "You can find the slides of the talk at <c't webdev> on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/end-to-end-testing-wie-es-sein-sollte"
+---
+::
 
 ## Recordings
 
-<media-grid :media="[{
-name: 'Neos Conference\'22',
-url: 'https://www.youtube-nocookie.com/embed/hzJPLKVarMw'
-}, {
-name: 'Reacticon\'21',
-url: 'https://www.youtube-nocookie.com/embed/f1LOWUkaQPU?start=15021'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Neos Conference'22"
+    url: "https://www.youtube-nocookie.com/embed/hzJPLKVarMw"
+  - name: "Reacticon'21"
+    url: "https://www.youtube-nocookie.com/embed/f1LOWUkaQPU?start=15021"
+---
+::

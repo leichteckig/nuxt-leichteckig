@@ -1,0 +1,53 @@
+<template>
+  <div class="page">
+    <section class="page__title">
+      <div class="container">
+        <h1 data-cy="Title">
+          {{ title }}
+        </h1>
+      </div>
+    </section>
+    <section v-if="img">
+      <Hero :img="img" />
+    </section>
+    <section class="page__content">
+      <div class="container">
+        <slot />
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup>
+defineOptions({ name: 'Page' })
+
+defineProps({
+  title: {
+    type: String,
+    required: false,
+    default: 'Page title'
+  },
+  img: {
+    type: Object,
+    required: false,
+    default: null
+  }
+})
+</script>
+
+<style scoped>
+  .page__title {
+    padding: 36px 0;
+
+    border-bottom: solid 3px var(--border-color);
+  }
+
+  .page__title h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .page__content {
+    margin-top: 40px;
+  }
+</style>

@@ -1,11 +1,12 @@
-/**
- * @jest-environment jsdom
- */
+import { describe, it, expect, vi, afterEach } from 'vitest'
+import { mount, shallowMount } from '@vue/test-utils'
+import SocialButtonGroup from '~/components/SocialButtonGroup.vue'
 
-import {mount, shallowMount} from '@vue/test-utils'
-import SocialButtonGroup from '@/components/SocialButtonGroup.vue'
+describe('SocialButtonGroup component', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
 
-describe('ColorModePicker component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(SocialButtonGroup);
 
@@ -13,26 +14,11 @@ describe('ColorModePicker component', () => {
   });
 
   it('should trigger link to social media', async () => {
-    const mockMethod = jest.spyOn(SocialButtonGroup.methods, 'openSocialLink');
-    global.open = jest.fn();
-    const wrapper = mount(SocialButtonGroup, {
-      propsData: {
-        media: [{
-          name: 'Slides',
-          url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
-        }]
-      },
-      stubs: {
-        IconXing: { template: '<div></div>' },
-        IconTwitter: { template: '<div></div>' },
-        IconLinkedin: { template: '<div></div>' },
-        IconGithub: { template: '<div></div>' }
-      }
-    });
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => {});
+    const wrapper = mount(SocialButtonGroup);
     const button = wrapper.find('.button-item');
 
-    wrapper.vm.method = mockMethod;
     await button.trigger('click');
-    expect(mockMethod).toHaveBeenCalled();
+    expect(openSpy).toHaveBeenCalledWith('https://twitter.com/leichteckig', '_blank', 'noopener');
   });
 });

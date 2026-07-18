@@ -1,14 +1,11 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import DetailSummary from '@/components/DetailSummary.vue'
+import DetailSummary from '~/components/DetailSummary.vue'
 
 describe('DetailSummary component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(DetailSummary, {
-      propsData: {
+      props: {
         article: {
           author: {
             image: ''
@@ -21,7 +18,7 @@ describe('DetailSummary component', () => {
 
   it('should display the most important article information', () => {
     const wrapper = shallowMount(DetailSummary, {
-      propsData: {
+      props: {
         article: {
           title: 'Article title ftw',
           description:  'Automation traps in the context of working with Shopware.',
@@ -41,5 +38,6 @@ describe('DetailSummary component', () => {
       }
     });
     expect(wrapper.vm).toBeTruthy();
+    expect(wrapper.find('.summary-detail__tag').text()).toBe('Shopware');
   });
 });

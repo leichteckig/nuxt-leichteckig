@@ -1,15 +1,15 @@
-/**
- * @jest-environment jsdom
- */
-
-import { mount, shallowMount } from '@vue/test-utils'
-import MediaGrid from '@/components/MediaGrid.vue'
-import Button from '@/components/Button.vue'
+import { describe, it, expect, vi, afterEach } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import MediaGrid from '~/components/content/MediaGrid.vue'
 
 describe('MediaGrid component', () => {
-  it('should be a Vue instance', () => {
-    const wrapper = shallowMount(MediaGrid, {
-      propsData: {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('should be a Vue instance', async () => {
+    const wrapper = await mountSuspended(MediaGrid, {
+      props: {
         media: [{
           name: 'SCD\'21',
           url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
@@ -20,17 +20,14 @@ describe('MediaGrid component', () => {
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('should render slide links',  () => {
-    const wrapper = shallowMount(MediaGrid, {
-      propsData: {
+  it('should render slide links', async () => {
+    const wrapper = await mountSuspended(MediaGrid, {
+      props: {
         media: [{
           name: 'Slides',
           url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
         }]
-      },
-      stubs: {
-        Button: Button
-      },
+      }
     });
     const button = wrapper.find('[data-cy=OpenSlides]');
 
@@ -38,29 +35,28 @@ describe('MediaGrid component', () => {
   });
 
   it('should have link to slides', async () => {
-    const mockMethod = jest.spyOn(MediaGrid.methods, 'openSlideLink');
-    global.open = jest.fn();
-    const wrapper = mount(MediaGrid, {
-      propsData: {
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => {});
+    const wrapper = await mountSuspended(MediaGrid, {
+      props: {
         media: [{
           name: 'Slides',
           url: 'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt'
         }]
-      },
-      stubs: {
-        Button: Button
       }
     });
     const button = wrapper.find('[data-cy=OpenSlides]');
 
-    wrapper.vm.method = mockMethod;
     await button.trigger('click');
-    expect(mockMethod).toHaveBeenCalled();
+    expect(openSpy).toHaveBeenCalledWith(
+      'https://speakerdeck.com/leichteckig/lets-get-visual-visuelles-testing-in-deinem-symfony-projekt',
+      '_blank'
+    );
+    expect(wrapper.emitted('open')).toBeTruthy();
   });
 
-  it('should render youtube video', () => {
-    const wrapper = shallowMount(MediaGrid, {
-      propsData: {
+  it('should render youtube video', async () => {
+    const wrapper = await mountSuspended(MediaGrid, {
+      props: {
         media: [{
           name: 'SCD\'21',
           url: 'https://www.youtube.com/embed/sxvQoWF4KS0'
