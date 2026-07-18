@@ -22,11 +22,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress Run
         uses: cypress-io/github-action@v5.1.0
         with:
+          install: false
           browser: chrome
           headless: true
           record: true
