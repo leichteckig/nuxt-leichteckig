@@ -70,6 +70,12 @@ ul {
   gap: 5px;
 }
 
+/* Without this the li reserves baseline space below the button
+   and grows taller than the 40px button box */
+li {
+  display: flex;
+}
+
 .color-item {
   display: inline-flex;
   align-items: center;

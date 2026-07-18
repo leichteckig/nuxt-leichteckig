@@ -69,7 +69,11 @@ const socialIcons = [{
       color: inherit;
     }
 
+    /* nuxt-svgo strips the icons' own dimensions, so size them here —
+       without an explicit size they collapse to 0x0 */
     svg {
+      width: 26px;
+      height: 26px;
       margin: 7px;
 
       &:hover {
