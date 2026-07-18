@@ -4,17 +4,14 @@ describe('Check Home page', () => {
     cy.waitForHydration();
   });
 
-  it('should load home page (visual)', () => {
+  it('should load home page', () => {
     cy.get('[data-cy=Polaroid]').should('be.visible');
     cy.contains('[data-cy=Welcome]', 'Hi, I\'m Ramona').should('be.visible');
 
     cy.get('[data-cy=FeaturedPosts]').should('be.visible');
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Home page');
-    }
   });
 
-  it('should change color mode to dark and light (visual)', () => {
+  it('should change color mode to dark and light', () => {
     cy.get('[data-cy=lightswitch]').should('be.visible');
     cy.get('[data-cy=lightswitch]').click();
 
@@ -33,12 +30,9 @@ describe('Check Home page', () => {
     cy.get('[data-cy=WelcomeDescription]')
       .should('have.css', 'color', 'rgb(235, 244, 241)');
 
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Home page - Dark mode');
-    }
   });
 
-  it('should change to german locale (visual)', () => {
+  it('should change to german locale', () => {
     cy.contains('[data-cy=lang-de]', 'DE').should('be.visible');
     cy.get('[data-cy=lang-de]').click();
 
@@ -48,9 +42,6 @@ describe('Check Home page', () => {
     cy.contains('[data-cy=Speaking]', 'Vorträge').should('be.visible');
     cy.contains('[data-cy=Attending]', 'Events').should('be.visible');
 
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Home page - German');
-    }
   });
 
   it('should open imprint', () => {

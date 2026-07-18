@@ -12,7 +12,7 @@ jobs:
           node-version: '24'
       - run: npm install
       - run: npm test
-  ui-cypress-percy-chrome:
+  ui-cypress-chrome:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,15 +28,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          record: true
-          projectId: ${{ secrets.CY_DASHBOARD_ID }}
           build: npm run generate
           start: npx serve .output/public -l 3000
           wait-on: 'http://localhost:3000'
-        env:
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - name: Percy Test
-        run: npx percy exec -- cypress run --browser chrome --headless --env percy=treu,grep=visual
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

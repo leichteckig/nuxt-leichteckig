@@ -3,15 +3,12 @@ describe('Check "Attending" area', () => {
     cy.visit('/');
   });
 
-  it('should load real events (visual)', () => {
+  it('should load real events', () => {
     cy.get('[data-cy=HeaderMain]').should('be.visible');
     cy.get('[data-cy=Attending]').click();
 
     cy.get('[data-cy=EventAppearances]').should('be.visible');
 
-    if (Cypress.env('percy')) {
-      cy.percySnapshot('Attending page');
-    }
   });
 
   it('should display events', () => {
