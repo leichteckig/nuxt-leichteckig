@@ -4,6 +4,7 @@
     class="hero-image"
     :src="`/${img.path}`"
     :alt="img.alt"
+    fetchpriority="high"
   >
 </template>
 
@@ -18,16 +19,13 @@ defineProps({
 
 <style scoped>
 .hero-image {
-  /* Set a specific height */
+  /* Fixed banner ratio: reserves the space before the image loads (no CLS)
+     and keeps the hero crop consistent across pages */
+  aspect-ratio: 3 / 1;
   max-height: 500px;
   width: 100%;
   object-fit: cover;
   object-position: 30% 70%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 }
 </style>
