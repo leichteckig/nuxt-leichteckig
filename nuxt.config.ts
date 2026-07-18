@@ -92,11 +92,14 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    // Roboto is intentionally not downloaded: --font-family-default is a
+    // system font stack that only lists it as a late fallback.
     download: true,
-    base64: true,
+    subsets: 'latin',
+    display: 'swap',
+    preload: true,
     families: {
-      Roboto: true,
-      'Amatic+SC': true
+      'Amatic+SC': [400, 700]
     }
   },
 
