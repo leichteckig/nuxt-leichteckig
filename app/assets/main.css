@@ -128,6 +128,42 @@ h6 {
   border-bottom-left-radius: 100px 30px;
 }
 
+/* Skeleton placeholder for opaque images: the shimmer lives on the <img>'s own
+   background, so it shows while loading and is painted over once the image
+   arrives — no extra DOM, no JS, invisible to assistive tech. Don't use it on
+   images with transparency (the background would shine through permanently).
+   The global prefers-reduced-motion rule freezes the shimmer to a static tint. */
+.img-skeleton {
+  background-color: var(--bg-secondary);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    var(--border-color) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: img-skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes img-skeleton-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-skeleton {
+    /* Static tint instead of a frozen mid-shimmer gradient */
+    background-image: none;
+    animation: none;
+  }
+}
+
 .handdraw-border {
   border: solid 3px var(--border-color);
 

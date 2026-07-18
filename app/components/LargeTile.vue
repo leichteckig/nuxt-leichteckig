@@ -11,6 +11,11 @@
         <img
           class="blog-card__author-img"
           :src="article.author.image"
+          alt=""
+          width="30"
+          height="30"
+          loading="lazy"
+          decoding="async"
         >
         {{ article.author.name }}
       </div>
@@ -21,11 +26,20 @@
         </NuxtLink>
       </h3>
 
-      <NuxtLink :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })">
+      <!-- Duplicate of the title link: hidden from AT and tab order so the
+           card exposes a single, properly named link -->
+      <NuxtLink
+        :to="localePath({ name: `${slugName}-slug`, params: { slug: article.slug } })"
+        aria-hidden="true"
+        tabindex="-1"
+      >
         <img
           v-if="article.img"
           :src="`/${article.img}`"
-          class="blog-card__img"
+          class="blog-card__img img-skeleton"
+          alt=""
+          loading="lazy"
+          decoding="async"
         >
       </NuxtLink>
       <p class="blog-card__description">

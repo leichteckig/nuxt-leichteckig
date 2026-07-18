@@ -29,5 +29,15 @@ defineProps({
   object-fit: cover;
   object-position: 30% 70%;
   position: relative;
+
+  /* Calm placeholder in the site's handdraw stripe motif, shown on the
+     image's own background until the (high-priority) hero paints over it */
+  background: repeating-linear-gradient(
+    45deg,
+    var(--border-color),
+    var(--border-color) 1px,
+    var(--bg) 1px,
+    var(--bg) 10px
+  );
 }
 </style>

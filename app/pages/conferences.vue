@@ -9,7 +9,10 @@
         <img
           alt="Moe giving talks"
           src="/ramona-schwering-talks-small.jpeg"
-          class=" img-header"
+          class="img-header img-skeleton"
+          width="250"
+          height="250"
+          decoding="async"
         >
       </div>
       <TableOverview :contents="futureEvents"/>
