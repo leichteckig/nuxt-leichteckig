@@ -1,6 +1,7 @@
 describe('Check "Speaking" area', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.waitForHydration();
   });
 
   it('should load real talks in listing and detail (visual)', () => {
@@ -8,6 +9,7 @@ describe('Check "Speaking" area', () => {
     cy.get('[data-cy=Speaking]').click();
 
     cy.get('[data-cy=PastTalkOverview]').should('be.visible');
+    cy.waitForHydration();
 
     if (Cypress.env('percy')) {
       cy.percySnapshot('Speaking page');

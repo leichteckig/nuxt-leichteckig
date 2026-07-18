@@ -1,35 +1,18 @@
-/**
- * @jest-environment jsdom
- */
-
-import { shallowMount } from '@vue/test-utils'
-import Footer from '@/components/Footer.vue'
+import { describe, it, expect } from 'vitest'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import Footer from '~/components/Footer.vue'
 
 describe('Footer component', () => {
-  it('should be a Vue instance', () => {
-    const wrapper = shallowMount(Footer, {
-      stubs: {
-        NuxtLink: { template: '<div></div>' }
-      },
-      mocks: {
-        $t: () => 'some specific text',
-        localePath: i => i
-      }
-    });
+  it('should be a Vue instance', async () => {
+    const wrapper = await mountSuspended(Footer);
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('should provide navigation to major areas', () => {
-    const wrapper = shallowMount(Footer, {
-      stubs: {
-        NuxtLink: { template: '<div></div>' }
-      },
-      mocks: {
-        $t: () => 'some specific text',
-        localePath: i => i
-      }
-    });
+  it('should provide navigation to major areas', async () => {
+    const wrapper = await mountSuspended(Footer);
 
-    expect(wrapper.find('.main-footer__social-links')).toBeTruthy();
+    expect(wrapper.find('.main-footer__social-links').exists()).toBe(true);
+    expect(wrapper.find('[data-cy=NavToImprint]').exists()).toBe(true);
+    expect(wrapper.find('[data-cy=NavToDP]').exists()).toBe(true);
   });
 });

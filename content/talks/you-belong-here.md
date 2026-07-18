@@ -22,8 +22,11 @@ Because for Ramona, one thing matters most during her keynotes: "𝗜𝗰𝗵 �
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/you-belong-here-on-hurdles-and-happiness-as-women-in-it'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/you-belong-here-on-hurdles-and-happiness-as-women-in-it"
+---
+::

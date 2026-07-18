@@ -1,9 +1,6 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import Page from '@/components/Page.vue'
+import Page from '~/components/Page.vue'
 
 describe('Page component', () => {
   it('should be a Vue instance', () => {

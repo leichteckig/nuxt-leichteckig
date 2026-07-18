@@ -22,20 +22,25 @@ Große Menschenmengen voller Fremder. Viele Geräusche. Die Sinne laufen auf Hoc
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Folien',
-description: 'Du kannst meine Folien auf Speakerdeck finden',
-url: 'https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-introvert'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Folien"
+    description: "Du kannst meine Folien auf Speakerdeck finden"
+    url: "https://speakerdeck.com/leichteckig/how-to-survive-conferences-as-an-introvert"
+---
+::
 
 ## Aufzeichnungen
 
-<media-grid :media="[{
-name: '🇺🇸 WeAreDevelopers Live',
-description: 'Aufnahme meines Talks für den Women In Tech Day.',
-url: 'https://www.wearedevelopers.com/en/videos/550/how-to-survive-conferences-as-an-introvert'
-},{
-name: '🇺🇸 Shopware TV',
-description: 'Das ist die achte Episode - Zur SCD Tech Stage. Du kannst meinen Talk auf TC 4:09:04 finden oder die Kapitelauswahl nutzen.',
-url: 'https://tv.shopware.com/en/video/1151503/'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "🇺🇸 WeAreDevelopers Live"
+    description: "Aufnahme meines Talks für den Women In Tech Day."
+    url: "https://www.wearedevelopers.com/en/videos/550/how-to-survive-conferences-as-an-introvert"
+  - name: "🇺🇸 Shopware TV"
+    description: "Das ist die achte Episode - Zur SCD Tech Stage. Du kannst meinen Talk auf TC 4:09:04 finden oder die Kapitelauswahl nutzen."
+    url: "https://tv.shopware.com/en/video/1151503/"
+---
+::

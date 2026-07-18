@@ -1,6 +1,7 @@
 describe('Check Home page', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.waitForHydration();
   });
 
   it('should load home page (visual)', () => {

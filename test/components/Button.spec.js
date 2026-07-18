@@ -1,9 +1,6 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import Button from '@/components/Button.vue'
+import Button from '~/components/Button.vue'
 
 describe('Button component', () => {
   it('should be a Vue instance', () => {

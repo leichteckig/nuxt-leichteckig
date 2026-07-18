@@ -21,15 +21,15 @@ This article should be a part of specific help resources to guide you on how to 
 In a way, it's like a remark sheet for all those little hassles I encounter in my daily routine or as questions in 
 StackOverflow or via [Shopware's community slack](http://shopwarecommunity.slack.com). Notes serve like a check point for thoughts, right? 
 
-<hint type="info" title="Updated on September 28, 2021">
+::hint{type="info" title="Updated on September 28, 2021"}
 It's a living document, so feel free to contribute, reach out to me and check at a later date, to see if new pitfalls were discovered.
-</hint>
+::
 
 ## General things
 
 ### Honorable mention
 
-I already have a [guide](smashing-common-pitfall-traps) on how to check your tests for general, common pitfall traps.
+I already have a [guide](/blog/smashing-common-pitfall-traps/) on how to check your tests for general, common pitfall traps.
 It might be helpful to you if you want to get a grip on inspecting all information on this topic.
 
 ### Are there already presets, tests or other testing related content by Shopware?
@@ -215,13 +215,13 @@ When working in CI, use a temporary wait to check the timing:
 cy.wait(500); // Time in ms, so this will wait for half a second
 ```
 
-<hint type="error" title="Be cautious!">
+::hint{type="error" title="Be cautious!"}
 Only use fixed waiting times temporarily, in order to debug. Replace this wait with a dynamic assertion if the
 flakiness is caused by timing issues. See our best practises and Cypress Best practices for further information.
 Needless to say, you should remove the loop as well, as soon as you're done with debugging.
-</hint>
+::
 
-If you want to learn more on this topic, there's an article by me on [flakiness](smashing-flaky-tests).
+If you want to learn more on this topic, there's an article by me on [flakiness](/blog/smashing-flaky-tests/).
 
 ### The element I want to interact with is not available anymore
 

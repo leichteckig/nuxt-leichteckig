@@ -8,6 +8,10 @@ If you want, clone it, check it out and if you have some feedback, please keep m
 
 ![image](https://user-images.githubusercontent.com/29896429/132575441-23582f2d-240e-4574-b397-5ca3e6704a58.png)
 
+## Tech stack
+
+Built with [Nuxt 4](https://nuxt.com) (Vue 3), [@nuxt/content](https://content.nuxt.com) v3 and [@nuxtjs/i18n](https://i18n.nuxtjs.org) v10.
+
 ## Build Setup
 
 ```bash
@@ -17,27 +21,24 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# build for production and preview it
 $ npm run build
-$ npm run start
+$ npm run preview
 
-# generate static project
+# generate static project (output in .output/public)
 $ npm run generate
 ```
 
 ## Run tests
 
-### Run Jest tests
+### Run Vitest unit tests
 
 ```
 # Run all tests
 $ npm test
 
-# Run jest tests
-$ npm run jest
-
 # Start test watcher for development
-$ npm run jest-watch
+$ npm run test:watch
 ```
 
 ### Run end-to-end tests

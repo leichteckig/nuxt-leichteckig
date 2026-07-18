@@ -2,8 +2,10 @@
   ID = "realworld-nuxt"
 
 [build]
-  publish = "dist/"
+  # On Netlify, Nitro auto-detects the netlify-static preset and emits
+  # to `dist` (locally, `dist` is a symlink to .output/public)
+  publish = "dist"
   command = "npm run generate"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "24"

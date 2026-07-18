@@ -1,16 +1,12 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import LinkTile from '@/components/LinkTile.vue'
+import LinkTile from '~/components/LinkTile.vue'
 
 describe('LinkTile component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(LinkTile, {
-      propsData: {
-        contents: [],
-        slugName: 'LargePosts'
+      props: {
+        contents: []
       }
     });
 
@@ -19,7 +15,7 @@ describe('LinkTile component', () => {
 
   it('should display a link', () => {
     const wrapper = shallowMount(LinkTile, {
-      propsData: {
+      props: {
         contents: [{
           title: 'My link title',
           img: 'https://ramona.codes',
@@ -27,8 +23,7 @@ describe('LinkTile component', () => {
             'Blog',
             'Jest'
           ]
-        }],
-        slugName: 'LargePosts'
+        }]
       }
     });
 

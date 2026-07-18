@@ -1,105 +1,42 @@
-/**
- * @jest-environment jsdom
- */
-
-import {mount, shallowMount} from '@vue/test-utils'
-import ColorModePicker from '@/components/ColorModePicker.vue'
+import { describe, it, expect } from 'vitest'
+import { nextTick } from 'vue'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import ColorModePicker from '~/components/ColorModePicker.vue'
 
 describe('ColorModePicker component', () => {
-  it('should be a Vue instance', () => {
-    const wrapper = shallowMount(ColorModePicker, {
-      propsData: {
-        imagePath: 'test/images/amazing.png'
-      },
-      mocks: {
-        $colorMode: 'unknown'
-      },
-    });
-    wrapper.setData({
-      colors: ['system', 'light', 'dark']
-    });
+  it('should be a Vue instance', async () => {
+    const wrapper = await mountSuspended(ColorModePicker);
 
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('should set other black on click', async () => {
-    const mockMethod = jest.spyOn(ColorModePicker.methods, 'getClasses');
-    const wrapper = mount(ColorModePicker, {
-      mocks: {
-        $colorMode: () => {
-          return {
-            preference: () => {
-              return 'black'
-            },
-            value: () => {
-              return 'black'
-            },
-          }
-        },
-      },
-      stubs: {
-        IconSystem: { template: '<div></div>' },
-        IconLight: { template: '<div></div>' },
-        IconDark: { template: '<div></div>' }
-      }
-    });
-    const button = wrapper.find('.color-item');
+  it('should render a switch for every color mode', async () => {
+    const wrapper = await mountSuspended(ColorModePicker);
 
-    wrapper.vm.method = mockMethod;
-    await button.trigger('click');
-    expect(mockMethod).toHaveBeenCalled();
+    expect(wrapper.findAll('.color-item')).toHaveLength(3);
+    expect(wrapper.find('[data-cy=systemswitch]').exists()).toBe(true);
+    expect(wrapper.find('[data-cy=lightswitch]').exists()).toBe(true);
+    expect(wrapper.find('[data-cy=darkswitch]').exists()).toBe(true);
+  });
+
+  it('should set dark mode on click', async () => {
+    const wrapper = await mountSuspended(ColorModePicker);
+    await nextTick();
+
+    await wrapper.find('[data-cy=darkswitch]').trigger('click');
+    await nextTick();
+
+    expect(wrapper.find('[data-cy=darkswitch]').classes()).toContain('preferred');
   });
 
   it('should set light mode on click', async () => {
-    const mockMethod = jest.spyOn(ColorModePicker.methods, 'getClasses');
-    const wrapper = mount(ColorModePicker, {
-      mocks: {
-        $colorMode: () => {
-          return {
-            preference: () => {
-              return 'light'
-            },
-            value: () => {
-              return 'light'
-            },
-          }
-        },
-      },
-      stubs: {
-        IconSystem: { template: '<div></div>' },
-        IconLight: { template: '<div></div>' },
-        IconDark: { template: '<div></div>' }
-      }
-    });
-    const button = wrapper.find('.color-item');
+    const wrapper = await mountSuspended(ColorModePicker);
+    await nextTick();
 
-    wrapper.vm.method = mockMethod;
-    await button.trigger('click');
-    expect(mockMethod).toHaveBeenCalled();
-  });
+    await wrapper.find('[data-cy=lightswitch]').trigger('click');
+    await nextTick();
 
-  it('should handle unknown color mode', async () => {
-    const mockMethod = jest.spyOn(ColorModePicker.methods, 'getClasses');
-    const wrapper = mount(ColorModePicker, {
-      mocks: {
-        $colorMode: () => {
-          return {
-            unknown: () => {
-              return true;
-            }
-          }
-        },
-      },
-      stubs: {
-        IconSystem: { template: '<div></div>' },
-        IconLight: { template: '<div></div>' },
-        IconDark: { template: '<div></div>' }
-      }
-    });
-    const button = wrapper.find('.color-item');
-
-    wrapper.vm.method = mockMethod;
-    await button.trigger('click');
-    expect(mockMethod).toHaveBeenCalled();
+    expect(wrapper.find('[data-cy=lightswitch]').classes()).toContain('preferred');
+    expect(wrapper.find('[data-cy=lightswitch]').classes()).toContain('selected');
   });
 });

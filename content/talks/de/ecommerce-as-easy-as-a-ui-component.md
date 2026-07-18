@@ -19,18 +19,23 @@ Bei der Frontend-Entwicklung geht es darum, eine Verbindung zu deinem Publikum h
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/ecommerce-as-easy-as-an-ui-component'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/ecommerce-as-easy-as-an-ui-component"
+---
+::
 
 ## Aufzeichnungen
 
-<media-grid :media="[{
-name: 'VueJS Amsterdam 2023',
-url: 'https://www.youtube-nocookie.com/embed/VivLHGGds6c'
-},{
-name: 'Shopware Community Day 2023',
-url: 'https://www.youtube-nocookie.com/embed/hN3t96zVfpw'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "VueJS Amsterdam 2023"
+    url: "https://www.youtube-nocookie.com/embed/VivLHGGds6c"
+  - name: "Shopware Community Day 2023"
+    url: "https://www.youtube-nocookie.com/embed/hN3t96zVfpw"
+---
+::

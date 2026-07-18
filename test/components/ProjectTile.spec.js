@@ -1,14 +1,11 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import ProjectTile from '@/components/ProjectTile.vue'
+import ProjectTile from '~/components/ProjectTile.vue'
 
 describe('ProjectTile component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(ProjectTile, {
-      propsData: {
+      props: {
         contents: [],
         title: 'LargePosts'
       }
@@ -19,16 +16,13 @@ describe('ProjectTile component', () => {
 
   it('should display github data', () => {
     const wrapper = shallowMount(ProjectTile, {
-      propsData: {
+      props: {
         contents: [{
           full_name: 'leichteckig/my-project',
           description: 'Lorem ipsum',
           html_url: 'https://github.com/leichteckig'
         }],
         title: 'Github thingy'
-      },
-      stubs: {
-        NuxtLink: { template: '<div><slot></slot></div>' }
       }
     });
 

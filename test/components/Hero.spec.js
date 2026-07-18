@@ -1,14 +1,11 @@
-/**
- * @jest-environment jsdom
- */
-
+import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import Hero from '@/components/Hero.vue'
+import Hero from '~/components/Hero.vue'
 
 describe('Hero component', () => {
   it('should be a Vue instance', () => {
     const wrapper = shallowMount(Hero, {
-      propsData: {
+      props: {
         img: {
           path: 'test/images/amazing.png',
           alt: 'moe'
@@ -21,7 +18,7 @@ describe('Hero component', () => {
 
   it('should render image path', () => {
     const wrapper = shallowMount(Hero, {
-      propsData: {
+      props: {
         img: {
           path: 'test/images/amazing.png',
           alt: 'moe'
@@ -32,4 +29,3 @@ describe('Hero component', () => {
     expect(wrapper.find('.hero-image').attributes().src).toBe('/test/images/amazing.png');
   });
 });
-

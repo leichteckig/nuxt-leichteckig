@@ -20,8 +20,11 @@ describe('Check "Attending" area', () => {
     cy.get('[data-cy=EventAppearances]').should('be.visible');
 
     cy.get('[data-label="Title"]').should('be.visible');
+    // text-decoration shorthand serializes differently across browsers —
+    // assert the longhand properties instead
     cy.get('tr.talk--old')
-      .should('have.css', 'text-decoration', 'line-through solid rgb(128, 128, 128)');
+      .should('have.css', 'text-decoration-line', 'line-through')
+      .and('have.css', 'color', 'rgb(128, 128, 128)');
   });
 
   it('should link to my past talks', () => {

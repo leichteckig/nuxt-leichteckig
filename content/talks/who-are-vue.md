@@ -23,8 +23,11 @@ Whether you're a seasoned VueJS developer or just getting started, you're in for
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/who-are-vue-authn-in-vue-the-important-parts'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/who-are-vue-authn-in-vue-the-important-parts"
+---
+::

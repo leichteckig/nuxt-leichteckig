@@ -22,8 +22,11 @@ Denn für Ramona zählt im Rahmen Ihre Keynotes vor allem eines: „𝗜𝗰𝗵
 
 ## Folien
 
-<media-grid :media="[{
-name: 'Folien',
-description: 'Du kannst meine Folien auf Speakerdeck finden',
-url: 'https://speakerdeck.com/leichteckig/you-belong-here-on-hurdles-and-happiness-as-women-in-it'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Folien"
+    description: "Du kannst meine Folien auf Speakerdeck finden"
+    url: "https://speakerdeck.com/leichteckig/you-belong-here-on-hurdles-and-happiness-as-women-in-it"
+---
+::

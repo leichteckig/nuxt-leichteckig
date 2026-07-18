@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// Waits until the Nuxt app has hydrated on the current page. Statically
+// generated pages are interactive-looking before Vue has taken over, so
+// clicking Vue-bound controls too early would silently do nothing.
+Cypress.Commands.add('waitForHydration', () => {
+  cy.window().should((win) => {
+    const app = win.document.querySelector('#__nuxt');
+    expect(app && app.__vue_app__, 'Nuxt app is hydrated').to.exist;
+  });
+});

@@ -20,8 +20,11 @@ Many developers and product managers are obsessed with all-green lighthouse scor
 
 ## Slides
 
-<media-grid :media="[{
-name: 'Slides',
-description: 'You can find the slides of the talk on speakerdeck',
-url: 'https://speakerdeck.com/leichteckig/measure-and-improve-frontend-performance-by-using-test-automation'
-}]"></media-grid>
+::media-grid
+---
+media:
+  - name: "Slides"
+    description: "You can find the slides of the talk on speakerdeck"
+    url: "https://speakerdeck.com/leichteckig/measure-and-improve-frontend-performance-by-using-test-automation"
+---
+::
