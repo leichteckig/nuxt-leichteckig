@@ -2,7 +2,8 @@
   <Page
     :title="$t('speakingPastPubs')"
     :img="{
-      path: 'recording-ramona-schwering.jpg',
+      path: 'recording-ramona-schwering.webp',
+      srcset: '/recording-ramona-schwering-800.webp 800w, /recording-ramona-schwering.webp 1280w',
       alt: 'Me, recording things'
     }"
   >

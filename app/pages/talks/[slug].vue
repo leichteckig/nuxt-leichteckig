@@ -105,7 +105,7 @@ useHead(() => ({
   }
 
   .talk-detail__lang {
-    font-family: 'Amatic SC';
+    font-family: var(--font-family-secondary);
     font-size: xx-large;
   }
 

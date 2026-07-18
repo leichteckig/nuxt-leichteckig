@@ -3,6 +3,7 @@
     :title="$t('aboutTitle')"
     :img="{
       path: 'stickers.webp',
+      srcset: '/stickers-800.webp 800w, /stickers.webp 1500w',
       alt: 'stickers'
     }"
   >

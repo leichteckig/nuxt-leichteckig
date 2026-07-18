@@ -2,7 +2,8 @@
   <Page
     :title="$t('speakingTitle')"
     :img="{
-      path: 'vuejsamsterdam.jpeg',
+      path: 'vuejsamsterdam.webp',
+      srcset: '/vuejsamsterdam-800.webp 800w, /vuejsamsterdam.webp 1500w',
       alt: 'Me, being about to speak at Vue.js Amsterdam',
     }"
   >
