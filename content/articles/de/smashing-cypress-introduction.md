@@ -1,7 +1,7 @@
 ---
 title: Tauchen wir ein in Cypress für End-to-End-Tests
 description: Ist End-to-End-Testing für Dich ein leidiges Thema? In diesem Artikel möchte ich Dir erklären, wie Du End-to-End-Tests mit Cypress Durchführen kannst, damit es für Dich nicht so mühsam und teuer wird, sondern Spaß macht.
-img: smashing-cypress-intro/cy-plant-unsplash.jpg
+img: smashing-cypress-intro/cy-plant-unsplash.webp
 alt: cypress introduction
 createdAt: 2021-11-04T22:50:54.724Z
 author:

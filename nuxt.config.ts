@@ -102,7 +102,9 @@ export default defineNuxtConfig({
   },
 
   robots: {
-    disallow: ['*/smashing-', '/imprint', '/privacy']
+    // Republished/syndicated articles (canonical points to the original) are
+    // kept out of the index via their slug prefix: smashing-, auth0-, devto-.
+    disallow: ['*/smashing-', '*/auth0-', '*/devto-', '/imprint', '/privacy']
   },
 
   googleFonts: {

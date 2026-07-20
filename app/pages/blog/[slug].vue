@@ -76,9 +76,11 @@ useHead(() => ({
     },
     { name: 'twitter:card', content: 'summary_large_image' }
   ],
-  link: article.value?.author?.bio?.includes('smashing')
-    ? [{ rel: 'canonical', href: article.value.author.bio }]
-    : []
+  link: article.value?.canonical
+    ? [{ rel: 'canonical', href: article.value.canonical }]
+    : article.value?.author?.bio?.includes('smashing')
+      ? [{ rel: 'canonical', href: article.value.author.bio }]
+      : []
 }))
 </script>
 

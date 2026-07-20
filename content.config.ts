@@ -16,6 +16,9 @@ const schema = z.object({
   img: z.string().optional(),
   alt: z.string().optional(),
   createdAt: z.string(),
+  // Absolute URL of the original publication. Set on republished/syndicated
+  // articles so the blog detail page emits a rel="canonical" pointing there.
+  canonical: z.string().optional(),
   author: author.optional(),
   tags: z.array(z.string()).optional(),
   otherLanguages: z.array(otherLanguage).optional()
