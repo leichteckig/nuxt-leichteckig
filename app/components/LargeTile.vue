@@ -35,7 +35,7 @@
       >
         <img
           v-if="article.img"
-          :src="`/${article.img}`"
+          :src="mediaSrc(article.img)"
           class="blog-card__img img-skeleton"
           alt=""
           loading="lazy"
@@ -66,9 +66,26 @@ const localePath = useLocalePath()
 
 <style scoped>
 
+/* One column by default (mobile), two columns from the site's desktop
+   breakpoint up. Grid `gap` handles the spacing that used to be card margins,
+   and equal-height rows keep side-by-side cards aligned. */
+.large-tile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin: 25px 0;
+}
+
+@media (min-width: 800px) {
+  .large-tile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .blog-card {
   padding: 50px;
-  margin: 25px 0;
+  /* Fill the grid cell so both cards in a row share the same height */
+  height: 100%;
 }
 
 .blog-card:hover {

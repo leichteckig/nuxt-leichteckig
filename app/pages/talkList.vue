@@ -8,21 +8,34 @@
       alt: 'Me, sitting in front of one of my slides during a panel discussion'
     }"
   >
-    <main class="past-talks">
+    <main
+      class="past-talks"
+      ref="listing"
+      tabindex="-1"
+    >
       <h2 data-cy="PastTalkHeader">
         {{ $t('talkSubtitle') }}
       </h2>
       <div class="featured-posts">
         <SmallTile
-          :contents="pastTalks"
+          :contents="pagedTalks"
           slug-name="talks"
         />
       </div>
+      <Pagination
+        v-if="totalPages > 1"
+        :current-page="currentPage"
+        :total-pages="totalPages"
+      />
     </main>
   </Page>
 </template>
 
 <script setup>
+// Talks are compact tiles in a dense grid, so a generous page size keeps the
+// full breadth visible and only paginates once the list grows substantially.
+const PAGE_SIZE = 12
+
 const { locale } = useI18n()
 
 const { data } = await useAsyncData(
@@ -34,6 +47,8 @@ const { data } = await useAsyncData(
 )
 
 const pastTalks = computed(() => withSlug(data.value))
+
+const { currentPage, totalPages, pagedItems: pagedTalks } = usePagination(pastTalks, PAGE_SIZE)
 
 useHead({
   title: 'Ramona Schwering\'s Talks',
@@ -47,6 +62,11 @@ useHead({
 </script>
 
 <style scoped>
+
+/* Programmatic focus target on page change; no ring for this non-interactive region */
+main:focus {
+  outline: none;
+}
 
 h2 {
   margin: 50px 0;

@@ -3,17 +3,26 @@
     title="Ramona Schwering's blog"
     class="blog"
   >
-    <main>
+    <main ref="listing" tabindex="-1">
       <LargeTile
-        :contents="articles"
+        :contents="pagedArticles"
         slug-name="blog"
         data-cy="BlogListing"
+      />
+      <Pagination
+        v-if="totalPages > 1"
+        :current-page="currentPage"
+        :total-pages="totalPages"
       />
     </main>
   </Page>
 </template>
 
 <script setup>
+// Articles shown per page. Two columns on desktop → three tidy rows;
+// six rows on mobile before the reader reaches the pager.
+const PAGE_SIZE = 6
+
 const { locale } = useI18n()
 
 const { data } = await useAsyncData(
@@ -25,6 +34,8 @@ const { data } = await useAsyncData(
 )
 
 const articles = computed(() => withSlug(data.value))
+
+const { currentPage, totalPages, pagedItems: pagedArticles } = usePagination(articles, PAGE_SIZE)
 
 useHead({
   title: 'Writing',
@@ -38,6 +49,11 @@ useHead({
 </script>
 
 <style scoped>
+/* Programmatic focus target (page changes); no ring for this non-interactive region */
+main:focus {
+  outline: none;
+}
+
 .blog-card {
   padding-bottom: 50px;
 }

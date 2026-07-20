@@ -20,3 +20,16 @@ export function withSlug(docs) {
     slug: doc.stem.split('/').pop()
   }))
 }
+
+/**
+ * Resolves an image reference to a usable `src`. Local assets are stored under
+ * `public/` and referenced by their bare path (prefixed with `/`); republished
+ * articles hotlink their images from the original publication via absolute URLs
+ * (http(s)), which must be passed through untouched.
+ */
+export function mediaSrc(path) {
+  if (!path) {
+    return path
+  }
+  return /^https?:\/\//.test(path) ? path : `/${path}`
+}

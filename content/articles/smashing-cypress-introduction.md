@@ -1,7 +1,7 @@
 ---
 title: Let’s Dive Into Cypress For End-to-End Testing
 description:  Is end-to-end testing a painful topic for you? In this article, Ramona Schwering explains how to handle end-to-end testing with Cypress and make it make it not so tedious and expensive for yourself, but fun instead.
-img: smashing-cypress-intro/cy-plant-unsplash.jpg
+img: smashing-cypress-intro/cy-plant-unsplash.webp
 alt: cypress introduction
 createdAt: 2021-11-04T22:50:54.724Z
 author:

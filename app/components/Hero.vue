@@ -2,7 +2,7 @@
   <img
     v-if="img"
     class="hero-image"
-    :src="`/${img.path}`"
+    :src="mediaSrc(img.path)"
     :srcset="img.srcset"
     :sizes="img.srcset ? '100vw' : undefined"
     :alt="img.alt"
