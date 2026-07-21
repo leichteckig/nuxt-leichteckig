@@ -26,7 +26,9 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://www.ramona.codes'
+    url: 'https://www.ramona.codes',
+    name: 'Ramona Schwering',
+    description: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Cypress Ambassador. OpenSource Lover.'
   },
 
   app: {
@@ -71,8 +73,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
+    // Umbrella: pulls in sitemap, robots, schema-org, og-image,
+    // link-checker and seo-utils (replaces the standalone sitemap/robots)
+    '@nuxtjs/seo',
     'nuxt-svgo'
   ],
 
@@ -105,6 +108,24 @@ export default defineNuxtConfig({
     // Republished/syndicated articles (canonical points to the original) are
     // kept out of the index via their slug prefix: smashing-, auth0-, devto-.
     disallow: ['*/smashing-', '*/auth0-', '*/devto-', '/imprint', '/privacy']
+  },
+
+  schemaOrg: {
+    // Site-wide identity: emits a Person node linked into every page's graph,
+    // so search engines and AI answer engines resolve the author consistently.
+    identity: {
+      type: 'Person',
+      name: 'Ramona Schwering',
+      description: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Cypress Ambassador. OpenSource Lover.',
+      image: 'https://www.ramona.codes/Moe-Profile.jpg',
+      sameAs: [
+        'https://github.com/leichteckig',
+        'https://twitter.com/leichteckig',
+        'https://www.linkedin.com/in/ramona-schwering/',
+        'https://www.xing.com/profile/Ramona_Schwering2/cv',
+        'https://hachyderm.io/@leichteckig'
+      ]
+    }
   },
 
   googleFonts: {
