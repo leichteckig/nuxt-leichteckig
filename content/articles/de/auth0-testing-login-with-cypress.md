@@ -7,7 +7,6 @@ createdAt: 2024-12-23T00:00:00.000Z
 canonical: https://auth0.com/blog/testing-auth0-login-with-cypress/
 author:
   name: Ramona Schwering
-  bio: https://auth0.com/blog/testing-auth0-login-with-cypress/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Auth0

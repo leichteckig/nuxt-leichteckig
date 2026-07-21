@@ -4,9 +4,9 @@ description: Ist End-to-End-Testing für Dich ein leidiges Thema? In diesem Arti
 img: smashing-cypress-intro/cy-plant-unsplash.webp
 alt: cypress introduction
 createdAt: 2021-11-04T22:50:54.724Z
+canonical: https://www.smashingmagazine.com/2021/09/cypress-end-to-end-testing/
 author:
   name: Ramona Schwering
-  bio: https://www.smashingmagazine.com/2021/09/cypress-end-to-end-testing/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine
