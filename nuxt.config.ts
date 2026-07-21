@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/rss.xml'],
       failOnError: false
     }
   },
@@ -57,7 +57,13 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'me', href: 'https://hachyderm.io/@leichteckig' }
+        { rel: 'me', href: 'https://hachyderm.io/@leichteckig' },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'Ramona Schwering — Writing',
+          href: '/rss.xml'
+        }
       ]
     }
   },
