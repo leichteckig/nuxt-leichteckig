@@ -7,7 +7,6 @@ createdAt: 2025-09-03T00:00:00.000Z
 canonical: https://auth0.com/blog/an-accessible-guide-to-wcag-3-3-8-authentication-without-frustration/
 author:
   name: Ramona Schwering
-  bio: https://auth0.com/blog/an-accessible-guide-to-wcag-3-3-8-authentication-without-frustration/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Auth0

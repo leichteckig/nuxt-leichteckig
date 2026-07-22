@@ -71,6 +71,10 @@ const articles = computed(() => withSlug(data.value))
 
 useHead({
   title: 'Ramona Schwering',
+  // Home page title already equals the site name, so skip the
+  // "%s | Ramona Schwering" branding template that nuxt-seo-utils adds
+  // site-wide (which would otherwise render "Ramona Schwering | Ramona Schwering")
+  titleTemplate: null,
   meta: [
     {
       name: 'description',
