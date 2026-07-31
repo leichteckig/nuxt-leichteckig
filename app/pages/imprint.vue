@@ -11,7 +11,11 @@
         </p>
         <h2>{{ $t('imprintContactTitle') }}</h2>
         <p>
-          {{ $t('imprintContactMail') }}<span class="mail">{{ $t('imprintContactLastname') }}</span>{{ $t('imprintContactDomain') }}<br>
+          {{ $t('imprintContactMail') }}<ObfuscatedEmail
+            user="hello"
+            domain="ramona.codes"
+            plain-fallback
+          /><br>
           {{ $t('imprintSource') }}<br>
         </p>
       </section>
@@ -40,8 +44,3 @@ useHead({
 })
 </script>
 
-<style scoped>
-p span.mail {
-  display: none;
-}
-</style>
