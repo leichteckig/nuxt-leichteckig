@@ -35,14 +35,19 @@ describe('Check "Speaker Kit" area', () => {
     cy.get('[data-cy=KitContact]').should('be.visible');
   });
 
-  it('shows the speaking map → 20 countries highlighted and listed', () => {
+  it('shows the speaking map → highlighted countries match the legend', () => {
     cy.visit('/speaker-kit/');
 
     cy.get('[data-cy=SpeakingMap]').should('be.visible');
 
-    // Legend and map are driven by the same country list, so both hold 20 entries.
-    cy.get('[data-cy=SpeakingMap] .speaking-map__list li').should('have.length', 20);
-    cy.get('[data-cy=SpeakingMap] .speaking-map__svg .visited').should('have.length', 20);
+    // Legend and map highlights come from the same country list, so their
+    // counts must match. Asserted as an invariant (plus a floor) so adding a
+    // country later doesn't break the test.
+    cy.get('[data-cy=SpeakingMap] .speaking-map__list li').then(($legend) => {
+      expect($legend.length, 'countries in legend').to.be.at.least(22);
+      cy.get('[data-cy=SpeakingMap] .speaking-map__svg .visited')
+        .should('have.length', $legend.length);
+    });
 
     // A visited country is painted in the brand colour; an unvisited one is not.
     cy.get('#de').should('have.class', 'visited');
@@ -54,8 +59,14 @@ describe('Check "Speaker Kit" area', () => {
     cy.waitForHydration();
 
     cy.get('[data-cy=CopyBioShort]').should('contain.text', 'Copy');
-    cy.get('[data-cy=CopyBioShort]').click();
-    cy.get('[data-cy=CopyBioShort]').should('contain.text', 'Copied!');
+
+    // The click handler is wired up during hydration, which can land a tick
+    // after the app first mounts. Re-query and re-click on each retry until the
+    // label flips, so the test doesn't race a not-yet-interactive button.
+    cy.get('[data-cy=CopyBioShort]').should(($btn) => {
+      $btn[0].click();
+      expect($btn.text()).to.contain('Copied!');
+    });
   });
 
   it('offers photo downloads → download links point at image files', () => {

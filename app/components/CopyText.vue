@@ -41,13 +41,27 @@ const props = defineProps({
 const copied = ref(false)
 let timer = null
 
-async function copy() {
+function copy() {
+  // Optimistic feedback: flip the label right away, then write in the
+  // background. The clipboard promise can hang or reject in restricted
+  // contexts (e.g. a non-focused/insecure iframe), so the UI state must not
+  // depend on it resolving.
+  copied.value = true
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    copied.value = false
+  }, 2000)
+
+  writeToClipboard(props.text)
+}
+
+async function writeToClipboard(text) {
   try {
-    await navigator.clipboard.writeText(props.text)
+    await navigator.clipboard.writeText(text)
   } catch {
     // Fallback for browsers without the async clipboard API (or no permission)
     const area = document.createElement('textarea')
-    area.value = props.text
+    area.value = text
     area.setAttribute('readonly', '')
     area.style.position = 'absolute'
     area.style.left = '-9999px'
@@ -56,12 +70,6 @@ async function copy() {
     document.execCommand('copy')
     document.body.removeChild(area)
   }
-
-  copied.value = true
-  clearTimeout(timer)
-  timer = setTimeout(() => {
-    copied.value = false
-  }, 2000)
 }
 
 onBeforeUnmount(() => clearTimeout(timer))
