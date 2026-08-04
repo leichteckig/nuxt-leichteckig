@@ -143,7 +143,7 @@
             >
             <a
               class="kit__photo-download"
-              :href="photo.file"
+              :href="photo.downloadFile"
               :download="photo.download"
             >
               {{ $t('kitPhotoDownload') }}
@@ -279,11 +279,14 @@ const stats = computed(() => [
   { number: t('kitStatSinceValue'), label: t('kitStatSince') }
 ])
 
+// `file` is the WebP shown on the page (small, fast); `downloadFile` is a JPEG
+// for the download link, since organizers' tools (print, Office, older CMS)
+// handle JPEG more reliably than WebP.
 const photos = [
-  { file: '/ramona-schwering-square.webp', download: 'ramona-schwering-square.webp', alt: 'Ramona Schwering speaking at NDC Copenhagen (square)' },
-  { file: '/ramona-schwering-google-io-connect.webp', download: 'ramona-schwering-google-io-connect.webp', alt: 'Ramona Schwering at Google I/O Connect' },
-  { file: '/ramona-schwering-headshot.webp', download: 'ramona-schwering-headshot.webp', alt: 'Portrait of Ramona Schwering' },
-  { file: '/ramona-schwering-world-congress-2023.webp', download: 'ramona-schwering-world-congress-2023.webp', alt: 'Ramona Schwering at WeAreDevelopers World Congress 2023' }
+  { file: '/ramona-schwering-square.webp', downloadFile: '/ramona-schwering-square.jpg', download: 'ramona-schwering-square.jpg', alt: 'Ramona Schwering speaking at NDC Copenhagen (square)' },
+  { file: '/ramona-schwering-google-io-connect.webp', downloadFile: '/ramona-schwering-google-io-connect.jpg', download: 'ramona-schwering-google-io-connect.jpg', alt: 'Ramona Schwering at Google I/O Connect' },
+  { file: '/ramona-schwering-headshot.webp', downloadFile: '/ramona-schwering-headshot.jpg', download: 'ramona-schwering-headshot.jpg', alt: 'Portrait of Ramona Schwering' },
+  { file: '/ramona-schwering-world-congress-2023.webp', downloadFile: '/ramona-schwering-world-congress-2023.jpg', download: 'ramona-schwering-world-congress-2023.jpg', alt: 'Ramona Schwering at WeAreDevelopers World Congress 2023' }
 ]
 
 const topics = computed(() => [
