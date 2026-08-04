@@ -281,7 +281,7 @@ const stats = computed(() => [
 
 const photos = [
   { file: '/ramona-schwering-square.webp', download: 'ramona-schwering-square.webp', alt: 'Ramona Schwering speaking at NDC Copenhagen (square)' },
-  { file: '/ramona-schwering-ndc-copenhagen.webp', download: 'ramona-schwering-ndc-copenhagen.webp', alt: 'Ramona Schwering speaking at NDC Copenhagen' },
+  { file: '/ramona-schwering-google-io-connect.webp', download: 'ramona-schwering-google-io-connect.webp', alt: 'Ramona Schwering at Google I/O Connect' },
   { file: '/ramona-schwering-headshot.webp', download: 'ramona-schwering-headshot.webp', alt: 'Portrait of Ramona Schwering' },
   { file: '/ramona-schwering-world-congress-2023.webp', download: 'ramona-schwering-world-congress-2023.webp', alt: 'Ramona Schwering at WeAreDevelopers World Congress 2023' }
 ]
