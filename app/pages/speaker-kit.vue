@@ -319,6 +319,7 @@ const achievements = computed(() => [
 const rider = computed(() => [
   t('kitRiderLaptop'),
   t('kitRiderAdapters'),
+  t('kitRiderSketchnoting'),
   t('kitRiderMic'),
   t('kitRiderAudio'),
   t('kitRiderInternet'),

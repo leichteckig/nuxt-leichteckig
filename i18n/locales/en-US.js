@@ -122,6 +122,7 @@ export default {
   "kitRiderTitle": "Tech rider",
   "kitRiderLaptop": "I present from my own laptop (macOS).",
   "kitRiderAdapters": "HDMI or USB-C output; I can bring common adapters.",
+  "kitRiderSketchnoting": "When I do live sketchnoting on stage, the setup needs to support connecting my iPad (I still bring the adapters). Please make sure the desk or lectern has room for both my laptop, for backup and notes, and the iPad I share the screen from.",
   "kitRiderMic": "A headset or lavalier mic is preferred over a handheld one.",
   "kitRiderAudio": "Audio to the room for live screen-reader demos.",
   "kitRiderInternet": "Stable internet for live coding and demos.",
