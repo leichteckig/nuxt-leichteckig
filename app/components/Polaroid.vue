@@ -36,6 +36,9 @@ const getClasses = computed(() => {
   if (props.type === 'rose') {
     return 'handdraw-border polaroid__rose'
   }
+  if (props.type === 'dark') {
+    return 'handdraw-border polaroid__dark'
+  }
   return 'handdraw-border polaroid__line'
 })
 </script>
@@ -93,6 +96,14 @@ const getClasses = computed(() => {
     margin: 30px 30px 130px 30px;
     background-color: #C05746;
     border-color: var(--color);
+  }
+
+  /* Neutral near-black taken from the dark stage photo, so the frame blends
+     into the image instead of standing out. Fixed (not theme-driven) because
+     the photo is dark in both light and dark mode. */
+  .polaroid__dark {
+    margin: 30px 30px 130px 30px;
+    background-color: #141416;
   }
 }
 

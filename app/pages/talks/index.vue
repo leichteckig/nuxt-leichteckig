@@ -72,6 +72,27 @@
           </Button>
         </div>
       </section>
+      <section
+        class="speaker-kit-cta"
+        data-cy="SpeakerKitCta"
+      >
+        <div class="handdraw-line" />
+        <div class="gradient" />
+        <div class="speaker-kit-cta__inner">
+          <h2 class="talks__title">
+            {{ $t('kitCtaTitle') }}
+          </h2>
+          <p class="talks__sub-title">
+            {{ $t('kitCtaSubtitle') }}
+          </p>
+          <Button
+            data-cy="ButtonToSpeakerKit"
+            :to="localePath('/speaker-kit/')"
+          >
+            {{ $t('kitCtaButton') }}
+          </Button>
+        </div>
+      </section>
     </main>
   </Page>
 </template>
@@ -160,6 +181,14 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.speaker-kit-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0 50px;
 }
 
 .gradient {

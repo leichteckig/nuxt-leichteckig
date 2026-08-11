@@ -122,11 +122,30 @@
           </div>
         </div>
       </section>
+      <section
+        class="about__speaker-kit-cta"
+        data-cy="SpeakerKitCta"
+      >
+        <div class="handdraw-line" />
+        <div class="gradient" />
+        <div class="about__cta-inner">
+          <h2>{{ $t('kitCtaTitle') }}</h2>
+          <p>{{ $t('kitCtaSubtitle') }}</p>
+          <Button
+            data-cy="ButtonToSpeakerKit"
+            :to="localePath('/speaker-kit/')"
+          >
+            {{ $t('kitCtaButton') }}
+          </Button>
+        </div>
+      </section>
     </main>
   </Page>
 </template>
 
 <script setup>
+const localePath = useLocalePath()
+
 const stack = [
   { name: 'HTML', file: 'html' },
   { name: 'CSS', file: 'css' },
@@ -311,6 +330,25 @@ onMounted(getGithubProjects)
   .about__polaroid-grid--reversed {
     display: grid;
     grid-template-columns: 1fr 2fr;
+  }
+}
+
+.about__speaker-kit-cta {
+  margin-top: 20px;
+
+  .about__cta-inner {
+    text-align: center;
+    margin: 30px 0 50px;
+  }
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 22px;
+    margin-bottom: 30px;
   }
 }
 </style>
