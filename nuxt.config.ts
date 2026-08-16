@@ -41,12 +41,12 @@ export default defineNuxtConfig({
         { name: 'color-scheme', content: 'light dark' },
         {
           name: 'description',
-          content: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Cypress Ambassador. OpenSource Lover.'
+          content: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Microsoft MVP. Google Developer Expert. OpenSource Lover.'
         },
         { property: 'og:title', content: 'Ramona Schwering' },
         {
           property: 'og:description',
-          content: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Cypress Ambassador. OpenSource Lover'
+          content: 'Frontend Developer & Developer Relations Engineer @mittwald. International Speaker. Microsoft MVP. Google Developer Expert. OpenSource Lover'
         },
         { property: 'og:type', content: 'website' },
         { property: 'og:image', content: 'https://www.ramona.codes/ogimage.png' },

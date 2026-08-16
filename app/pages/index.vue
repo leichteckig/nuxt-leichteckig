@@ -75,7 +75,7 @@ useHead({
     {
       name: 'description',
       content: 'Hi, I\'m Ramona. ' +
-        'Software Developer @shopware. International Speaker. Cypress Ambassador. OpenSource Lover'
+        'Developer Relations Engineer @mittwald. International Speaker. Microsoft MVP. Google Developer Expert. OpenSource Lover'
     }
   ]
 })

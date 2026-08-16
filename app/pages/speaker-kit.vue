@@ -73,6 +73,53 @@
       <div class="handdraw-line" />
       <div class="gradient" />
 
+      <!-- Achievements & conference highlights -->
+      <section
+        class="kit__section"
+        data-cy="KitAchievements"
+      >
+        <div class="kit__credibility-grid">
+          <div>
+            <h2>{{ $t('kitAchievementsTitle') }}</h2>
+            <ul class="kit__achievements">
+              <li
+                v-for="item in achievements"
+                :key="item"
+                class="kit__achievement"
+              >
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>{{ $t('kitHighlightsTitle') }}</h2>
+            <p class="kit__section-intro">
+              {{ $t('kitHighlightsIntro') }}
+            </p>
+            <ul
+              class="kit__highlights"
+              data-cy="KitHighlights"
+            >
+              <li
+                v-for="conf in conferenceHighlights"
+                :key="conf.name"
+                class="kit__highlight"
+              >
+                <span class="kit__highlight-name">{{ conf.name }}</span>
+                <span
+                  v-if="conf.count >= 2"
+                  class="kit__highlight-count handdraw-border"
+                >×{{ conf.count }}</span>
+                <span class="kit__highlight-years">{{ conf.years }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="handdraw-line" />
+      <div class="gradient" />
+
       <!-- Speaking world map -->
       <section
         class="kit__section"
@@ -213,26 +260,6 @@
       <div class="handdraw-line" />
       <div class="gradient" />
 
-      <!-- Achievements -->
-      <section
-        class="kit__section"
-        data-cy="KitAchievements"
-      >
-        <h2>{{ $t('kitAchievementsTitle') }}</h2>
-        <ul class="kit__achievements">
-          <li
-            v-for="item in achievements"
-            :key="item"
-            class="kit__achievement"
-          >
-            {{ item }}
-          </li>
-        </ul>
-      </section>
-
-      <div class="handdraw-line" />
-      <div class="gradient" />
-
       <!-- Tech rider & contact -->
       <section
         class="kit__section kit__contact"
@@ -289,6 +316,17 @@ const photos = [
   { file: '/ramona-schwering-world-congress-2023.webp', downloadFile: '/ramona-schwering-world-congress-2023.jpg', download: 'ramona-schwering-world-congress-2023.jpg', alt: 'Ramona Schwering at WeAreDevelopers World Congress 2023' }
 ]
 
+// Repeat and marquee stages, curated for organizers scanning for proof of
+// experience. `count` drives the "×N" badge (shown only for 2+ appearances,
+// per Ramona's rule); single but notable stages list the year alone.
+const conferenceHighlights = [
+  { name: 'WeAreDevelopers World Congress', count: 5, years: '2022–2026' },
+  { name: 'Vue.js Amsterdam', count: 4, years: '2022, 2023, 2024, 2026' },
+  { name: 'NDC', count: 2, years: '2025, 2026' },
+  { name: 'JSNation US', count: 1, years: '2024' },
+  { name: 'Nordic.js', count: 1, years: '2025' }
+]
+
 const topics = computed(() => [
   t('kitTopicTesting'),
   t('kitTopicA11y'),
@@ -309,6 +347,7 @@ const signatureTalks = [
 
 const achievements = computed(() => [
   t('kitAchievementGde'),
+  t('kitAchievementMvp'),
   t('kitAchievementWtm'),
   t('kitAchievementCypress'),
   t('kitAchievementStages'),
@@ -442,6 +481,43 @@ useHead(() => ({
   margin-top: 10px;
 }
 
+/* Conference highlights */
+.kit__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.kit__highlight {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.kit__highlight-name {
+  font-family: var(--font-family-secondary);
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.kit__highlight-count {
+  padding: 2px 12px;
+  font-size: 15px;
+  background: var(--bg);
+}
+
+.kit__highlight-years {
+  font-size: 15px;
+  color: var(--color-text-muted);
+
+  @media screen and (min-width: 500px) {
+    margin-left: auto;
+  }
+}
+
 /* Photos */
 .kit__photo-grid {
   list-style: none;
@@ -539,16 +615,26 @@ useHead(() => ({
   margin-top: 30px;
 }
 
-/* Achievements */
+/* Achievements & highlights (two-column credibility block) */
+.kit__credibility-grid {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
 .kit__achievements {
   padding-left: 0;
   list-style: none;
   display: grid;
   gap: 12px;
-
-  @media screen and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .kit__achievement {

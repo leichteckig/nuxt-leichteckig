@@ -105,6 +105,7 @@
                 data-cy="WelcomeDescription"
               >
                 <li>{{ $t('aboutSpecialFirst') }}</li>
+                <li>{{ $t('aboutSpecialMvp') }}</li>
                 <li>{{ $t('aboutSpecialSecond') }}</li>
                 <li>{{ $t('aboutSpecialThird') }}</li>
                 <li>{{ $t('aboutSpecialFourth') }}</li>
