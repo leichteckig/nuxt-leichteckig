@@ -4,9 +4,9 @@ description: Beim Schreiben von Front-End-Tests gibt es viele Fallstricke, die s
 img: smashing-testing-pitfalls/1-frontend-testing-pitfalls.png
 alt: common testing traps
 createdAt: 2021-07-01T22:50:54.724Z
+canonical: https://www.smashingmagazine.com/2021/07/frontend-testing-pitfalls/
 author:
   name: Ramona Schwering
-  bio: https://www.smashingmagazine.com/2021/07/frontend-testing-pitfalls/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine

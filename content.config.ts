@@ -2,7 +2,6 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const author = z.object({
   name: z.string(),
-  bio: z.string().optional(),
   image: z.string().optional()
 })
 

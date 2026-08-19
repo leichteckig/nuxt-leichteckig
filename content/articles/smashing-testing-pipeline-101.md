@@ -4,9 +4,9 @@ description: Automated testing can give you much confidence in merging your chan
 img: https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/96b8ad22-5da2-4bee-8696-2aa210727e4a/testing-pipeline-101-frontend-testing.jpg
 alt: Testing pipeline for frontend testing
 createdAt: 2022-02-21T13:30:00.000Z
+canonical: https://www.smashingmagazine.com/2022/02/testing-pipeline-101-frontend-testing/
 author:
   name: Ramona Schwering
-  bio: https://www.smashingmagazine.com/2022/02/testing-pipeline-101-frontend-testing/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine

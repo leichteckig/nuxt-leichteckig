@@ -4,9 +4,9 @@ description: Unzuverlässige Tests sind ein lebendiger Alptraum für jeden, der 
 img: smashing-flakiness/heisenbug.png
 alt: flaky test
 createdAt: 2021-04-07T22:50:54.724Z
+canonical: https://www.smashingmagazine.com/2021/04/flaky-tests-living-nightmare/
 author:
   name: Ramona Schwering
-  bio: https://www.smashingmagazine.com/2021/04/flaky-tests-living-nightmare/
   image: https://avatars.githubusercontent.com/u/29896429?s=120&v=4
 tags:
 - Smashing magazine
