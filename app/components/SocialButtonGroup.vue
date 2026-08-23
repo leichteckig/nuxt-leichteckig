@@ -35,10 +35,6 @@ const icons = {
 }
 
 const socialIcons = [{
-  name: 'twitter',
-  label: 'Ramona on Twitter',
-  link: 'https://twitter.com/leichteckig'
-}, {
   name: 'github',
   label: 'Ramona on GitHub',
   link: 'https://github.com/leichteckig'
@@ -50,6 +46,10 @@ const socialIcons = [{
   name: 'bluesky',
   label: 'Ramona on Bluesky',
   link: 'https://bsky.app/profile/leichteckig.bsky.social'
+}, {
+  name: 'twitter',
+  label: 'Ramona on Twitter',
+  link: 'https://twitter.com/leichteckig'
 }, {
   name: 'rss',
   label: 'Subscribe to the RSS feed',
