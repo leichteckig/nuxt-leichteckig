@@ -24,12 +24,14 @@ import IconTwitter from '~/assets/icons/twitter.svg'
 import IconGithub from '~/assets/icons/github.svg'
 import IconLinkedin from '~/assets/icons/linkedin.svg'
 import IconXing from '~/assets/icons/xing.svg'
+import IconRss from '~/assets/icons/rss.svg'
 
 const icons = {
   twitter: IconTwitter,
   github: IconGithub,
   linkedin: IconLinkedin,
-  xing: IconXing
+  xing: IconXing,
+  rss: IconRss
 }
 
 const socialIcons = [{
@@ -48,6 +50,10 @@ const socialIcons = [{
   name: 'xing',
   label: 'Ramona on Xing',
   link: 'https://www.xing.com/profile/Ramona_Schwering2/cv'
+}, {
+  name: 'rss',
+  label: 'Subscribe to the RSS feed',
+  link: '/rss.xml'
 }]
 </script>
 
