@@ -23,20 +23,18 @@
 import IconTwitter from '~/assets/icons/twitter.svg'
 import IconGithub from '~/assets/icons/github.svg'
 import IconLinkedin from '~/assets/icons/linkedin.svg'
-import IconXing from '~/assets/icons/xing.svg'
+import IconBluesky from '~/assets/icons/bluesky.svg'
+import IconRss from '~/assets/icons/rss.svg'
 
 const icons = {
   twitter: IconTwitter,
   github: IconGithub,
   linkedin: IconLinkedin,
-  xing: IconXing
+  bluesky: IconBluesky,
+  rss: IconRss
 }
 
 const socialIcons = [{
-  name: 'twitter',
-  label: 'Ramona on Twitter',
-  link: 'https://twitter.com/leichteckig'
-}, {
   name: 'github',
   label: 'Ramona on GitHub',
   link: 'https://github.com/leichteckig'
@@ -45,9 +43,17 @@ const socialIcons = [{
   label: 'Ramona on LinkedIn',
   link: 'https://www.linkedin.com/in/ramona-schwering/'
 }, {
-  name: 'xing',
-  label: 'Ramona on Xing',
-  link: 'https://www.xing.com/profile/Ramona_Schwering2/cv'
+  name: 'bluesky',
+  label: 'Ramona on Bluesky',
+  link: 'https://bsky.app/profile/leichteckig.bsky.social'
+}, {
+  name: 'twitter',
+  label: 'Ramona on Twitter',
+  link: 'https://twitter.com/leichteckig'
+}, {
+  name: 'rss',
+  label: 'Subscribe to the RSS feed',
+  link: '/rss.xml'
 }]
 </script>
 

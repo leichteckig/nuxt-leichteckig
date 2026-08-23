@@ -15,10 +15,20 @@ describe('SocialButtonGroup component', () => {
 
   it('should link to social media', () => {
     const wrapper = mount(SocialButtonGroup);
-    const link = wrapper.find('.button-item a');
+    const links = wrapper.findAll('.button-item a');
+    const hrefs = links.map(link => link.attributes('href'));
 
-    expect(link.attributes('href')).toBe('https://twitter.com/leichteckig');
-    expect(link.attributes('target')).toBe('_blank');
-    expect(link.attributes('rel')).toBe('noopener');
+    // Order matters: it drives the visual row of icons
+    expect(hrefs).toEqual([
+      'https://github.com/leichteckig',
+      'https://www.linkedin.com/in/ramona-schwering/',
+      'https://bsky.app/profile/leichteckig.bsky.social',
+      'https://twitter.com/leichteckig',
+      '/rss.xml'
+    ]);
+
+    const firstLink = links[0];
+    expect(firstLink.attributes('target')).toBe('_blank');
+    expect(firstLink.attributes('rel')).toBe('noopener');
   });
 });
